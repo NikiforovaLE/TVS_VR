@@ -1,0 +1,170 @@
+fileFormatVersion: 2
+guid: 6760147b900ef504cae1f1e931dcff75
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Container
+    100002: Door
+    100004: //RootNode
+    100006: Grab_downup
+    100008: Grab_forwardback
+    100010: Grab_sidebyside
+    100012: Rotator
+    100014: SmallContainer
+    100016: SmallContainer2
+    100018: SmallContainerCap
+    100020: SmallContainerCap2
+    100022: SmallContainerCap2Closer
+    100024: SmallContainerOpener
+    100026: SmallContainerRotator
+    100028: SmallDoor
+    100030: Walls
+    400000: Container
+    400002: Door
+    400004: //RootNode
+    400006: Grab_downup
+    400008: Grab_forwardback
+    400010: Grab_sidebyside
+    400012: Rotator
+    400014: SmallContainer
+    400016: SmallContainer2
+    400018: SmallContainerCap
+    400020: SmallContainerCap2
+    400022: SmallContainerCap2Closer
+    400024: SmallContainerOpener
+    400026: SmallContainerRotator
+    400028: SmallDoor
+    400030: Walls
+    2100000: No Name
+    2300000: Container
+    2300002: Door
+    2300004: Grab_downup
+    2300006: Grab_forwardback
+    2300008: Grab_sidebyside
+    2300010: Rotator
+    2300012: SmallContainer
+    2300014: SmallContainer2
+    2300016: SmallContainerCap
+    2300018: SmallContainerCap2
+    2300020: SmallContainerCap2Closer
+    2300022: SmallContainerOpener
+    2300024: SmallContainerRotator
+    2300026: SmallDoor
+    2300028: Walls
+    3300000: Container
+    3300002: Door
+    3300004: Grab_downup
+    3300006: Grab_forwardback
+    3300008: Grab_sidebyside
+    3300010: Rotator
+    3300012: SmallContainer
+    3300014: SmallContainer2
+    3300016: SmallContainerCap
+    3300018: SmallContainerCap2
+    3300020: SmallContainerCap2Closer
+    3300022: SmallContainerOpener
+    3300024: SmallContainerRotator
+    3300026: SmallDoor
+    3300028: Walls
+    4300000: Rotator
+    4300002: Grab_forwardback
+    4300004: Grab_downup
+    4300006: Grab_sidebyside
+    4300008: Container
+    4300010: Door
+    4300012: Walls
+    4300014: SmallDoor
+    4300016: SmallContainer2
+    4300018: SmallContainer
+    4300020: SmallContainerCap2
+    4300022: SmallContainerCap2Closer
+    4300024: SmallContainerOpener
+    4300026: SmallContainerCap
+    4300028: SmallContainerRotator
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,200 @@
+fileFormatVersion: 2
+guid: f8874927fbea82441827325b9704ac56
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Container
+    100002: Cube
+    100004: Door
+    100006: //RootNode
+    100008: Grab_downup
+    100010: Grab_forwardback
+    100012: Grab_sidebyside
+    100014: Rotator
+    100016: SmallContainer
+    100018: SmallContainer2
+    100020: SmallContainerCap
+    100022: SmallContainerCap2
+    100024: SmallContainerCap2Closer
+    100026: SmallContainerOpener
+    100028: SmallContainerRotator
+    100030: SmallDoor
+    100032: Walls
+    100034: Walls.001
+    100036: Walls.002
+    100038: Walls.003
+    100040: Walls.004
+    100042: Walls.005
+    400000: Container
+    400002: Cube
+    400004: Door
+    400006: //RootNode
+    400008: Grab_downup
+    400010: Grab_forwardback
+    400012: Grab_sidebyside
+    400014: Rotator
+    400016: SmallContainer
+    400018: SmallContainer2
+    400020: SmallContainerCap
+    400022: SmallContainerCap2
+    400024: SmallContainerCap2Closer
+    400026: SmallContainerOpener
+    400028: SmallContainerRotator
+    400030: SmallDoor
+    400032: Walls
+    400034: Walls.001
+    400036: Walls.002
+    400038: Walls.003
+    400040: Walls.004
+    400042: Walls.005
+    2100000: No Name
+    2300000: Container
+    2300002: Cube
+    2300004: Door
+    2300006: Grab_downup
+    2300008: Grab_forwardback
+    2300010: Grab_sidebyside
+    2300012: Rotator
+    2300014: SmallContainer
+    2300016: SmallContainer2
+    2300018: SmallContainerCap
+    2300020: SmallContainerCap2
+    2300022: SmallContainerCap2Closer
+    2300024: SmallContainerOpener
+    2300026: SmallContainerRotator
+    2300028: SmallDoor
+    2300030: Walls
+    2300032: Walls.001
+    2300034: Walls.002
+    2300036: Walls.003
+    2300038: Walls.004
+    2300040: Walls.005
+    3300000: Container
+    3300002: Cube
+    3300004: Door
+    3300006: Grab_downup
+    3300008: Grab_forwardback
+    3300010: Grab_sidebyside
+    3300012: Rotator
+    3300014: SmallContainer
+    3300016: SmallContainer2
+    3300018: SmallContainerCap
+    3300020: SmallContainerCap2
+    3300022: SmallContainerCap2Closer
+    3300024: SmallContainerOpener
+    3300026: SmallContainerRotator
+    3300028: SmallDoor
+    3300030: Walls
+    3300032: Walls.001
+    3300034: Walls.002
+    3300036: Walls.003
+    3300038: Walls.004
+    3300040: Walls.005
+    4300000: Rotator
+    4300002: Grab_forwardback
+    4300004: Grab_downup
+    4300006: Grab_sidebyside
+    4300008: Container
+    4300010: Door
+    4300012: Walls
+    4300014: SmallDoor
+    4300016: SmallContainer2
+    4300018: SmallContainer
+    4300020: SmallContainerCap2
+    4300022: SmallContainerCap2Closer
+    4300024: SmallContainerOpener
+    4300026: SmallContainerCap
+    4300028: SmallContainerRotator
+    4300030: Walls.001
+    4300032: Walls.002
+    4300034: Cube
+    4300036: Walls.003
+    4300038: Walls.004
+    4300040: Walls.005
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
