@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2021.3/staging' branch; Version is '2021.3.4f1 (cb45f9cae8b7) revision 13321721'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 10  (10.0.19044) 64bit Core' Language: 'ru' Physical Memory: 16224 MB
+OS: 'Windows 10  (10.0.19043) 64bit CoreSingleLanguage' Language: 'ru' Physical Memory: 8077 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
@@ -11,13 +11,13 @@ C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe
 -name
 AssetImportWorker1
 -projectPath
-D:/PROJECTS/Unity/TVSVR
+D:/UnityProjects/TVS_VR
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-50606
-Successfully changed project path to: D:/PROJECTS/Unity/TVSVR
-D:/PROJECTS/Unity/TVSVR
+50545
+Successfully changed project path to: D:/UnityProjects/TVS_VR
+D:/UnityProjects/TVS_VR
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -47,714 +47,59 @@ D:/PROJECTS/Unity/TVSVR
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 219.93 ms, found 7 plugins.
-Preloading 1 native plugins for Editor in 1.02 ms.
+Refreshing native plugins compatible for Editor in 1114.73 ms, found 7 plugins.
+Preloading 1 native plugins for Editor in 17.64 ms.
 Initialize engine version: 2021.3.4f1 (cb45f9cae8b7)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.4f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path D:/PROJECTS/Unity/TVSVR/Assets
+[Subsystems] Discovering subsystems at path D:/UnityProjects/TVS_VR/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
-    Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce GTX 1660 Ti (ID=0x2191)
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce 940MX (ID=0x134d)
     Vendor:   NVIDIA
-    VRAM:     5991 MB
-    Driver:   27.21.14.5655
+    VRAM:     2010 MB
+    Driver:   30.0.14.7219
 Shader 'Oculus/OVRMRCameraFrameLit': fallback shader 'Alpha-Diffuse' not found
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.4f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.4f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56864
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56908
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.4f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.011561 seconds.
+Registered in 0.012312 seconds.
 Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 192.98 ms, found 7 plugins.
-Preloading 1 native plugins for Editor in 0.08 ms.
+Refreshing native plugins compatible for Editor in 222.34 ms, found 7 plugins.
+Preloading 1 native plugins for Editor in 0.07 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.945 seconds
+- Completed reload, in  1.250 seconds
 Domain Reload Profiling:
-	ReloadAssembly (945ms)
-		BeginReloadAssembly (106ms)
+	ReloadAssembly (1251ms)
+		BeginReloadAssembly (216ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (684ms)
-			LoadAssemblies (103ms)
+		EndReloadAssembly (849ms)
+			LoadAssemblies (214ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (147ms)
+			SetupTypeCache (181ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (38ms)
-			SetupLoadedEditorAssemblies (425ms)
+			RebuildScriptCaches (49ms)
+			SetupLoadedEditorAssemblies (505ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (12ms)
+				InitializePlatformSupportModulesInManaged (10ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (193ms)
-				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (161ms)
-				ProcessInitializeOnLoadMethodAttributes (57ms)
+				RefreshPlugins (223ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (201ms)
+				ProcessInitializeOnLoadMethodAttributes (69ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.009388 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 253.57 ms, found 7 plugins.
-Preloading 1 native plugins for Editor in 0.08 ms.
-Package Manager log level set to [2]
-[XR] OculusXRPlugin: registering subsystems
-[XR] Unable to register display lifecyle provider: [1]
-[XR] Oculus Input lifecycle provider registered.
-[XR] Unable to register input lifecyle provider: [1]
-[XR] OVRP version 1.72.0
-Mono: successfully reloaded assembly
-- Completed reload, in  2.315 seconds
-Domain Reload Profiling:
-	ReloadAssembly (2317ms)
-		BeginReloadAssembly (204ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (11ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (29ms)
-		EndReloadAssembly (1921ms)
-			LoadAssemblies (150ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (523ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (133ms)
-			SetupLoadedEditorAssemblies (1060ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (9ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (254ms)
-				BeforeProcessingInitializeOnLoad (215ms)
-				ProcessInitializeOnLoadAttributes (452ms)
-				ProcessInitializeOnLoadMethodAttributes (120ms)
-				AfterProcessingInitializeOnLoad (11ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (11ms)
-Platform modules already initialized, skipping
-========================================================================
-Worker process is ready to serve import requests
-Shader 'Oculus/OVRMRCameraFrameLit': fallback shader 'Alpha-Diffuse' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.12 seconds
-Refreshing native plugins compatible for Editor in 1.63 ms, found 7 plugins.
-Preloading 1 native plugins for Editor in 0.12 ms.
-Unloading 6321 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 60 unused Assets / (480.4 KB). Loaded Objects now: 6754.
-Memory consumption went from 255.3 MB to 254.8 MB.
-Total: 6.083400 ms (FindLiveObjects: 0.639400 ms CreateObjectMapping: 0.716300 ms MarkObjects: 4.249600 ms  DeleteObjects: 0.476400 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 12006.167848 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Уст_отмывки_сушки_Normal.png
-  artifactKey: Guid(fe98f385e8d1a3142957bea617e6086e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Уст_отмывки_сушки_Normal.png using Guid(fe98f385e8d1a3142957bea617e6086e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b77bb275ef867cfe3400e2cea87547e') in 0.196625 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Уст_счит_маркировки_BaseColor.png
-  artifactKey: Guid(b0151e60e382b964cb927580ffa92518) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Уст_счит_маркировки_BaseColor.png using Guid(b0151e60e382b964cb927580ffa92518) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b5a87eff8a5786b1e1e14e00853f8bb') in 0.153631 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000049 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Шиберы_AO.png
-  artifactKey: Guid(8792cb7ee8453f9459ed0d0156a6829a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Шиберы_AO.png using Guid(8792cb7ee8453f9459ed0d0156a6829a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1650b24141fe525be5f226a2e9f55a90') in 0.049443 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Уст_отмывки_сушки_Roughness.png
-  artifactKey: Guid(7e9a4739c59428544a43c19f342bf432) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Уст_отмывки_сушки_Roughness.png using Guid(7e9a4739c59428544a43c19f342bf432) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2fe9ef970c74923f28fc5bd1dabaa692') in 0.033989 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_координатная_Roughness.png
-  artifactKey: Guid(9f4e273132f1fe74aa783d9e6b8b81c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_координатная_Roughness.png using Guid(9f4e273132f1fe74aa783d9e6b8b81c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb1ac6e1300af8d20b53970022b6914a') in 0.024936 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_контроля_герметичности_Roughness.png
-  artifactKey: Guid(866d91ea844daed4e9c5139d25323ecf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_контроля_герметичности_Roughness.png using Guid(866d91ea844daed4e9c5139d25323ecf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84d7076fd13effd10794c7196bc37809') in 0.027885 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_координатная_Metalness.png
-  artifactKey: Guid(918b64e7937a6bb489932d8640da5db6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_координатная_Metalness.png using Guid(918b64e7937a6bb489932d8640da5db6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba44f4eca33e8a6823ab6b729793cc0b') in 0.028219 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000045 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_вытягивания_Normal.png
-  artifactKey: Guid(199afe649f5d9f849ad7bf277d1e55dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_вытягивания_Normal.png using Guid(199afe649f5d9f849ad7bf277d1e55dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a02e841d0966d6a946453b7123638c5') in 0.032403 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Коорд_некоп_манип_телега_AO.png
-  artifactKey: Guid(bb04de965e670f2499b828a570c54ef0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Коорд_некоп_манип_телега_AO.png using Guid(bb04de965e670f2499b828a570c54ef0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6a6cf3c8d8c5601b3f4e566075dd878') in 0.034567 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Кран-манип_хватай_AO.png
-  artifactKey: Guid(46556a00913cf39478aa953d0ca01ae0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Кран-манип_хватай_AO.png using Guid(46556a00913cf39478aa953d0ca01ae0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca12d07b2a0bed407ee75f12461a1ed6') in 0.024260 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Платформа_Normal.png
-  artifactKey: Guid(33667354f99a75b4191ce0fe0c78127c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Платформа_Normal.png using Guid(33667354f99a75b4191ce0fe0c78127c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13b5f7c890339a9bb022df61b303f3b3') in 0.021940 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Уст_крепления_головок_опора_AO.png
-  artifactKey: Guid(9166ba197d3473b4cb61d8fea8ef009f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Уст_крепления_головок_опора_AO.png using Guid(9166ba197d3473b4cb61d8fea8ef009f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbc8863fcfe77837448fbc405f1ddc6d') in 0.019951 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Рельсы_крана_манипулятора_AO.png
-  artifactKey: Guid(8a3996ca1a352b54bb447afb97e2de1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Рельсы_крана_манипулятора_AO.png using Guid(8a3996ca1a352b54bb447afb97e2de1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd60f511d97de9187e3037b647af63bad') in 0.021773 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000047 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_перемещения_Normal.png
-  artifactKey: Guid(cffd52c1f11cee7449b1f7674a1a3e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_перемещения_Normal.png using Guid(cffd52c1f11cee7449b1f7674a1a3e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60370c2ee5c04c9a5b0e7b59851006a0') in 0.025831 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_контроля_герметичности_BaseColor.png
-  artifactKey: Guid(32a672af9837ec640b120d191ec25790) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_контроля_герметичности_BaseColor.png using Guid(32a672af9837ec640b120d191ec25790) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f79f9a4555784d2414558da690d83af') in 0.101515 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000046 seconds.
-  path: Assets/ResorsesOriginal/Textures/kukson_kuka_AlbedoTransparency.png
-  artifactKey: Guid(61fc39f7ed75b824dbaa9a8452052d1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/kukson_kuka_AlbedoTransparency.png using Guid(61fc39f7ed75b824dbaa9a8452052d1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3282fb8531dad8d1c1221fc106d6f96c') in 0.024860 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Коорд_некоп_манип_телега_BaseColor.png
-  artifactKey: Guid(9d2202b9ae216504fbc2dd9c586095e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Коорд_некоп_манип_телега_BaseColor.png using Guid(9d2202b9ae216504fbc2dd9c586095e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31ceaa1440fe6b6d4e4ae36083c0b26b') in 0.155431 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000045 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Считыватель_Normal.png
-  artifactKey: Guid(fb2ae3766addf974eb8be7709fe702ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Считыватель_Normal.png using Guid(fb2ae3766addf974eb8be7709fe702ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2cd9aca7e86f87844f5e76fcbadddd3c') in 0.026659 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Oculus/OculusProjectConfig.asset
-  artifactKey: Guid(99c0d806eb5cbe24da5e78ee5659c393) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Oculus/OculusProjectConfig.asset using Guid(99c0d806eb5cbe24da5e78ee5659c393) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b553b1fe471c7e373d164a3bf765b2cf') in 0.012618 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Шиберы_Roughness.png
-  artifactKey: Guid(fe8ae7963d351244787fb1a59d42411a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Шиберы_Roughness.png using Guid(fe8ae7963d351244787fb1a59d42411a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd54d6c82f1d8955aa1534933ec890000') in 0.025115 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Тележка_уч_запен_BaseColor.png
-  artifactKey: Guid(91ed30cca8987f044813ac8fd691e55f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Тележка_уч_запен_BaseColor.png using Guid(91ed30cca8987f044813ac8fd691e55f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '995bafaa67de67670062568b95fe7963') in 0.021794 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Рельсы_автооператора_BaseColor.png
-  artifactKey: Guid(d9b14deabe8d44446a52f9c386abc83c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Рельсы_автооператора_BaseColor.png using Guid(d9b14deabe8d44446a52f9c386abc83c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e959d26a655149534252deaea9d1ca97') in 0.080193 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Уст_отмывки_сушки_AO.png
-  artifactKey: Guid(54d4296aa4e7dbe41bc21ced2164a344) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Уст_отмывки_сушки_AO.png using Guid(54d4296aa4e7dbe41bc21ced2164a344) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f34c10e590f5bcbe1be2878b1bafe8ae') in 0.020291 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Рельсы_крана_манипулятора_Metalness.png
-  artifactKey: Guid(4deddb2d66265184ab16a1c4152a173f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Рельсы_крана_манипулятора_Metalness.png using Guid(4deddb2d66265184ab16a1c4152a173f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93963716abd46d9391c846fb02b60ffd') in 0.020074 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_вытягивания_Metalness.png
-  artifactKey: Guid(3711f985c5e3c894c9c6409e985c8a3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_вытягивания_Metalness.png using Guid(3711f985c5e3c894c9c6409e985c8a3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3576855a70aa4d3bbb1545e481ce200') in 0.024637 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000084 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_удаления_продуктов_Roughness.png
-  artifactKey: Guid(26c08fd506f62b04199e1d68c8c63c6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_удаления_продуктов_Roughness.png using Guid(26c08fd506f62b04199e1d68c8c63c6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8da6a28a0e09f5448980e445a6b8c5e7') in 0.024193 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Укрытие_временного_хранения_AO.png
-  artifactKey: Guid(f318cb98e69a65b4fb141593252df5b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Укрытие_временного_хранения_AO.png using Guid(f318cb98e69a65b4fb141593252df5b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5eba1d1e30300b81b84e46077dfc608f') in 0.026000 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Уст_контроля_загрязненности_BaseColor.png
-  artifactKey: Guid(9f6c6d10360af21429998f67f91ac9aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Уст_контроля_загрязненности_BaseColor.png using Guid(9f6c6d10360af21429998f67f91ac9aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c9bf21d5477b512ac86ff0a8950993b') in 0.110387 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000043 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Уст_отмывки_сушки_Metalness.png
-  artifactKey: Guid(2b40a2b193a36934392863a880b4f9fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Уст_отмывки_сушки_Metalness.png using Guid(2b40a2b193a36934392863a880b4f9fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d71764d83a30c2473fc86403ae32385') in 0.023601 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_контроля_герметичности_Metalness.png
-  artifactKey: Guid(0ecb04cc971253347aed112459501dba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_контроля_герметичности_Metalness.png using Guid(0ecb04cc971253347aed112459501dba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '576229c711a9f632c50a04a3ac684174') in 0.019891 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_контроля_массы_AO.png
-  artifactKey: Guid(1991a85c96cbc474cbc35f93fb4fa8bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_контроля_массы_AO.png using Guid(1991a85c96cbc474cbc35f93fb4fa8bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf643eb7f2cc9203a3ad04a342e9fe77') in 0.022919 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_контроля_герметичности_AO.png
-  artifactKey: Guid(06d57206a3362af4fa3d9b7833e1ae87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_контроля_герметичности_AO.png using Guid(06d57206a3362af4fa3d9b7833e1ae87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3090dcc38ef6eedebb641bb30b2c8184') in 0.024227 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000063 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Коорд_некоп_манип_рельс_Normal.png
-  artifactKey: Guid(8652fd606bc6b974c97cd3592c601793) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Коорд_некоп_манип_рельс_Normal.png using Guid(8652fd606bc6b974c97cd3592c601793) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3fe6dedf6a30fa3f2da56763c415e14b') in 0.053359 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/ResorsesOriginal/Textures/Trap_Rail_AO.png
-  artifactKey: Guid(cd8ada45d3e28e04381c8ab0ff88799f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/Trap_Rail_AO.png using Guid(cd8ada45d3e28e04381c8ab0ff88799f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa5e7b9e826657838e28cf57bff1df33') in 0.023743 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000050 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Коорд_некоп_манип_телега_Metalness.png
-  artifactKey: Guid(586742d0b6790d044866b3d31a379beb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Коорд_некоп_манип_телега_Metalness.png using Guid(586742d0b6790d044866b3d31a379beb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01553ee20aa577a5577cb9260fd321ff') in 0.027323 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000038 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Уст_крепления_головок_опора_Metalness.png
-  artifactKey: Guid(f698d42665284dd4bb73b0c1c03a524b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Уст_крепления_головок_опора_Metalness.png using Guid(f698d42665284dd4bb73b0c1c03a524b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7ce4412dd4bae2f2deb1860392e5260') in 0.023476 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Уст_отмывки_сушки_BaseColor.png
-  artifactKey: Guid(71049ff0d3be70b40a46cef71ffa10f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Уст_отмывки_сушки_BaseColor.png using Guid(71049ff0d3be70b40a46cef71ffa10f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c956660480ba7b43f29e198d869a5cf2') in 0.522586 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Рельсы_автооператора_Roughness.png
-  artifactKey: Guid(8ef1def4a5a9c914588297271b970446) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Рельсы_автооператора_Roughness.png using Guid(8ef1def4a5a9c914588297271b970446) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cceb0016194d5b63dc9f208e10a9cb20') in 0.024993 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Коорд_некоп_манип_рука_BaseColor.png
-  artifactKey: Guid(178867e7c7e4946439413212c70fedd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Коорд_некоп_манип_рука_BaseColor.png using Guid(178867e7c7e4946439413212c70fedd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea90743fc5eeee5e039de015d5e4aa85') in 0.023628 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Стены_полы_Normal.png
-  artifactKey: Guid(8ab674f9d10c55246912622a5075e3c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Стены_полы_Normal.png using Guid(8ab674f9d10c55246912622a5075e3c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5194f66dc05a23168a4013a1b5907895') in 0.030258 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Стены_AO.png
-  artifactKey: Guid(93aec64c95d342948986bf0dcef0aa09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Стены_AO.png using Guid(93aec64c95d342948986bf0dcef0aa09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0535b0072d61a4e48513536aec9a4568') in 0.029042 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_выгрузки_Normal.png
-  artifactKey: Guid(a6c18fda2855583429ff622ef661b010) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_выгрузки_Normal.png using Guid(a6c18fda2855583429ff622ef661b010) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3a8e635de0c7bdd35447f5a7e33c136') in 0.027749 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Уст_контроля_загрязненности_Normal.png
-  artifactKey: Guid(729a447dd5b39804486ec9ac2019c0cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Уст_контроля_загрязненности_Normal.png using Guid(729a447dd5b39804486ec9ac2019c0cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '549be27abfbf490ab5a510bd68f4cd03') in 0.023808 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Автооператор_BaseColor.png
-  artifactKey: Guid(1f341bc32acfe2c43978e12d3968790e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Автооператор_BaseColor.png using Guid(1f341bc32acfe2c43978e12d3968790e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9dddd1e584d057ffe1895c9f883e479') in 0.250837 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000072 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Коорд_некоп_манип_рука_AO.png
-  artifactKey: Guid(cf72feeee904d10438ff6d2a7026c00f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Коорд_некоп_манип_рука_AO.png using Guid(cf72feeee904d10438ff6d2a7026c00f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aefb11739978883c1010b8b17e6a8896') in 0.025943 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/ResorsesOriginal/Textures/Camera_Camera_AlbedoTransparency.png
-  artifactKey: Guid(aaad73890e1573a4885aa5425a54b80c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/Camera_Camera_AlbedoTransparency.png using Guid(aaad73890e1573a4885aa5425a54b80c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed576aedaecd0bca2b4b4025b747fb51') in 0.044527 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/ResorsesOriginal/Textures/Camera_Camera_MetallicSmoothness.png
-  artifactKey: Guid(2fa2878c646e84243abb31b9cb4abca5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/Camera_Camera_MetallicSmoothness.png using Guid(2fa2878c646e84243abb31b9cb4abca5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '840ddd7ca2c362e152dc0ccab8c145fb') in 0.029513 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_выгрузки_AO.png
-  artifactKey: Guid(f4463f5710c02c94d84b76c72088b1b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_выгрузки_AO.png using Guid(f4463f5710c02c94d84b76c72088b1b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe07fca9abafed054764a9631d6be964') in 0.042921 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_удаления_продуктов_AO.png
-  artifactKey: Guid(455529cef104e1c448acda762c2657b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_удаления_продуктов_AO.png using Guid(455529cef104e1c448acda762c2657b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9329a299437ad74dca5d481efc8d6874') in 0.031078 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Магазин_Metalness.png
-  artifactKey: Guid(34e5a83713b32e5478e5aa395503b9b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Магазин_Metalness.png using Guid(34e5a83713b32e5478e5aa395503b9b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1896b2b4d7454dc698eb2da5b2311fe9') in 0.025228 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000097 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Стены_полы_Roughness.png
-  artifactKey: Guid(5585fd63c9fee6c4296df46594ca2334) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Стены_полы_Roughness.png using Guid(5585fd63c9fee6c4296df46594ca2334) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c594245912fce94ef9c5ee3725543ba2') in 0.022434 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/ResorsesOriginal/Textures/Trap_Trap_AO.png
-  artifactKey: Guid(98c8cc0f8723af948ad9fcfc8ecc8951) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/Trap_Trap_AO.png using Guid(98c8cc0f8723af948ad9fcfc8ecc8951) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12fbc2beacf1eecb999a28295cd6b995') in 0.022626 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Кран-манипулятор_AO.png
-  artifactKey: Guid(31b24fc688a8fa84c8b0a3034220823a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Кран-манипулятор_AO.png using Guid(31b24fc688a8fa84c8b0a3034220823a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '717fa6b92ea015c5e1cbdbe6f39397b2') in 0.023808 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_выталкивания_твэл_Normal.png
-  artifactKey: Guid(6566333692ed3444c93c9d2622cd2990) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_выталкивания_твэл_Normal.png using Guid(6566333692ed3444c93c9d2622cd2990) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b474b6f62cf820d62a19ca818f56f39') in 0.026777 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_перемещения_Metalness.png
-  artifactKey: Guid(14e864cf9f4f3f74a96a7abac199249c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_перемещения_Metalness.png using Guid(14e864cf9f4f3f74a96a7abac199249c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72a36792e0bcfb662e4eb01701c9af2b') in 0.024434 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000049 seconds.
-  path: Assets/ResorsesOriginal/Textures
-  artifactKey: Guid(305944f75147e894481fb52d55727369) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures using Guid(305944f75147e894481fb52d55727369) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6a238e9aa8ec5694f21ee597822ceaa') in 0.009418 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_КС_Roughness.png
-  artifactKey: Guid(d76848aa74374594c9c87082861b179f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_КС_Roughness.png using Guid(d76848aa74374594c9c87082861b179f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26b6f3f3d8990fe080cce656740704c4') in 0.025176 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Считыватель_BaseColor.png
-  artifactKey: Guid(69b16ef2b4eb64f4abbbec03c7482bd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Считыватель_BaseColor.png using Guid(69b16ef2b4eb64f4abbbec03c7482bd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0685656e8103e50ec1eaf1488b059886') in 0.234763 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000036 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_траснпортная_Normal.png
-  artifactKey: Guid(5b202dffe7d120f478078d7610c2074f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_траснпортная_Normal.png using Guid(5b202dffe7d120f478078d7610c2074f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e6b8237cd8c6907450404a3af4e93c7') in 0.025332 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Уст_счит_маркировки_AO.png
-  artifactKey: Guid(2959830ad49ca9d458d0c5f14a5baa27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Уст_счит_маркировки_AO.png using Guid(2959830ad49ca9d458d0c5f14a5baa27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b14d8e484497cfa7a648c3e7f643ee6') in 0.025877 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Стены_полы_BaseColor.png
-  artifactKey: Guid(21618a084504f7c41b617072179890c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Стены_полы_BaseColor.png using Guid(21618a084504f7c41b617072179890c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fbe7d3529b6c7341b6ce6a7d0f53097b') in 0.398921 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Магазин_AO.png
-  artifactKey: Guid(5def1cb95f934454183c91d4bf3baa48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Магазин_AO.png using Guid(5def1cb95f934454183c91d4bf3baa48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56059242d7ca881db6924814d18e3e3c') in 0.019352 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Магазин_BaseColor.png
-  artifactKey: Guid(0f7cd23415afa9d4298f49d02a832475) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Магазин_BaseColor.png using Guid(0f7cd23415afa9d4298f49d02a832475) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9507b64a3edaf3987190365535fb98bb') in 0.131128 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000068 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_удаления_продуктов_BaseColor.png
-  artifactKey: Guid(49bf3d3b5c5972d4b8a2222887168cd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_удаления_продуктов_BaseColor.png using Guid(49bf3d3b5c5972d4b8a2222887168cd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a11200d81c73668c4bc7a223d004f0e') in 0.175520 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_контроля_массы_BaseColor.png
-  artifactKey: Guid(dc24a7532259fc54bbe946cedc3509f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_контроля_массы_BaseColor.png using Guid(dc24a7532259fc54bbe946cedc3509f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f38bb04588fa9e8887fddf5cc94097d8') in 0.300386 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Короб_Metalness.png
-  artifactKey: Guid(fe14719523112ae4aab664b3efd821ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Короб_Metalness.png using Guid(fe14719523112ae4aab664b3efd821ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2924ce90273cd4c1c0cc38ce9ce3bda1') in 0.045366 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/ResorsesOriginal/Textures/kukson_kuka_Normal.png
-  artifactKey: Guid(c291ed0ffc514b449b0b12f9a7288c71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/kukson_kuka_Normal.png using Guid(c291ed0ffc514b449b0b12f9a7288c71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d0ff3ebae8674949e18d431fc833dae') in 0.013222 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Настил_BaseColor.png
-  artifactKey: Guid(ffa2cad457874cc42a194ef8d84ee810) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Настил_BaseColor.png using Guid(ffa2cad457874cc42a194ef8d84ee810) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd312e195aeebcc861dad725a20ad2825') in 0.099007 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Укрытие_временного_хранения_BaseColor.png
-  artifactKey: Guid(71f31271461dc024bb6d853d3f0be066) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Укрытие_временного_хранения_BaseColor.png using Guid(71f31271461dc024bb6d853d3f0be066) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b986f2343a0c735c86a6623deda805fb') in 0.188279 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/ResorsesOriginal/Textures/Camera_Camera_Normal.png
-  artifactKey: Guid(55ac226ab3166424d977ce542f05916b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/Camera_Camera_Normal.png using Guid(55ac226ab3166424d977ce542f05916b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7270eb30c41725da2be3454fa7965ed') in 0.014899 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_КС_Metalness.png
-  artifactKey: Guid(989a9356ceb9b87409fd87c4fc0bbe22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_КС_Metalness.png using Guid(989a9356ceb9b87409fd87c4fc0bbe22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51b87ceabffcb059ce38d2fefec08217') in 0.017525 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Стены_Roughness.png
-  artifactKey: Guid(74b84f74d32b98249a85f7815d4b8d8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Стены_Roughness.png using Guid(74b84f74d32b98249a85f7815d4b8d8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13ecba1750686c3404a667facff951f1') in 0.015288 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Уст_счит_маркировки_Metalness.png
-  artifactKey: Guid(55540f2ab671ec84e94a05b589111937) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Уст_счит_маркировки_Metalness.png using Guid(55540f2ab671ec84e94a05b589111937) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4352ca297fa9c22d23743e81bfef8c9e') in 0.017623 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/ResorsesOriginal/Textures/kukson_Handend_AlbedoTransparency.png
-  artifactKey: Guid(d45327fa8c1844946bca1c9076bdbd71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/kukson_Handend_AlbedoTransparency.png using Guid(d45327fa8c1844946bca1c9076bdbd71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e92c2a4b69e0ce09895b105c2b9df27') in 0.018540 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Малый короб_AO.png
-  artifactKey: Guid(ace613db38e4c2940b3603b65002461d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Малый короб_AO.png using Guid(ace613db38e4c2940b3603b65002461d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a52685eb0248d12396e04b4347a525a4') in 0.017146 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_сборки_пучка_смазки_Roughness.png
-  artifactKey: Guid(fcf23b07c66253c4c8e34b9c3ff47d06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_сборки_пучка_смазки_Roughness.png using Guid(fcf23b07c66253c4c8e34b9c3ff47d06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf1ccef51afb1387dcbc3a3999cc4426') in 0.017487 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Шиберы_Normal.png
-  artifactKey: Guid(02ec457da65e13e41907d4b5bb20d0a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Шиберы_Normal.png using Guid(02ec457da65e13e41907d4b5bb20d0a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2f7ad911eb6fb4e5a21e0b5f8d4aa7a') in 0.021140 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000037 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Кантователь_Metalness.png
-  artifactKey: Guid(cce4ecf1a9fbad24eb197958eddbf4c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Кантователь_Metalness.png using Guid(cce4ecf1a9fbad24eb197958eddbf4c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78e23024779e02499ecfb38d29def00d') in 0.167126 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Настил_Metalness.png
-  artifactKey: Guid(ed6e2fe3c10f5b745b4430abd34e3177) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Настил_Metalness.png using Guid(ed6e2fe3c10f5b745b4430abd34e3177) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e56660b4458dc2d0b7acbddad2c81d63') in 0.025497 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_перемещения_хвостовика_Normal.png
-  artifactKey: Guid(556249f9a66960742881db875b8e7751) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_перемещения_хвостовика_Normal.png using Guid(556249f9a66960742881db875b8e7751) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2bae363d23c2d656ccb5bb1c7cbb4a6') in 0.025366 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_контроля_геометрии_Metalness.png
-  artifactKey: Guid(1f222d2b63124d646b63483ef7265db9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_контроля_геометрии_Metalness.png using Guid(1f222d2b63124d646b63483ef7265db9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d1109a2a1abd0910cfee91511535ec0') in 0.016618 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Рельсы_автооператора_AO.png
-  artifactKey: Guid(1c37fa3a1d945ec43be065a544bcc0f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Рельсы_автооператора_AO.png using Guid(1c37fa3a1d945ec43be065a544bcc0f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c09175c7b1977fd08ec85de6efe6ce58') in 0.013203 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_вытягивания_Roughness.png
-  artifactKey: Guid(46a1b0cbdb16e6d43a8d795b81063128) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_вытягивания_Roughness.png using Guid(46a1b0cbdb16e6d43a8d795b81063128) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62d0825ac8a95f485dbcf1917143a217') in 0.014406 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000037 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_перемещения_Roughness.png
-  artifactKey: Guid(73855321a665e45478c12979f3c95965) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_перемещения_Roughness.png using Guid(73855321a665e45478c12979f3c95965) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb8e3fa80a5cd2f28ac75d7fedbb76a0') in 0.019651 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Автооператор_Metalness.png
-  artifactKey: Guid(8f76dd8eb909cc44495cf1a5b4715eba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Автооператор_Metalness.png using Guid(8f76dd8eb909cc44495cf1a5b4715eba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4486f3d9089f31c30386675a73c6f1b') in 0.014490 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Короб_BaseColor.png
-  artifactKey: Guid(8fdaa3fd569428a45a528d3a2287c073) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Короб_BaseColor.png using Guid(8fdaa3fd569428a45a528d3a2287c073) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fbcf9dc7e236efdeebd074d349f6588f') in 0.120828 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Рельсы_участка_запеналивания_AO.png
-  artifactKey: Guid(85aded36e600b7849a68cf67ac37658a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Рельсы_участка_запеналивания_AO.png using Guid(85aded36e600b7849a68cf67ac37658a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e6787fa059e9b3b4c74c70508ccb121') in 0.035763 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/ResorsesOriginal/Textures/Trap_Rail_Normal.png
-  artifactKey: Guid(4be9908a5e89c7145a7163fe7ae926e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/Trap_Rail_Normal.png using Guid(4be9908a5e89c7145a7163fe7ae926e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79e3f7ff10991550e765d4946d67015e') in 0.031216 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000050 seconds.
-  path: Assets/ResorsesOriginal/Textures/kukson_Handend_AO.png
-  artifactKey: Guid(75602b9b13532654e957299e8c42120e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/kukson_Handend_AO.png using Guid(75602b9b13532654e957299e8c42120e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0286e4f55f27ac6b0844ef038b765bca') in 0.047387 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.001153 seconds.
-  path: Assets/ResorsesOriginal/Textures/Trap_Rail_AlbedoTransparency.png
-  artifactKey: Guid(c775b7ae4972c6844807905bf6a46a12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/Trap_Rail_AlbedoTransparency.png using Guid(c775b7ae4972c6844807905bf6a46a12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd77bcda25858d57cfebb253689a70f0') in 0.020085 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000111 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Малый короб_Roughness.png
-  artifactKey: Guid(bcf810ced83205f49af80bae8f09c011) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Малый короб_Roughness.png using Guid(bcf810ced83205f49af80bae8f09c011) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a214cfa3b26b659a129ddabaafb6008') in 0.017538 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000130 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Кран-манип_хватай_Normal.png
-  artifactKey: Guid(a7a899a18d36dce419077c5eed972cd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Кран-манип_хватай_Normal.png using Guid(a7a899a18d36dce419077c5eed972cd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95042e64f03acd8f2455b9c67df46048') in 0.022516 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Уст_счит_маркировки_Roughness.png
-  artifactKey: Guid(bdd4b48d42a3acb40a1820d668693b6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Уст_счит_маркировки_Roughness.png using Guid(bdd4b48d42a3acb40a1820d668693b6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c3a54bffe4b3de32e57a45c9d72d80f') in 0.016810 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/ResorsesOriginal/Textures/kukson_Handend_MetallicSmoothness.png
-  artifactKey: Guid(d475b73ca1dfaec49a1ee7d9b2d39165) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/kukson_Handend_MetallicSmoothness.png using Guid(d475b73ca1dfaec49a1ee7d9b2d39165) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54f60c23bce1fd5d41505b40542008bf') in 0.019887 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000047 seconds.
-  path: Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_сборки_пучка_смазки_AO.png
-  artifactKey: Guid(a11ee9af854295b40941f179b6952596) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ResorsesOriginal/Textures/СборкаТВСALL_Установка_сборки_пучка_смазки_AO.png using Guid(a11ee9af854295b40941f179b6952596) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f6b9af2de3d66919878d0dc4ff73bf2') in 0.022192 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 12.089670 seconds.
-  path: Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Textures/ControllerBoxTextures/controller_plain_DiffuseGlossiness.png
-  artifactKey: Guid(ed6778a8aa0ab7144ba6379c9135942b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Textures/ControllerBoxTextures/controller_plain_DiffuseGlossiness.png using Guid(ed6778a8aa0ab7144ba6379c9135942b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10bed7565ae21122508fe31569750508') in 0.413382 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Textures/diorama_paint_diorama_main_elements_DiffuseGlossiness.png
-  artifactKey: Guid(67dce7e8b86381241a992e155b539e5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Textures/diorama_paint_diorama_main_elements_DiffuseGlossiness.png using Guid(67dce7e8b86381241a992e155b539e5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ea793be8d9173c1834dc633e4540dfa') in 0.561201 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 209.707294 seconds.
-  path: Assets/Oculus/SampleFramework/Usage/SpatialAnchor/Materials/Clear.mat
-  artifactKey: Guid(15d1a592c297987428ced42437287bdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Oculus/SampleFramework/Usage/SpatialAnchor/Materials/Clear.mat using Guid(15d1a592c297987428ced42437287bdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9468abb0d006f3a108b34499a5c6dad2') in 0.370522 seconds 
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
+Registered in 0.239060 seconds.
