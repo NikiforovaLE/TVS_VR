@@ -80,7 +80,7 @@ public class OVRRaycaster : GraphicRaycaster, IPointerEnterHandler
 	/// world objects
 	/// </summary>
 	[NonSerialized]
-    private List<RaycastHit> m_RaycastResults = new List<RaycastHit>();
+    private List<RaycastHit> m_RaycastResults = new();
     private void Raycast(PointerEventData eventData, List<RaycastResult> resultAppendList, Ray ray, bool checkForBlocking)
     {
         //This function is closely based on
@@ -193,7 +193,7 @@ public class OVRRaycaster : GraphicRaycaster, IPointerEnterHandler
     /// Perform a raycast into the screen and collect all graphics underneath it.
     /// </summary>
     [NonSerialized]
-    static readonly List<RaycastHit> s_SortedGraphics = new List<RaycastHit>();
+    static readonly List<RaycastHit> s_SortedGraphics = new();
     private void GraphicRaycast(Canvas canvas, Ray ray, List<RaycastHit> results)
     {
         //This function is based closely on :
@@ -259,7 +259,7 @@ public class OVRRaycaster : GraphicRaycaster, IPointerEnterHandler
     {
         Vector3[] corners = new Vector3[4];
         rectTransform.GetWorldCorners(corners);
-        Plane plane = new Plane(corners[0], corners[1], corners[2]);
+        Plane plane = new(corners[0], corners[1], corners[2]);
 
         float enter;
         if (!plane.Raycast(ray, out enter))
