@@ -4,41 +4,40 @@ using UnityEngine;
 
 public class ARM1 : MonoBehaviour
 {
-    public GameObject PanelArm;
-    public GameObject PanelButtons;
+    public GameObject ButtonsPanelARM1;
+    public GameObject ButtonsPanel;
 
     public void ClickARM1()
     {
-        PanelButtons.SetActive(true);
-        PanelArm.SetActive(false);
+        ButtonsPanelARM1.SetActive(true);
+        ButtonsPanel.SetActive(false);
     }
 
-    public void ClickBack()
+    public void ClickMainView()
     {
-        PanelButtons.SetActive(false);
-        PanelArm.SetActive(true);
+        ButtonsPanelARM1.SetActive(false);
+        ButtonsPanel.SetActive(true);
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        PanelButtons.SetActive(false);
+        ButtonsPanelARM1.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (OVRInput.Get(OVRInput.Button.One))
         {
-            Debug.Log("Space key was pressed.");
             ClickARM1();
+            Debug.Log("A button pressed");
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
+        if (OVRInput.Get(OVRInput.Button.Two))
         {
-            Debug.Log("Space key was pressed.");
-            ClickBack();
+            ClickMainView();
+            Debug.Log("B button pressed");
         }
-
     }
 }
