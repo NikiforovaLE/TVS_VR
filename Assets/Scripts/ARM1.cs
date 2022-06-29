@@ -28,7 +28,7 @@ public class ARM1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (OVRInput.Get(OVRInput.Button.One))
+     /*   if (OVRInput.Get(OVRInput.Button.One))
         {
             ClickARM1();
             Debug.Log("A button pressed");
@@ -38,6 +38,6 @@ public class ARM1 : MonoBehaviour
         {
             ClickMainView();
             Debug.Log("B button pressed");
-        }
+        }*/
     }
 }
