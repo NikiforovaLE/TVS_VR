@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class ARM1 : MonoBehaviour
 {
-    public GameObject ButtonsPanelARM1;
-    public GameObject ButtonsPanel;
+    [SerializeField] private GameObject ARM1Panel;
+    [SerializeField] private GameObject GeneralPanel;
 
     public void ClickARM1()
     {
-        ButtonsPanelARM1.SetActive(true);
-        ButtonsPanel.SetActive(false);
+        ARM1Panel.SetActive(true);
+        GeneralPanel.SetActive(false);
     }
 
     public void ClickMainView()
     {
-        ButtonsPanelARM1.SetActive(false);
-        ButtonsPanel.SetActive(true);
+        ARM1Panel.SetActive(false);
+        GeneralPanel.SetActive(true);
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        ButtonsPanelARM1.SetActive(false);
+        ARM1Panel.SetActive(false);
     }
 
     // Update is called once per frame

@@ -1,14 +1,22 @@
-/************************************************************************************
-Copyright : Copyright (c) Facebook Technologies, LLC and its affiliates. All rights reserved.
-
-Your use of this SDK or tool is subject to the Oculus SDK License Agreement, available at
-https://developer.oculus.com/licenses/oculussdk/
-
-Unless required by applicable law or agreed to in writing, the Utilities SDK distributed
-under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
-ANY KIND, either express or implied. See the License for the specific language governing
-permissions and limitations under the License.
-************************************************************************************/
+/*
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ * All rights reserved.
+ *
+ * Licensed under the Oculus SDK License Agreement (the "License");
+ * you may not use the Oculus SDK except in compliance with the License,
+ * which is provided at the time of installation or download, or which
+ * otherwise accompanies this software in either electronic or hard copy form.
+ *
+ * You may obtain a copy of the License at
+ *
+ * https://developer.oculus.com/licenses/oculussdk/
+ *
+ * Unless required by applicable law or agreed to in writing, the Oculus SDK
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 using System;
 using System.Collections;
@@ -80,7 +88,7 @@ public class OVRRaycaster : GraphicRaycaster, IPointerEnterHandler
 	/// world objects
 	/// </summary>
 	[NonSerialized]
-    private List<RaycastHit> m_RaycastResults = new();
+    private List<RaycastHit> m_RaycastResults = new List<RaycastHit>();
     private void Raycast(PointerEventData eventData, List<RaycastResult> resultAppendList, Ray ray, bool checkForBlocking)
     {
         //This function is closely based on
@@ -193,7 +201,7 @@ public class OVRRaycaster : GraphicRaycaster, IPointerEnterHandler
     /// Perform a raycast into the screen and collect all graphics underneath it.
     /// </summary>
     [NonSerialized]
-    static readonly List<RaycastHit> s_SortedGraphics = new();
+    static readonly List<RaycastHit> s_SortedGraphics = new List<RaycastHit>();
     private void GraphicRaycast(Canvas canvas, Ray ray, List<RaycastHit> results)
     {
         //This function is based closely on :
@@ -259,7 +267,7 @@ public class OVRRaycaster : GraphicRaycaster, IPointerEnterHandler
     {
         Vector3[] corners = new Vector3[4];
         rectTransform.GetWorldCorners(corners);
-        Plane plane = new(corners[0], corners[1], corners[2]);
+        Plane plane = new Plane(corners[0], corners[1], corners[2]);
 
         float enter;
         if (!plane.Raycast(ray, out enter))
