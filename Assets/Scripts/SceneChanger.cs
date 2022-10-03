@@ -5,12 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     void ChangeScene(string scenename) { 
         SceneManager.LoadScene(scenename); 
     }
@@ -23,11 +17,5 @@ public class SceneChanger : MonoBehaviour
     public void ClickMenu()
     {
         ChangeScene("Menu");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
