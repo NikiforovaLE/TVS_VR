@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class CanvasActions : MonoBehaviour
 {
-    [SerializeField] private GameObject ARM1Button;
-    [SerializeField] private GameObject ARM2Button;
-    [SerializeField] private GameObject GeneralViewButton;
-
     [SerializeField] private GameObject GeneralPanel;
     [SerializeField] private GameObject ARM1Panel;
     [SerializeField] private GameObject ARM2Panel;
