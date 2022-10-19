@@ -1,0 +1,302 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.4f1 (cb45f9cae8b7) revision 13321721'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19044) 64bit Professional' Language: 'ru' Physical Memory: 8050 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+D:\Program Files\Unity 2021.3.4f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker8
+-projectPath
+F:/Projects/Unity/TVS_VR
+-logFile
+Logs/AssetImportWorker8.log
+-srvPort
+62752
+Successfully changed project path to: F:/Projects/Unity/TVS_VR
+F:/Projects/Unity/TVS_VR
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Unable to join player connection multicast group.
+Unable to join player connection alternative multicast group.
+Refreshing native plugins compatible for Editor in 444.76 ms, found 10 plugins.
+Preloading 1 native plugins for Editor in 46.66 ms.
+Initialize engine version: 2021.3.4f1 (cb45f9cae8b7)
+[Subsystems] Discovering subsystems at path D:/Program Files/Unity 2021.3.4f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path F:/Projects/Unity/TVS_VR/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) UHD Graphics 630 (ID=0x3e92)
+    Vendor:   Intel
+    VRAM:     4025 MB
+    Driver:   30.0.101.1340
+Shader 'Oculus/OVRMRCameraFrameLit': fallback shader 'Alpha-Diffuse' not found
+Initialize mono
+Mono path[0] = 'D:/Program Files/Unity 2021.3.4f1/Editor/Data/Managed'
+Mono path[1] = 'D:/Program Files/Unity 2021.3.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'D:/Program Files/Unity 2021.3.4f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56232
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Program Files/Unity 2021.3.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002538 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 156.82 ms, found 10 plugins.
+Preloading 1 native plugins for Editor in 0.03 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.858 seconds
+Domain Reload Profiling:
+	ReloadAssembly (859ms)
+		BeginReloadAssembly (196ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (552ms)
+			LoadAssemblies (195ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (135ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (26ms)
+			SetupLoadedEditorAssemblies (340ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (157ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (126ms)
+				ProcessInitializeOnLoadMethodAttributes (50ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.068554 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image F:\Projects\Unity\TVS_VR\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image F:\Projects\Unity\TVS_VR\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 139.72 ms, found 10 plugins.
+Preloading 1 native plugins for Editor in 0.03 ms.
+Package Manager log level set to [2]
+[XR] OculusXRPlugin: registering subsystems
+[XR] Unable to register display lifecyle provider: [1]
+[XR] Oculus Input lifecycle provider registered.
+[XR] Unable to register input lifecyle provider: [1]
+[XR] OVRP version 1.75.0
+Mono: successfully reloaded assembly
+- Completed reload, in  1.587 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1588ms)
+		BeginReloadAssembly (140ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (45ms)
+		EndReloadAssembly (1339ms)
+			LoadAssemblies (115ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (360ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (81ms)
+			SetupLoadedEditorAssemblies (724ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (140ms)
+				BeforeProcessingInitializeOnLoad (133ms)
+				ProcessInitializeOnLoadAttributes (338ms)
+				ProcessInitializeOnLoadMethodAttributes (106ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (21ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Shader 'Oculus/OVRMRCameraFrameLit': fallback shader 'Alpha-Diffuse' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.48 seconds
+Refreshing native plugins compatible for Editor in 11.69 ms, found 10 plugins.
+Preloading 1 native plugins for Editor in 0.23 ms.
+Unloading 6552 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 84 unused Assets / (0.8 MB). Loaded Objects now: 7000.
+Memory consumption went from 260.9 MB to 260.1 MB.
+Total: 11.126600 ms (FindLiveObjects: 4.171200 ms CreateObjectMapping: 1.137800 ms MarkObjects: 4.639900 ms  DeleteObjects: 1.173000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1495.884620 seconds.
+  path: Assets/Mnemonic schemes/01. Подача комплектующих/07.png
+  artifactKey: Guid(e9adcc46b7e866e4f942d1cf74c83aaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mnemonic schemes/01. Подача комплектующих/07.png using Guid(e9adcc46b7e866e4f942d1cf74c83aaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4501e0665a8c5e25c84b68f3f6c32db8') in 0.643645 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Mnemonic schemes/01. Подача комплектующих
+  artifactKey: Guid(030c49273e5596e428df6749e60e75df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mnemonic schemes/01. Подача комплектующих using Guid(030c49273e5596e428df6749e60e75df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6104fd5ab8819192b27deff94248fb37') in 0.004342 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Materials
+  artifactKey: Guid(8481b4fabeca0e94ab62c9aa13a179a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials using Guid(8481b4fabeca0e94ab62c9aa13a179a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d39c9c15805fbba108afc29f08062e4') in 0.015108 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/New Universal Render Pipeline Asset_Renderer.asset
+  artifactKey: Guid(6843a278c6480d64ea8aa58619d3ca21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/New Universal Render Pipeline Asset_Renderer.asset using Guid(6843a278c6480d64ea8aa58619d3ca21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '006ecd2f02f434b6e36c78a992aa3bb0') in 0.015911 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000078 seconds.
+  path: Assets/Canvas.prefab
+  artifactKey: Guid(6b3681b804e456247a3a54096e96d278) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Canvas.prefab using Guid(6b3681b804e456247a3a54096e96d278) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46a0864b2cab52f4c3ecb3e850988a79') in 0.092181 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Mnemonic schemes/01. Подача комплектующих/04.png
+  artifactKey: Guid(4e8ad948ad328a94f963a6b33c94974e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mnemonic schemes/01. Подача комплектующих/04.png using Guid(4e8ad948ad328a94f963a6b33c94974e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3399ed21fa1a7e15e4a503bb0f0d1ea1') in 0.032596 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Mnemonic schemes/01. Подача комплектующих/02.png
+  artifactKey: Guid(ac0019773293c6a47a7c637766588427) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mnemonic schemes/01. Подача комплектующих/02.png using Guid(ac0019773293c6a47a7c637766588427) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba27b2e3040b1c63f5967f3c55b397be') in 0.028942 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Mnemonic schemes/01. Подача комплектующих/05.png
+  artifactKey: Guid(2c0861dea97f03f459e174ae519ed13a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mnemonic schemes/01. Подача комплектующих/05.png using Guid(2c0861dea97f03f459e174ae519ed13a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b74aab46a8e91c5678f692e4f4c01b0') in 0.029708 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Mnemonic schemes/01. Подача комплектующих/10.png
+  artifactKey: Guid(137293737ce41ec42a4993c6fa76e2f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mnemonic schemes/01. Подача комплектующих/10.png using Guid(137293737ce41ec42a4993c6fa76e2f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33011ad87869a2a68e3b73b9c7d08a0f') in 0.050078 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Materials/Cubemat.mat
+  artifactKey: Guid(1840041f9b87a624199db7f8a19afff4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Cubemat.mat using Guid(1840041f9b87a624199db7f8a19afff4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8575896b3d16a2e59323a2aa27a6d0b3') in 3.202284 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.626831 seconds.
+  path: Assets/Mnemonic schemes/01. Подача комплектующих1
+  artifactKey: Guid(5887ef7fc54a6a946a80450bd53958f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mnemonic schemes/01. Подача комплектующих1 using Guid(5887ef7fc54a6a946a80450bd53958f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '749a4d36af722c17098157de67a55cf3') in 0.006798 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.050504 seconds.
+  path: Assets/Mnemonic schemes/01. Подача комплектующих1/01.png
+  artifactKey: Guid(704e75db6fb5f324fbb9b161f5bb0332) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mnemonic schemes/01. Подача комплектующих1/01.png using Guid(704e75db6fb5f324fbb9b161f5bb0332) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd50b94151c2ad0712b03ee1c96701af3') in 0.011743 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.012869 seconds.
+  path: Assets/Mnemonic schemes/01. Подача комплектующих1/01st.png
+  artifactKey: Guid(c8e7db8a9b7b97946bca3e65f24abeb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mnemonic schemes/01. Подача комплектующих1/01st.png using Guid(c8e7db8a9b7b97946bca3e65f24abeb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c579345b121d1b467a7b7222d4fecd55') in 0.035055 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Mnemonic schemes/01. Подача комплектующих1/11.png
+  artifactKey: Guid(7011db3be772e4048a67a4e060b95f16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mnemonic schemes/01. Подача комплектующих1/11.png using Guid(7011db3be772e4048a67a4e060b95f16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6aecd3626c40cb076a5a4bfe5eba33c7') in 0.014925 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Mnemonic schemes/01. Подача комплектующих1/04.png
+  artifactKey: Guid(689daa08c0a0a834281f85bc142a7ae4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mnemonic schemes/01. Подача комплектующих1/04.png using Guid(689daa08c0a0a834281f85bc142a7ae4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '077dc244a6f0903c1b8f7788d692cd4b') in 0.023622 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.710033 seconds.
+  path: Assets/Mnemonic schemes/01. Подача комплектующих1/01.png
+  artifactKey: Guid(704e75db6fb5f324fbb9b161f5bb0332) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mnemonic schemes/01. Подача комплектующих1/01.png using Guid(704e75db6fb5f324fbb9b161f5bb0332) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05584ed954413c50c191944c9b3da1b0') in 0.024919 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.548693 seconds.
+  path: Assets/Mnemonic schemes/01. Подача комплектующих1/01st.png
+  artifactKey: Guid(c8e7db8a9b7b97946bca3e65f24abeb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mnemonic schemes/01. Подача комплектующих1/01st.png using Guid(c8e7db8a9b7b97946bca3e65f24abeb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e9ec9a0d06411e05808871942bbe6db') in 0.130963 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 101.745007 seconds.
+  path: Assets/Scenes/Menu.unity
+  artifactKey: Guid(65e632872e990b146960b0aee5c7854e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Menu.unity using Guid(65e632872e990b146960b0aee5c7854e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b0f485d7eb15235f6799b37c7c47d9f') in 0.005964 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 306.482393 seconds.
+  path: Assets/Mnemonic schemes/01. Подача комплектующих1/02.png
+  artifactKey: Guid(392c61b4b9f5fbe4faab3af68442396c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mnemonic schemes/01. Подача комплектующих1/02.png using Guid(392c61b4b9f5fbe4faab3af68442396c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42395f00c706c782b33aebe103f0ff24') in 0.025328 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 641.532594 seconds.
+  path: Assets/Mnemonic schemes/01. Подача комплектующих1/02.png
+  artifactKey: Guid(392c61b4b9f5fbe4faab3af68442396c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mnemonic schemes/01. Подача комплектующих1/02.png using Guid(392c61b4b9f5fbe4faab3af68442396c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98060aac6fc3279cf8bbd45ae8d1f4e1') in 0.019764 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 126.145761 seconds.
+  path: Assets/Mnemonic schemes/01. Подача комплектующих1/03.png
+  artifactKey: Guid(02f2d877770db4b48b92f1daa5d1aa2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mnemonic schemes/01. Подача комплектующих1/03.png using Guid(02f2d877770db4b48b92f1daa5d1aa2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a588dc1a4f69db11a02a9ca945d898d0') in 0.028468 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.937045 seconds.
+  path: Assets/Mnemonic schemes/01. Подача комплектующих1/04.png
+  artifactKey: Guid(689daa08c0a0a834281f85bc142a7ae4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mnemonic schemes/01. Подача комплектующих1/04.png using Guid(689daa08c0a0a834281f85bc142a7ae4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68c4504e3aeb296252f323072957e4a2') in 0.026451 seconds 
