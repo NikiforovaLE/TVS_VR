@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class GeneralPanelAcions : MonoBehaviour
 {
-    [SerializeField] private GameObject _button01Mneomo;
-    [SerializeField] private GameObject _button02Mneomo;
-    [SerializeField] private GameObject _button03Mneomo;
-    [SerializeField] private GameObject _button04Mneomo;
+    [SerializeField] private GameObject mnemoOne;
+    [SerializeField] private GameObject mnemoTwo;
+    [SerializeField] private GameObject mnemoThree;
+    [SerializeField] private GameObject mnemoFour;
     [SerializeField] private GameObject _button05Mneomo;
     [SerializeField] private GameObject _button06Mneomo;
     [SerializeField] private GameObject _button07Mneomo;
@@ -21,32 +21,44 @@ public class GeneralPanelAcions : MonoBehaviour
     [SerializeField] private GameObject _button15Mneomo;
     [SerializeField] private GameObject _button16Mneomo;
     [SerializeField] private GameObject _button17Mneomo;
+    [SerializeField] Animation animOfMnemoOne;
+    //[SerializeField] Animator animOfMnemoTwo;
+    //[SerializeField] Animator animOfMnemoThree;
+    //[SerializeField] Animator animOfMnemoFour;
+    //[SerializeField] Animator animOfMnemoFive;
+    //[SerializeField] Animator animOfMnemoSix;
+    //[SerializeField] Animator animOfMnemoSeven;
 
-    private List<GameObject> buttonsMnemos;
-   
+    private List<GameObject> mnemos;
+    private List<Animation> animatorsOfMnemos;
+
     public void SetButonPanelActive(GameObject buttonMnemo)
     {
-        int panelIndex = buttonsMnemos.IndexOf(buttonMnemo);
-        for (int i = 0; i < buttonsMnemos.Count; i++)
+        int panelIndex = mnemos.IndexOf(buttonMnemo);
+        for (int i = 0; i < mnemos.Count; i++)
         {
             if (i != panelIndex)
             {
-                buttonsMnemos[i].SetActive(false);
+                mnemos[i].SetActive(false);
             }
         }
-        buttonsMnemos[panelIndex].SetActive(true);
+        mnemos[panelIndex].SetActive(true);
+        animatorsOfMnemos[panelIndex].Play();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        buttonsMnemos = new List<GameObject>() {
-        _button01Mneomo, _button02Mneomo, _button03Mneomo, _button04Mneomo, _button05Mneomo, _button06Mneomo,
+        mnemos = new List<GameObject>() {
+        mnemoOne, mnemoTwo, mnemoThree, mnemoFour, _button05Mneomo, _button06Mneomo,
         _button07Mneomo, _button08Mneomo, _button09Mneomo, _button10Mneomo, _button11Mneomo, _button12Mneomo,
         _button13Mneomo, _button14Mneomo, _button15Mneomo, _button16Mneomo, _button17Mneomo};
-        for (int i = 0; i < buttonsMnemos.Count; i++)
+        for (int i = 0; i < mnemos.Count; i++)
         {
-            buttonsMnemos[i].SetActive(false);
+            mnemos[i].SetActive(false);
         }
+        animatorsOfMnemos = new List<Animation>() { animOfMnemoOne
+            //, animOfMnemoTwo, animOfMnemoThree, animOfMnemoFour, animOfMnemoFive, animOfMnemoSix, animOfMnemoSeven 
+        };
     }
 }
