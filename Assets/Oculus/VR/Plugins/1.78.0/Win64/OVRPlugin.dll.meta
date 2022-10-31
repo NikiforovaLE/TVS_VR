@@ -16,11 +16,11 @@ PluginImporter:
     second:
       enabled: 0
       settings:
-        Exclude Editor: 1
+        Exclude Editor: 0
         Exclude Linux64: 1
         Exclude OSXUniversal: 1
         Exclude Win: 1
-        Exclude Win64: 1
+        Exclude Win64: 0
         Exclude WindowsStoreApps: 1
   - first:
       : Editor
@@ -32,14 +32,14 @@ PluginImporter:
   - first:
       Any: 
     second:
-      enabled: 0
+      enabled: 1
       settings: {}
   - first:
       Editor: Editor
     second:
       enabled: 1
       settings:
-        CPU: X86_64
+        CPU: x86_64
         DefaultValueInitialized: true
         OS: Windows
   - first:
