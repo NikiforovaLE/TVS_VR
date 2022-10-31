@@ -17,6 +17,10 @@ public class CanvasActions : MonoBehaviour
         ARM1Panel.SetActive(true);
         ARM2Panel.SetActive(false);
         GeneralPanel.SetActive(false);
+
+        MainPanel.SetActive(false);
+        ARM1MainPanel.SetActive(true);
+        ARM2MainPanel.SetActive(false);
     }
 
     public void openARM2Panel()
@@ -24,6 +28,10 @@ public class CanvasActions : MonoBehaviour
         ARM2Panel.SetActive(true);
         ARM1Panel.SetActive(false);
         GeneralPanel.SetActive(false);
+
+        MainPanel.SetActive(false);
+        ARM1MainPanel.SetActive(false);
+        ARM2MainPanel.SetActive(true);
     }
 
     public void openGeneralPanel()
@@ -31,7 +39,10 @@ public class CanvasActions : MonoBehaviour
         GeneralPanel.SetActive(true);
         ARM1Panel.SetActive(false);
         ARM2Panel.SetActive(false);
-       
+
+        MainPanel.SetActive(true);
+        ARM1MainPanel.SetActive(false);
+        ARM2MainPanel.SetActive(false);
     }
 
     // Start is called before the first frame update
@@ -43,6 +54,6 @@ public class CanvasActions : MonoBehaviour
 
         MainPanel.SetActive(true);
         ARM1MainPanel.SetActive(false);
-        ARM2Panel.SetActive(false);
+        ARM2MainPanel.SetActive(false);
     }
 }
