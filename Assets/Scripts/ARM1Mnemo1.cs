@@ -6,16 +6,25 @@ using UnityEngine.UI;
 public class ARM1Mnemo1 : MonoBehaviour
 {
     [SerializeField] private Text output;
+
     [SerializeField] private Text readNumberOne;
     [SerializeField] private Text readNumberTwo;
     [SerializeField] private Text readNumberThree;
     [SerializeField] private Text readNumberFour;
     [SerializeField] private Text readNumberFive;
+
+    [SerializeField] private Text numberOnMnemo0;
+
     [SerializeField] private Button confirm;
+
     private List<string> containersNumbers;
     private List<Text> readNumbers;
+    private List<string> chosenNumbers;
+
     private int counter;
     private int counterOfReadNumbers;
+
+    public List<string> ChosenNumbers { get => chosenNumbers; set => chosenNumbers = value; }
 
     public void ReadNumberOfContainer()
     {
@@ -34,15 +43,11 @@ public class ARM1Mnemo1 : MonoBehaviour
 
     public void ConfirmChoice()
     {
-        if (counterOfReadNumbers < 5)
+        if (counterOfReadNumbers < 5 && !ChosenNumbers.Contains(output.text))
         {
             readNumbers[counterOfReadNumbers].text = output.text;
-            counterOfReadNumbers++;
-        }
-        else
-        {
-            counterOfReadNumbers = 0;
-            readNumbers[counterOfReadNumbers].text = output.text;
+            ChosenNumbers.Add(output.text);
+            numberOnMnemo0.text = (counterOfReadNumbers + 1).ToString();
             counterOfReadNumbers++;
         }
     }
@@ -52,8 +57,16 @@ public class ARM1Mnemo1 : MonoBehaviour
     {
         counter = 0;
         counterOfReadNumbers = 0;
+        output.text = "";
+        readNumberOne.text = "";
+        readNumberTwo.text = "";
+        readNumberThree.text = "";
+        readNumberFour.text = "";
+        readNumberFive.text = "";
+        numberOnMnemo0.text = 0.ToString();
+
         containersNumbers = new List<string> { "CONT0001", "CONT0002", "CONT0003", "CONT0004", "CONT0005" };
         readNumbers = new List<Text> { readNumberOne, readNumberTwo, readNumberThree, readNumberFour, readNumberFive };
-        output.text = "";
+        ChosenNumbers = new List<string>();
     }
 }
