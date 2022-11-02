@@ -8,6 +8,7 @@ public class ARM1Mnemo2 : MonoBehaviour
     [SerializeField] private ARM1Mnemo1 ARM1Mnemo1;
     [SerializeField] private Text containerNumber;
     [SerializeField] private Text frameNumber;
+    [SerializeField] private Text typeOfTVS;
     [SerializeField] private Image indicatorOne;
     [SerializeField] private Image indicatorTwo;
     [SerializeField] private Image indicatorThree;
@@ -30,21 +31,22 @@ public class ARM1Mnemo2 : MonoBehaviour
     public Dictionary<string, string> NumberOfContainersAndFrames { get => numberOfContainersAndFrames; set => numberOfContainersAndFrames = value; }
     public Dictionary<string, bool> ResultOfControl { get => resultOfControl; set => resultOfControl = value; }
     public List<Image> Indicators1 { get => Indicators; set => Indicators = value; }
+    public Text TypeOfTVS { get => typeOfTVS; set => typeOfTVS = value; }
 
     public void ShowContainerNumbers()
     {
-        List<string> chosenContaineNumbers = ARM1Mnemo1.ChosenNumbers;
-        int size = chosenContaineNumbers.Count;
+        List<string> chosenContainerNumbers = ARM1Mnemo1.ChosenNumbers;
+        int size = chosenContainerNumbers.Count;
         if (counter % 2 == 0 && containersCounter < size)
         {
-            containerNumber.text = ARM1Mnemo1.ChosenNumbers[containersCounter];
+            containerNumber.text = chosenContainerNumbers[containersCounter];
             containersCounter++;
             counter++;
         }
         else if (counter % 2 == 0 && containersCounter >= size)
         {
             containersCounter = 0;
-            containerNumber.text = ARM1Mnemo1.ChosenNumbers[containersCounter];
+            containerNumber.text = chosenContainerNumbers[containersCounter];
             containersCounter++;
             counter++;
         }
@@ -129,5 +131,9 @@ public class ARM1Mnemo2 : MonoBehaviour
         ResultOfControl = new Dictionary<string, bool>();
         NumberOfContainersAndFrames = new Dictionary<string, string>();
         Indicators = new List<Image> { indicatorOne, indicatorTwo, indicatorThree, indicatorFour, indicatorFive };
+        for (int i = 0; i < Indicators.Count; i++)
+        {
+            Indicators[i].color = Color.gray;
+        }
     }
 }

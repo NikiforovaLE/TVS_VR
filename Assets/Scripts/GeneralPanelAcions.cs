@@ -43,7 +43,6 @@ public class GeneralPanelAcions : MonoBehaviour
             }
         }
         mnemos[panelIndex].SetActive(true);
-        animatorsOfMnemos[panelIndex].Play();
     }
 
     // Start is called before the first frame update
