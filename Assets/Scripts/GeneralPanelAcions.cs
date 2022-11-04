@@ -21,16 +21,8 @@ public class GeneralPanelAcions : MonoBehaviour
     [SerializeField] private GameObject _button15Mneomo;
     [SerializeField] private GameObject _button16Mneomo;
     [SerializeField] private GameObject _button17Mneomo;
-    [SerializeField] Animation animOfMnemoOne;
-    [SerializeField] Animation animOfMnemoTwo;
-    [SerializeField] Animation animOfMnemoThree;
-    [SerializeField] Animation animOfMnemoFour;
-    [SerializeField] Animation animOfMnemoFive;
-    [SerializeField] Animation animOfMnemoSix;
-    [SerializeField] Animation animOfMnemoSeven;
 
     private List<GameObject> mnemos;
-    private List<Animation> animatorsOfMnemos;
 
     public void SetButonPanelActive(GameObject buttonMnemo)
     {
@@ -56,7 +48,5 @@ public class GeneralPanelAcions : MonoBehaviour
         {
             mnemos[i].SetActive(false);
         }
-
-        animatorsOfMnemos = new List<Animation>() { animOfMnemoOne, animOfMnemoTwo, animOfMnemoThree, animOfMnemoFour, animOfMnemoFive, animOfMnemoSix, animOfMnemoSeven };
     }
 }

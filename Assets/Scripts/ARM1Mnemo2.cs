@@ -8,15 +8,20 @@ public class ARM1Mnemo2 : MonoBehaviour
     [SerializeField] private ARM1Mnemo1 ARM1Mnemo1;
     [SerializeField] private Text containerNumber;
     [SerializeField] private Text frameNumber;
-    [SerializeField] private Text typeOfTVS;
+    [SerializeField] private Text attention;
+
     [SerializeField] private Image indicatorOne;
     [SerializeField] private Image indicatorTwo;
     [SerializeField] private Image indicatorThree;
     [SerializeField] private Image indicatorFour;
     [SerializeField] private Image indicatorFive;
+    [SerializeField] private Dropdown menuOfTypes;
+    
+
     private int counter;
     private int containersCounter;
     private int framesCounter;
+    private string typeOfTVS;
     private string whenDefects;
     private List<string> framesNumbers;
     private List<Image> Indicators;
@@ -25,13 +30,15 @@ public class ARM1Mnemo2 : MonoBehaviour
     private bool DefectsInFixing;
     private Dictionary<string, bool> resultOfControl;
     private Dictionary<string, string> numberOfContainersAndFrames;
+    private Dictionary<string, string> framesAndTypes;
     public bool Scratches1 { get => Scratches; set => Scratches = value; }
     public bool Dints1 { get => Dints; set => Dints = value; }
     public bool DefectsInFixing1 { get => DefectsInFixing; set => DefectsInFixing = value; }
     public Dictionary<string, string> NumberOfContainersAndFrames { get => numberOfContainersAndFrames; set => numberOfContainersAndFrames = value; }
     public Dictionary<string, bool> ResultOfControl { get => resultOfControl; set => resultOfControl = value; }
     public List<Image> Indicators1 { get => Indicators; set => Indicators = value; }
-    public Text TypeOfTVS { get => typeOfTVS; set => typeOfTVS = value; }
+    public string TypeOfTVS { get => typeOfTVS; set => typeOfTVS = value; }
+    public Dictionary<string, string> FramesAndTypes { get => framesAndTypes; set => framesAndTypes = value; }
 
     public void ShowContainerNumbers()
     {
@@ -50,7 +57,7 @@ public class ARM1Mnemo2 : MonoBehaviour
             containersCounter++;
             counter++;
         }
-        else if (counter % 2 != 0)
+        else
         {
             ShowFrameNumber();
         }
@@ -82,16 +89,33 @@ public class ARM1Mnemo2 : MonoBehaviour
         string Container = containerNumber.text;
         string Frame = frameNumber.text;
         int indexOfIndicator = ARM1Mnemo1.ChosenNumbers.IndexOf(Container);
-        numberOfContainersAndFrames.Add(Container, Frame);
+        if (Container.Equals("") || Frame.Equals(""))
+        {
+            attention.color = Color.red;
+            attention.text = "Необходимо считать номера";
+            return;
+        }
+
+        if (TypeOfTVS.Equals(""))
+        {
+            attention.color = Color.red;
+            attention.text = "Сначала выберите исполнение ТВС!";
+            return;
+        }
+
         if (IsDefects())
         {
+            attention.text = "";
             ResultOfControl.Add(Container, true);
             Indicators[indexOfIndicator].color = Color.red;
         }
-        else
+        else 
         {
-            ResultOfControl.Add(Container, false);
+            attention.text = "";
             Indicators[indexOfIndicator].color = Color.green;
+            ResultOfControl.Add(Container, false);
+            NumberOfContainersAndFrames.Add(Container, Frame);
+            FramesAndTypes.Add(Frame, TypeOfTVS);
         }
     }
 
@@ -117,6 +141,10 @@ public class ARM1Mnemo2 : MonoBehaviour
         return Scratches || Dints || DefectsInFixing;
     }
 
+    public void ChooseType()
+    {
+        TypeOfTVS = menuOfTypes.options[menuOfTypes.value].text;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -124,12 +152,15 @@ public class ARM1Mnemo2 : MonoBehaviour
         containersCounter = 0;
         framesCounter = 0;
         whenDefects = "x";
+        attention.text = "";
+        TypeOfTVS = "";
         framesNumbers = new List<string> { "TVS00001", "TVS00002", "TVS00003", "TVS00004", "TVS00005" };
         Scratches = false;
         Dints = false;
         DefectsInFixing = false;
         ResultOfControl = new Dictionary<string, bool>();
         NumberOfContainersAndFrames = new Dictionary<string, string>();
+        FramesAndTypes = new Dictionary<string, string>();
         Indicators = new List<Image> { indicatorOne, indicatorTwo, indicatorThree, indicatorFour, indicatorFive };
         for (int i = 0; i < Indicators.Count; i++)
         {

@@ -9,14 +9,8 @@ public class ARMPanelActions : MonoBehaviour
     [SerializeField] private GameObject mnemoTwo;
     [SerializeField] private GameObject mnemoThree;
     [SerializeField] private GameObject mnemoFour;
-    [SerializeField] Animation animOfMnemoZero;
-    [SerializeField] Animation animOfMnemoOne;
-    [SerializeField] Animation animOfMnemoTwo;
-    [SerializeField] Animation animOfMnemoThree;
-    [SerializeField] Animation animOfMnemoFour;
 
     private List<GameObject> mnemos;
-    private List<Animation> animationsOfMnemos;
 
     public void ShowMnemoPanel(GameObject buttonMnemo)
     {
@@ -40,6 +34,5 @@ public class ARMPanelActions : MonoBehaviour
         {
             mnemos[i].SetActive(false);
         }
-        animationsOfMnemos = new List<Animation>() { animOfMnemoZero, animOfMnemoOne, animOfMnemoTwo, animOfMnemoThree, animOfMnemoFour };
     }
 }
