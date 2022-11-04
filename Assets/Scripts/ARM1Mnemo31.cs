@@ -9,32 +9,41 @@ public class ARM1Mnemo31 : MonoBehaviour
     [SerializeField] private ARM1Mnemo2 ARM1Mnemo2;
     [SerializeField] private Text containerNumber;
 
+    private string currentContainer;
     private int counter;
+
+    public string CurrentContainer { get => currentContainer; set => currentContainer = value; }
+
     public void ShowContainerNumber()
     {
         List<string> chosenContainerNumbers = ARM1Mnemo1.ChosenNumbers;
         int size = chosenContainerNumbers.Count;
         Image currentIndicator = ARM1Mnemo2.Indicators1[counter];
-        if (counter < size && currentIndicator.color.Equals(Color.green))
+        if (counter == size - 1)
         {
-            containerNumber.text = chosenContainerNumbers[counter];
+            WriteInContainerNumber(currentIndicator, chosenContainerNumbers);
+            counter = 0;
+        }
+        else if (counter < size)
+        {
+            WriteInContainerNumber(currentIndicator, chosenContainerNumbers);
             counter++;
         }
-        else
+    }
+
+    private void WriteInContainerNumber(Image currentIndicator, List<string> chosenContNumbers)
+    {
+        if (currentIndicator.color.Equals(Color.green))
         {
-            counter = 0;
-            containerNumber.text = chosenContainerNumbers[counter];
-            counter++;
+            containerNumber.text = chosenContNumbers[counter];
         }
     }
 
     public void ConfirmChoice()
     {
-        if (containerNumber.text != "")
-        {
-            List<string> chosenContainerNumbers = ARM1Mnemo1.ChosenNumbers;
-            chosenContainerNumbers.Remove(containerNumber.text);
-        }
+            //List<string> chosenContainerNumbers = ARM1Mnemo1.ChosenNumbers;
+            CurrentContainer = containerNumber.text;
+            //chosenContainerNumbers.Remove(containerNumber.text);
     }
 
     // Start is called before the first frame update
@@ -42,5 +51,6 @@ public class ARM1Mnemo31 : MonoBehaviour
     {
         counter = 0;
         containerNumber.text = "";
+        CurrentContainer = "";
     }
 }

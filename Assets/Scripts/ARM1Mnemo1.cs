@@ -15,8 +15,6 @@ public class ARM1Mnemo1 : MonoBehaviour
 
     [SerializeField] private Text numberOnMnemo0;
 
-    [SerializeField] private Button confirm;
-
     private List<string> containersNumbers;
     private List<Text> readNumbers;
     private List<string> chosenNumbers;
