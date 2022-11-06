@@ -12,18 +12,18 @@ public class CanvasActions : MonoBehaviour
     [SerializeField] private GameObject ARM1MainPanel;
     [SerializeField] private GameObject ARM2MainPanel;
 
-    public void openARM1Panel()
+    public void OpenARM1Panel()
     {
-        ARM1Panel.SetActive(true);
         ARM2Panel.SetActive(false);
         GeneralPanel.SetActive(false);
+        ARM1Panel.SetActive(true);
 
         MainPanel.SetActive(false);
-        ARM1MainPanel.SetActive(true);
         ARM2MainPanel.SetActive(false);
+        ARM1MainPanel.SetActive(true);
     }
 
-    public void openARM2Panel()
+    public void OpenARM2Panel()
     {
         ARM2Panel.SetActive(true);
         ARM1Panel.SetActive(false);
@@ -34,15 +34,15 @@ public class CanvasActions : MonoBehaviour
         ARM2MainPanel.SetActive(true);
     }
 
-    public void openGeneralPanel()
+    public void OpenGeneralPanel()
     {
-        GeneralPanel.SetActive(true);
         ARM1Panel.SetActive(false);
         ARM2Panel.SetActive(false);
+        GeneralPanel.SetActive(true);
 
-        MainPanel.SetActive(true);
         ARM1MainPanel.SetActive(false);
         ARM2MainPanel.SetActive(false);
+        MainPanel.SetActive(true); 
     }
 
     // Start is called before the first frame update

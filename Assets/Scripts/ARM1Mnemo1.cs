@@ -15,6 +15,8 @@ public class ARM1Mnemo1 : MonoBehaviour
 
     [SerializeField] private Text numberOnMnemo0;
 
+    [SerializeField] private ARMPanelActions ARMPanelActions;
+
     private List<string> containersNumbers;
     private List<Text> readNumbers;
     private List<string> chosenNumbers;
@@ -39,7 +41,7 @@ public class ARM1Mnemo1 : MonoBehaviour
         }
     }
 
-    public void ConfirmChoice()
+    public void ConfirmChoice(GameObject mainARM1Mnemo)
     {
         if (counterOfReadNumbers < 5 && !ChosenNumbers.Contains(output.text))
         {
@@ -47,6 +49,7 @@ public class ARM1Mnemo1 : MonoBehaviour
             ChosenNumbers.Add(output.text);
             numberOnMnemo0.text = (counterOfReadNumbers + 1).ToString();
             counterOfReadNumbers++;
+            ARMPanelActions.ShowMnemoPanel(mainARM1Mnemo);
         }
     }
 
