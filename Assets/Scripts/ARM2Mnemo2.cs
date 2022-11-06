@@ -10,7 +10,8 @@ public class ARM2Mnemo2 : MonoBehaviour
     [SerializeField] private ARM2Mnemo0 ARM2Mnemo0;
     [SerializeField] private ARM2Mnemo1 ARM2Mnemo1;
     [SerializeField] private ARM1Mnemo2 ARM1Mnemo2;
-
+    [SerializeField] private ARMPanelActions ARM2PanelActions;
+    [SerializeField] private GameObject mainMnemoARM2;
     private List<string> VTUKNumbers;
 
     private string currentVTUK;
@@ -57,6 +58,8 @@ public class ARM2Mnemo2 : MonoBehaviour
         CurrentVTUK = outputVTUKNumber.text;
         currentTotalAmountOfFuelElementsInVTUK = outputNumberOfFuelElements.text;
         ARM2Mnemo0.ShowVTUKInfo();
+        ARM2PanelActions.ShowMnemoPanel(mainMnemoARM2);
+
     }
 
     // Start is called before the first frame update

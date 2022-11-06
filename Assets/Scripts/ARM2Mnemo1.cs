@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ARM2Mnemo1 : MonoBehaviour
 {
+    [SerializeField] private ARMPanelActions ARM2PanelActions;
     [SerializeField] private ARM1Mnemo1 ARM1Mnemo1;
     [SerializeField] private ARM1Mnemo2 ARM1Mnemo2;
     [SerializeField] private ARM1Mnemo31 ARM1Mnemo31;
@@ -13,6 +14,7 @@ public class ARM2Mnemo1 : MonoBehaviour
     [SerializeField] private Text outputFrameNumber;
     [SerializeField] private Text frameNumberOnMnemo0;
     [SerializeField] private Text typeOnMnemo0;
+    [SerializeField] private GameObject mainMnemoARM2;
 
     private string currentFrame;
     //private int clickCounter;
@@ -31,6 +33,7 @@ public class ARM2Mnemo1 : MonoBehaviour
     {
         currentFrame = outputFrameNumber.text;
         ARM2Mnemo0.ShowTVSInfo();
+        ARM2PanelActions.ShowMnemoPanel(mainMnemoARM2);
 
     }
 

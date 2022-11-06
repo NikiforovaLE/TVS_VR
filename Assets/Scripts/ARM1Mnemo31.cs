@@ -7,7 +7,9 @@ public class ARM1Mnemo31 : MonoBehaviour
 {
     [SerializeField] private ARM1Mnemo1 ARM1Mnemo1;
     [SerializeField] private ARM1Mnemo2 ARM1Mnemo2;
+    [SerializeField] private ARMPanelActions ARM1PanelActions;
     [SerializeField] private Text containerNumber;
+    [SerializeField] private GameObject mainARM1Mnemo;
 
     private string currentContainer;
     private int counter;
@@ -41,9 +43,10 @@ public class ARM1Mnemo31 : MonoBehaviour
 
     public void ConfirmChoice()
     {
-            //List<string> chosenContainerNumbers = ARM1Mnemo1.ChosenNumbers;
+            List<string> chosenContainerNumbers = ARM1Mnemo1.ChosenNumbers;
             CurrentContainer = containerNumber.text;
-            //chosenContainerNumbers.Remove(containerNumber.text);
+            chosenContainerNumbers.Remove(CurrentContainer);
+            ARM1PanelActions.ShowMnemoPanel(mainARM1Mnemo);
     }
 
     // Start is called before the first frame update

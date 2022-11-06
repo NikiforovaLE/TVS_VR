@@ -2295,7 +2295,7 @@ RectTransform:
   - {fileID: 85854769}
   - {fileID: 401970970}
   m_Father: {fileID: 8875842652342990448}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3712,7 +3712,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8875842652165137824}
         m_TargetAssemblyTypeName: GeneralPanelAcions, Assembly-CSharp
-        m_MethodName: SetButonPanelActive
+        m_MethodName: SetPanelActive
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 184751275}
@@ -3791,6 +3791,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 713295421}
+  - {fileID: 517637857}
   m_Father: {fileID: 1551619516}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4003,7 +4004,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8875842652165137824}
         m_TargetAssemblyTypeName: GeneralPanelAcions, Assembly-CSharp
-        m_MethodName: SetButonPanelActive
+        m_MethodName: SetPanelActive
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 757297172}
@@ -5333,7 +5334,7 @@ RectTransform:
   - {fileID: 505577887}
   - {fileID: 2083463464}
   m_Father: {fileID: 8875842652342990448}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5812,7 +5813,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8875842652342990448}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6001,7 +6002,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8875842652342990448}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6269,7 +6270,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8875842652342990448}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6835,7 +6836,7 @@ RectTransform:
   - {fileID: 122615491}
   - {fileID: 1320832530}
   m_Father: {fileID: 8875842652342990448}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6984,7 +6985,7 @@ RectTransform:
   - {fileID: 1802241349}
   - {fileID: 1239079989}
   m_Father: {fileID: 8875842652342990448}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7272,12 +7273,12 @@ RectTransform:
   - {fileID: 854128176}
   - {fileID: 901509743}
   - {fileID: 351091585}
-  m_Father: {fileID: 8875842653053164211}
-  m_RootOrder: 4
+  m_Father: {fileID: 310240983}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.8086, y: -186.8}
+  m_AnchoredPosition: {x: 0.0016098, y: -166}
   m_SizeDelta: {x: 323.74, y: 293}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &517637858
@@ -7404,7 +7405,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8875842652165137824}
         m_TargetAssemblyTypeName: GeneralPanelAcions, Assembly-CSharp
-        m_MethodName: SetButonPanelActive
+        m_MethodName: SetPanelActive
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1336268239}
@@ -8548,7 +8549,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ARM1Mnemo1: {fileID: 1810788621}
   ARM1Mnemo2: {fileID: 1752574613}
+  ARM1PanelActions: {fileID: 8875842653053164222}
   containerNumber: {fileID: 2035602865}
+  mainARM1Mnemo: {fileID: 310240982}
 --- !u!1 &598935477
 GameObject:
   m_ObjectHideFlags: 0
@@ -9240,7 +9243,7 @@ RectTransform:
   - {fileID: 528716032}
   - {fileID: 1965915172}
   m_Father: {fileID: 8875842652342990448}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9340,7 +9343,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.027985, y: -67}
+  m_AnchoredPosition: {x: 0.027985, y: 78}
   m_SizeDelta: {x: 468.3, y: 39.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &692904082
@@ -9441,6 +9444,8 @@ MonoBehaviour:
   ARM2Mnemo0: {fileID: 598935481}
   ARM2Mnemo1: {fileID: 802269655}
   ARM1Mnemo2: {fileID: 1752574613}
+  ARM2PanelActions: {fileID: 1930395246}
+  mainMnemoARM2: {fileID: 598935477}
 --- !u!1 &693633997
 GameObject:
   m_ObjectHideFlags: 0
@@ -10286,7 +10291,7 @@ RectTransform:
   - {fileID: 1228217123}
   - {fileID: 1564266177}
   m_Father: {fileID: 8875842652342990448}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10555,7 +10560,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8875842652342990448}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10591,7 +10596,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8875842652342990448}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11368,7 +11373,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 174.79, y: 1002.1}
+  m_AnchoredPosition: {x: 174.9, y: 1002.5}
   m_SizeDelta: {x: 1658.6, y: 2527.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &797872795
@@ -11502,6 +11507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bb674a6ee7db80458d181f685b95618, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ARM2PanelActions: {fileID: 1930395246}
   ARM1Mnemo1: {fileID: 1810788621}
   ARM1Mnemo2: {fileID: 1752574613}
   ARM1Mnemo31: {fileID: 598563205}
@@ -11510,6 +11516,7 @@ MonoBehaviour:
   outputFrameNumber: {fileID: 464033149}
   frameNumberOnMnemo0: {fileID: 1670035210}
   typeOnMnemo0: {fileID: 1671761197}
+  mainMnemoARM2: {fileID: 598935477}
 --- !u!1 &808334784
 GameObject:
   m_ObjectHideFlags: 0
@@ -12659,11 +12666,23 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8875842651833588697}
         m_TargetAssemblyTypeName: CanvasActions, Assembly-CSharp
-        m_MethodName: openGeneralPanel
+        m_MethodName: OpenGeneralPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8875842652165137824}
+        m_TargetAssemblyTypeName: GeneralPanelAcions, Assembly-CSharp
+        m_MethodName: SetPanelActive
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1943614471}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -13482,7 +13501,7 @@ RectTransform:
   - {fileID: 808334785}
   - {fileID: 199981067}
   m_Father: {fileID: 8875842652342990448}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13733,7 +13752,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8875842652165137824}
         m_TargetAssemblyTypeName: GeneralPanelAcions, Assembly-CSharp
-        m_MethodName: SetButonPanelActive
+        m_MethodName: SetPanelActive
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 485879197}
@@ -14051,7 +14070,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8875842652342990448}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14690,7 +14709,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8875842652165137824}
         m_TargetAssemblyTypeName: GeneralPanelAcions, Assembly-CSharp
-        m_MethodName: SetButonPanelActive
+        m_MethodName: SetPanelActive
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 945776624}
@@ -15736,7 +15755,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8875842652342990448}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -15829,7 +15848,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8875842652165137824}
         m_TargetAssemblyTypeName: GeneralPanelAcions, Assembly-CSharp
-        m_MethodName: SetButonPanelActive
+        m_MethodName: SetPanelActive
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 765928705}
@@ -15963,7 +15982,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8875842652165137824}
         m_TargetAssemblyTypeName: GeneralPanelAcions, Assembly-CSharp
-        m_MethodName: SetButonPanelActive
+        m_MethodName: SetPanelActive
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1246007845}
@@ -16865,7 +16884,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8875842652342990448}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -16958,7 +16977,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8875842652165137824}
         m_TargetAssemblyTypeName: GeneralPanelAcions, Assembly-CSharp
-        m_MethodName: SetButonPanelActive
+        m_MethodName: SetPanelActive
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1125652456}
@@ -18202,7 +18221,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8875842652342990448}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -19225,7 +19244,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8875842652165137824}
         m_TargetAssemblyTypeName: GeneralPanelAcions, Assembly-CSharp
-        m_MethodName: SetButonPanelActive
+        m_MethodName: SetPanelActive
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1519242603}
@@ -19756,7 +19775,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8875842652342990448}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -20241,7 +20260,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8875842652165137824}
         m_TargetAssemblyTypeName: GeneralPanelAcions, Assembly-CSharp
-        m_MethodName: SetButonPanelActive
+        m_MethodName: SetPanelActive
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 413148559}
@@ -21974,7 +21993,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.012786865}
+  m_AnchoredPosition: {x: 0, y: 0.012084961}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1707644648
@@ -22532,10 +22551,10 @@ MonoBehaviour:
       - m_Target: {fileID: 1810788621}
         m_TargetAssemblyTypeName: ARM1Mnemo1, Assembly-CSharp
         m_MethodName: ConfirmChoice
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 310240982}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -22674,6 +22693,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22356a1d846c2e440901a32d7bd183e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainARM1Mnemo: {fileID: 310240982}
+  ARMPanelActions: {fileID: 8875842653053164222}
   ARM1Mnemo1: {fileID: 1810788621}
   containerNumber: {fileID: 1535735377}
   frameNumber: {fileID: 144395871}
@@ -22683,7 +22704,7 @@ MonoBehaviour:
   indicatorThree: {fileID: 425003168}
   indicatorFour: {fileID: 632235778}
   indicatorFive: {fileID: 149824482}
-  menuOfTypes: {fileID: 276706287}
+  menuOfTVSTypes: {fileID: 276706287}
 --- !u!1 &1762800901
 GameObject:
   m_ObjectHideFlags: 0
@@ -22770,7 +22791,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8875842652165137824}
         m_TargetAssemblyTypeName: GeneralPanelAcions, Assembly-CSharp
-        m_MethodName: SetButonPanelActive
+        m_MethodName: SetPanelActive
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 482554465}
@@ -23141,7 +23162,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8875842652165137824}
         m_TargetAssemblyTypeName: GeneralPanelAcions, Assembly-CSharp
-        m_MethodName: SetButonPanelActive
+        m_MethodName: SetPanelActive
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 652390215}
@@ -23446,6 +23467,7 @@ MonoBehaviour:
   readNumberFour: {fileID: 1530915715}
   readNumberFive: {fileID: 1183288399}
   numberOnMnemo0: {fileID: 607057256}
+  ARMPanelActions: {fileID: 8875842653053164222}
 --- !u!1 &1831536807
 GameObject:
   m_ObjectHideFlags: 0
@@ -23818,7 +23840,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8875842652165137824}
         m_TargetAssemblyTypeName: GeneralPanelAcions, Assembly-CSharp
-        m_MethodName: SetButonPanelActive
+        m_MethodName: SetPanelActive
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 378509277}
@@ -24238,7 +24260,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8875842652165137824}
         m_TargetAssemblyTypeName: GeneralPanelAcions, Assembly-CSharp
-        m_MethodName: SetButonPanelActive
+        m_MethodName: SetPanelActive
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 427115339}
@@ -24372,7 +24394,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8875842652165137824}
         m_TargetAssemblyTypeName: GeneralPanelAcions, Assembly-CSharp
-        m_MethodName: SetButonPanelActive
+        m_MethodName: SetPanelActive
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 742707284}
@@ -25223,6 +25245,82 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1940854310}
+  m_CullTransparentMesh: 1
+--- !u!1 &1943614471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1943614472}
+  - component: {fileID: 1943614474}
+  - component: {fileID: 1943614473}
+  m_Layer: 5
+  m_Name: 00. Mnemo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1943614472
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943614471}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8875842652342990448}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1943614473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943614471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1943614474
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943614471}
   m_CullTransparentMesh: 1
 --- !u!1 &1947130429
 GameObject:
@@ -26088,7 +26186,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8875842652165137824}
         m_TargetAssemblyTypeName: GeneralPanelAcions, Assembly-CSharp
-        m_MethodName: SetButonPanelActive
+        m_MethodName: SetPanelActive
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1005022325}
@@ -26858,7 +26956,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 2039480487}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -27340,7 +27438,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8875842652165137824}
         m_TargetAssemblyTypeName: GeneralPanelAcions, Assembly-CSharp
-        m_MethodName: SetButonPanelActive
+        m_MethodName: SetPanelActive
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 441557210}
@@ -31134,7 +31232,7 @@ SkinnedMeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1678554350897072657}
   m_Enabled: 1
-  m_CastShadows: 0
+  m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -34988,7 +35086,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8875842651833588697}
         m_TargetAssemblyTypeName: CanvasActions, Assembly-CSharp
-        m_MethodName: openARM2Panel
+        m_MethodName: OpenARM2Panel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -35268,6 +35366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ef2bc9fe3e03704d9e143fcc1490f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mnemoZero: {fileID: 1943614471}
   mnemoOne: {fileID: 485879197}
   mnemoTwo: {fileID: 652390215}
   mnemoThree: {fileID: 378509277}
@@ -35297,6 +35396,7 @@ RectTransform:
   m_LocalScale: {x: 0.0010759612, y: 0.0010759612, z: 0.0010759612}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1943614472}
   - {fileID: 485879198}
   - {fileID: 652390216}
   - {fileID: 378509278}
@@ -35698,7 +35798,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8875842651833588697}
         m_TargetAssemblyTypeName: CanvasActions, Assembly-CSharp
-        m_MethodName: openARM1Panel
+        m_MethodName: OpenARM1Panel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -35810,7 +35910,6 @@ RectTransform:
   - {fileID: 8875842653473597776}
   - {fileID: 8875842651911210377}
   - {fileID: 8875842651654042716}
-  - {fileID: 517637857}
   m_Father: {fileID: 228099685}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

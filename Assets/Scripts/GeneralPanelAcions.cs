@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GeneralPanelAcions : MonoBehaviour
 {
+    [SerializeField] private GameObject mnemoZero;
     [SerializeField] private GameObject mnemoOne;
     [SerializeField] private GameObject mnemoTwo;
     [SerializeField] private GameObject mnemoThree;
@@ -24,7 +25,7 @@ public class GeneralPanelAcions : MonoBehaviour
 
     private List<GameObject> mnemos;
 
-    public void SetButonPanelActive(GameObject buttonMnemo)
+    public void SetPanelActive(GameObject buttonMnemo)
     {
         int panelIndex = mnemos.IndexOf(buttonMnemo);
         for (int i = 0; i < mnemos.Count; i++)
@@ -41,7 +42,7 @@ public class GeneralPanelAcions : MonoBehaviour
     void Start()
     {
         mnemos = new List<GameObject>() {
-        mnemoOne, mnemoTwo, mnemoThree, mnemoFour, _button05Mneomo, _button06Mneomo,
+        mnemoZero, mnemoOne, mnemoTwo, mnemoThree, mnemoFour, _button05Mneomo, _button06Mneomo,
         _button07Mneomo, _button08Mneomo, _button09Mneomo, _button10Mneomo, _button11Mneomo, _button12Mneomo,
         _button13Mneomo, _button14Mneomo, _button15Mneomo, _button16Mneomo, _button17Mneomo};
         for (int i = 0; i < mnemos.Count; i++)

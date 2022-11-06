@@ -12,9 +12,9 @@ public class ARMPanelActions : MonoBehaviour
 
     private List<GameObject> mnemos;
 
-    public void ShowMnemoPanel(GameObject buttonMnemo)
+    public void ShowMnemoPanel(GameObject mnemo)
     {
-        int panelIndex = mnemos.IndexOf(buttonMnemo);
+        int panelIndex = mnemos.IndexOf(mnemo);
         for (int i = 0; i < mnemos.Count; i++)
         {
             if (i != panelIndex)

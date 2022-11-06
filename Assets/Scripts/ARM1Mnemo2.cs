@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class ARM1Mnemo2 : MonoBehaviour
 {
+    [SerializeField] private GameObject mainARM1Mnemo;
+    [SerializeField] private ARMPanelActions ARMPanelActions;
     [SerializeField] private ARM1Mnemo1 ARM1Mnemo1;
+
     [SerializeField] private Text containerNumber;
     [SerializeField] private Text frameNumber;
     [SerializeField] private Text attention;
@@ -15,9 +18,9 @@ public class ARM1Mnemo2 : MonoBehaviour
     [SerializeField] private Image indicatorThree;
     [SerializeField] private Image indicatorFour;
     [SerializeField] private Image indicatorFive;
-    [SerializeField] private Dropdown menuOfTypes;
-    
 
+    [SerializeField] private Dropdown menuOfTVSTypes;
+    
     private int counter;
     private int containersCounter;
     private int framesCounter;
@@ -108,6 +111,7 @@ public class ARM1Mnemo2 : MonoBehaviour
             attention.text = "";
             ResultOfControl.Add(Container, true);
             Indicators[indexOfIndicator].color = Color.red;
+            ARMPanelActions.ShowMnemoPanel(mainARM1Mnemo);
         }
         else 
         {
@@ -116,6 +120,7 @@ public class ARM1Mnemo2 : MonoBehaviour
             ResultOfControl.Add(Container, false);
             NumberOfContainersAndFrames.Add(Container, Frame);
             FramesAndTypes.Add(Frame, TypeOfTVS);
+            ARMPanelActions.ShowMnemoPanel(mainARM1Mnemo);
         }
     }
 
@@ -143,7 +148,7 @@ public class ARM1Mnemo2 : MonoBehaviour
 
     public void ChooseType()
     {
-        TypeOfTVS = menuOfTypes.options[menuOfTypes.value].text;
+        TypeOfTVS = menuOfTVSTypes.options[menuOfTVSTypes.value].text;
     }
     // Start is called before the first frame update
     void Start()
