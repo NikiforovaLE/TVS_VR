@@ -12,6 +12,7 @@ public class ARM1Mnemo2 : MonoBehaviour
     [SerializeField] private Text containerNumber;
     [SerializeField] private Text frameNumber;
     [SerializeField] private Text attention;
+    [SerializeField] private Text message;
 
     [SerializeField] private Image indicatorOne;
     [SerializeField] private Image indicatorTwo;
@@ -20,12 +21,14 @@ public class ARM1Mnemo2 : MonoBehaviour
     [SerializeField] private Image indicatorFive;
 
     [SerializeField] private Dropdown menuOfTVSTypes;
-    
+
+    private readonly string messageWhenConfirmWithoutDeffects = "“ребуетс€ передать контейнер на участок ѕ“и ";
+    private readonly string messageWhenConfirmWithDeffects = "“ребуетс€ выбрать контейнер без дефектов и передать его на участок ѕ“и ";
     private int counter;
     private int containersCounter;
     private int framesCounter;
     private string typeOfTVS;
-    private string whenDefects;
+    private readonly string whenDefects = "x";
     private List<string> framesNumbers;
     private List<Image> Indicators;
     private bool Scratches;
@@ -112,6 +115,7 @@ public class ARM1Mnemo2 : MonoBehaviour
             ResultOfControl.Add(Container, true);
             Indicators[indexOfIndicator].color = Color.red;
             ARMPanelActions.ShowMnemoPanel(mainARM1Mnemo);
+            message.text = messageWhenConfirmWithDeffects;
         }
         else 
         {
@@ -121,6 +125,7 @@ public class ARM1Mnemo2 : MonoBehaviour
             NumberOfContainersAndFrames.Add(Container, Frame);
             FramesAndTypes.Add(Frame, TypeOfTVS);
             ARMPanelActions.ShowMnemoPanel(mainARM1Mnemo);
+            message.text = messageWhenConfirmWithoutDeffects;
         }
     }
 
@@ -156,9 +161,8 @@ public class ARM1Mnemo2 : MonoBehaviour
         counter = 0;
         containersCounter = 0;
         framesCounter = 0;
-        whenDefects = "x";
         attention.text = "";
-        TypeOfTVS = "";
+        TypeOfTVS = ""; 
         framesNumbers = new List<string> { "TVS00001", "TVS00002", "TVS00003", "TVS00004", "TVS00005" };
         Scratches = false;
         Dints = false;
