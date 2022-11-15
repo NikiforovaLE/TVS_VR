@@ -7,6 +7,9 @@ public class CanvasActions : MonoBehaviour
     [SerializeField] private GameObject GeneralPanel;
     [SerializeField] private GameObject ARM1Panel;
     [SerializeField] private GameObject ARM2Panel;
+    [SerializeField] private GameObject GeneralMessagePanel;
+    [SerializeField] private GameObject ARM1MessagePanel;
+    [SerializeField] private GameObject ARM2MessagePanel;
 
     [SerializeField] private GameObject MainPanel;
     [SerializeField] private GameObject ARM1MainPanel;
@@ -21,6 +24,10 @@ public class CanvasActions : MonoBehaviour
         MainPanel.SetActive(false);
         ARM2MainPanel.SetActive(false);
         ARM1MainPanel.SetActive(true);
+
+        GeneralMessagePanel.SetActive(false);
+        ARM2MessagePanel.SetActive(false);
+        ARM1MessagePanel.SetActive(true);
     }
 
     public void OpenARM2Panel()
@@ -32,6 +39,10 @@ public class CanvasActions : MonoBehaviour
         MainPanel.SetActive(false);
         ARM1MainPanel.SetActive(false);
         ARM2MainPanel.SetActive(true);
+
+        GeneralMessagePanel.SetActive(false);
+        ARM1MessagePanel.SetActive(false);
+        ARM2MessagePanel.SetActive(true);
     }
 
     public void OpenGeneralPanel()
@@ -42,7 +53,11 @@ public class CanvasActions : MonoBehaviour
 
         ARM1MainPanel.SetActive(false);
         ARM2MainPanel.SetActive(false);
-        MainPanel.SetActive(true); 
+        MainPanel.SetActive(true);
+
+        ARM1MessagePanel.SetActive(false);
+        ARM2MessagePanel.SetActive(false);
+        GeneralMessagePanel.SetActive(true);
     }
 
     // Start is called before the first frame update
@@ -55,5 +70,9 @@ public class CanvasActions : MonoBehaviour
         MainPanel.SetActive(true);
         ARM1MainPanel.SetActive(false);
         ARM2MainPanel.SetActive(false);
+
+        ARM1MessagePanel.SetActive(false);
+        ARM2MessagePanel.SetActive(false);
+        GeneralMessagePanel.SetActive(true);
     }
 }

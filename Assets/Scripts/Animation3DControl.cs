@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Animation3DControl : MonoBehaviour
 {
+    //[SerializeField] Animation ShiberAnim;
+    //[SerializeField] Animation LojementCarkasTvsAnim;
 
+    private bool flag = false;
     public Animator Shiber;
     public Animator LojementCarkasTvs;
     public GameObject LojementSvidetelSborkaPuchka;
@@ -31,6 +34,8 @@ public class Animation3DControl : MonoBehaviour
     public int counttvel;
 
     public bool StateAnimation;
+
+    public bool Flag { get => flag; set => flag = value; }
 
     void Start()
     {
@@ -118,96 +123,110 @@ public class Animation3DControl : MonoBehaviour
         PozicionirovTvela.enabled = false;
     }
 
-    // Update is called once per frame
+    //public void PlayFirstMnemo()
+    //{
+    //    ShiberAnim.Play();
+    //    LojementCarkasTvsAnim.Play();
+    //    //Shiber.enabled = true;
+    //    //LojementCarkasTvs.enabled = false;
+    //    //LojementSvidetelSborkaPuchka.SetActive(false);
+    //    //LojementSvidetelAutooperator.SetActive(true);
+    //    UzelStikovkiFun();
+    //}
+
+    //// Update is called once per frame
     void Update()
     {
-        RunTime += Time.deltaTime;
-
-        if (RunTime > 1 && RunTime < 1.1)
+        if (flag)
         {
-            ShiberFun();
-        }
+            RunTime += Time.deltaTime;
 
-        if (RunTime > 4.5 && RunTime < 4.6)
-            LojementCarkasTvsFun();
+            if (RunTime > 1 && RunTime < 1.1)
+            {
+                ShiberFun();
+            }
 
-        if (RunTime > 9.5 && RunTime < 9.6)
-        {
-            Shiber.enabled = true;
-            LojementCarkasTvs.enabled = false;
-        }
+            if (RunTime > 4.5 && RunTime < 4.6)
+                LojementCarkasTvsFun();
 
-        if (RunTime > 13 && RunTime < 13.1)
-        {
-            LojementSvidetelSborkaPuchka.SetActive(false);
-            LojementSvidetelAutooperator.SetActive(true);
-            UzelStikovkiFun();
-        }
+            if (RunTime > 9.5 && RunTime < 9.6)
+            {
+                Shiber.enabled = true;
+                LojementCarkasTvs.enabled = false;
+            }
 
-        if (RunTime > 15.5 && RunTime < 15.8)
-        {
-            UzelStikovki.enabled = false;
-            MagazinFun();
-        }
+            if (RunTime > 13 && RunTime < 13.1)
+            {
+                LojementSvidetelSborkaPuchka.SetActive(false);
+                LojementSvidetelAutooperator.SetActive(true);
+                UzelStikovkiFun();
+            }
 
-        if (RunTime > 20.5 && RunTime < 20.6)
-            UzelStikovki.enabled = true;
+            if (RunTime > 15.5 && RunTime < 15.8)
+            {
+                UzelStikovki.enabled = false;
+                MagazinFun();
+            }
 
-        if (RunTime > 25.5 && RunTime < 25.6)
-            RazborkaMagazinaFun();
+            if (RunTime > 20.5 && RunTime < 20.6)
+                UzelStikovki.enabled = true;
 
-        if (RunTime > 33.92 && RunTime < 33.93)
-            PozicionirovTvelaFunRun();
+            if (RunTime > 25.5 && RunTime < 25.6)
+                RazborkaMagazinaFun();
 
-        if (RunTime > 39.63 && RunTime < 39.64)
-            RazborkaMagazina.enabled = false;
+            if (RunTime > 33.92 && RunTime < 33.93)
+                PozicionirovTvelaFunRun();
 
-        if (RunTime > 50.25 && RunTime < 50.26)
-            RazborkaMagazina.enabled = true;
+            if (RunTime > 39.63 && RunTime < 39.64)
+                RazborkaMagazina.enabled = false;
 
-        if (RunTime > 60.15 && RunTime < 60.2)
-        {
-            AutooperatorFun();
-            //RunTime = 24;
-            //counttvel++;
-        }
+            if (RunTime > 50.25 && RunTime < 50.26)
+                RazborkaMagazina.enabled = true;
 
-        if (RunTime > 90.15 && RunTime < 90.2)
-        {
-            Autooperator.enabled = false;
-            LojementSvidetelAutooperator.transform.SetParent(KantovatelOb);
-            KantovatelFun();
-            //RunTime = 24;
-            //counttvel++;
-        }
+            if (RunTime > 60.15 && RunTime < 60.2)
+            {
+                AutooperatorFun();
+                //RunTime = 24;
+                //counttvel++;
+            }
 
-        if (RunTime > 95.1 && RunTime < 95.2)
-        {
-            Kantovatel.enabled = false;
-            SborkaFun();
-        }
+            if (RunTime > 90.15 && RunTime < 90.2)
+            {
+                Autooperator.enabled = false;
+                LojementSvidetelAutooperator.transform.SetParent(KantovatelOb);
+                KantovatelFun();
+                //RunTime = 24;
+                //counttvel++;
+            }
 
-        if (RunTime > 107.1 && RunTime < 107.2)
-        {
-            HeadTvs.transform.SetParent(TVS);
-        }
+            if (RunTime > 95.1 && RunTime < 95.2)
+            {
+                Kantovatel.enabled = false;
+                SborkaFun();
+            }
 
-        if (RunTime > 135.1 && RunTime < 135.2)
-        {
-            Sborka.enabled = false;
-            CoordinatManipulatorFun();
-        }
+            if (RunTime > 107.1 && RunTime < 107.2)
+            {
+                HeadTvs.transform.SetParent(TVS);
+            }
 
-        if (RunTime > 146.1 && RunTime < 146.2)
-        {
-            Sborka.enabled = false;
-            Tvs.transform.SetParent(CoodinRichag);
-        }
+            if (RunTime > 135.1 && RunTime < 135.2)
+            {
+                Sborka.enabled = false;
+                CoordinatManipulatorFun();
+            }
 
-        if (RunTime > 157.1 && RunTime < 157.2)
-        {
-            Sborka.enabled = false;
-            Tvs.transform.SetParent(null);
+            if (RunTime > 146.1 && RunTime < 146.2)
+            {
+                Sborka.enabled = false;
+                Tvs.transform.SetParent(CoodinRichag);
+            }
+
+            if (RunTime > 157.1 && RunTime < 157.2)
+            {
+                Sborka.enabled = false;
+                Tvs.transform.SetParent(null);
+            }
         }
     }
 }

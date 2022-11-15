@@ -7,6 +7,8 @@ public class ARM2Mnemo2 : MonoBehaviour
 {
     [SerializeField] private Text outputVTUKNumber;
     [SerializeField] private Text outputNumberOfFuelElements;
+    [SerializeField] private Text message;
+    [SerializeField] private Text generalMessage;
     [SerializeField] private ARM2Mnemo0 ARM2Mnemo0;
     [SerializeField] private ARM2Mnemo1 ARM2Mnemo1;
     [SerializeField] private ARM1Mnemo2 ARM1Mnemo2;
@@ -14,6 +16,7 @@ public class ARM2Mnemo2 : MonoBehaviour
     [SerializeField] private GameObject mainMnemoARM2;
     private List<string> VTUKNumbers;
 
+    private string generalMessageAfterConfirm = "Посмотрите 2D и 3D анимации";
     private string currentVTUK;
     private string currentTotalAmountOfFuelElementsInVTUK;
     private string totalAmountOfFuelElementsInVTUKWhenTypeOneAndTwo;
@@ -55,11 +58,15 @@ public class ARM2Mnemo2 : MonoBehaviour
 
     public void ConfirmChoice()
     {
-        CurrentVTUK = outputVTUKNumber.text;
-        currentTotalAmountOfFuelElementsInVTUK = outputNumberOfFuelElements.text;
-        ARM2Mnemo0.ShowVTUKInfo();
-        ARM2PanelActions.ShowMnemoPanel(mainMnemoARM2);
-
+        if (!outputVTUKNumber.text.Equals(""))
+        {
+            CurrentVTUK = outputVTUKNumber.text;
+            currentTotalAmountOfFuelElementsInVTUK = outputNumberOfFuelElements.text;
+            ARM2Mnemo0.ShowVTUKInfo();
+            ARM2PanelActions.ShowMnemoPanel(mainMnemoARM2);
+            message.text = "";
+            generalMessage.text = generalMessageAfterConfirm;
+        }
     }
 
     // Start is called before the first frame update
