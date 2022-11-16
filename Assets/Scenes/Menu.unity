@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4441176, g: 0.49354225, b: 0.5729647, a: 1}
+  m_IndirectSpecularColor: {r: 0.44411725, g: 0.4935416, b: 0.57296365, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5200,7 +5200,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &153232178
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10796,7 +10796,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &325234496
 Transform:
   m_ObjectHideFlags: 0
@@ -16448,6 +16448,7 @@ GameObject:
   m_Component:
   - component: {fileID: 485879198}
   - component: {fileID: 485879199}
+  - component: {fileID: 485879200}
   m_Layer: 5
   m_Name: 01. Mnemo
   m_TagString: Untagged
@@ -16510,6 +16511,22 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &485879200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485879197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a016d7b1497a6524d9363ece7b7a8420, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RunTime: 0
+  Shiber: {fileID: 2046364360}
+  LojementCarkasTvs: {fileID: 386464785}
+  LojementSvidetelSborkaPuchka: {fileID: 60271909}
 --- !u!1 &488810136
 GameObject:
   m_ObjectHideFlags: 0
@@ -30380,7 +30397,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &869124494
 RectTransform:
   m_ObjectHideFlags: 0
@@ -65626,7 +65643,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1930395243
 RectTransform:
   m_ObjectHideFlags: 0
@@ -80721,7 +80738,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &8875842651961452160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80872,7 +80889,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8875842652165137823
 RectTransform:
   m_ObjectHideFlags: 0
@@ -81034,7 +81051,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &8875842652342990456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81286,7 +81303,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8875842652812991210
 RectTransform:
   m_ObjectHideFlags: 0
@@ -81449,7 +81466,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8875842653053164211
 RectTransform:
   m_ObjectHideFlags: 0
