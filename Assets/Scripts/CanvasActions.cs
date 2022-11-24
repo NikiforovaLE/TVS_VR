@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class CanvasActions : MonoBehaviour
@@ -15,8 +16,17 @@ public class CanvasActions : MonoBehaviour
     [SerializeField] private GameObject ARM1MainPanel;
     [SerializeField] private GameObject ARM2MainPanel;
 
+    [SerializeField] private Image GneralPanelButton;
+    [SerializeField] private Image ARM1PanelButton;
+    [SerializeField] private Image ARM2PanelButton;
+
+    private Color buttonColorAfterClicking = new(200f / 255f, 200f / 255f, 200f / 255f);
     public void OpenARM1Panel()
     {
+        GneralPanelButton.color = Color.white;
+        ARM2PanelButton.color = Color.white;
+        ARM1PanelButton.color = buttonColorAfterClicking;
+
         ARM2Panel.SetActive(false);
         GeneralPanel.SetActive(false);
         ARM1Panel.SetActive(true);
@@ -32,6 +42,10 @@ public class CanvasActions : MonoBehaviour
 
     public void OpenARM2Panel()
     {
+        GneralPanelButton.color = Color.white;
+        ARM1PanelButton.color = Color.white;
+        ARM2PanelButton.color = buttonColorAfterClicking;
+
         ARM2Panel.SetActive(true);
         ARM1Panel.SetActive(false);
         GeneralPanel.SetActive(false);
@@ -47,6 +61,10 @@ public class CanvasActions : MonoBehaviour
 
     public void OpenGeneralPanel()
     {
+        ARM1PanelButton.color = Color.white;
+        ARM2PanelButton.color = Color.white;
+        GneralPanelButton.color = buttonColorAfterClicking;
+
         ARM1Panel.SetActive(false);
         ARM2Panel.SetActive(false);
         GeneralPanel.SetActive(true);
@@ -63,6 +81,10 @@ public class CanvasActions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GneralPanelButton.color = Color.white;
+        ARM1PanelButton.color = Color.white;
+        ARM2PanelButton.color = Color.white;
+
         GeneralPanel.SetActive(true);
         ARM1Panel.SetActive(false);
         ARM2Panel.SetActive(false);

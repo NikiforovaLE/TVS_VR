@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Animation3DControl : MonoBehaviour
 {
-    //[SerializeField] Animation ShiberAnim;
-    //[SerializeField] Animation LojementCarkasTvsAnim;
-
     private bool flag = false;
     public Animator Shiber;
     public Animator LojementCarkasTvs;
@@ -122,17 +119,6 @@ public class Animation3DControl : MonoBehaviour
     {
         PozicionirovTvela.enabled = false;
     }
-
-    //public void PlayFirstMnemo()
-    //{
-    //    ShiberAnim.Play();
-    //    LojementCarkasTvsAnim.Play();
-    //    //Shiber.enabled = true;
-    //    //LojementCarkasTvs.enabled = false;
-    //    //LojementSvidetelSborkaPuchka.SetActive(false);
-    //    //LojementSvidetelAutooperator.SetActive(true);
-    //    UzelStikovkiFun();
-    //}
 
     //// Update is called once per frame
     void Update()
