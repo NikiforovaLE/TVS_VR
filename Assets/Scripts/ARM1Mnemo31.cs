@@ -10,10 +10,14 @@ public class ARM1Mnemo31 : MonoBehaviour
     [SerializeField] private ARMPanelActions ARM1PanelActions;
     [SerializeField] private Text containerNumber;
     [SerializeField] private Text message;
+    [SerializeField] private Text generalMessage;
+    [SerializeField] private Text ARM2Message;
     [SerializeField] private GameObject mainARM1Mnemo;
 
     private string currentContainer;
     private readonly string messageWhenConfirm = "";
+    private readonly string generalMessageAfterConfirm = "Необходимо выполнить операции на АРМ ввода №2";
+    private readonly string ARM2MessageAfterConfirm = "Необходимо получить контейнер с каркасом ТВС";
     private int counter;
 
     public string CurrentContainer { get => currentContainer; set => currentContainer = value; }
@@ -50,6 +54,8 @@ public class ARM1Mnemo31 : MonoBehaviour
         chosenContainerNumbers.Remove(CurrentContainer);
         ARM1PanelActions.ShowMnemoPanel(mainARM1Mnemo);
         message.text = messageWhenConfirm;
+        generalMessage.text = generalMessageAfterConfirm;
+        ARM2Message.text = ARM2MessageAfterConfirm;
     }
 
     // Start is called before the first frame update

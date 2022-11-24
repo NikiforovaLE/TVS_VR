@@ -7,7 +7,7 @@ public class ARM1Mnemo1 : MonoBehaviour
 {
     [SerializeField] private Text output;
     [SerializeField] private Text message;
-
+    [SerializeField] private Text generalMessage;
     [SerializeField] private Text readNumberOne;
     [SerializeField] private Text readNumberTwo;
     [SerializeField] private Text readNumberThree;
@@ -25,6 +25,7 @@ public class ARM1Mnemo1 : MonoBehaviour
     private int counter;
     private int counterOfReadNumbers;
     private readonly string firstMessage = "Требуется получить контейнер с каркасом ТВС";
+    private readonly string firstGeneralMessage = "Необходимо выполнить операции на АРМ ввода №1";
     private readonly string afterConfirmMessage = "Требуется выполнить входной контроль";
 
     public List<string> ChosenNumbers { get => chosenNumbers; set => chosenNumbers = value; }
@@ -70,6 +71,7 @@ public class ARM1Mnemo1 : MonoBehaviour
         readNumberFive.text = "";
         numberOnMnemo0.text = 0.ToString();
         message.text = firstMessage;
+        generalMessage.text = firstGeneralMessage;
         containersNumbers = new List<string> { "CONT0001", "CONT0002", "CONT0003", "CONT0004", "CONT0005" };
         readNumbers = new List<Text> { readNumberOne, readNumberTwo, readNumberThree, readNumberFour, readNumberFive };
         ChosenNumbers = new List<string>();

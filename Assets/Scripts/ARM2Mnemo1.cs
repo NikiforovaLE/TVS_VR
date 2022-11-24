@@ -14,8 +14,10 @@ public class ARM2Mnemo1 : MonoBehaviour
     [SerializeField] private Text outputFrameNumber;
     [SerializeField] private Text frameNumberOnMnemo0;
     [SerializeField] private Text typeOnMnemo0;
+    [SerializeField] private Text message;
     [SerializeField] private GameObject mainMnemoARM2;
 
+    private string messageAfterConfirm = "Необходимо получить ВТУК";
     private string currentFrame;
     //private int clickCounter;
 
@@ -34,6 +36,8 @@ public class ARM2Mnemo1 : MonoBehaviour
         currentFrame = outputFrameNumber.text;
         ARM2Mnemo0.ShowTVSInfo();
         ARM2PanelActions.ShowMnemoPanel(mainMnemoARM2);
+        message.text = messageAfterConfirm;
+
 
     }
 
@@ -44,5 +48,6 @@ public class ARM2Mnemo1 : MonoBehaviour
         outputFrameNumber.text = "";
         frameNumberOnMnemo0.text = "";
         currentFrame = "";
+        message.text = "";
     }
 }
