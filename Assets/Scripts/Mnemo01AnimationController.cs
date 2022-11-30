@@ -4,31 +4,36 @@ using UnityEngine;
 
 public class Mnemo01AnimationController : MonoBehaviour
 {
-    private Animation anim;
-    public float RunTime;
+    private Animation animmnemo01;
+    private Animation animmnemo02;
+    private Animation animmnemo03;
 
     public Animator Shiber;
     public Animator LojementCarkasTvs;
     public GameObject LojementSvidetelSborkaPuchka;
 
+    public GameObject Mnemo01;
+    public GameObject Mnemo02;
+    public GameObject Mnemo03;
+
     // Start is called before the first frame update
     void Start()
     {
-        anim = gameObject.GetComponent<Animation>();
+        animmnemo01 = Mnemo01.GetComponent<Animation>();
+        animmnemo02 = Mnemo02.GetComponent<Animation>();
+        animmnemo03 = Mnemo03.GetComponent<Animation>();
         Shiber.Play("DoorMoving", 0, 0f);
         Shiber.enabled = false;
 
         LojementCarkasTvs.Play("LogementArriving", 0, 0f);
         LojementCarkasTvs.enabled = false;
+        animmnemo01.Play();
     }
 
     // Update is called once per frame
     void Update()
     {
-        RunTime += Time.deltaTime;
 
-        if (RunTime > 3 && RunTime < 5.1)
-            anim.Play();
     }
 
     public void ShiberPlay()
@@ -49,5 +54,13 @@ public class Mnemo01AnimationController : MonoBehaviour
     public void LojementCarkasTvsStop()
     {
         LojementCarkasTvs.enabled = false;
+    }
+
+    public void Mnemo01OffMnemo02On()
+    {
+        Mnemo01.active = false;
+        Mnemo02.active = true;
+        animmnemo02.Play();
+        animmnemo03.Play();
     }
 }
