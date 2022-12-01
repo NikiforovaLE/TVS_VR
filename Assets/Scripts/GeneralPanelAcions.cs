@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GeneralPanelAcions : MonoBehaviour
 {
@@ -23,11 +24,38 @@ public class GeneralPanelAcions : MonoBehaviour
     [SerializeField] private GameObject _button16Mneomo;
     [SerializeField] private GameObject _button17Mneomo;
 
-    private List<GameObject> mnemos;
+    [SerializeField] private Image plugOfZeroImage;
+    [SerializeField] private Image mnemoOneButtonImage;
+    [SerializeField] private Image mnemoTwoButtonImage;
+    [SerializeField] private Image mnemoThreeButtonImage;
+    [SerializeField] private Image mnemoFourButtonImage;
+    [SerializeField] private Image _button05MneomoImage;
+    [SerializeField] private Image _button06MneomoImage;
+    [SerializeField] private Image _button07MneomoImage;
+    [SerializeField] private Image _button08MneomoImage;
+    [SerializeField] private Image _button09MneomoImage;
+    [SerializeField] private Image _button10MneomoImage;
+    [SerializeField] private Image _button11MneomoImage;
+    [SerializeField] private Image _button12MneomoImage;
+    [SerializeField] private Image _button13MneomoImage;
+    [SerializeField] private Image _button14MneomoImage;
+    [SerializeField] private Image _button15MneomoImage;
+    [SerializeField] private Image _button16MneomoImage;
+    [SerializeField] private Image _button17MneomoImage;
 
-    public void SetPanelActive(GameObject buttonMnemo)
+    private List<GameObject> mnemos;
+    private List<Image> imagesOfMnemoButtons;
+
+    private Color buttonColorAfterClicking = new(200f / 255f, 200f / 255f, 200f / 255f);
+    public void SetPanelActive(GameObject mnemo)
     {
-        int panelIndex = mnemos.IndexOf(buttonMnemo);
+        int mnemoIndex = mnemos.IndexOf(mnemo);
+        MakePanelActiveByIndex(mnemoIndex);
+        MakeButtonGray(mnemoIndex);
+    }
+
+    private void MakePanelActiveByIndex(int panelIndex)
+    {
         for (int i = 0; i < mnemos.Count; i++)
         {
             if (i != panelIndex)
@@ -36,6 +64,18 @@ public class GeneralPanelAcions : MonoBehaviour
             }
         }
         mnemos[panelIndex].SetActive(true);
+    }
+
+    private void MakeButtonGray(int panelIndex)
+    {
+        for (int i = 0; i < imagesOfMnemoButtons.Count; i++)
+        {
+            if (i != panelIndex)
+            {
+                imagesOfMnemoButtons[i].color = Color.white;
+            }
+        }
+        imagesOfMnemoButtons[panelIndex].color = buttonColorAfterClicking;
     }
 
     // Start is called before the first frame update
@@ -48,6 +88,15 @@ public class GeneralPanelAcions : MonoBehaviour
         for (int i = 0; i < mnemos.Count; i++)
         {
             mnemos[i].SetActive(false);
+        }
+
+        imagesOfMnemoButtons = new List<Image>() {
+        plugOfZeroImage, mnemoOneButtonImage, mnemoTwoButtonImage, mnemoThreeButtonImage, mnemoFourButtonImage, _button05MneomoImage, _button06MneomoImage,
+        _button07MneomoImage, _button08MneomoImage, _button09MneomoImage, _button10MneomoImage, _button11MneomoImage, _button12MneomoImage,
+        _button13MneomoImage, _button14MneomoImage, _button15MneomoImage, _button16MneomoImage, _button17MneomoImage};
+        for (int i = 0; i < imagesOfMnemoButtons.Count; i++)
+        {
+            imagesOfMnemoButtons[i].color = Color.white;
         }
     }
 }

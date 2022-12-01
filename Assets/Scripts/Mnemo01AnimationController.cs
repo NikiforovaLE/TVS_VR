@@ -58,8 +58,8 @@ public class Mnemo01AnimationController : MonoBehaviour
 
     public void Mnemo01OffMnemo02On()
     {
-        Mnemo01.active = false;
-        Mnemo02.active = true;
+        Mnemo01.SetActive(false);
+        Mnemo02.SetActive(true);
         animmnemo02.Play();
         animmnemo03.Play();
     }
