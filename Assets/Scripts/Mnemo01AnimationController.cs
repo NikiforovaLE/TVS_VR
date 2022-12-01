@@ -16,6 +16,12 @@ public class Mnemo01AnimationController : MonoBehaviour
     public GameObject Mnemo02;
     public GameObject Mnemo03;
 
+    public GameObject Shiberm;
+    public GameObject Ramka;
+    public GameObject M03m;
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +39,7 @@ public class Mnemo01AnimationController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        animmnemo01.Play();
 
     }
 
@@ -60,7 +67,16 @@ public class Mnemo01AnimationController : MonoBehaviour
     {
         Mnemo01.SetActive(false);
         Mnemo02.SetActive(true);
+        Mnemo03On();
         animmnemo02.Play();
         animmnemo03.Play();
+    }
+
+    public void Mnemo03On()
+    { 
+        Mnemo03.SetActive(true);
+        Shiberm.SetActive(false);
+        Ramka.SetActive(false);
+        M03m.SetActive(false);
     }
 }
