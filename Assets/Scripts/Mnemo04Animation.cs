@@ -15,6 +15,7 @@ public class Mnemo04Animation : MonoBehaviour
     public GameObject M03m;
 
     public Animator Ustanovkapozitsiitvela;
+    public Animator Ustanovkarazborkimagtvel;
 
     // Start is called before the first frame update
     void Start()
@@ -42,12 +43,18 @@ public class Mnemo04Animation : MonoBehaviour
 
     public void UstanovkapozitsiitvelaStop()
     {
+        Mnemo03Off();
         Ustanovkapozitsiitvela.enabled = false;
     }
 
     public void UstanovkapozitsiitvelaPlay()
     {
         Ustanovkapozitsiitvela.enabled = true;
+    }
+
+    public void UstanovkarazborkimagtvelPlay()
+    {
+        Ustanovkarazborkimagtvel.enabled = true;
     }
 
 }

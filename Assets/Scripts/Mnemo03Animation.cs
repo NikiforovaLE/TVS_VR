@@ -5,8 +5,9 @@ using UnityEngine;
 public class Mnemo03Animation : MonoBehaviour
 {
     public GameObject Mnemo02;
-    public GameObject Mnemo03;
+    public GameObject Mnemo04;
     private Animation animmnemo03;
+    private Animation animmnemo04;
 
     public GameObject Magazin;
 
@@ -21,6 +22,7 @@ public class Mnemo03Animation : MonoBehaviour
     void Start()
     {
         animmnemo03 = gameObject.GetComponent<Animation>();
+        animmnemo04 = Mnemo04.GetComponent<Animation>();
     }
 
     // Update is called once per frame
@@ -43,6 +45,13 @@ public class Mnemo03Animation : MonoBehaviour
         M03m.active = true;
     }
 
+    private void Mnemo03Off()
+    {
+        Shiberm.active = false;
+        Ramka.active = false;
+        M03m.active = false;
+    }
+
     public void UstanovkapozitsiitvelaRun()
     {
         Ustanovkapozitsiitvela.Play("CoordinateMoving", 0, 0f);
@@ -57,6 +66,9 @@ public class Mnemo03Animation : MonoBehaviour
     public void UstanovkarazborkimagtvelStop()
     {
         Ustanovkarazborkimagtvel.enabled = false;
+        Mnemo03Off();
+        Mnemo04.active = true;
+        animmnemo04.Play();
     }
 
     public void UstanovkarazborkimagtvelPlay()
