@@ -13,6 +13,7 @@ public class ARM1Mnemo2 : MonoBehaviour
     [SerializeField] private Text frameNumber;
     [SerializeField] private Text attention;
     [SerializeField] private Text message;
+    [SerializeField] private Text chosenType;
 
     [SerializeField] private Image indicatorOne;
     [SerializeField] private Image indicatorTwo;
@@ -20,23 +21,30 @@ public class ARM1Mnemo2 : MonoBehaviour
     [SerializeField] private Image indicatorFour;
     [SerializeField] private Image indicatorFive;
 
-    [SerializeField] private Dropdown menuOfTVSTypes;
-
-    private readonly string messageWhenConfirmWithoutDeffects = "“ребуетс€ передать контейнер на участок ѕ“и ";
-    private readonly string messageWhenConfirmWithDeffects = "“ребуетс€ выбрать контейнер без дефектов и передать его на участок ѕ“и ";
+    [SerializeField] private GameObject types;
+    
     private int counter;
     private int containersCounter;
     private int framesCounter;
     private string typeOfTVS;
-    private readonly string whenDefects = "x";
-    private List<string> framesNumbers;
-    private List<Image> Indicators;
     private bool Scratches;
     private bool Dints;
     private bool DefectsInFixing;
+
+    private List<string> framesNumbers;
+    private List<Image> Indicators;
     private Dictionary<string, bool> resultOfControl;
     private Dictionary<string, string> numberOfContainersAndFrames;
     private Dictionary<string, string> framesAndTypes;
+
+    private readonly string messageWhenConfirmWithoutDeffects = "“ребуетс€ передать контейнер на участок ѕ“и ";
+    private readonly string messageWhenConfirmWithDeffects = "“ребуетс€ выбрать контейнер без дефектов и передать его на участок ѕ“и ";
+    private readonly string whenDefects = "x";
+    private readonly string type1 = "1";
+    private readonly string type2 = "2";
+    private readonly string type3 = "3";
+    private readonly string type4 = "4";
+
     public bool Scratches1 { get => Scratches; set => Scratches = value; }
     public bool Dints1 { get => Dints; set => Dints = value; }
     public bool DefectsInFixing1 { get => DefectsInFixing; set => DefectsInFixing = value; }
@@ -151,9 +159,34 @@ public class ARM1Mnemo2 : MonoBehaviour
         return Scratches || Dints || DefectsInFixing;
     }
 
-    public void ChooseType()
+    public void ShowTypesMenu()
     {
-        TypeOfTVS = menuOfTVSTypes.options[menuOfTVSTypes.value].text;
+        types.SetActive(true);
+    }
+
+    public void ChooseType1()
+    {
+        ChooseType(type1);
+    }
+
+    public void ChooseType2()
+    {
+        ChooseType(type2);
+    }
+    public void ChooseType3()
+    {
+        ChooseType(type3);
+    }
+    public void ChooseType4()
+    {
+        ChooseType(type4);
+    }
+
+    private void ChooseType(string type)
+    {
+        TypeOfTVS = type;
+        types.SetActive(false);
+        chosenType.text = type;
     }
     // Start is called before the first frame update
     void Start()
@@ -175,5 +208,7 @@ public class ARM1Mnemo2 : MonoBehaviour
         {
             Indicators[i].color = Color.gray;
         }
+        types.SetActive(false);
+        chosenType.text = "";
     }
 }

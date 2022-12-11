@@ -20,7 +20,8 @@ public class Mnemo01AnimationController : MonoBehaviour
     public GameObject Ramka;
     public GameObject M03m;
 
-    
+    public GeneralPanelAcions generalPanelAcions;
+    public GeneralPanelAcions additionalGeneralPanelAcions;
 
     // Start is called before the first frame update
     void Start()
@@ -65,18 +66,20 @@ public class Mnemo01AnimationController : MonoBehaviour
 
     public void Mnemo01OffMnemo02On()
     {
-        Mnemo01.SetActive(false);
-        Mnemo02.SetActive(true);
+        generalPanelAcions.SetPanelActive(Mnemo02);
+        //Mnemo01.SetActive(false);
+        //Mnemo02.SetActive(true);
         Mnemo03On();
         animmnemo02.Play();
         animmnemo03.Play();
     }
 
     public void Mnemo03On()
-    { 
-        Mnemo03.SetActive(true);
-        Shiberm.SetActive(false);
-        Ramka.SetActive(false);
-        M03m.SetActive(false);
+    {
+        additionalGeneralPanelAcions.SetPanelActive(Mnemo03);
+        //Mnemo03.SetActive(true);
+        //Shiberm.SetActive(false);
+        //Ramka.SetActive(false);
+        //M03m.SetActive(false);
     }
 }
