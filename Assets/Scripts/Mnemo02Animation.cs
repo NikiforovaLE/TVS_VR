@@ -29,6 +29,7 @@ public class Mnemo02Animation : MonoBehaviour
     public void UzelStikovkiPlay()
     {
         UzelStikovki.enabled = true;
+        UzelStikovki.GetComponent<AudioSource>().Play();
     }
 
     public void RolgantVtukPlay()

@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Mnemo01AnimationController : MonoBehaviour
 {
@@ -22,6 +21,14 @@ public class Mnemo01AnimationController : MonoBehaviour
 
     public GeneralPanelAcions generalPanelAcions;
     public GeneralPanelAcions additionalGeneralPanelAcions;
+    public ARM1Mnemo2 ARM1Mnemo2;
+    public Text infoAboutContainerNumberOn01Mnemo;
+    [SerializeField] private Text infoAboutTVSNumberOn01Mnemo;
+    [SerializeField] private Image imageOf03MnemoButton;
+
+    private string currentFrame;
+    private Color buttonColorAfterClicking = new(200f / 255f, 200f / 255f, 200f / 255f);
+    public string CurrentFrame { get => currentFrame; set => currentFrame = value; }
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +42,7 @@ public class Mnemo01AnimationController : MonoBehaviour
         LojementCarkasTvs.Play("LogementArriving", 0, 0f);
         LojementCarkasTvs.enabled = false;
         animmnemo01.Play();
+        infoAboutTVSNumberOn01Mnemo.text = "";
     }
 
     // Update is called once per frame
@@ -47,6 +55,8 @@ public class Mnemo01AnimationController : MonoBehaviour
     public void ShiberPlay()
     {
         Shiber.enabled = true;
+        Shiber.GetComponent<AudioSource>().Play();  
+        infoAboutTVSNumberOn01Mnemo.text = ARM1Mnemo2.NumberOfContainersAndFrames[infoAboutContainerNumberOn01Mnemo.text];
     }
 
     public void ShiberStop()
@@ -57,6 +67,7 @@ public class Mnemo01AnimationController : MonoBehaviour
     public void LojementCarkasTvsPlay()
     {
         LojementCarkasTvs.enabled = true;
+        LojementCarkasTvs.GetComponent<AudioSource>().Play();
     }
 
     public void LojementCarkasTvsStop()
@@ -77,6 +88,7 @@ public class Mnemo01AnimationController : MonoBehaviour
     public void Mnemo03On()
     {
         additionalGeneralPanelAcions.SetPanelActive(Mnemo03);
+        imageOf03MnemoButton.color = buttonColorAfterClicking;
         //Mnemo03.SetActive(true);
         //Shiberm.SetActive(false);
         //Ramka.SetActive(false);
