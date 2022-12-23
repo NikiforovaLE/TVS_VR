@@ -14,6 +14,8 @@ public class ARM2Mnemo2 : MonoBehaviour
     [SerializeField] private ARM1Mnemo2 ARM1Mnemo2;
     [SerializeField] private ARMPanelActions ARM2PanelActions;
     [SerializeField] private GameObject mainMnemoARM2;
+    [SerializeField] private Text infoAboutVTUKNumberOn02Mnemo;
+
     private List<string> VTUKNumbers;
 
     private string generalMessageAfterConfirm = "Посмотрите 2D и 3D анимации";
@@ -66,6 +68,7 @@ public class ARM2Mnemo2 : MonoBehaviour
             ARM2PanelActions.ShowMnemoPanel(mainMnemoARM2);
             message.text = "";
             generalMessage.text = generalMessageAfterConfirm;
+            infoAboutVTUKNumberOn02Mnemo.text = CurrentVTUK;
         }
     }
 
@@ -77,5 +80,6 @@ public class ARM2Mnemo2 : MonoBehaviour
         VTUKNumbers = new List<string> { "VTUK0001", "VTUK0002", "VTUK0003", "VTUK0004", "VTUK0005" };
         totalAmountOfFuelElementsInVTUKWhenTypeOneAndTwo = "80";
         totalAmountOfFuelElementsInVTUKWhenTypeThreeAndFour = "51";
+        infoAboutVTUKNumberOn02Mnemo.text = "";
     }
 }

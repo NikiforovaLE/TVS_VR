@@ -9,15 +9,18 @@ public class ARM1Mnemo31 : MonoBehaviour
     [SerializeField] private ARM1Mnemo2 ARM1Mnemo2;
     [SerializeField] private ARMPanelActions ARM1PanelActions;
     [SerializeField] private Text containerNumber;
-    [SerializeField] private Text message;
+    [SerializeField] private Text messageOnARM1TopPanel;
     [SerializeField] private Text generalMessage;
     [SerializeField] private Text ARM2Message;
+    [SerializeField] private Text infoAboutContainerNumberOn01Mnemo;
+    [SerializeField] private Text attention;
     [SerializeField] private GameObject mainARM1Mnemo;
 
     private string currentContainer;
     private readonly string messageWhenConfirm = "";
     private readonly string generalMessageAfterConfirm = "Необходимо выполнить операции на АРМ ввода №2";
     private readonly string ARM2MessageAfterConfirm = "Необходимо получить контейнер с каркасом ТВС";
+    private readonly string warningMessage = "Сначала нужно считать номер контейнера!";
     private int counter;
 
     public string CurrentContainer { get => currentContainer; set => currentContainer = value; }
@@ -49,13 +52,23 @@ public class ARM1Mnemo31 : MonoBehaviour
 
     public void ConfirmChoice()
     {
-        List<string> chosenContainerNumbers = ARM1Mnemo1.ChosenNumbers;
-        CurrentContainer = containerNumber.text;
-        chosenContainerNumbers.Remove(CurrentContainer);
-        ARM1PanelActions.ShowMnemoPanel(mainARM1Mnemo);
-        message.text = messageWhenConfirm;
-        generalMessage.text = generalMessageAfterConfirm;
-        ARM2Message.text = ARM2MessageAfterConfirm;
+        if (containerNumber.text.Equals(""))
+        {
+            attention.color = Color.red;
+            attention.text = warningMessage;
+        }
+        else
+        {
+            attention.text = "";
+            List<string> chosenContainerNumbers = ARM1Mnemo1.ChosenNumbers;
+            CurrentContainer = containerNumber.text;
+            chosenContainerNumbers.Remove(CurrentContainer);
+            ARM1PanelActions.ShowMnemoPanel(mainARM1Mnemo);
+            messageOnARM1TopPanel.text = messageWhenConfirm;
+            generalMessage.text = generalMessageAfterConfirm;
+            ARM2Message.text = ARM2MessageAfterConfirm;
+            infoAboutContainerNumberOn01Mnemo.text = CurrentContainer;
+        }
     }
 
     // Start is called before the first frame update
@@ -64,5 +77,7 @@ public class ARM1Mnemo31 : MonoBehaviour
         counter = 0;
         containerNumber.text = "";
         CurrentContainer = "";
+        infoAboutContainerNumberOn01Mnemo.text = "";
+        attention.text = "";
     }
 }

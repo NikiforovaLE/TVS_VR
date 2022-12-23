@@ -13,7 +13,7 @@ public class ARM1Mnemo1 : MonoBehaviour
     [SerializeField] private Text readNumberThree;
     [SerializeField] private Text readNumberFour;
     [SerializeField] private Text readNumberFive;
-
+    [SerializeField] private Text attention;
     [SerializeField] private Text numberOnMnemo0;
 
     [SerializeField] private ARMPanelActions ARMPanelActions;
@@ -27,7 +27,7 @@ public class ARM1Mnemo1 : MonoBehaviour
     private readonly string firstMessage = "Требуется получить контейнер с каркасом ТВС";
     private readonly string firstGeneralMessage = "Необходимо выполнить операции на АРМ ввода №1";
     private readonly string afterConfirmMessage = "Требуется выполнить входной контроль";
-
+    private readonly string warningMessage = "Сначала нужно считать номер контейнера!";
     public List<string> ChosenNumbers { get => chosenNumbers; set => chosenNumbers = value; }
 
     public void ReadNumberOfContainer()
@@ -47,8 +47,16 @@ public class ARM1Mnemo1 : MonoBehaviour
 
     public void ConfirmChoice(GameObject mainARM1Mnemo)
     {
+        if (output.text.Equals(""))
+        {
+            attention.color = Color.red;
+            attention.text = warningMessage;
+            return;
+        }
+
         if (counterOfReadNumbers < 5 && !ChosenNumbers.Contains(output.text))
         {
+            attention.text = "";
             readNumbers[counterOfReadNumbers].text = output.text;
             ChosenNumbers.Add(output.text);
             numberOnMnemo0.text = (counterOfReadNumbers + 1).ToString();
@@ -69,6 +77,7 @@ public class ARM1Mnemo1 : MonoBehaviour
         readNumberThree.text = "";
         readNumberFour.text = "";
         readNumberFive.text = "";
+        attention.text = "";
         numberOnMnemo0.text = 0.ToString();
         message.text = firstMessage;
         generalMessage.text = firstGeneralMessage;
