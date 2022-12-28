@@ -8,8 +8,6 @@ public class Mnemo02Animation : MonoBehaviour
 
     public Animator RolgantVtuk;
 
-    public GameObject Mnemo03;
-
     void Start()
     {
         UzelStikovki.Play("DoorOpening", 0, 0f);

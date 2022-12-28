@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mnemo03Animation : MonoBehaviour
+public class Mnemo03AnimationMain : MonoBehaviour
 {
     public GameObject Mnemo02;
     public GameObject Mnemo03;
-    public GameObject Mnemo03M;
     public GameObject Mnemo04;
     private Animation animmnemo03;
     private Animation animmnemo04;
@@ -53,17 +52,16 @@ public class Mnemo03Animation : MonoBehaviour
 
     private void Mnemo03OnMain()
     {
-        Mnemo03M.active = true;
+        Mnemo03.active = true;
     }
 
 
     private void Mnemo03Off()
     {
         Mnemo02.active = false;
-        //Shiberm.active = false;
-        //Ramka.active = false;
-        //M03m.active = false;
-        Mnemo03.active = false;
+        Shiberm.active = false;
+        Ramka.active = false;
+        M03m.active = false;
     }
 
     public void UstanovkapozitsiitvelaRun()
@@ -80,9 +78,9 @@ public class Mnemo03Animation : MonoBehaviour
     public void UstanovkarazborkimagtvelStop()
     {
         Ustanovkarazborkimagtvel.enabled = false;
+        //Mnemo03Off();
         Mnemo03OnMain();
         Mnemo04.active = true;
-        Mnemo03Off();
         animmnemo04.Play("04 Mnemo Animation");
     }
 

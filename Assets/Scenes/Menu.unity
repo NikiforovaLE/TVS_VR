@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4441176, g: 0.49354225, b: 0.5729647, a: 1}
+  m_IndirectSpecularColor: {r: 0.44411725, g: 0.4935416, b: 0.57296365, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -17583,6 +17583,7 @@ GameObject:
   - component: {fileID: 378509278}
   - component: {fileID: 378509279}
   - component: {fileID: 378509280}
+  - component: {fileID: 378509281}
   m_Layer: 5
   m_Name: 03. Mnemo
   m_TagString: Untagged
@@ -17637,14 +17638,43 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378509277}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 162044406f8784a48926b258915b2bc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Mnemo02: {fileID: 652390215}
+  Mnemo03: {fileID: 0}
+  Mnemo03M: {fileID: 0}
   Mnemo04: {fileID: 482554465}
   Magazin: {fileID: 560939984}
+  Shiberm03m: {fileID: 0}
+  Ramka03m: {fileID: 0}
+  M03m03m: {fileID: 0}
+  Shiberm: {fileID: 925739844}
+  Ramka: {fileID: 791395994}
+  M03m: {fileID: 505577886}
+  Ustanovkarazborkimagtvel: {fileID: 27972190}
+  Ustanovkapozitsiitvela: {fileID: 610498444}
+--- !u!114 &378509281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378509277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf23ea235df86f84394ce8adf9613912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Mnemo02: {fileID: 652390215}
+  Mnemo03: {fileID: 378509277}
+  Mnemo04: {fileID: 1084145463}
+  Magazin: {fileID: 0}
+  Shiberm03m: {fileID: 0}
+  Ramka03m: {fileID: 0}
+  M03m03m: {fileID: 0}
   Shiberm: {fileID: 925739844}
   Ramka: {fileID: 791395994}
   M03m: {fileID: 505577886}
@@ -19345,7 +19375,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UzelStikovki: {fileID: 1496453442}
   RolgantVtuk: {fileID: 506394845}
-  Mnemo03: {fileID: 1960402524}
 --- !u!111 &423743101
 Animation:
   m_ObjectHideFlags: 0
@@ -31245,7 +31274,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &652390216
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31313,7 +31342,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UzelStikovki: {fileID: 1496453442}
   RolgantVtuk: {fileID: 506394845}
-  Mnemo03: {fileID: 378509277}
 --- !u!1 &657806053
 GameObject:
   m_ObjectHideFlags: 0
@@ -53781,7 +53809,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1084145464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53795,7 +53823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mnemo02: {fileID: 423743099}
-  Mnemo03: {fileID: 1960402524}
+  Mnemo03: {fileID: 378509277}
   Magazin: {fileID: 0}
   Shiberm: {fileID: 309378113}
   Ramka: {fileID: 1217384567}
@@ -77764,7 +77792,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1551619516
 Transform:
   m_ObjectHideFlags: 0
@@ -99384,9 +99412,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 162044406f8784a48926b258915b2bc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Mnemo02: {fileID: 423743099}
+  Mnemo02: {fileID: 652390215}
+  Mnemo03: {fileID: 1960402524}
+  Mnemo03M: {fileID: 378509277}
   Mnemo04: {fileID: 1084145463}
   Magazin: {fileID: 827670841}
+  Shiberm03m: {fileID: 0}
+  Ramka03m: {fileID: 0}
+  M03m03m: {fileID: 0}
   Shiberm: {fileID: 309378113}
   Ramka: {fileID: 1217384567}
   M03m: {fileID: 531178528}

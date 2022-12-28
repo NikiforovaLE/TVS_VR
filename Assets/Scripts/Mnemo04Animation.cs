@@ -28,6 +28,7 @@ public class Mnemo04Animation : MonoBehaviour
     {
         animmnemo04 = gameObject.GetComponent<Animation>();
         animmnemo03 = Mnemo03.GetComponent<Animation>();
+        animmnemo03["03 Mnemo Animation"].time = 10.0f;
     }
 
     // Update is called once per frame
@@ -52,11 +53,11 @@ public class Mnemo04Animation : MonoBehaviour
 
     private void Mnemo04Off()
     {
-        mnemo0404.active = false;
-        mnemo0402.active = false;
-        mnemo04051.active = false;
-        mnemo04052.active = false;
-        Mnemo03On();
+        //mnemo0404.active = false;
+        //mnemo0402.active = false;
+        //mnemo04051.active = false;
+        //mnemo04052.active = false;
+        //Mnemo03On();
         animmnemo03.Play("03 Mnemo Animation");
     }
 
