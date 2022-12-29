@@ -52,12 +52,12 @@ public class Mnemo04Animation : MonoBehaviour
 
     private void Mnemo04Off()
     {
-        mnemo0404.active = false;
-        mnemo0402.active = false;
-        mnemo04051.active = false;
-        mnemo04052.active = false;
-        Mnemo03On();
-        animmnemo03.Play("03 Mnemo Animation");
+        //mnemo0404.active = false;
+        //mnemo0402.active = false;
+        //mnemo04051.active = false;
+        //mnemo04052.active = false;
+        //Mnemo03On();
+        animmnemo03.Play("03 Mnemo Animation1");
     }
 
     public void UstanovkapozitsiitvelaRun()
@@ -82,10 +82,10 @@ public class Mnemo04Animation : MonoBehaviour
         Ustanovkarazborkimagtvel.enabled = true;
     }
 
-    public void Mnemo03Play()
+    /*public void Mnemo03Play()
     {
         animmnemo03.Play("03 Mnemo Animation");
-    }
+    }*/
 
     public void Mnemo03Stop()
     {

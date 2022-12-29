@@ -2,14 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mnemo03Animation : MonoBehaviour
+public class Mnemo03AnimationMain : MonoBehaviour
 {
     public GameObject Mnemo02;
     public GameObject Mnemo03;
-    public GameObject Mnemo03M;
     public GameObject Mnemo04;
     private Animation animmnemo03;
-    private Animation animmnemo03m;
     private Animation animmnemo04;
 
     public GameObject Shiberm03m;
@@ -20,8 +18,6 @@ public class Mnemo03Animation : MonoBehaviour
     public GameObject Ramka;
     public GameObject M03m;
 
-    public GameObject Magazin;
-
     public Animator Ustanovkarazborkimagtvel;
     public Animator Ustanovkapozitsiitvela;
 
@@ -30,13 +26,14 @@ public class Mnemo03Animation : MonoBehaviour
     {
         animmnemo03 = gameObject.GetComponent<Animation>();
         animmnemo04 = Mnemo04.GetComponent<Animation>();
-        animmnemo03m = Mnemo03M.GetComponent<Animation>();
+        //animmnemo03["03 Mnemo Animation"].time = 20.0f;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void AnimationMnemo03Stop()
@@ -54,18 +51,16 @@ public class Mnemo03Animation : MonoBehaviour
 
     private void Mnemo03OnMain()
     {
-        Mnemo03M.active = true;
-        Magazin.active = true;
+        Mnemo03.active = true;
     }
 
 
     private void Mnemo03Off()
     {
         Mnemo02.active = false;
-        //Shiberm.active = false;
-        //Ramka.active = false;
-        //M03m.active = false;
-        Mnemo03.active = false;
+        Shiberm.active = false;
+        Ramka.active = false;
+        M03m.active = false;
     }
 
     public void UstanovkapozitsiitvelaRun()
@@ -82,9 +77,9 @@ public class Mnemo03Animation : MonoBehaviour
     public void UstanovkarazborkimagtvelStop()
     {
         Ustanovkarazborkimagtvel.enabled = false;
+        //Mnemo03Off();
         Mnemo03OnMain();
         Mnemo04.active = true;
-        Mnemo03Off();
         animmnemo04.Play("04 Mnemo Animation");
     }
 

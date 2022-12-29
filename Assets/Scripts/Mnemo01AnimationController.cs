@@ -19,6 +19,8 @@ public class Mnemo01AnimationController : MonoBehaviour
     public GameObject Ramka;
     public GameObject M03m;
 
+    public GameObject Mag;
+
     public GeneralPanelAcions generalPanelAcions;
     public GeneralPanelAcions additionalGeneralPanelAcions;
     public ARM1Mnemo2 ARM1Mnemo2;
@@ -79,7 +81,7 @@ public class Mnemo01AnimationController : MonoBehaviour
     {
         generalPanelAcions.SetPanelActive(Mnemo02);
         //Mnemo01.SetActive(false);
-        //Mnemo02.SetActive(true);
+        Mag.SetActive(true);
         Mnemo03On();
         animmnemo02.Play();
         animmnemo03.Play();
