@@ -15,9 +15,12 @@ public class ARM2Mnemo1 : MonoBehaviour
     [SerializeField] private Text frameNumberOnMnemo0;
     [SerializeField] private Text typeOnMnemo0;
     [SerializeField] private Text message;
+    [SerializeField] private Text attentionMessage;
     [SerializeField] private GameObject mainMnemoARM2;
 
-    private string messageAfterConfirm = "Необходимо получить ВТУК";
+    private readonly string messageAfterConfirm = "Необходимо получить ВТУК";
+    private readonly string attentionMessageAboutTheAbsenceOfContainer = "Необходимо считать номер контейнера";
+    private readonly string attentionMessageAboutTheAbsenceOfFrame = "Необходимо считать номер каркаса ТВС";
     private string currentFrame;
     //private int clickCounter;
 
@@ -33,12 +36,21 @@ public class ARM2Mnemo1 : MonoBehaviour
 
     public void ConfirmChoice()
     {
-        currentFrame = outputFrameNumber.text;
-        ARM2Mnemo0.ShowTVSInfo();
-        ARM2PanelActions.ShowMnemoPanel(mainMnemoARM2);
-        message.text = messageAfterConfirm;
-
-
+        string containerNumber = outputContainerNumber.text;
+        string frameNumber = outputFrameNumber.text;
+        if (containerNumber.Equals("") || frameNumber.Equals(""))
+        {
+            attentionMessage.color = Color.red;
+            attentionMessage.text = containerNumber.Equals("") ? attentionMessageAboutTheAbsenceOfContainer : attentionMessageAboutTheAbsenceOfFrame;
+        }
+        else
+        {
+            attentionMessage.text = "";
+            currentFrame = frameNumber;
+            ARM2Mnemo0.ShowTVSInfo();
+            ARM2PanelActions.ShowMnemoPanel(mainMnemoARM2);
+            message.text = messageAfterConfirm;
+        }
     }
 
     // Start is called before the first frame update
@@ -49,5 +61,6 @@ public class ARM2Mnemo1 : MonoBehaviour
         frameNumberOnMnemo0.text = "";
         currentFrame = "";
         message.text = "";
+        attentionMessage.text = "";
     }
 }
