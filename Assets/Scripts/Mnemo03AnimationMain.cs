@@ -10,8 +10,6 @@ public class Mnemo03AnimationMain : MonoBehaviour
     private Animation animmnemo03;
     private Animation animmnemo04;
 
-    public GameObject Magazin;
-
     public GameObject Shiberm03m;
     public GameObject Ramka03m;
     public GameObject M03m03m;
@@ -28,13 +26,14 @@ public class Mnemo03AnimationMain : MonoBehaviour
     {
         animmnemo03 = gameObject.GetComponent<Animation>();
         animmnemo04 = Mnemo04.GetComponent<Animation>();
-        
+        //animmnemo03["03 Mnemo Animation"].time = 20.0f;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        Magazin.active = true;
+
     }
 
     public void AnimationMnemo03Stop()

@@ -9,9 +9,8 @@ public class Mnemo03Animation : MonoBehaviour
     public GameObject Mnemo03M;
     public GameObject Mnemo04;
     private Animation animmnemo03;
+    private Animation animmnemo03m;
     private Animation animmnemo04;
-
-    public GameObject Magazin;
 
     public GameObject Shiberm03m;
     public GameObject Ramka03m;
@@ -21,6 +20,8 @@ public class Mnemo03Animation : MonoBehaviour
     public GameObject Ramka;
     public GameObject M03m;
 
+    public GameObject Magazin;
+
     public Animator Ustanovkarazborkimagtvel;
     public Animator Ustanovkapozitsiitvela;
 
@@ -29,13 +30,13 @@ public class Mnemo03Animation : MonoBehaviour
     {
         animmnemo03 = gameObject.GetComponent<Animation>();
         animmnemo04 = Mnemo04.GetComponent<Animation>();
-        
+        animmnemo03m = Mnemo03M.GetComponent<Animation>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Magazin.active = true;
+        
     }
 
     public void AnimationMnemo03Stop()
@@ -54,6 +55,7 @@ public class Mnemo03Animation : MonoBehaviour
     private void Mnemo03OnMain()
     {
         Mnemo03M.active = true;
+        Magazin.active = true;
     }
 
 

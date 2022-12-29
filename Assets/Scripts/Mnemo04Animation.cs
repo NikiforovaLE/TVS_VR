@@ -28,7 +28,6 @@ public class Mnemo04Animation : MonoBehaviour
     {
         animmnemo04 = gameObject.GetComponent<Animation>();
         animmnemo03 = Mnemo03.GetComponent<Animation>();
-        animmnemo03["03 Mnemo Animation"].time = 10.0f;
     }
 
     // Update is called once per frame
@@ -58,7 +57,7 @@ public class Mnemo04Animation : MonoBehaviour
         //mnemo04051.active = false;
         //mnemo04052.active = false;
         //Mnemo03On();
-        animmnemo03.Play("03 Mnemo Animation");
+        animmnemo03.Play("03 Mnemo Animation1");
     }
 
     public void UstanovkapozitsiitvelaRun()
@@ -83,10 +82,10 @@ public class Mnemo04Animation : MonoBehaviour
         Ustanovkarazborkimagtvel.enabled = true;
     }
 
-    public void Mnemo03Play()
+    /*public void Mnemo03Play()
     {
         animmnemo03.Play("03 Mnemo Animation");
-    }
+    }*/
 
     public void Mnemo03Stop()
     {

@@ -17590,7 +17590,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &378509278
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17624,9 +17624,9 @@ Animation:
   m_GameObject: {fileID: 378509277}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 353bab72fc7dab8409e43a72538e78dc, type: 2}
+  m_Animation: {fileID: 7400000, guid: 1cf88894639004b448081052f6fd1ed6, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: 353bab72fc7dab8409e43a72538e78dc, type: 2}
+  - {fileID: 7400000, guid: 1cf88894639004b448081052f6fd1ed6, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -17647,13 +17647,13 @@ MonoBehaviour:
   Mnemo03: {fileID: 0}
   Mnemo03M: {fileID: 0}
   Mnemo04: {fileID: 482554465}
-  Magazin: {fileID: 560939984}
   Shiberm03m: {fileID: 0}
   Ramka03m: {fileID: 0}
   M03m03m: {fileID: 0}
   Shiberm: {fileID: 925739844}
   Ramka: {fileID: 791395994}
   M03m: {fileID: 505577886}
+  Magazin: {fileID: 0}
   Ustanovkarazborkimagtvel: {fileID: 27972190}
   Ustanovkapozitsiitvela: {fileID: 610498444}
 --- !u!114 &378509281
@@ -17671,7 +17671,6 @@ MonoBehaviour:
   Mnemo02: {fileID: 652390215}
   Mnemo03: {fileID: 378509277}
   Mnemo04: {fileID: 1084145463}
-  Magazin: {fileID: 0}
   Shiberm03m: {fileID: 0}
   Ramka03m: {fileID: 0}
   M03m03m: {fileID: 0}
@@ -22405,6 +22404,7 @@ MonoBehaviour:
   Shiberm: {fileID: 309378113}
   Ramka: {fileID: 1217384567}
   M03m: {fileID: 531178528}
+  Mag: {fileID: 827670841}
   generalPanelAcions: {fileID: 8875842652165137824}
   additionalGeneralPanelAcions: {fileID: 1257206486}
   ARM1Mnemo2: {fileID: 1752574613}
@@ -27186,8 +27186,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 560939984}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.02170164}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 505577887}
@@ -27195,7 +27195,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 206, y: 0.013259888}
+  m_AnchoredPosition: {x: 12.200394, y: 0.028869629}
   m_SizeDelta: {x: 770, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &560939986
@@ -27211,7 +27211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0.98039216, g: 1, b: 0.87058824, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -39575,6 +39575,7 @@ MonoBehaviour:
   Shiberm: {fileID: 925739844}
   Ramka: {fileID: 791395994}
   M03m: {fileID: 505577886}
+  Mag: {fileID: 0}
   generalPanelAcions: {fileID: 1921196482}
   additionalGeneralPanelAcions: {fileID: 8875842652165137824}
   ARM1Mnemo2: {fileID: 0}
@@ -53809,7 +53810,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1084145464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99416,13 +99417,13 @@ MonoBehaviour:
   Mnemo03: {fileID: 1960402524}
   Mnemo03M: {fileID: 378509277}
   Mnemo04: {fileID: 1084145463}
-  Magazin: {fileID: 827670841}
   Shiberm03m: {fileID: 0}
   Ramka03m: {fileID: 0}
   M03m03m: {fileID: 0}
   Shiberm: {fileID: 309378113}
   Ramka: {fileID: 1217384567}
   M03m: {fileID: 531178528}
+  Magazin: {fileID: 560939984}
   Ustanovkarazborkimagtvel: {fileID: 27972190}
   Ustanovkapozitsiitvela: {fileID: 610498444}
 --- !u!111 &1960402526
