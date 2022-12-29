@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ARM2Mnemo2 : MonoBehaviour
 {
     [SerializeField] private Text outputVTUKNumber;
+    [SerializeField] private Text outputVTUKNumberOnMnemo3;
     [SerializeField] private Text outputNumberOfFuelElements;
     [SerializeField] private Text message;
     [SerializeField] private Text generalMessage;
@@ -18,7 +19,7 @@ public class ARM2Mnemo2 : MonoBehaviour
 
     private List<string> VTUKNumbers;
 
-    private string generalMessageAfterConfirm = "Посмотрите 2D и 3D анимации";
+    private readonly string generalMessageAfterConfirm = "Посмотрите 2D и 3D анимации";
     private string currentVTUK;
     private string currentTotalAmountOfFuelElementsInVTUK;
     private string totalAmountOfFuelElementsInVTUKWhenTypeOneAndTwo;
@@ -63,6 +64,7 @@ public class ARM2Mnemo2 : MonoBehaviour
         if (!outputVTUKNumber.text.Equals(""))
         {
             CurrentVTUK = outputVTUKNumber.text;
+            outputVTUKNumberOnMnemo3.text = outputVTUKNumber.text;
             currentTotalAmountOfFuelElementsInVTUK = outputNumberOfFuelElements.text;
             ARM2Mnemo0.ShowVTUKInfo();
             ARM2PanelActions.ShowMnemoPanel(mainMnemoARM2);
