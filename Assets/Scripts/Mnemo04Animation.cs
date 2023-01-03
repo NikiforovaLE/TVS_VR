@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Mnemo04Animation : MonoBehaviour
 {
@@ -23,11 +24,22 @@ public class Mnemo04Animation : MonoBehaviour
     public Animator Ustanovkapozitsiitvela;
     public Animator Ustanovkarazborkimagtvel;
 
+    [SerializeField] private Text equippedFuelRodsText;
+    [SerializeField] private Text currentFuelRodNumberText;
+    [SerializeField] private Text pushPositionText;
+
+    private int countpushPosition;
+    private List<string> pushPositions;
+    private List<string> currentFuelRodNumbers;
+
+
     // Start is called before the first frame update
     void Start()
     {
         animmnemo04 = gameObject.GetComponent<Animation>();
         animmnemo03 = Mnemo03.GetComponent<Animation>();
+        pushPositions = new List<string> { "", "001", "040", "080", "120", "160" };
+        currentFuelRodNumbers =  new List<string> { "", "01000123", "01004023", "01008023", "01012023", "01016023" };
     }
 
     // Update is called once per frame
@@ -91,5 +103,18 @@ public class Mnemo04Animation : MonoBehaviour
     {
         animmnemo03.Stop();
     }
+
+    public void CurrentFuelRodNumber()
+    {
+        countpushPosition = countpushPosition + 1;
+        currentFuelRodNumberText.text = currentFuelRodNumbers[countpushPosition];
+        pushPositionText.text = pushPositions[countpushPosition];
+    }
+
+    public void EquippedFuelRods()
+    {
+        equippedFuelRodsText.text = pushPositionText.text;
+    }
+
 
 }

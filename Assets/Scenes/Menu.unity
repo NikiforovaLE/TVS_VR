@@ -12048,7 +12048,7 @@ GameObject:
   - component: {fileID: 291987220}
   - component: {fileID: 291987219}
   m_Layer: 5
-  m_Name: CurrentTVSText
+  m_Name: Fuel Rods Removed Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17768,7 +17768,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &378509278
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17828,15 +17828,15 @@ MonoBehaviour:
   Mnemo03: {fileID: 0}
   Mnemo03M: {fileID: 0}
   Mnemo04: {fileID: 482554465}
-  Shiberm03m: {fileID: 0}
-  Ramka03m: {fileID: 0}
-  M03m03m: {fileID: 0}
   Shiberm: {fileID: 925739844}
   Ramka: {fileID: 791395994}
   M03m: {fileID: 505577886}
   Magazin: {fileID: 0}
   Ustanovkarazborkimagtvel: {fileID: 27972190}
   Ustanovkapozitsiitvela: {fileID: 610498444}
+  magazineNumberText: {fileID: 0}
+  fuelRodsRemovedText: {fileID: 0}
+  lastReadFuelRodsNumberText: {fileID: 0}
 --- !u!114 &378509281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17860,6 +17860,9 @@ MonoBehaviour:
   M03m: {fileID: 505577886}
   Ustanovkarazborkimagtvel: {fileID: 27972190}
   Ustanovkapozitsiitvela: {fileID: 610498444}
+  magazineNumberText: {fileID: 1853816054}
+  fuelRodsRemovedText: {fileID: 291987219}
+  lastReadFuelRodsNumberText: {fileID: 436382128}
 --- !u!1 &382239838
 GameObject:
   m_ObjectHideFlags: 0
@@ -19981,7 +19984,7 @@ GameObject:
   - component: {fileID: 436382129}
   - component: {fileID: 436382128}
   m_Layer: 5
-  m_Name: CurrentTVSText
+  m_Name: Last Read Fuel Rods Number Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22481,7 +22484,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &482554466
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22547,6 +22550,9 @@ MonoBehaviour:
   mnemo04052: {fileID: 0}
   Ustanovkapozitsiitvela: {fileID: 610498444}
   Ustanovkarazborkimagtvel: {fileID: 27972190}
+  equippedFuelRodsText: {fileID: 0}
+  currentFuelRodNumberText: {fileID: 0}
+  pushPositionText: {fileID: 0}
 --- !u!1 &482595563
 GameObject:
   m_ObjectHideFlags: 0
@@ -24570,7 +24576,7 @@ GameObject:
   - component: {fileID: 506838183}
   - component: {fileID: 506838182}
   m_Layer: 5
-  m_Name: CurrentContText
+  m_Name: Current Fuel Rod Number Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44313,7 +44319,7 @@ GameObject:
   - component: {fileID: 869697531}
   - component: {fileID: 869697530}
   m_Layer: 5
-  m_Name: CurrentTVSText
+  m_Name: TVS Type Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55594,6 +55600,9 @@ MonoBehaviour:
   mnemo04052: {fileID: 209781844}
   Ustanovkapozitsiitvela: {fileID: 610498444}
   Ustanovkarazborkimagtvel: {fileID: 27972190}
+  equippedFuelRodsText: {fileID: 1776071040}
+  currentFuelRodNumberText: {fileID: 506838182}
+  pushPositionText: {fileID: 2097484255}
 --- !u!111 &1084145465
 Animation:
   m_ObjectHideFlags: 0
@@ -62014,7 +62023,7 @@ GameObject:
   - component: {fileID: 1239910017}
   - component: {fileID: 1239910016}
   m_Layer: 5
-  m_Name: CurrentTVSText
+  m_Name: Last Read Fuel Rods Number Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65593,7 +65602,7 @@ GameObject:
   - component: {fileID: 1289760675}
   - component: {fileID: 1289760674}
   m_Layer: 5
-  m_Name: CurrentContText
+  m_Name: Magazine Number Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91708,7 +91717,7 @@ GameObject:
   - component: {fileID: 1776071041}
   - component: {fileID: 1776071040}
   m_Layer: 5
-  m_Name: CurrentTVSText
+  m_Name: Equipped Fuel Rods Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94461,7 +94470,7 @@ GameObject:
   - component: {fileID: 1836119596}
   - component: {fileID: 1836119595}
   m_Layer: 5
-  m_Name: CurrentTVSText
+  m_Name: Fuel Rods Removed Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95072,7 +95081,7 @@ GameObject:
   - component: {fileID: 1853816055}
   - component: {fileID: 1853816054}
   m_Layer: 5
-  m_Name: CurrentContText
+  m_Name: Magazine Number Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102606,15 +102615,15 @@ MonoBehaviour:
   Mnemo03: {fileID: 1960402524}
   Mnemo03M: {fileID: 378509277}
   Mnemo04: {fileID: 1084145463}
-  Shiberm03m: {fileID: 0}
-  Ramka03m: {fileID: 0}
-  M03m03m: {fileID: 0}
   Shiberm: {fileID: 309378113}
   Ramka: {fileID: 1217384567}
   M03m: {fileID: 531178528}
   Magazin: {fileID: 560939984}
   Ustanovkarazborkimagtvel: {fileID: 27972190}
   Ustanovkapozitsiitvela: {fileID: 610498444}
+  magazineNumberText: {fileID: 1289760674}
+  fuelRodsRemovedText: {fileID: 1836119595}
+  lastReadFuelRodsNumberText: {fileID: 1239910016}
 --- !u!111 &1960402526
 Animation:
   m_ObjectHideFlags: 0
@@ -106590,7 +106599,7 @@ GameObject:
   - component: {fileID: 2035686916}
   - component: {fileID: 2035686915}
   m_Layer: 5
-  m_Name: CurrentContText
+  m_Name: TVS Frame Number Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110024,7 +110033,7 @@ GameObject:
   - component: {fileID: 2097484256}
   - component: {fileID: 2097484255}
   m_Layer: 5
-  m_Name: CurrentTVSText
+  m_Name: Push Position Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Mnemo03Animation : MonoBehaviour
 {
@@ -12,10 +13,6 @@ public class Mnemo03Animation : MonoBehaviour
     private Animation animmnemo03m;
     private Animation animmnemo04;
 
-    public GameObject Shiberm03m;
-    public GameObject Ramka03m;
-    public GameObject M03m03m;
-
     public GameObject Shiberm;
     public GameObject Ramka;
     public GameObject M03m;
@@ -25,12 +22,27 @@ public class Mnemo03Animation : MonoBehaviour
     public Animator Ustanovkarazborkimagtvel;
     public Animator Ustanovkapozitsiitvela;
 
+    [SerializeField] private Text magazineNumberText;
+    [SerializeField] private Text fuelRodsRemovedText;
+    [SerializeField] private Text lastReadFuelRodsNumberText;
+
+    private List<string> lastReadFuelRodsNumbers;
+    private List<string> fuelRodsRemoveds;
+
+    public static int countLastReadFuelRodsNumbers;
+    public static int countFuelRodsRemoveds;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
         animmnemo03 = gameObject.GetComponent<Animation>();
         animmnemo04 = Mnemo04.GetComponent<Animation>();
         animmnemo03m = Mnemo03M.GetComponent<Animation>();
+
+        lastReadFuelRodsNumbers = new List<string> { "", "01000123", "01004023", "01008023", "01012023", "01016023" };
+        fuelRodsRemoveds = new List<string> { "", "001", "040", "080", "120", "160" };
     }
 
     // Update is called once per frame
@@ -91,5 +103,17 @@ public class Mnemo03Animation : MonoBehaviour
     public void UstanovkarazborkimagtvelPlay()
     {
         Ustanovkarazborkimagtvel.enabled = true;
+    }
+
+    public void LastReadFuelRodsNumber()
+    {
+        countLastReadFuelRodsNumbers = countLastReadFuelRodsNumbers + 1;
+        lastReadFuelRodsNumberText.text = lastReadFuelRodsNumbers[countLastReadFuelRodsNumbers];
+    }
+
+    public void RuelRodsRemoveds()
+    {
+        countFuelRodsRemoveds = countFuelRodsRemoveds + 1;
+        fuelRodsRemovedText.text = fuelRodsRemoveds[countFuelRodsRemoveds];
     }
 }
