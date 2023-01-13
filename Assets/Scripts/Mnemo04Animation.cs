@@ -10,8 +10,6 @@ public class Mnemo04Animation : MonoBehaviour
     private Animation animmnemo04;
     private Animation animmnemo03;
 
-    public GameObject Magazin;
-
     public GameObject Shiberm;
     public GameObject Ramka;
     public GameObject M03m;
@@ -28,7 +26,7 @@ public class Mnemo04Animation : MonoBehaviour
     [SerializeField] private Text currentFuelRodNumberText;
     [SerializeField] private Text pushPositionText;
 
-    private int countpushPosition;
+    private int countpushPosition = 0;
     private List<string> pushPositions;
     private List<string> currentFuelRodNumbers;
 
@@ -42,27 +40,21 @@ public class Mnemo04Animation : MonoBehaviour
         currentFuelRodNumbers =  new List<string> { "", "01000123", "01004023", "01008023", "01012023", "01016023" };
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void Mnemo03Off()
     {
-        Shiberm.active = false;
-        Ramka.active = false;
-        M03m.active = false;
+        Shiberm.SetActive(false);
+        Ramka.SetActive(false);
+        M03m.SetActive(false);
     }
 
     private void Mnemo03On()
     {
-        Shiberm.active = true;
-        Ramka.active = true;
-        M03m.active = true;
+        Shiberm.SetActive(true);
+        Ramka.SetActive(true);
+        M03m.SetActive(true);
     }
 
-    private void Mnemo04Off()
+    public void Mnemo04Off()
     {
         //mnemo0404.active = false;
         //mnemo0402.active = false;
@@ -106,7 +98,7 @@ public class Mnemo04Animation : MonoBehaviour
 
     public void CurrentFuelRodNumber()
     {
-        countpushPosition = countpushPosition + 1;
+        countpushPosition++;
         currentFuelRodNumberText.text = currentFuelRodNumbers[countpushPosition];
         pushPositionText.text = pushPositions[countpushPosition];
     }
@@ -115,6 +107,4 @@ public class Mnemo04Animation : MonoBehaviour
     {
         equippedFuelRodsText.text = pushPositionText.text;
     }
-
-
 }

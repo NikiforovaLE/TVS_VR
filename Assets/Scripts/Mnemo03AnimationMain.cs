@@ -53,12 +53,6 @@ public class Mnemo03AnimationMain : MonoBehaviour
         fuelRodsRemovedText.text = fuelRodsRemoveds[countFuelRodsRemoveds];
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void AnimationMnemo03Stop()
     {
         //animmnemo03.Stop();
@@ -67,23 +61,23 @@ public class Mnemo03AnimationMain : MonoBehaviour
 
     private void Mnemo03Onn()
     {
-        Shiberm.active = true;
-        Ramka.active = true;
-        M03m.active = true;
+        Shiberm.SetActive(true);
+        Ramka.SetActive(true);
+        M03m.SetActive(true);
     }
 
     private void Mnemo03OnMain()
     {
-        Mnemo03.active = true;
+        Mnemo03.SetActive(true);
     }
 
 
     private void Mnemo03Off()
     {
-        Mnemo02.active = false;
-        Shiberm.active = false;
-        Ramka.active = false;
-        M03m.active = false;
+        Mnemo02.SetActive(false);
+        Shiberm.SetActive(false);
+        Ramka.SetActive(false);
+        M03m.SetActive(false);
     }
 
     public void UstanovkapozitsiitvelaRun()
@@ -102,7 +96,7 @@ public class Mnemo03AnimationMain : MonoBehaviour
         Ustanovkarazborkimagtvel.enabled = false;
         //Mnemo03Off();
         Mnemo03OnMain();
-        Mnemo04.active = true;
+        Mnemo04.SetActive(true);
         animmnemo04.Play("04 Mnemo Animation");
     }
 

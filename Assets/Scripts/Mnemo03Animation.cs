@@ -43,12 +43,7 @@ public class Mnemo03Animation : MonoBehaviour
 
         lastReadFuelRodsNumbers = new List<string> { "", "01000123", "01004023", "01008023", "01012023", "01016023" };
         fuelRodsRemoveds = new List<string> { "", "001", "040", "080", "120", "160" };
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        magazineNumberText.text = "";
     }
 
     public void AnimationMnemo03Stop()
@@ -59,25 +54,25 @@ public class Mnemo03Animation : MonoBehaviour
 
     private void Mnemo03Onn()
     {
-        Shiberm.active = true;
-        Ramka.active = true;
-        M03m.active = true;
+        Shiberm.SetActive(true);
+        Ramka.SetActive(true);
+        M03m.SetActive(true);
     }
 
     private void Mnemo03OnMain()
     {
-        Mnemo03M.active = true;
-        Magazin.active = true;
+        Mnemo03M.SetActive(true);
+        Magazin.SetActive(true);
     }
 
 
     private void Mnemo03Off()
     {
-        Mnemo02.active = false;
+        Mnemo02.SetActive(false);
         //Shiberm.active = false;
         //Ramka.active = false;
         //M03m.active = false;
-        Mnemo03.active = false;
+        Mnemo03.SetActive(false);
     }
 
     public void UstanovkapozitsiitvelaRun()
@@ -95,7 +90,7 @@ public class Mnemo03Animation : MonoBehaviour
     {
         Ustanovkarazborkimagtvel.enabled = false;
         Mnemo03OnMain();
-        Mnemo04.active = true;
+        Mnemo04.SetActive(true);
         Mnemo03Off();
         animmnemo04.Play("04 Mnemo Animation");
     }
@@ -107,13 +102,13 @@ public class Mnemo03Animation : MonoBehaviour
 
     public void LastReadFuelRodsNumber()
     {
-        countLastReadFuelRodsNumbers = countLastReadFuelRodsNumbers + 1;
+        countLastReadFuelRodsNumbers++;
         lastReadFuelRodsNumberText.text = lastReadFuelRodsNumbers[countLastReadFuelRodsNumbers];
     }
 
     public void RuelRodsRemoveds()
     {
-        countFuelRodsRemoveds = countFuelRodsRemoveds + 1;
+        countFuelRodsRemoveds++;
         fuelRodsRemovedText.text = fuelRodsRemoveds[countFuelRodsRemoveds];
     }
 }
