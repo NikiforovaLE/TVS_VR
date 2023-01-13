@@ -1192,6 +1192,20 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 25
+    functionName: RuelRodsRemoveds
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 27.333334
+    functionName: LastReadFuelRodsNumber
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 29.5
     functionName: UstanovkarazborkimagtvelStop
     data: 

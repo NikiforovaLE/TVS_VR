@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Mnemo03Animation : MonoBehaviour
 {
@@ -12,10 +13,6 @@ public class Mnemo03Animation : MonoBehaviour
     private Animation animmnemo03m;
     private Animation animmnemo04;
 
-    public GameObject Shiberm03m;
-    public GameObject Ramka03m;
-    public GameObject M03m03m;
-
     public GameObject Shiberm;
     public GameObject Ramka;
     public GameObject M03m;
@@ -25,18 +22,28 @@ public class Mnemo03Animation : MonoBehaviour
     public Animator Ustanovkarazborkimagtvel;
     public Animator Ustanovkapozitsiitvela;
 
+    [SerializeField] private Text magazineNumberText;
+    [SerializeField] private Text fuelRodsRemovedText;
+    [SerializeField] private Text lastReadFuelRodsNumberText;
+
+    private List<string> lastReadFuelRodsNumbers;
+    private List<string> fuelRodsRemoveds;
+
+    public static int countLastReadFuelRodsNumbers;
+    public static int countFuelRodsRemoveds;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
         animmnemo03 = gameObject.GetComponent<Animation>();
         animmnemo04 = Mnemo04.GetComponent<Animation>();
         animmnemo03m = Mnemo03M.GetComponent<Animation>();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        lastReadFuelRodsNumbers = new List<string> { "", "01000123", "01004023", "01008023", "01012023", "01016023" };
+        fuelRodsRemoveds = new List<string> { "", "001", "040", "080", "120", "160" };
+        magazineNumberText.text = "";
     }
 
     public void AnimationMnemo03Stop()
@@ -47,25 +54,25 @@ public class Mnemo03Animation : MonoBehaviour
 
     private void Mnemo03Onn()
     {
-        Shiberm.active = true;
-        Ramka.active = true;
-        M03m.active = true;
+        Shiberm.SetActive(true);
+        Ramka.SetActive(true);
+        M03m.SetActive(true);
     }
 
     private void Mnemo03OnMain()
     {
-        Mnemo03M.active = true;
-        Magazin.active = true;
+        Mnemo03M.SetActive(true);
+        Magazin.SetActive(true);
     }
 
 
     private void Mnemo03Off()
     {
-        Mnemo02.active = false;
+        Mnemo02.SetActive(false);
         //Shiberm.active = false;
         //Ramka.active = false;
         //M03m.active = false;
-        Mnemo03.active = false;
+        Mnemo03.SetActive(false);
     }
 
     public void UstanovkapozitsiitvelaRun()
@@ -83,7 +90,7 @@ public class Mnemo03Animation : MonoBehaviour
     {
         Ustanovkarazborkimagtvel.enabled = false;
         Mnemo03OnMain();
-        Mnemo04.active = true;
+        Mnemo04.SetActive(true);
         Mnemo03Off();
         animmnemo04.Play("04 Mnemo Animation");
     }
@@ -91,5 +98,17 @@ public class Mnemo03Animation : MonoBehaviour
     public void UstanovkarazborkimagtvelPlay()
     {
         Ustanovkarazborkimagtvel.enabled = true;
+    }
+
+    public void LastReadFuelRodsNumber()
+    {
+        countLastReadFuelRodsNumbers++;
+        lastReadFuelRodsNumberText.text = lastReadFuelRodsNumbers[countLastReadFuelRodsNumbers];
+    }
+
+    public void RuelRodsRemoveds()
+    {
+        countFuelRodsRemoveds++;
+        fuelRodsRemovedText.text = fuelRodsRemoveds[countFuelRodsRemoveds];
     }
 }
