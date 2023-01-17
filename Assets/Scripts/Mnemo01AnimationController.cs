@@ -52,7 +52,7 @@ public class Mnemo01AnimationController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (firstAnimationPermission)
+        //if (firstAnimationPermission)
         {
             animmnemo01.Play();
         }
