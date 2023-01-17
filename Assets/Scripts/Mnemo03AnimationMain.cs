@@ -43,8 +43,8 @@ public class Mnemo03AnimationMain : MonoBehaviour
         //animmnemo03["03 Mnemo Animation"].time = 20.0f;
 
 
-        lastReadFuelRodsNumbers = new List<string> { "01000123", "01004023", "01008023", "01012023", "01016023" };
-        fuelRodsRemoveds = new List<string> { "001", "040", "080", "120", "160" };
+        lastReadFuelRodsNumbers = new List<string> { "", "01000123", "01004023", "01008023", "01012023", "01016023" };
+        fuelRodsRemoveds = new List<string> { "", "001", "040", "080", "120", "160" };
 
         countLastReadFuelRodsNumbers = Mnemo03Animation.countLastReadFuelRodsNumbers;
         countFuelRodsRemoveds = Mnemo03Animation.countFuelRodsRemoveds;

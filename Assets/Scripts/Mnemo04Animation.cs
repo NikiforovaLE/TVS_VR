@@ -7,6 +7,7 @@ public class Mnemo04Animation : MonoBehaviour
 {
     public GameObject Mnemo02;
     public GameObject Mnemo03;
+    public GameObject Mnemo05;
     private Animation animmnemo04;
     private Animation animmnemo03;
 
@@ -56,12 +57,14 @@ public class Mnemo04Animation : MonoBehaviour
 
     public void Mnemo04Off()
     {
-        //mnemo0404.active = false;
-        //mnemo0402.active = false;
-        //mnemo04051.active = false;
-        //mnemo04052.active = false;
-        //Mnemo03On();
+        if (countpushPosition < 5)
         animmnemo03.Play("03 Mnemo Animation1");
+        else
+        {
+            Mnemo03.active = false;
+            Mnemo05.active = true;
+        }
+        
     }
 
     public void UstanovkapozitsiitvelaRun()
@@ -86,10 +89,6 @@ public class Mnemo04Animation : MonoBehaviour
         Ustanovkarazborkimagtvel.enabled = true;
     }
 
-    /*public void Mnemo03Play()
-    {
-        animmnemo03.Play("03 Mnemo Animation");
-    }*/
 
     public void Mnemo03Stop()
     {

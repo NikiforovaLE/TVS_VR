@@ -28,9 +28,11 @@ public class Mnemo01AnimationController : MonoBehaviour
     [SerializeField] private Text infoAboutTVSNumberOn01Mnemo;
     [SerializeField] private Image imageOf03MnemoButton;
 
+    private bool firstAnimationPermission = false;
     private string currentFrame;
     private Color buttonColorAfterClicking = new(200f / 255f, 200f / 255f, 200f / 255f);
     public string CurrentFrame { get => currentFrame; set => currentFrame = value; }
+    public bool FirstAnimationPermission { get => firstAnimationPermission; set => firstAnimationPermission = value; }
 
     // Start is called before the first frame update
     void Start()
@@ -43,21 +45,23 @@ public class Mnemo01AnimationController : MonoBehaviour
 
         LojementCarkasTvs.Play("LogementArriving", 0, 0f);
         LojementCarkasTvs.enabled = false;
-        animmnemo01.Play();
+        //animmnemo01.Play();
         infoAboutTVSNumberOn01Mnemo.text = "";
     }
 
     // Update is called once per frame
     void Update()
     {
-        animmnemo01.Play();
-
+        if (firstAnimationPermission)
+        {
+            animmnemo01.Play();
+        }
     }
 
     public void ShiberPlay()
     {
         Shiber.enabled = true;
-        Shiber.GetComponent<AudioSource>().Play();  
+        Shiber.GetComponent<AudioSource>().Play();
         infoAboutTVSNumberOn01Mnemo.text = ARM1Mnemo2.NumberOfContainersAndFrames[infoAboutContainerNumberOn01Mnemo.text];
     }
 

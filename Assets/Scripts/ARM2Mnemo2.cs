@@ -14,6 +14,7 @@ public class ARM2Mnemo2 : MonoBehaviour
     [SerializeField] private ARM2Mnemo1 ARM2Mnemo1;
     [SerializeField] private ARM1Mnemo2 ARM1Mnemo2;
     [SerializeField] private ARMPanelActions ARM2PanelActions;
+    [SerializeField] private Mnemo01AnimationController mnemo01AnimationController;
     [SerializeField] private GameObject mainMnemoARM2;
     [SerializeField] private Text infoAboutVTUKNumberOn02Mnemo;
 
@@ -71,6 +72,7 @@ public class ARM2Mnemo2 : MonoBehaviour
             message.text = "";
             generalMessage.text = generalMessageAfterConfirm;
             infoAboutVTUKNumberOn02Mnemo.text = CurrentVTUK;
+            mnemo01AnimationController.FirstAnimationPermission = true;
         }
     }
 
