@@ -10,6 +10,11 @@ public class Mnemo05Animation : MonoBehaviour
     public Animator Autooperator;
     public GameObject TVSframe;
     public GameObject TVSframeAutooperator;
+    public Transform Tilter;
+    public GameObject Mnemo04Add;
+    public GameObject Mnemo06Add;
+    public GameObject Mnemo07;
+    public GameObject Mnemo05;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +28,6 @@ public class Mnemo05Animation : MonoBehaviour
         TVSframe.active = false;
         TVSframeAutooperator.active = true;
         animmnemo05.Play();
-        
     }
 
     public void AutooperatorRun()
@@ -31,4 +35,13 @@ public class Mnemo05Animation : MonoBehaviour
         Autooperator.Play("Third_new", 0, 0f);
     }
 
+    public void TitlerTvsRun()
+    {
+        Autooperator.enabled = false;
+        TVSframeAutooperator.transform.SetParent(Tilter);
+        Mnemo05.active = false;
+        Mnemo04Add.active = false;
+        Mnemo06Add.active = true;
+        Mnemo07.active = true;
+    }
 }
