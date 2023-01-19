@@ -7,18 +7,21 @@ public class Mnemo07Animation : MonoBehaviour
 {
 
     private Animation animmnemo07;
+    private Animation animmnemo06;
     public Animator Tilter;
+    public GameObject Mnemo06Add;
 
     // Start is called before the first frame update
     void Start()
     {
         animmnemo07 = gameObject.GetComponent<Animation>();
+        animmnemo06 = Mnemo06Add.GetComponent<Animation>();
+        animmnemo07.Play();
     }
-
 
     void Update()
     {
-        animmnemo07.Play();
+        
     }
 
     public void TitlerRun()
@@ -28,6 +31,7 @@ public class Mnemo07Animation : MonoBehaviour
 
     public void TitlerStop()
     {
+        animmnemo06.Play();
         Tilter.enabled = false;
     }
 
