@@ -984,13 +984,6 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 13.133333
-    functionName: destinationPositionForward
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
   - time: 15.566667
     functionName: destinationPositionForward
     data: 
@@ -1020,13 +1013,6 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 28.45
-    functionName: destinationPositionBack
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 28.533333
     functionName: destinationPositionBack
     data: 
     objectReferenceParameter: {fileID: 0}

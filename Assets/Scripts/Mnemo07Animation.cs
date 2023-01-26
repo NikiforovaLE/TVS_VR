@@ -35,8 +35,8 @@ public class Mnemo07Animation : MonoBehaviour
 
         stateHeadLatches = new List<string> { "Не поджата", "Поджата" };
         capturesFixing = new List<string> { "Открыты", "Закрыты" };
-        screwedNuts = new List<string> { "0", "1", "3", "4", "5", "6" };
-        flared = new List<string> { "0", "1", "3", "4", "5", "6" };
+        screwedNuts = new List<string> { "0", "1", "2", "3", "4", "5", "6" };
+        flared = new List<string> { "0", "1","2", "3", "4", "5", "6" };
 
         stateHeadLatchesText.text = stateHeadLatches[countstateHeadLatches];
         capturesFixingText.text = capturesFixing[countcapturesFixing + 1];
