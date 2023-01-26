@@ -11,17 +11,37 @@ public class Mnemo07Animation : MonoBehaviour
     public Animator Tilter;
     public GameObject Mnemo06Add;
 
+    private List<string> stateHeadLatches;
+    private List<string> capturesFixing;
+    private List<string> screwedNuts;
+    private List<string> flared;
+
+    private int countstateHeadLatches = 0;
+    private int countcapturesFixing = 0;
+    private int countscrewedNuts = 0;
+    private int countsflared = 0;
+
+    [SerializeField] private Text stateHeadLatchesText;
+    [SerializeField] private Text capturesFixingText;
+    [SerializeField] private Text screwedNutsText;
+    [SerializeField] private Text flaredText;
+
     // Start is called before the first frame update
     void Start()
     {
         animmnemo07 = gameObject.GetComponent<Animation>();
         animmnemo06 = Mnemo06Add.GetComponent<Animation>();
         animmnemo07.Play();
-    }
 
-    void Update()
-    {
-        
+        stateHeadLatches = new List<string> { "Не поджата", "Поджата" };
+        capturesFixing = new List<string> { "Открыты", "Закрыты" };
+        screwedNuts = new List<string> { "0", "1", "3", "4", "5", "6" };
+        flared = new List<string> { "0", "1", "3", "4", "5", "6" };
+
+        stateHeadLatchesText.text = stateHeadLatches[countstateHeadLatches];
+        capturesFixingText.text = capturesFixing[countcapturesFixing + 1];
+        screwedNutsText.text = screwedNuts[countscrewedNuts];
+        flaredText.text = flared[countsflared];
     }
 
     public void TitlerRun()
@@ -34,5 +54,25 @@ public class Mnemo07Animation : MonoBehaviour
         animmnemo06.Play();
         Tilter.enabled = false;
     }
+
+    public void stateHeadLatchesPreloaded()
+    {
+        countstateHeadLatches++;
+        stateHeadLatchesText.text = stateHeadLatches[countstateHeadLatches];
+    }
+
+    public void screwedNutsAdd()
+    {
+        countscrewedNuts++;
+        screwedNutsText.text = screwedNuts[countscrewedNuts];
+    }
+
+    public void flaredAdd()
+    {
+        countsflared++;
+        flaredText.text = flared[countsflared];
+    }
+
+
 
 }

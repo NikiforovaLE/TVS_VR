@@ -21,6 +21,7 @@ public class Mnemo06Animation : MonoBehaviour
     public void ManipulatorRun()
     {
         Manipulator.Play("Armature_Action_Event", 0, 0f);
+        Manipulator.speed = 1;
     }
 
     public void ManipulatorStop()
