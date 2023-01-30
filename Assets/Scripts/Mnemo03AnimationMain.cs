@@ -105,7 +105,6 @@ public class Mnemo03AnimationMain : MonoBehaviour
         Ustanovkarazborkimagtvel.enabled = true;
     }
 
-
     public void LastReadFuelRodsNumber()
     {
         countLastReadFuelRodsNumbers = countLastReadFuelRodsNumbers + 1;

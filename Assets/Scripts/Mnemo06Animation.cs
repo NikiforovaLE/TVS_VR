@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Mnemo06Animation : MonoBehaviour
 {
@@ -12,10 +9,6 @@ public class Mnemo06Animation : MonoBehaviour
     void Start()
     {
         animmnemo06 = gameObject.GetComponent<Animation>();
-    }
-
-    void Update()
-    {
     }
 
     public void ManipulatorRun()

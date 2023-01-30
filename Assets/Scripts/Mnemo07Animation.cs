@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -72,7 +71,4 @@ public class Mnemo07Animation : MonoBehaviour
         countsflared++;
         flaredText.text = flared[countsflared];
     }
-
-
-
 }
