@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -61,10 +60,9 @@ public class Mnemo04Animation : MonoBehaviour
         animmnemo03.Play("03 Mnemo Animation1");
         else
         {
-            Mnemo03.active = false;
-            Mnemo05.active = true;
+            Mnemo03.SetActive(false);
+            Mnemo05.SetActive(true);
         }
-        
     }
 
     public void UstanovkapozitsiitvelaRun()
@@ -88,7 +86,6 @@ public class Mnemo04Animation : MonoBehaviour
     {
         Ustanovkarazborkimagtvel.enabled = true;
     }
-
 
     public void Mnemo03Stop()
     {
