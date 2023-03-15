@@ -28,6 +28,9 @@ public class ARM2Mnemo0 : MonoBehaviour
 
     private readonly string typeOneAndTwoTotalAmountOfFuelElements = "160";
     private readonly string typeThreeAndFourTotalAmountOfFuelElements = "102";
+
+    public Text FrameNumber { get => frameNumber; set => frameNumber = value; }
+
     public void ShowTVSInfo()
     {
         //Get needed info
@@ -35,7 +38,7 @@ public class ARM2Mnemo0 : MonoBehaviour
         string typeOfTVS = ARM1Mnemo2.FramesAndTypes[currentFrameOfTVS];
 
         //Add info to 0.Mnemo in ARM2MainPanel
-        frameNumber.text = currentFrameOfTVS;
+        FrameNumber.text = currentFrameOfTVS;
         type.text = typeOfTVS;
         GetAndSetTotalAmountOfFuelElementsInTVS();
         currentAmountOfFuelElementsInTVS.text = "0";
@@ -75,7 +78,7 @@ public class ARM2Mnemo0 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {  
-        frameNumber.text = "";
+        FrameNumber.text = "";
         type.text = "";
         currentAmountOfFuelElementsInTVS.text = "";
         totalAmountOfFuelElementsInTVS.text = "";
