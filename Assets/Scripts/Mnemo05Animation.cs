@@ -45,8 +45,8 @@ public class Mnemo05Animation : MonoBehaviour
 
     void Update()
     {
-        TVSframe.active = false;
-        TVSframeAutooperator.active = true;
+        TVSframe.SetActive(false);
+        TVSframeAutooperator.SetActive(true);
         animmnemo05.Play();
     }
 
@@ -59,10 +59,10 @@ public class Mnemo05Animation : MonoBehaviour
     {
         Autooperator.enabled = false;
         TVSframeAutooperator.transform.SetParent(Tilter);
-        Mnemo05.active = false;
-        Mnemo04Add.active = false;
-        Mnemo06Add.active = true;
-        Mnemo07.active = true;
+        Mnemo05.SetActive(false);
+        Mnemo04Add.SetActive(false);
+        Mnemo06Add.SetActive(true);
+        Mnemo07.SetActive(true);
     }
 
     public void verticalPositionLower()
@@ -100,7 +100,4 @@ public class Mnemo05Animation : MonoBehaviour
         countdestinationPosition--;
         destinationPositionText.text = destinationPosition[countdestinationPosition];
     }
-
-
-
 }
