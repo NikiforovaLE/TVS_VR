@@ -8,7 +8,7 @@ public class Mnemo8Animation : MonoBehaviour
     [SerializeField] private GameObject Manipulator;
     [SerializeField] private GameObject TVS;
     [SerializeField] private Text currentTVSNumberText;
-    [SerializeField] private ARM2Mnemo0 aRM2Mnemo0;
+    public ARM2Mnemo0 aRM2Mnemo0;
 
     private float speed = 5f;
     // Start is called before the first frame update
