@@ -8,16 +8,20 @@ public class Mnemo00Animation : MonoBehaviour
     [SerializeField] private Text attentionMessage;
     [SerializeField] private Text currentFuel;
     public ARM2Mnemo0 ARM2Mnemo0;
-    public ARM2Mnemo2 ARM2Mnemo2;
     public Animation fuelMoving;
+    public Animation VTUKGetting;
+    public Animation VTUKReturning;
     private Animation currentMnemoAnimation;
     private List<string> fuelNumbers;
     private int fuelCount = 0;
-    private bool isPermitted;
     private readonly string doActionsOnARM = "Необходимо выполнить действия на АРМ ввода №2";
 
     public Text AttentionMessage { get => attentionMessage; set => attentionMessage = value; }
 
+    public void StartMnemoAnimation()
+    {
+        currentMnemoAnimation.enabled = true;
+    }
     public void FillFuelNumbers()
     {
         fuelNumbers = ARM2Mnemo0.Type.ToString() switch
@@ -28,25 +32,28 @@ public class Mnemo00Animation : MonoBehaviour
         };
         currentFuel.text = fuelNumbers[fuelCount++];
     }
+
+    public void GetVTUK()
+    {
+        currentMnemoAnimation.enabled = false;
+        VTUKGetting.Play();
+    }
     public void LoadFuelIntoTVS()
     {
-        while (isPermitted && fuelCount < fuelNumbers.Capacity)
+        currentMnemoAnimation.enabled = false;
+        while (fuelCount < fuelNumbers.Capacity)
         {
             fuelMoving.Play();
             if (fuelCount == 3)
             {
                 AttentionMessage.text = doActionsOnARM;
                 fuelCount++;
-                isPermitted = false;
-                currentMnemoAnimation.Stop();
-                break;
+                return;
             }
             fuelCount++;
         }
-        if(fuelCount == fuelNumbers.Capacity)
-        {
-            fuelMoving.enabled = false;
-        }
+        fuelMoving.enabled = false;
+        currentMnemoAnimation.enabled = true;
     }
 
     public void ShowFuelNumber()
@@ -60,15 +67,5 @@ public class Mnemo00Animation : MonoBehaviour
         attentionMessage.text = "";
         currentFuel.text = "";
         currentMnemoAnimation = gameObject.GetComponent<Animation>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        isPermitted = ARM2Mnemo2.LoadingIsPermitted;
-        if(isPermitted)
-        {
-            currentMnemoAnimation.Play();
-        }
     }
 }
