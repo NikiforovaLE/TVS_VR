@@ -26,12 +26,10 @@ public class ARM2Mnemo2 : MonoBehaviour
     private string totalAmountOfFuelElementsInVTUKWhenTypeOneAndTwo;
     private string totalAmountOfFuelElementsInVTUKWhenTypeThreeAndFour;
     private int counter;
-    private bool loadingIsPermitted;
 
     public Mnemo00Animation Mnemo00Animation;
     public string CurrentVTUK { get => currentVTUK; set => currentVTUK = value; }
     public string CurrentTotalAmountOfFuelElementsInVTUK { get => currentTotalAmountOfFuelElementsInVTUK; set => currentTotalAmountOfFuelElementsInVTUK = value; }
-    public bool LoadingIsPermitted { get => loadingIsPermitted; set => loadingIsPermitted = value; }
 
     public void ReadVTUKNumber()
     {
@@ -76,8 +74,8 @@ public class ARM2Mnemo2 : MonoBehaviour
             generalMessage.text = generalMessageAfterConfirm;
             infoAboutVTUKNumberOn02Mnemo.text = CurrentVTUK;
             mnemo01AnimationController.FirstAnimationPermission = true;
-            LoadingIsPermitted = true;
             Mnemo00Animation.AttentionMessage.text = "";
+            Mnemo00Animation.StartMnemoAnimation();
         }
     }
 
@@ -90,6 +88,5 @@ public class ARM2Mnemo2 : MonoBehaviour
         totalAmountOfFuelElementsInVTUKWhenTypeOneAndTwo = "80";
         totalAmountOfFuelElementsInVTUKWhenTypeThreeAndFour = "51";
         infoAboutVTUKNumberOn02Mnemo.text = "";
-        LoadingIsPermitted = false;
     }
 }
