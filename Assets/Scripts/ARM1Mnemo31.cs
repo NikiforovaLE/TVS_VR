@@ -15,7 +15,7 @@ public class ARM1Mnemo31 : MonoBehaviour
     [SerializeField] private Text infoAboutContainerNumberOn01Mnemo;
     [SerializeField] private Text attention;
     [SerializeField] private GameObject mainARM1Mnemo;
-
+    [SerializeField] private Mnemo00Animation Mnemo00Animation;
     private string currentContainer;
     private readonly string messageWhenConfirm = "";
     private readonly string generalMessageAfterConfirm = "Необходимо выполнить операции на АРМ ввода №2";
@@ -68,6 +68,7 @@ public class ARM1Mnemo31 : MonoBehaviour
             generalMessage.text = generalMessageAfterConfirm;
             ARM2Message.text = ARM2MessageAfterConfirm;
             infoAboutContainerNumberOn01Mnemo.text = CurrentContainer;
+            Mnemo00Animation.ToBeYellow = false;
         }
     }
 
