@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class Mnemo00Animation : MonoBehaviour
 {
-    [SerializeField] private Text attentionMessage;
+    [SerializeField] private Text attentionMessageOne;
+    [SerializeField] private Text attentionMessageTwo;
     [SerializeField] private Text currentFuel;
+    public GameObject yellowBackgroungOne;
+    public GameObject yellowBackgroungTwo;
     public ARM2Mnemo0 ARM2Mnemo0;
     public Animation fuelMoving;
     public Animation VTUKGetting;
@@ -14,9 +17,13 @@ public class Mnemo00Animation : MonoBehaviour
     private Animation currentMnemoAnimation;
     private List<string> fuelNumbers;
     private int fuelCount = 0;
+    private bool toBeYellowOne = true;
+    private bool toBeYellowTwo = false;
     private readonly string doActionsOnARM = "Необходимо выполнить действия на АРМ ввода №2";
 
-    public Text AttentionMessage { get => attentionMessage; set => attentionMessage = value; }
+    public Text AttentionMessage { get => attentionMessageTwo; set => attentionMessageTwo = value; }
+    public Text AttentionMessageOne { get => attentionMessageOne; set => attentionMessageOne = value; }
+    public bool ToBeYellowOne { get => toBeYellowOne; set => toBeYellowOne = value; }
 
     public void StartMnemoAnimation()
     {
@@ -64,8 +71,27 @@ public class Mnemo00Animation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        attentionMessage.text = "";
+        AttentionMessageOne.text = "Необходимо выполнить действия на АРМ ввода №1";
+        attentionMessageTwo.text = "";
         currentFuel.text = "";
         currentMnemoAnimation = gameObject.GetComponent<Animation>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        SetBackground(yellowBackgroungOne, ToBeYellowOne);
+    }
+
+    private void SetBackground(GameObject background, bool toBeYellow)
+    {
+        if (toBeYellow)
+        {
+            background.SetActive(true);
+        }
+        else
+        {
+            background.SetActive(false);
+        }
     }
 }
