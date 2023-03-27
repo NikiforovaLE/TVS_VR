@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class Mnemo01AnimationController : MonoBehaviour
 {
+    public Animation animmnemo00;
     private Animation animmnemo01;
     private Animation animmnemo02;
     private Animation animmnemo03;
@@ -55,6 +56,7 @@ public class Mnemo01AnimationController : MonoBehaviour
         //if (firstAnimationPermission)
         {
             animmnemo01.Play();
+            animmnemo00.Play();
         }
     }
 

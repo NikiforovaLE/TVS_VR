@@ -24,6 +24,7 @@ public class Mnemo00Animation : MonoBehaviour
     public Text AttentionMessage { get => attentionMessageTwo; set => attentionMessageTwo = value; }
     public Text AttentionMessageOne { get => attentionMessageOne; set => attentionMessageOne = value; }
     public bool ToBeYellowOne { get => toBeYellowOne; set => toBeYellowOne = value; }
+    public bool ToBeYellowTwo { get => toBeYellowTwo; set => toBeYellowTwo = value; }
 
     public void StartMnemoAnimation()
     {
@@ -81,6 +82,7 @@ public class Mnemo00Animation : MonoBehaviour
     void Update()
     {
         SetBackground(yellowBackgroungOne, ToBeYellowOne);
+        SetBackground(yellowBackgroungTwo, ToBeYellowTwo);
     }
 
     private void SetBackground(GameObject background, bool toBeYellow)
