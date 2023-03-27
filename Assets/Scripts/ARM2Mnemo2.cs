@@ -76,6 +76,7 @@ public class ARM2Mnemo2 : MonoBehaviour
             mnemo01AnimationController.FirstAnimationPermission = true;
             Mnemo00Animation.AttentionMessage.text = "";
             Mnemo00Animation.StartMnemoAnimation();
+            Mnemo00Animation.ToBeYellowOne = false;
         }
     }
 

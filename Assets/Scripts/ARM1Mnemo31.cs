@@ -68,7 +68,7 @@ public class ARM1Mnemo31 : MonoBehaviour
             generalMessage.text = generalMessageAfterConfirm;
             ARM2Message.text = ARM2MessageAfterConfirm;
             infoAboutContainerNumberOn01Mnemo.text = CurrentContainer;
-            Mnemo00Animation.ToBeYellow = false;
+            Mnemo00Animation.ToBeYellowOne = false;
         }
     }
 
