@@ -22,9 +22,10 @@ public class ARM2Mnemo1 : MonoBehaviour
     private readonly string attentionMessageAboutTheAbsenceOfContainer = "Необходимо считать номер контейнера";
     private readonly string attentionMessageAboutTheAbsenceOfFrame = "Необходимо считать номер каркаса ТВС";
     private string currentFrame;
-    //private int clickCounter;
+    private string currentContainerNumber;
 
     public string CurrentFrame { get => currentFrame; set => currentFrame = value; }
+    public string CurrentContainerNumber { get => currentContainerNumber; set => currentContainerNumber = value; }
 
     public void ShowContainerAndTVSNumbers()
     {
@@ -47,6 +48,7 @@ public class ARM2Mnemo1 : MonoBehaviour
         {
             attentionMessage.text = "";
             currentFrame = frameNumber;
+            CurrentContainerNumber = containerNumber;
             ARM2Mnemo0.ShowTVSInfo();
             ARM2PanelActions.ShowMnemoPanel(mainMnemoARM2);
             message.text = messageAfterConfirm;

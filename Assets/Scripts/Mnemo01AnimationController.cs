@@ -3,8 +3,6 @@ using UnityEngine.UI;
 
 public class Mnemo01AnimationController : MonoBehaviour
 {
-    public Animation animmnemo00;
-    private Animation animmnemo01;
     private Animation animmnemo02;
     private Animation animmnemo03;
 
@@ -29,16 +27,13 @@ public class Mnemo01AnimationController : MonoBehaviour
     [SerializeField] private Text infoAboutTVSNumberOn01Mnemo;
     [SerializeField] private Image imageOf03MnemoButton;
 
-    private bool firstAnimationPermission = false;
     private string currentFrame;
     private Color buttonColorAfterClicking = new(200f / 255f, 200f / 255f, 200f / 255f);
     public string CurrentFrame { get => currentFrame; set => currentFrame = value; }
-    public bool FirstAnimationPermission { get => firstAnimationPermission; set => firstAnimationPermission = value; }
 
     // Start is called before the first frame update
     void Start()
     {
-        animmnemo01 = Mnemo01.GetComponent<Animation>();
         animmnemo02 = Mnemo02.GetComponent<Animation>();
         animmnemo03 = Mnemo03.GetComponent<Animation>();
         Shiber.Play("DoorMoving", 0, 0f);
@@ -48,16 +43,6 @@ public class Mnemo01AnimationController : MonoBehaviour
         LojementCarkasTvs.enabled = false;
         //animmnemo01.Play();
         infoAboutTVSNumberOn01Mnemo.text = "";
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //if (firstAnimationPermission)
-        {
-            animmnemo01.Play();
-            animmnemo00.Play();
-        }
     }
 
     public void ShiberPlay()
