@@ -8,13 +8,18 @@ public class Mnemo00Animation : MonoBehaviour
     [SerializeField] private Text attentionMessageOne;
     [SerializeField] private Text attentionMessageTwo;
     [SerializeField] private Text currentFuel;
+    [SerializeField] private Text currentContainerNumber;
+    [SerializeField] private Text currentVTUKNumber;
+    [SerializeField] private Text totalFuelAmount;
     public GameObject yellowBackgroungOne;
     public GameObject yellowBackgroungTwo;
     public ARM2Mnemo0 ARM2Mnemo0;
+    public ARM2Mnemo1 ARM2Mnemo1;
+    public ARM2Mnemo2 ARM2Mnemo2;
     public Animation fuelMoving;
     public Animation VTUKGetting;
     public Animation VTUKReturning;
-    private Animation currentMnemoAnimation;
+    public Animation currentMnemoAnimation;
     private List<string> fuelNumbers;
     private int fuelCount = 0;
     private bool toBeYellowOne = true;
@@ -43,7 +48,7 @@ public class Mnemo00Animation : MonoBehaviour
 
     public void GetVTUK()
     {
-        currentMnemoAnimation.enabled = false;
+        currentMnemoAnimation.Stop();
         VTUKGetting.Play();
     }
     public void LoadFuelIntoTVS()
@@ -61,7 +66,7 @@ public class Mnemo00Animation : MonoBehaviour
             fuelCount++;
         }
         fuelMoving.enabled = false;
-        currentMnemoAnimation.enabled = true;
+        currentMnemoAnimation.Play();
     }
 
     public void ShowFuelNumber()
@@ -72,9 +77,11 @@ public class Mnemo00Animation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AttentionMessageOne.text = "Необходимо выполнить действия на АРМ ввода №1";
+        AttentionMessageOne.text = "Необходимо выполнить операции на АРМ ввода №1";
         attentionMessageTwo.text = "";
         currentFuel.text = "";
+        currentContainerNumber.text = "";
+        currentVTUKNumber.text = "";
         currentMnemoAnimation = gameObject.GetComponent<Animation>();
     }
 
@@ -83,17 +90,13 @@ public class Mnemo00Animation : MonoBehaviour
     {
         SetBackground(yellowBackgroungOne, ToBeYellowOne);
         SetBackground(yellowBackgroungTwo, ToBeYellowTwo);
+        currentContainerNumber.text = ARM2Mnemo1.CurrentContainerNumber;
+        currentVTUKNumber.text = ARM2Mnemo2.CurrentVTUK;
+        totalFuelAmount.text = ARM2Mnemo2.CurrentTotalAmountOfFuelElementsInVTUK;
     }
 
     private void SetBackground(GameObject background, bool toBeYellow)
     {
-        if (toBeYellow)
-        {
-            background.SetActive(true);
-        }
-        else
-        {
-            background.SetActive(false);
-        }
+        background.SetActive(toBeYellow);
     }
 }

@@ -17,6 +17,8 @@ public class ARM2Mnemo2 : MonoBehaviour
     [SerializeField] private Mnemo01AnimationController mnemo01AnimationController;
     [SerializeField] private GameObject mainMnemoARM2;
     [SerializeField] private Text infoAboutVTUKNumberOn02Mnemo;
+    public Animation animmnemo00;
+    public Animation animmnemo01;
 
     private List<string> VTUKNumbers;
 
@@ -73,10 +75,11 @@ public class ARM2Mnemo2 : MonoBehaviour
             message.text = "";
             generalMessage.text = generalMessageAfterConfirm;
             infoAboutVTUKNumberOn02Mnemo.text = CurrentVTUK;
-            mnemo01AnimationController.FirstAnimationPermission = true;
             Mnemo00Animation.AttentionMessage.text = "";
             Mnemo00Animation.StartMnemoAnimation();
             Mnemo00Animation.ToBeYellowOne = false;
+            animmnemo00.Play();
+            animmnemo01.Play();
         }
     }
 
