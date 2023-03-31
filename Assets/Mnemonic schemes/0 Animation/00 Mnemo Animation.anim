@@ -2371,6 +2371,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0
+    functionName: Start01MnemoAnimation
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 32.066666
     functionName: GetVTUK
     data: 
