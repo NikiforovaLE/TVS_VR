@@ -10,6 +10,7 @@ public class Mnemo00Animation : MonoBehaviour
     [SerializeField] private Text currentFuel;
     [SerializeField] private Text currentContainerNumber;
     [SerializeField] private Text currentVTUKNumber;
+    [SerializeField] private Text currentFuelAmount;
     [SerializeField] private Text totalFuelAmount;
     public GameObject yellowBackgroungOne;
     public GameObject yellowBackgroungTwo;
@@ -17,8 +18,9 @@ public class Mnemo00Animation : MonoBehaviour
     public ARM2Mnemo1 ARM2Mnemo1;
     public ARM2Mnemo2 ARM2Mnemo2;
     public Animator mnemo00Animator;
-    private List<string> fuelNumbers;
+    public Animation mnemo01Animation;
     private int fuelCount = 0;
+    private List<string> fuelNumbers;
     private bool toBeYellowOne = true;
     private bool toBeYellowTwo = false;
     private readonly string doActionsOnARM = "Необходимо выполнить действия на АРМ ввода №2";
@@ -32,6 +34,11 @@ public class Mnemo00Animation : MonoBehaviour
     {
         mnemo00Animator.Play("00 Mnemo Animation");
     }
+
+    public void Start01MnemoAnimation()
+    {
+        mnemo01Animation.Play();
+    }
     public void FillFuelNumbers()
     {
         fuelNumbers = ARM2Mnemo0.Type.ToString() switch
@@ -40,7 +47,8 @@ public class Mnemo00Animation : MonoBehaviour
             "3" or "4" => new List<string> { "0", "1", "50", "51", "52", "101", "102" },
             _ => new List<string> { "0", "1", "79", "80", "81", "159", "160" }
         };
-        currentFuel.text = fuelNumbers[fuelCount++];
+        currentFuel.text = fuelNumbers[fuelCount];
+        mnemo00Animator.SetInteger("fuelCount", fuelCount);
     }
 
     public void GetVTUK()
@@ -49,30 +57,28 @@ public class Mnemo00Animation : MonoBehaviour
     }
     public void LoadFuelIntoTVS()
     {
-        for (int i = fuelCount; i < fuelNumbers.Count; i++)
-        {
-            PlayFuelMoving();
-            if (fuelCount == 3)
-            {
-                AttentionMessage.text = doActionsOnARM;
-                toBeYellowTwo = true;
-                mnemo00Animator.Play("ReturnVTUK");
-                return;
-            }
-        }
-        //mnemo00Animator.Play("Mnemo00Continue");
+        mnemo00Animator.Play("FuelMoving");
     }
 
-    private void PlayFuelMoving()
+    private void CheckConditionToStopAnimation()
     {
-        mnemo00Animator.Play("FuelMoving");
-        new WaitForSeconds(11);
-        mnemo00Animator.Update(0f);
+        if (mnemo00Animator.GetInteger("fuelCount") == 3)
+        {
+            AttentionMessage.text = doActionsOnARM;
+            toBeYellowTwo = true;
+            mnemo00Animator.Play("ReturnVTUK");
+        }
+        else if (mnemo00Animator.GetInteger("fuelCount") == 6)
+        {
+            mnemo00Animator.Play("ReturnVTUK");
+        }
     }
 
     public void ShowFuelNumber()
     {
-        currentFuel.text = fuelNumbers[fuelCount++];
+        fuelCount++;
+        currentFuelAmount.text = fuelNumbers[fuelCount];
+        mnemo00Animator.SetInteger("fuelCount", fuelCount);
     }
 
     // Start is called before the first frame update
@@ -83,6 +89,7 @@ public class Mnemo00Animation : MonoBehaviour
         currentFuel.text = "";
         currentContainerNumber.text = "";
         currentVTUKNumber.text = "";
+        mnemo00Animator.SetInteger("fuelCount", 0);
     }
 
     // Update is called once per frame
