@@ -70,8 +70,8 @@ public class Mnemo01AnimationController : MonoBehaviour
 
     public void Mnemo01OffMnemo02On()
     {
-        generalPanelAcions.SetPanelActive(Mnemo02);
-        //Mnemo01.SetActive(false);
+        //generalPanelAcions.SetPanelActive(Mnemo02);
+        Mnemo01.SetActive(false);
         Mag.SetActive(true);
         Mnemo03On();
         animmnemo02.Play();
@@ -80,11 +80,11 @@ public class Mnemo01AnimationController : MonoBehaviour
 
     public void Mnemo03On()
     {
-        additionalGeneralPanelAcions.SetPanelActive(Mnemo03);
+        //additionalGeneralPanelAcions.SetPanelActive(Mnemo03);
         imageOf03MnemoButton.color = buttonColorAfterClicking;
-        //Mnemo03.SetActive(true);
-        //Shiberm.SetActive(false);
-        //Ramka.SetActive(false);
-        //M03m.SetActive(false);
+        Mnemo03.SetActive(true);
+        Shiberm.SetActive(false);
+        Ramka.SetActive(false);
+        M03m.SetActive(false);
     }
 }
