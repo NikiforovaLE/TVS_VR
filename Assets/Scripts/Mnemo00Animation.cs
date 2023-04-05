@@ -23,7 +23,7 @@ public class Mnemo00Animation : MonoBehaviour
     private List<string> fuelNumbers;
     private bool toBeYellowOne = true;
     private bool toBeYellowTwo = false;
-    private readonly string doActionsOnARM = "Необходимо выполнить действия на АРМ ввода №2";
+    private readonly string doActionsOnARM = "Необходимо выполнить операции на АРМ ввода №2";
 
     public Text AttentionMessage { get => attentionMessageTwo; set => attentionMessageTwo = value; }
     public Text AttentionMessageOne { get => attentionMessageOne; set => attentionMessageOne = value; }
