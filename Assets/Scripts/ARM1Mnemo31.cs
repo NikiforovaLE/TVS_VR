@@ -64,11 +64,19 @@ public class ARM1Mnemo31 : MonoBehaviour
             CurrentContainer = containerNumber.text;
             chosenContainerNumbers.Remove(CurrentContainer);
             ARM1PanelActions.ShowMnemoPanel(mainARM1Mnemo);
+
+            //top panel messages
             messageOnARM1TopPanel.text = messageWhenConfirm;
             generalMessage.text = generalMessageAfterConfirm;
             ARM2Message.text = ARM2MessageAfterConfirm;
+
+            //info on 01 Mnemo
             infoAboutContainerNumberOn01Mnemo.text = CurrentContainer;
+
+            //Mnemo 00 actions
             Mnemo00Animation.ToBeYellowOne = false;
+            Mnemo00Animation.ToBeYellowTwo = true;
+            Mnemo00Animation.AttentionMessageTwo.text = generalMessageAfterConfirm;
         }
     }
 
