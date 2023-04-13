@@ -9,6 +9,7 @@ public class Mnemo10Animation : MonoBehaviour
     [SerializeField] private Text validityText;
     [SerializeField] private Text currentTVS;
     public ARM2Mnemo0 ARM2Mnemo0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,12 @@ public class Mnemo10Animation : MonoBehaviour
 
     public void SetValidity()
     {
-        validityText.text = DateTime.Today.AddDays(3).ToString();
+        validityText.text = DateTime.Now.AddDays(3).ToString();
+    }
+
+    public void StartControl()
+    {
+        gameObject.GetComponent<Animator>().Play("10 Mnemo Animation");
+        SetValidity();
     }
 }

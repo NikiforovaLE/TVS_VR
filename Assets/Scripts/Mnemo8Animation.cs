@@ -45,4 +45,9 @@ public class Mnemo8Animation : MonoBehaviour
     {
         TVS.transform.Translate(speed * Time.deltaTime * new Vector3(485f, -270f, 0f));
     }
+
+    public void MoveToWashing()
+    {
+        TVS.transform.Translate(speed * Time.deltaTime * new Vector3(361f, -270f, 0f));
+    }
 }

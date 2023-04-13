@@ -20,15 +20,17 @@ public class Mnemo00Animation : MonoBehaviour
     public Animator mnemo00Animator;
     public Animation mnemo01Animation;
     private int fuelCount = 0;
+    private int vtukGettingCount = 0;
     private List<string> fuelNumbers;
     private bool toBeYellowOne = true;
     private bool toBeYellowTwo = false;
     private readonly string doActionsOnARM = "Необходимо выполнить операции на АРМ ввода №2";
 
-    public Text AttentionMessage { get => attentionMessageTwo; set => attentionMessageTwo = value; }
     public Text AttentionMessageOne { get => attentionMessageOne; set => attentionMessageOne = value; }
+    public Text AttentionMessageTwo { get => attentionMessageTwo; set => attentionMessageTwo = value; }
     public bool ToBeYellowOne { get => toBeYellowOne; set => toBeYellowOne = value; }
     public bool ToBeYellowTwo { get => toBeYellowTwo; set => toBeYellowTwo = value; }
+    public int VtukGettingCount { get => vtukGettingCount; set => vtukGettingCount = value; }
 
     public void StartMnemoAnimation()
     {
@@ -38,6 +40,7 @@ public class Mnemo00Animation : MonoBehaviour
     public void Start01MnemoAnimation()
     {
         mnemo01Animation.Play();
+
     }
     public void FillFuelNumbers()
     {
@@ -54,6 +57,7 @@ public class Mnemo00Animation : MonoBehaviour
     public void GetVTUK()
     {
         mnemo00Animator.Play("VTUKGetting");
+        mnemo00Animator.SetInteger("VTUKGettingCount", ++VtukGettingCount);
     }
     public void LoadFuelIntoTVS()
     {
@@ -64,7 +68,7 @@ public class Mnemo00Animation : MonoBehaviour
     {
         if (mnemo00Animator.GetInteger("fuelCount") == 3)
         {
-            AttentionMessage.text = doActionsOnARM;
+            AttentionMessageTwo.text = doActionsOnARM;
             toBeYellowTwo = true;
             mnemo00Animator.Play("ReturnVTUK");
         }
