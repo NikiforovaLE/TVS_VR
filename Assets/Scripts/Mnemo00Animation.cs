@@ -12,6 +12,7 @@ public class Mnemo00Animation : MonoBehaviour
     [SerializeField] private Text currentVTUKNumber;
     [SerializeField] private Text currentFuelAmount;
     [SerializeField] private Text totalFuelAmount;
+    public GameObject Mnemo01MainPanel;
     public GameObject yellowBackgroungOne;
     public GameObject yellowBackgroungTwo;
     public ARM2Mnemo0 ARM2Mnemo0;
@@ -24,7 +25,8 @@ public class Mnemo00Animation : MonoBehaviour
     private List<string> fuelNumbers;
     private bool toBeYellowOne = true;
     private bool toBeYellowTwo = false;
-    private readonly string doActionsOnARM = "Необходимо выполнить операции на АРМ ввода №2";
+    private readonly string doActionsOnARM2 = "Необходимо выполнить операции на АРМ ввода №2";
+    private readonly string returnVUKMessage = "Необходимо вернуть ВТУК";
 
     public Text AttentionMessageOne { get => attentionMessageOne; set => attentionMessageOne = value; }
     public Text AttentionMessageTwo { get => attentionMessageTwo; set => attentionMessageTwo = value; }
@@ -32,13 +34,9 @@ public class Mnemo00Animation : MonoBehaviour
     public bool ToBeYellowTwo { get => toBeYellowTwo; set => toBeYellowTwo = value; }
     public int VtukGettingCount { get => vtukGettingCount; set => vtukGettingCount = value; }
 
-    public void StartMnemoAnimation()
-    {
-        mnemo00Animator.Play("00 Mnemo Animation");
-    }
-
     public void Start01MnemoAnimation()
     {
+        Mnemo01MainPanel.SetActive(true);
         mnemo01Animation.Play();
 
     }
@@ -68,7 +66,7 @@ public class Mnemo00Animation : MonoBehaviour
     {
         if (mnemo00Animator.GetInteger("fuelCount") == 3)
         {
-            AttentionMessageTwo.text = doActionsOnARM;
+            AttentionMessageTwo.text = doActionsOnARM2;
             toBeYellowTwo = true;
             mnemo00Animator.Play("ReturnVTUK");
         }
@@ -85,6 +83,12 @@ public class Mnemo00Animation : MonoBehaviour
         mnemo00Animator.SetInteger("fuelCount", fuelCount);
     }
 
+    public void ShowMessageToReturnVTUK()
+    {
+        toBeYellowTwo = true;
+        attentionMessageTwo.text = returnVUKMessage;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -99,14 +103,14 @@ public class Mnemo00Animation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SetBackground(yellowBackgroungOne, ToBeYellowOne);
-        SetBackground(yellowBackgroungTwo, ToBeYellowTwo);
+        SetBackgroundActive(yellowBackgroungOne, ToBeYellowOne);
+        SetBackgroundActive(yellowBackgroungTwo, ToBeYellowTwo);
         currentContainerNumber.text = ARM2Mnemo1.CurrentContainerNumber;
         currentVTUKNumber.text = ARM2Mnemo2.CurrentVTUK;
         totalFuelAmount.text = ARM2Mnemo2.CurrentTotalAmountOfFuelElementsInVTUK;
     }
 
-    private void SetBackground(GameObject background, bool toBeYellow)
+    private void SetBackgroundActive(GameObject background, bool toBeYellow)
     {
         background.SetActive(toBeYellow);
     }
