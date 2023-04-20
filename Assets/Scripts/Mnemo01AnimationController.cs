@@ -72,6 +72,7 @@ public class Mnemo01AnimationController : MonoBehaviour
     {
         //generalPanelAcions.SetPanelActive(Mnemo02);
         Mnemo01.SetActive(false);
+        Mnemo02.SetActive(true);
         Mag.SetActive(true);
         Mnemo03On();
         animmnemo02.Play();
