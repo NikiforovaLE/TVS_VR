@@ -6,33 +6,60 @@ using UnityEngine.UI;
 public class Mnemo8Animation : MonoBehaviour
 {
     [SerializeField] private GameObject Manipulator;
-    [SerializeField] private GameObject TVS;
+    [SerializeField] private Image TVS;
     [SerializeField] private Text currentTVSNumberText;
     [SerializeField] private Animator mnemo08Animator;
     public ARM2Mnemo0 aRM2Mnemo0;
     private bool isWashing = false;
-    private readonly Vector3 washingTarget = new(361, -270, 0);
+    private readonly Vector3 tvsWashingTarget = new(359.0f, -270.0f, 0.0f);
+    private readonly Vector3 manipulatorWashingTarget = new(362.3f, -173.7f, 0.0f);
+    private readonly float speed = 0.5f;
 
-    private float speed = 5f;
+    float timeOfTravel = 1000; //time after object reach a target place 
+    float currentTime = 0; // actual floting time 
+    float normalizedValue;
+
+    public bool IsWashing { get => isWashing; set => isWashing = value; }
+
     // Start is called before the first frame update
     void Start()
     {
         currentTVSNumberText.text = "";
-        TVS.transform.position = new Vector3(486f, -269f, 0f);
+        TVS.transform.position = new Vector3(486f, -270f);
     }
 
     // Update is called once per frame
     void Update()
     {
         currentTVSNumberText.text = aRM2Mnemo0.FrameNumber.text;
-        if (isWashing)
+
+        if (IsWashing)
         {
-            TVS.transform.position = Vector3.MoveTowards(TVS.transform.position, washingTarget, speed * Time.deltaTime);
-            if (TVS.transform.position == washingTarget)
+            MoveManipulatorAndTVSToWashing();
+        }
+    }
+
+    private void MoveManipulatorAndTVSToWashing()
+    {
+        mnemo08Animator.enabled = false;
+        MoveToCertainPlace(tvsWashingTarget, manipulatorWashingTarget);
+    }
+
+    private void MoveToCertainPlace(Vector3 tvsTarget, Vector3 manipulatorTarget)
+    {
+        while (currentTime <= timeOfTravel)
+        {
+            currentTime += Time.deltaTime;
+            normalizedValue = currentTime / timeOfTravel; // we normalize our time 
+
+            TVS.rectTransform.anchoredPosition = Vector3.Lerp(TVS.rectTransform.anchoredPosition, tvsTarget, normalizedValue);
+            Manipulator.transform.localPosition = Vector3.Lerp(Manipulator.transform.localPosition, manipulatorTarget, normalizedValue);
+            if ((currentTime >= timeOfTravel))
             {
                 isWashing = false;
+                mnemo08Animator.enabled = true;
+                mnemo08Animator.Play("08 Mnemo Animation Washing");
             }
-
         }
     }
 
@@ -51,8 +78,8 @@ public class Mnemo8Animation : MonoBehaviour
     public void MoveToAssembly()
     {
         TVS.transform.Translate(speed * Time.deltaTime * new Vector3(0f, -170f, 0f));
-    }    
-    
+    }
+
     public void MoveFromAssembly()
     {
         TVS.transform.Translate(speed * Time.deltaTime * new Vector3(485f, -270f, 0f));
@@ -60,7 +87,8 @@ public class Mnemo8Animation : MonoBehaviour
 
     public void MoveToWashing()
     {
-        isWashing = true;
+        IsWashing = true;
+
         //mnemo08Animator.Play("08 Mnemo Animation Washing");
     }
 }
