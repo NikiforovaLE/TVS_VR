@@ -11,8 +11,13 @@ public class Mnemo8Animation : MonoBehaviour
     [SerializeField] private Animator mnemo08Animator;
     public ARM2Mnemo0 aRM2Mnemo0;
     private bool isWashing = false;
-    private readonly Vector3 washingTarget = new(361.0f, -270.0f, 0.0f);
-    private readonly float speed = 1.0f;
+    private readonly Vector3 tvsWashingTarget = new(359.0f, -270.0f, 0.0f);
+    private readonly Vector3 manipulatorWashingTarget = new(362.3f, -173.7f, 0.0f);
+    private readonly float speed = 0.5f;
+
+    float timeOfTravel = 1000; //time after object reach a target place 
+    float currentTime = 0; // actual floting time 
+    float normalizedValue;
 
     public bool IsWashing { get => isWashing; set => isWashing = value; }
 
@@ -27,36 +32,34 @@ public class Mnemo8Animation : MonoBehaviour
     void Update()
     {
         currentTVSNumberText.text = aRM2Mnemo0.FrameNumber.text;
+
         if (IsWashing)
         {
-            mnemo08Animator.enabled = false;
-            MoveManipulatorToWashing();
-            TVS.rectTransform.anchoredPosition.Set(361.0f, -270.0f);
-            if (TVS.transform.position.Equals(washingTarget))
-            {
-                isWashing = false;
-            }
+            MoveManipulatorAndTVSToWashing();
         }
     }
 
-    private void MoveManipulatorToWashing()
+    private void MoveManipulatorAndTVSToWashing()
     {
-        //Manipulator.transform.Translate(Manipulator.transform.position);
+        mnemo08Animator.enabled = false;
+        MoveToCertainPlace(tvsWashingTarget, manipulatorWashingTarget);
+    }
 
-        //move towards the center of the world (or where ever you like)
-        Vector3 targetPosition = new Vector3(362.3f, -173.7f, 0.0f);
-
-        Vector3 currentPosition = Manipulator.transform.position;
-        //first, check to see if we're close enough to the target
-        if (Vector3.Distance(currentPosition, targetPosition) > 1f)
+    private void MoveToCertainPlace(Vector3 tvsTarget, Vector3 manipulatorTarget)
+    {
+        while (currentTime <= timeOfTravel)
         {
-            Vector3 directionOfTravel = targetPosition - currentPosition;
-            directionOfTravel.Normalize();
-            //scale the movement on each axis by the directionOfTravel vector components
+            currentTime += Time.deltaTime;
+            normalizedValue = currentTime / timeOfTravel; // we normalize our time 
 
-            Manipulator.transform.Translate(
-                (directionOfTravel.x * speed * Time.deltaTime),
-                (directionOfTravel.y * speed * Time.deltaTime), 0.0f);
+            TVS.rectTransform.anchoredPosition = Vector3.Lerp(TVS.rectTransform.anchoredPosition, tvsTarget, normalizedValue);
+            Manipulator.transform.localPosition = Vector3.Lerp(Manipulator.transform.localPosition, manipulatorTarget, normalizedValue);
+            if ((currentTime >= timeOfTravel))
+            {
+                isWashing = false;
+                mnemo08Animator.enabled = true;
+                mnemo08Animator.Play("08 Mnemo Animation Washing");
+            }
         }
     }
 
