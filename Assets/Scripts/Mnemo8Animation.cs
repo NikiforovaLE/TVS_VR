@@ -10,9 +10,25 @@ public class Mnemo8Animation : MonoBehaviour
     [SerializeField] private Text currentTVSNumberText;
     [SerializeField] private Animator mnemo08Animator;
     public ARM2Mnemo0 aRM2Mnemo0;
+
     private bool isWashing = false;
+    private bool IsDrying = false;
+    private bool WeightControl = false;
+    private bool GeometryControl = false;
+    private bool ImpurityControl = false;
+    private bool TightnessControl = false;
+
     private readonly Vector3 tvsWashingTarget = new(359.0f, -270.0f, 0.0f);
     private readonly Vector3 manipulatorWashingTarget = new(362.3f, -173.7f, 0.0f);
+
+    private readonly Vector3 tvsDryingTarget = new(359.0f, -270.0f, 0.0f);
+    private readonly Vector3 manipulatorDryingTarget = new(362.3f, -173.7f, 0.0f);
+    
+    private readonly Vector3 tvsWeightComtrolTarget = new(359.0f, -270.0f, 0.0f);
+    private readonly Vector3 manipulatorWeightComtrolTarget = new(362.3f, -173.7f, 0.0f);
+    
+    private readonly Vector3 tvsGeometryControlTarget = new(359.0f, -270.0f, 0.0f);
+    private readonly Vector3 manipulatorGeometryControlTarget = new(362.3f, -173.7f, 0.0f);
     private readonly float speed = 0.5f;
 
     float timeOfTravel = 1000; //time after object reach a target place 
@@ -37,6 +53,21 @@ public class Mnemo8Animation : MonoBehaviour
         {
             MoveManipulatorAndTVSToWashing();
         }
+
+        if (IsDrying)
+        {
+            MoveToCertainPlace(tvsDryingTarget, manipulatorDryingTarget);
+        }
+
+        if (WeightControl)
+        {
+            MoveToCertainPlace(tvsWeightComtrolTarget, manipulatorWeightComtrolTarget);
+        }
+
+        if (GeometryControl)
+        {
+            MoveToCertainPlace(tvsGeometryControlTarget, manipulatorGeometryControlTarget);
+        }
     }
 
     private void MoveManipulatorAndTVSToWashing()
@@ -50,7 +81,7 @@ public class Mnemo8Animation : MonoBehaviour
         while (currentTime <= timeOfTravel)
         {
             currentTime += Time.deltaTime;
-            normalizedValue = currentTime / timeOfTravel; // we normalize our time 
+            normalizedValue = currentTime / timeOfTravel;  
 
             TVS.rectTransform.anchoredPosition = Vector3.Lerp(TVS.rectTransform.anchoredPosition, tvsTarget, normalizedValue);
             Manipulator.transform.localPosition = Vector3.Lerp(Manipulator.transform.localPosition, manipulatorTarget, normalizedValue);
@@ -85,10 +116,22 @@ public class Mnemo8Animation : MonoBehaviour
         TVS.transform.Translate(speed * Time.deltaTime * new Vector3(485f, -270f, 0f));
     }
 
-    public void MoveToWashing()
+    private void SetIsWashingTrue()
     {
         IsWashing = true;
+    }
 
-        //mnemo08Animator.Play("08 Mnemo Animation Washing");
+    private void SetIsDryingTrue()
+    {
+        IsDrying = true;
+    }
+    private void SetWeightControlTrue()
+    {
+        WeightControl = true;
+    }    
+    
+    private void SetGeometryControlTrue()
+    {
+        GeometryControl = true;
     }
 }
