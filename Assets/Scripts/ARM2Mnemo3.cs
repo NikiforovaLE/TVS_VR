@@ -12,6 +12,7 @@ public class ARM2Mnemo3 : MonoBehaviour
     [SerializeField] private Text ARM2Mnemo2TextAboutVTUKNumber;
     [SerializeField] private Text ARM2Mnemo2TextAboutAmountOfFuel;
     [SerializeField] private Animator mnemo00Animator;
+    [SerializeField] private Mnemo00Animation Mnemo00Animation;
 
     public void ConfirmChoice()
     {
@@ -26,6 +27,8 @@ public class ARM2Mnemo3 : MonoBehaviour
             ARM2PanelActions.ShowMnemoPanel(mainMnemoARM2);
             outputVTUKNumber.text = "";
             mnemo00Animator.Play("ReturnVTUK");
+            Mnemo00Animation.AttentionMessageTwo.text = "";
+            Mnemo00Animation.ToBeYellowTwo = false;
         }
     }
 }

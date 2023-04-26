@@ -21,17 +21,17 @@ public class Mnemo8Animation : MonoBehaviour
     private readonly Vector3 tvsWashingTarget = new(359.0f, -270.0f, 0.0f);
     private readonly Vector3 manipulatorWashingTarget = new(362.3f, -173.7f, 0.0f);
 
-    private readonly Vector3 tvsDryingTarget = new(359.0f, -270.0f, 0.0f);
+    private readonly Vector3 tvsDryingTarget = new(310.0f, -270.0f, 0.0f);
     private readonly Vector3 manipulatorDryingTarget = new(362.3f, -173.7f, 0.0f);
-    
-    private readonly Vector3 tvsWeightComtrolTarget = new(359.0f, -270.0f, 0.0f);
+
+    private readonly Vector3 tvsWeightComtrolTarget = new(-102.0f, -270.0f, 0.0f);
     private readonly Vector3 manipulatorWeightComtrolTarget = new(362.3f, -173.7f, 0.0f);
-    
+
     private readonly Vector3 tvsGeometryControlTarget = new(359.0f, -270.0f, 0.0f);
     private readonly Vector3 manipulatorGeometryControlTarget = new(362.3f, -173.7f, 0.0f);
     private readonly float speed = 0.5f;
 
-    float timeOfTravel = 1000; //time after object reach a target place 
+    float timeOfTravel = 1000f; //time after object reach a target place 
     float currentTime = 0; // actual floting time 
     float normalizedValue;
 
@@ -51,45 +51,41 @@ public class Mnemo8Animation : MonoBehaviour
 
         if (IsWashing)
         {
-            MoveManipulatorAndTVSToWashing();
+            MoveToCertainPlace(tvsWashingTarget, manipulatorWashingTarget, isWashing, "08 Mnemo Animation Washing");
         }
 
         if (IsDrying)
         {
-            MoveToCertainPlace(tvsDryingTarget, manipulatorDryingTarget);
+            MoveToCertainPlace(tvsDryingTarget, manipulatorDryingTarget, IsDrying, "08 Mnemo Animation Drying");
         }
 
         if (WeightControl)
         {
-            MoveToCertainPlace(tvsWeightComtrolTarget, manipulatorWeightComtrolTarget);
+            MoveToCertainPlace(tvsWeightComtrolTarget, manipulatorWeightComtrolTarget, WeightControl, "08 Mnemo Animation Weight");
         }
 
         if (GeometryControl)
         {
-            MoveToCertainPlace(tvsGeometryControlTarget, manipulatorGeometryControlTarget);
+
+            MoveToCertainPlace(tvsGeometryControlTarget, manipulatorGeometryControlTarget, GeometryControl, "08 Mnemo Animation Geometry");
         }
     }
 
-    private void MoveManipulatorAndTVSToWashing()
+    private void MoveToCertainPlace(Vector3 tvsTarget, Vector3 manipulatorTarget, bool controlFlag, string nextAnimName)
     {
         mnemo08Animator.enabled = false;
-        MoveToCertainPlace(tvsWashingTarget, manipulatorWashingTarget);
-    }
-
-    private void MoveToCertainPlace(Vector3 tvsTarget, Vector3 manipulatorTarget)
-    {
         while (currentTime <= timeOfTravel)
         {
             currentTime += Time.deltaTime;
-            normalizedValue = currentTime / timeOfTravel;  
+            normalizedValue = currentTime / timeOfTravel;
 
             TVS.rectTransform.anchoredPosition = Vector3.Lerp(TVS.rectTransform.anchoredPosition, tvsTarget, normalizedValue);
             Manipulator.transform.localPosition = Vector3.Lerp(Manipulator.transform.localPosition, manipulatorTarget, normalizedValue);
             if ((currentTime >= timeOfTravel))
             {
-                isWashing = false;
+                controlFlag = false;
                 mnemo08Animator.enabled = true;
-                mnemo08Animator.Play("08 Mnemo Animation Washing");
+                mnemo08Animator.Play(nextAnimName);
             }
         }
     }
@@ -100,20 +96,9 @@ public class Mnemo8Animation : MonoBehaviour
         TVS.transform.Translate(speed * Time.deltaTime * new Vector3(-374f, -269f));
     }
 
-    public void MoveFromBufferStore(GameObject target)
-    {
-        Manipulator.transform.Translate(target.transform.position);
-        TVS.transform.Translate(target.transform.position);
-    }
-
     public void MoveToAssembly()
     {
         TVS.transform.Translate(speed * Time.deltaTime * new Vector3(0f, -170f, 0f));
-    }
-
-    public void MoveFromAssembly()
-    {
-        TVS.transform.Translate(speed * Time.deltaTime * new Vector3(485f, -270f, 0f));
     }
 
     private void SetIsWashingTrue()
@@ -128,8 +113,8 @@ public class Mnemo8Animation : MonoBehaviour
     private void SetWeightControlTrue()
     {
         WeightControl = true;
-    }    
-    
+    }
+
     private void SetGeometryControlTrue()
     {
         GeometryControl = true;
