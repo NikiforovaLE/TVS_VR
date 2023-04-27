@@ -1024,7 +1024,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 8.983334
-    functionName: MoveToWashing
+    functionName: SetIsWashingTrue
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

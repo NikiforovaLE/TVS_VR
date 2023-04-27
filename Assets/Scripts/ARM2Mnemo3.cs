@@ -27,8 +27,15 @@ public class ARM2Mnemo3 : MonoBehaviour
             ARM2PanelActions.ShowMnemoPanel(mainMnemoARM2);
             outputVTUKNumber.text = "";
             mnemo00Animator.Play("ReturnVTUK");
-            Mnemo00Animation.AttentionMessageTwo.text = "";
-            Mnemo00Animation.ToBeYellowTwo = false;
+            if (mnemo00Animator.GetInteger("VTUKGettingCount") % 2 != 0)
+            {
+                Mnemo00Animation.AttentionMessageTwo.text = "Необходимо получить ВТУК";
+            }
+            else
+            {
+                Mnemo00Animation.AttentionMessageTwo.text = "";
+                Mnemo00Animation.ToBeYellowTwo = false;
+            }
         }
     }
 }
