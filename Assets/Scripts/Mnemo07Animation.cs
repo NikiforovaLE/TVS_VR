@@ -24,7 +24,10 @@ public class Mnemo07Animation : MonoBehaviour
     [SerializeField] private Text capturesFixingText;
     [SerializeField] private Text screwedNutsText;
     [SerializeField] private Text flaredText;
-
+    [SerializeField] public GameObject Mnemo08;
+    [SerializeField] public GameObject Mnemo09;
+    [SerializeField] public GeneralPanelAcions GeneralPanelAcions;
+    [SerializeField] public GeneralPanelAcions AdditionlGeneralPanelAcions;
     // Start is called before the first frame update
     void Start()
     {
@@ -70,5 +73,12 @@ public class Mnemo07Animation : MonoBehaviour
     {
         countsflared++;
         flaredText.text = flared[countsflared];
+    }
+
+    public void disable07MnemoShow08Mnemo()
+    {
+        //Set mnemo08 active on MainPanel
+        GeneralPanelAcions.SetPanelActive(Mnemo08);
+        AdditionlGeneralPanelAcions.SetPanelActive(Mnemo09);
     }
 }

@@ -58,7 +58,7 @@ public class GeneralPanelAcions : MonoBehaviour
     {
         for (int i = 0; i < mnemos.Count; i++)
         {
-            if (i != panelIndex)
+            if (i != panelIndex && i != 0)
             {
                 mnemos[i].SetActive(false);
             }
@@ -85,7 +85,8 @@ public class GeneralPanelAcions : MonoBehaviour
         mnemoZero, mnemoOne, mnemoTwo, mnemoThree, mnemoFour, _button05Mneomo, _button06Mneomo,
         _button07Mneomo, _button08Mneomo, _button09Mneomo, _button10Mneomo, _button11Mneomo, _button12Mneomo,
         _button13Mneomo, _button14Mneomo, _button15Mneomo, _button16Mneomo, _button17Mneomo};
-        for (int i = 0; i < mnemos.Count; i++)
+        mnemos[0].SetActive(true);
+        for (int i = 1; i < mnemos.Count; i++)
         {
             mnemos[i].SetActive(false);
         }

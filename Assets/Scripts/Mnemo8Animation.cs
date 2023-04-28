@@ -36,18 +36,25 @@ public class Mnemo8Animation : MonoBehaviour
     private readonly Vector3 tvsGeometryControlTarget = new(-224.0f, -270.0f, 0.0f);
     private readonly Vector3 manipulatorGeometryControlTarget = new(-223.0f, -173.7f, 0.0f);
 
-    private readonly float speed = 0.5f;
-    readonly float timeOfTravel = 1f; //time after object reach a target place 
-    float currentTime = 0; // actual floting time 
-    float normalizedValue;
+    // Movement speed in units per second.
+    public float speed = 1.0f;
 
+    // Time when the movement started.
+    private float startTime;
+
+    // Total distance between the markers.
+    private float tvsJourneyLength;
+    private float manipulatorJourneyLength;
+
+    private RectTransform tvsStartTransform;
+    private Transform manipulatorStartTransform;
     public bool IsWashing { get => isWashing; set => isWashing = value; }
 
     // Start is called before the first frame update
     void Start()
     {
         currentTVSNumberText.text = "";
-        TVS.transform.position = new Vector3(486f, -270f);
+        TVS.transform.position = new Vector3(486f, -270f, 0);
     }
 
     // Update is called once per frame
@@ -55,49 +62,70 @@ public class Mnemo8Animation : MonoBehaviour
     {
         currentTVSNumberText.text = aRM2Mnemo0.FrameNumber.text;
 
-        if (IsWashing && MoveToCertainPlace(tvsWashingTarget, manipulatorWashingTarget, "08 Mnemo Animation Washing"))
+        if (IsWashing && MoveToCertainPlace(tvsWashingTarget, manipulatorWashingTarget, "08 Mnemo Animation Washing",
+            startTime, tvsStartTransform, manipulatorStartTransform,
+            tvsJourneyLength, manipulatorJourneyLength))
         {
             IsWashing = false;
         }
 
-        if (IsDrying && MoveToCertainPlace(tvsDryingTarget, manipulatorDryingTarget, "08 Mnemo Animation Drying"))
+        if (IsDrying && MoveToCertainPlace(tvsDryingTarget, manipulatorDryingTarget, "08 Mnemo Animation Drying",
+            startTime, tvsStartTransform, manipulatorStartTransform,
+            tvsJourneyLength, manipulatorJourneyLength))
         {
             IsDrying = false;
         }
 
-        if (TightnessControl && MoveToCertainPlace(tvsTightnessControlTarget, manipulatorTightnessControlTarget, "08 Mnemo Animation Tightness"))
+        if (TightnessControl && MoveToCertainPlace(tvsTightnessControlTarget, manipulatorTightnessControlTarget, "08 Mnemo Animation Tightness",
+            startTime, tvsStartTransform, manipulatorStartTransform,
+            tvsJourneyLength, manipulatorJourneyLength))
         {
             TightnessControl = false;
         }
 
-        if (ImpurityControl && MoveToCertainPlace(tvsImpurityControlTarget, manipulatorImpurityControlTarget, "08 Mnemo Animation Impurity"))
+        if (ImpurityControl && MoveToCertainPlace(tvsImpurityControlTarget, manipulatorImpurityControlTarget, "08 Mnemo Animation Impurity",
+            startTime, tvsStartTransform, manipulatorStartTransform,
+            tvsJourneyLength, manipulatorJourneyLength))
         {
             ImpurityControl = false;
         }
 
-        if (WeightControl && MoveToCertainPlace(tvsWeightControlTarget, manipulatorWeightControlTarget, "08 Mnemo Animation Weight"))
+        if (WeightControl && MoveToCertainPlace(tvsWeightControlTarget, manipulatorWeightControlTarget, "08 Mnemo Animation Weight",
+            startTime, tvsStartTransform, manipulatorStartTransform,
+            tvsJourneyLength, manipulatorJourneyLength))
         {
             WeightControl = false;
         }
 
-        if (GeometryControl && MoveToCertainPlace(tvsGeometryControlTarget, manipulatorGeometryControlTarget, "08 Mnemo Animation Geometry"))
+        if (GeometryControl && MoveToCertainPlace(tvsGeometryControlTarget, manipulatorGeometryControlTarget, "08 Mnemo Animation Geometry",
+            startTime, tvsStartTransform, manipulatorStartTransform,
+            tvsJourneyLength, manipulatorJourneyLength))
         {
             GeometryControl = false;
         }
     }
 
-    private bool MoveToCertainPlace(Vector3 tvsTarget, Vector3 manipulatorTarget, string animName)
+    private bool MoveToCertainPlace(Vector3 tvsTarget, Vector3 manipulatorTarget, string animName,
+        float startTime, RectTransform tvsStartTransform, Transform manipulatorStartTransform,
+        float tvsJourneyLength, float manipulatorJourneyLength)
     {
         mnemo08Animator.enabled = false;
-        while (currentTime <= timeOfTravel)
-        {
-            currentTime += Time.deltaTime;
-            normalizedValue = currentTime / timeOfTravel;
 
-            TVS.rectTransform.anchoredPosition = Vector3.Lerp(TVS.rectTransform.anchoredPosition, tvsTarget, speed);
-            Manipulator.transform.localPosition = Vector3.Lerp(Manipulator.transform.localPosition, manipulatorTarget, speed);
-        }
-        if (currentTime >= timeOfTravel)
+        // Distance moved equals elapsed time times speed..
+        float distCovered = (Time.time - startTime) * speed;
+
+        tvsJourneyLength = Vector3.Distance(tvsStartTransform.anchoredPosition, tvsTarget);
+        manipulatorJourneyLength = Vector3.Distance(manipulatorStartTransform.localPosition, manipulatorTarget);
+
+        // Fraction of journey completed equals current distance divided by total distance.
+        float fractionOfTVSJourney = distCovered / tvsJourneyLength;
+        float fractionOfManipulatorJourney = distCovered / manipulatorJourneyLength;
+
+        // Set our position as a fraction of the distance between the markers.
+        TVS.rectTransform.anchoredPosition = Vector3.Lerp(tvsStartTransform.anchoredPosition, tvsTarget, fractionOfTVSJourney);
+        Manipulator.transform.localPosition = Vector3.Lerp(manipulatorStartTransform.localPosition, manipulatorTarget, fractionOfManipulatorJourney);
+
+        if (TVS.rectTransform.anchoredPosition.x >= tvsTarget.x & TVS.rectTransform.anchoredPosition.y >= tvsTarget.y)
         {
             mnemo08Animator.enabled = true;
             mnemo08Animator.Play(animName);
@@ -120,29 +148,47 @@ public class Mnemo8Animation : MonoBehaviour
     private void SetIsWashingTrue()
     {
         IsWashing = true;
+        SetStartState(tvsWashingTarget, manipulatorWashingTarget);
     }
 
     private void SetIsDryingTrue()
     {
         IsDrying = true;
+        SetStartState(tvsDryingTarget, manipulatorDryingTarget);
+
     }
     private void SetTightnessControlTrue()
     {
         TightnessControl = true;
+        SetStartState(tvsTightnessControlTarget, manipulatorTightnessControlTarget);
     }
 
     private void SetImpurityControlTrue()
     {
         ImpurityControl = true;
+        SetStartState(tvsImpurityControlTarget, manipulatorImpurityControlTarget);
     }
 
     private void SetWeightControlTrue()
     {
         WeightControl = true;
+        SetStartState(tvsWeightControlTarget, manipulatorWeightControlTarget);
     }
 
     private void SetGeometryControlTrue()
     {
         GeometryControl = true;
+        SetStartState(tvsGeometryControlTarget, manipulatorGeometryControlTarget);
+    }
+
+    private void SetStartState(Vector3 tvsTarget, Vector3 manipulatorTarget)
+    {
+        startTime = Time.time;
+        tvsStartTransform = TVS.rectTransform;
+        manipulatorStartTransform = Manipulator.transform;
+
+        // Calculate the journey length.
+        tvsJourneyLength = Vector3.Distance(tvsStartTransform.position, tvsTarget);
+        manipulatorJourneyLength = Vector3.Distance(manipulatorStartTransform.localPosition, manipulatorTarget);
     }
 }
