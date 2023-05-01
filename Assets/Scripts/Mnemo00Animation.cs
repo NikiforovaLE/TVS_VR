@@ -20,6 +20,7 @@ public class Mnemo00Animation : MonoBehaviour
     public ARM2Mnemo2 ARM2Mnemo2;
     public Animator mnemo00Animator;
     public Animation mnemo01Animation;
+    public Animation mnemo07Animation;
     private int fuelCount = 0;
     private int vtukGettingCount = 0;
     private List<string> fuelNumbers;
@@ -87,6 +88,11 @@ public class Mnemo00Animation : MonoBehaviour
     {
         toBeYellowTwo = true;
         attentionMessageTwo.text = returnVUKMessage;
+    }
+
+    public void start07MnemoAnimation()
+    {
+        mnemo07Animation.Play();
     }
 
     // Start is called before the first frame update
