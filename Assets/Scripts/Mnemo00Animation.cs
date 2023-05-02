@@ -5,6 +5,17 @@ using UnityEngine.UI;
 
 public class Mnemo00Animation : MonoBehaviour
 {
+    [SerializeField] private GameObject mnemo01;
+    [SerializeField] private GameObject mnemo07;
+    [SerializeField] private GameObject mnemo08;
+
+    [SerializeField] private GeneralPanelAcions GeneralPanelAcions;
+    [SerializeField] private GeneralPanelAcions AdditionalGeneralPanelAcions;
+
+    [SerializeField] private ARM2Mnemo0 ARM2Mnemo0;
+    [SerializeField] private ARM2Mnemo1 ARM2Mnemo1;
+    [SerializeField] private ARM2Mnemo2 ARM2Mnemo2;
+
     [SerializeField] private Text attentionMessageOne;
     [SerializeField] private Text attentionMessageTwo;
     [SerializeField] private Text currentFuel;
@@ -12,20 +23,19 @@ public class Mnemo00Animation : MonoBehaviour
     [SerializeField] private Text currentVTUKNumber;
     [SerializeField] private Text currentFuelAmount;
     [SerializeField] private Text totalFuelAmount;
-    public GameObject Mnemo01MainPanel;
+
     public GameObject yellowBackgroungOne;
     public GameObject yellowBackgroungTwo;
-    public ARM2Mnemo0 ARM2Mnemo0;
-    public ARM2Mnemo1 ARM2Mnemo1;
-    public ARM2Mnemo2 ARM2Mnemo2;
+
+
     public Animator mnemo00Animator;
-    public Animation mnemo01Animation;
-    public Animation mnemo07Animation;
+
+    private List<string> fuelNumbers;
     private int fuelCount = 0;
     private int vtukGettingCount = 0;
-    private List<string> fuelNumbers;
     private bool toBeYellowOne = true;
     private bool toBeYellowTwo = false;
+
     private readonly string doActionsOnARM2 = "Необходимо выполнить операции на АРМ ввода №2";
     private readonly string returnVUKMessage = "Необходимо вернуть ВТУК";
 
@@ -37,9 +47,8 @@ public class Mnemo00Animation : MonoBehaviour
 
     public void Start01MnemoAnimation()
     {
-        Mnemo01MainPanel.SetActive(true);
-        mnemo01Animation.Play();
-
+        GeneralPanelAcions.SetPanelActive(mnemo01);
+        mnemo01.GetComponent<Animation>().Play();
     }
     public void FillFuelNumbers()
     {
@@ -90,9 +99,12 @@ public class Mnemo00Animation : MonoBehaviour
         attentionMessageTwo.text = returnVUKMessage;
     }
 
-    public void start07MnemoAnimation()
+    public void Start07MnemoAnimation()
     {
-        mnemo07Animation.Play();
+        AdditionalGeneralPanelAcions.SetPanelActive(mnemo08);
+        mnemo08.GetComponent<Animator>().Play("08 Mnemo Animation");
+        GeneralPanelAcions.SetPanelActive(mnemo07);
+        mnemo07.GetComponent<Animation>().Play();
     }
 
     // Start is called before the first frame update
