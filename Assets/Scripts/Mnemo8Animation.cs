@@ -9,6 +9,9 @@ public class Mnemo8Animation : MonoBehaviour
     [SerializeField] private Image TVS;
     [SerializeField] private Text currentTVSNumberText;
     [SerializeField] private Animator mnemo08Animator;
+    [SerializeField] private Animator coordinateManipulatorAnimator;
+    [SerializeField] private ManagementMenuActions controlMenuPermission;
+
     public ARM2Mnemo0 aRM2Mnemo0;
 
     private bool isWashing = false;
@@ -17,6 +20,7 @@ public class Mnemo8Animation : MonoBehaviour
     private bool ImpurityControl = false;
     private bool WeightControl = false;
     private bool GeometryControl = false;
+    private bool readyToControl = false;
 
     private readonly Vector3 tvsWashingTarget = new(359.0f, -270.0f, 0.0f);
     private readonly Vector3 manipulatorWashingTarget = new(362.3f, -173.7f, 0.0f);
@@ -49,6 +53,7 @@ public class Mnemo8Animation : MonoBehaviour
     private RectTransform tvsStartTransform;
     private Transform manipulatorStartTransform;
     public bool IsWashing { get => isWashing; set => isWashing = value; }
+    public bool ReadyToControl { get => readyToControl; set => readyToControl = value; }
 
     // Start is called before the first frame update
     void Start()
@@ -145,8 +150,15 @@ public class Mnemo8Animation : MonoBehaviour
         TVS.transform.Translate(speed * Time.deltaTime * new Vector3(0f, -170f, 0f));
     }
 
-    private void SetIsWashingTrue()
+    private void SetReadyToControlTrue()
     {
+        mnemo08Animator.enabled = false;
+        ReadyToControl = true;
+    }    
+    
+    public void SetIsWashingTrue()
+    {
+        mnemo08Animator.enabled = false;
         IsWashing = true;
         SetStartState(tvsWashingTarget, manipulatorWashingTarget);
     }
@@ -190,5 +202,10 @@ public class Mnemo8Animation : MonoBehaviour
         // Calculate the journey length.
         tvsJourneyLength = Vector3.Distance(tvsStartTransform.position, tvsTarget);
         manipulatorJourneyLength = Vector3.Distance(manipulatorStartTransform.localPosition, manipulatorTarget);
+    }
+
+    public void Start3DManipulatorAnimation()
+    {
+        coordinateManipulatorAnimator.Play("ManipulatorMoving2");
     }
 }

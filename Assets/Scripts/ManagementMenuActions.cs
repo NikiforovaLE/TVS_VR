@@ -13,13 +13,16 @@ public class ManagementMenuActions : MonoBehaviour
     [SerializeField] private Image pressed;
     private bool isChosen = false;
     private Color greenColor = new(120 / 255f, 240 / 255f, 90 / 255f);
+
+    public bool IsChosen { get => isChosen; set => isChosen = value; }
+
     public void MakeButtonsGreen()
     {
         foreach (Image buttonImage in buttonImagesToMakeGreen)
         {
             buttonImage.color = greenColor;
         }
-        isChosen = true;
+        IsChosen = true;
     }
 
     public void MakeButtonsWhite()
@@ -28,12 +31,12 @@ public class ManagementMenuActions : MonoBehaviour
         {
             buttonImage.color = Color.white;
         }
-        isChosen = false;
+        IsChosen = false;
     }
 
     public void StartOperations()
     {
-        if (isChosen)
+        if (IsChosen)
         {
             MakeButtonOnePressedButtonTwoUnpressed(playButton, pauseButton);
             animator.enabled = true;

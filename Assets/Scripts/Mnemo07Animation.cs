@@ -75,10 +75,9 @@ public class Mnemo07Animation : MonoBehaviour
         flaredText.text = flared[countsflared];
     }
 
-    public void disable07MnemoShow08Mnemo()
+    public void Disable07MnemoShow09Mnemo()
     {
         //Set mnemo08 active on MainPanel
-        GeneralPanelAcions.SetPanelActive(Mnemo08);
-        AdditionlGeneralPanelAcions.SetPanelActive(Mnemo09);
+        GeneralPanelAcions.SetPanelActive(Mnemo09);
     }
 }

@@ -99,7 +99,7 @@ public class Mnemo00Animation : MonoBehaviour
         attentionMessageTwo.text = returnVUKMessage;
     }
 
-    public void Start07MnemoAnimation()
+    public void Start07And08MnemoAnimations()
     {
         AdditionalGeneralPanelAcions.SetPanelActive(mnemo08);
         mnemo08.GetComponent<Animator>().Play("08 Mnemo Animation");
