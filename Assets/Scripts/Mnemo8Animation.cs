@@ -10,7 +10,6 @@ public class Mnemo8Animation : MonoBehaviour
     [SerializeField] private Text currentTVSNumberText;
     [SerializeField] private Animator mnemo08Animator;
     [SerializeField] private Animator coordinateManipulatorAnimator;
-    [SerializeField] private ManagementMenuActions controlMenuPermission;
 
     public ARM2Mnemo0 aRM2Mnemo0;
 
@@ -26,7 +25,7 @@ public class Mnemo8Animation : MonoBehaviour
     private readonly Vector3 manipulatorWashingTarget = new(362.3f, -173.7f, 0.0f);
 
     private readonly Vector3 tvsDryingTarget = new(310.0f, -270.0f, 0.0f);
-    private readonly Vector3 manipulatorDryingTarget = new(362.3f, -173.7f, 0.0f);
+    private readonly Vector3 manipulatorDryingTarget = new(311f, -173.7f, 0.0f);
 
     private readonly Vector3 tvsTightnessControlTarget = new(188.0f, -270.0f, 0.0f);
     private readonly Vector3 manipulatorTightnessControlTarget = new(189.0f, -173.7f, 0.0f);
@@ -68,51 +67,44 @@ public class Mnemo8Animation : MonoBehaviour
         currentTVSNumberText.text = aRM2Mnemo0.FrameNumber.text;
 
         if (IsWashing && MoveToCertainPlace(tvsWashingTarget, manipulatorWashingTarget, "08 Mnemo Animation Washing",
-            startTime, tvsStartTransform, manipulatorStartTransform,
-            tvsJourneyLength, manipulatorJourneyLength))
+            startTime, tvsStartTransform, manipulatorStartTransform))
         {
             IsWashing = false;
         }
 
         if (IsDrying && MoveToCertainPlace(tvsDryingTarget, manipulatorDryingTarget, "08 Mnemo Animation Drying",
-            startTime, tvsStartTransform, manipulatorStartTransform,
-            tvsJourneyLength, manipulatorJourneyLength))
+            startTime, tvsStartTransform, manipulatorStartTransform))
         {
             IsDrying = false;
         }
 
         if (TightnessControl && MoveToCertainPlace(tvsTightnessControlTarget, manipulatorTightnessControlTarget, "08 Mnemo Animation Tightness",
-            startTime, tvsStartTransform, manipulatorStartTransform,
-            tvsJourneyLength, manipulatorJourneyLength))
+            startTime, tvsStartTransform, manipulatorStartTransform))
         {
             TightnessControl = false;
         }
 
         if (ImpurityControl && MoveToCertainPlace(tvsImpurityControlTarget, manipulatorImpurityControlTarget, "08 Mnemo Animation Impurity",
-            startTime, tvsStartTransform, manipulatorStartTransform,
-            tvsJourneyLength, manipulatorJourneyLength))
+            startTime, tvsStartTransform, manipulatorStartTransform))
         {
             ImpurityControl = false;
         }
 
         if (WeightControl && MoveToCertainPlace(tvsWeightControlTarget, manipulatorWeightControlTarget, "08 Mnemo Animation Weight",
-            startTime, tvsStartTransform, manipulatorStartTransform,
-            tvsJourneyLength, manipulatorJourneyLength))
+            startTime, tvsStartTransform, manipulatorStartTransform))
         {
             WeightControl = false;
         }
 
         if (GeometryControl && MoveToCertainPlace(tvsGeometryControlTarget, manipulatorGeometryControlTarget, "08 Mnemo Animation Geometry",
-            startTime, tvsStartTransform, manipulatorStartTransform,
-            tvsJourneyLength, manipulatorJourneyLength))
+            startTime, tvsStartTransform, manipulatorStartTransform))
         {
             GeometryControl = false;
         }
     }
 
     private bool MoveToCertainPlace(Vector3 tvsTarget, Vector3 manipulatorTarget, string animName,
-        float startTime, RectTransform tvsStartTransform, Transform manipulatorStartTransform,
-        float tvsJourneyLength, float manipulatorJourneyLength)
+        float startTime, RectTransform tvsStartTransform, Transform manipulatorStartTransform)
     {
         mnemo08Animator.enabled = false;
 
@@ -158,7 +150,6 @@ public class Mnemo8Animation : MonoBehaviour
     
     public void SetIsWashingTrue()
     {
-        mnemo08Animator.enabled = false;
         IsWashing = true;
         SetStartState(tvsWashingTarget, manipulatorWashingTarget);
     }
