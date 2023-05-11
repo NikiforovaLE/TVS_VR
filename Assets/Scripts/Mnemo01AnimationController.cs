@@ -68,22 +68,22 @@ public class Mnemo01AnimationController : MonoBehaviour
         LojementCarkasTvs.enabled = false;
     }
 
-    public void Mnemo01OffMnemo02On()
+    public void Mnemo01OffMnemo02Andnemo03On()
     {
-        //generalPanelAcions.SetPanelActive(Mnemo02);
-        Mnemo01.SetActive(false);
-        Mnemo02.SetActive(true);
+        generalPanelAcions.SetPanelActive(Mnemo02);
+        additionalGeneralPanelAcions.SetPanelActive(Mnemo03);
+        imageOf03MnemoButton.color = buttonColorAfterClicking;
+
         Mag.SetActive(true);
-        Mnemo03On();
         animmnemo02.Play();
         animmnemo03.Play();
     }
 
     public void Mnemo03On()
     {
-        //additionalGeneralPanelAcions.SetPanelActive(Mnemo03);
+        additionalGeneralPanelAcions.SetPanelActive(Mnemo03);
         imageOf03MnemoButton.color = buttonColorAfterClicking;
-        Mnemo03.SetActive(true);
+        //Mnemo03.SetActive(true);
         Shiberm.SetActive(false);
         Ramka.SetActive(false);
         M03m.SetActive(false);

@@ -79,7 +79,7 @@ public class ARM2Mnemo2 : MonoBehaviour
             if (mnemo00Animator.GetInteger("VTUKGettingCount") % 2 != 0)
             {
                 mnemo00Animator.Play("VTUKGetting");
-                mnemo01AnimationController.Mnemo01OffMnemo02On();
+                //mnemo01AnimationController.Mnemo01OffMnemo02Andnemo03On();
             }
         }
     }
