@@ -5,13 +5,6 @@ using UnityEngine.UI;
 
 public class Mnemo00Animation : MonoBehaviour
 {
-    [SerializeField] private GameObject mnemo01;
-    [SerializeField] private GameObject mnemo07;
-    [SerializeField] private GameObject mnemo08;
-
-    [SerializeField] private GeneralPanelAcions GeneralPanelAcions;
-    [SerializeField] private GeneralPanelAcions AdditionalGeneralPanelAcions;
-
     [SerializeField] private ARM2Mnemo0 ARM2Mnemo0;
     [SerializeField] private ARM2Mnemo1 ARM2Mnemo1;
     [SerializeField] private ARM2Mnemo2 ARM2Mnemo2;
@@ -26,7 +19,6 @@ public class Mnemo00Animation : MonoBehaviour
 
     public GameObject yellowBackgroungOne;
     public GameObject yellowBackgroungTwo;
-
 
     public Animator mnemo00Animator;
 
@@ -45,11 +37,6 @@ public class Mnemo00Animation : MonoBehaviour
     public bool ToBeYellowTwo { get => toBeYellowTwo; set => toBeYellowTwo = value; }
     public int VtukGettingCount { get => vtukGettingCount; set => vtukGettingCount = value; }
 
-    public void Start01MnemoAnimation()
-    {
-        GeneralPanelAcions.SetPanelActive(mnemo01);
-        mnemo01.GetComponent<Animation>().Play();
-    }
     public void FillFuelNumbers()
     {
         fuelNumbers = ARM2Mnemo0.Type.ToString() switch
@@ -67,6 +54,8 @@ public class Mnemo00Animation : MonoBehaviour
         mnemo00Animator.Play("VTUKGetting");
         mnemo00Animator.SetInteger("VTUKGettingCount", ++VtukGettingCount);
     }
+
+    //At the end of the VTUKGetting animation
     public void LoadFuelIntoTVS()
     {
         mnemo00Animator.Play("FuelMoving");
@@ -97,14 +86,6 @@ public class Mnemo00Animation : MonoBehaviour
     {
         toBeYellowTwo = true;
         attentionMessageTwo.text = returnVUKMessage;
-    }
-
-    public void Start07And08MnemoAnimations()
-    {
-        AdditionalGeneralPanelAcions.SetPanelActive(mnemo08);
-        mnemo08.GetComponent<Animator>().Play("08 Mnemo Animation");
-        GeneralPanelAcions.SetPanelActive(mnemo07);
-        mnemo07.GetComponent<Animation>().Play();
     }
 
     // Start is called before the first frame update

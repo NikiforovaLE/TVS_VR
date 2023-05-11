@@ -151,48 +151,44 @@ public class Mnemo8Animation : MonoBehaviour
     public void SetIsWashingTrue()
     {
         IsWashing = true;
-        SetStartState(tvsWashingTarget, manipulatorWashingTarget);
+        SetStartState();
     }
 
     private void SetIsDryingTrue()
     {
         IsDrying = true;
-        SetStartState(tvsDryingTarget, manipulatorDryingTarget);
+        SetStartState();
 
     }
     private void SetTightnessControlTrue()
     {
         TightnessControl = true;
-        SetStartState(tvsTightnessControlTarget, manipulatorTightnessControlTarget);
+        SetStartState();
     }
 
     private void SetImpurityControlTrue()
     {
         ImpurityControl = true;
-        SetStartState(tvsImpurityControlTarget, manipulatorImpurityControlTarget);
+        SetStartState();
     }
 
     private void SetWeightControlTrue()
     {
         WeightControl = true;
-        SetStartState(tvsWeightControlTarget, manipulatorWeightControlTarget);
+        SetStartState();
     }
 
     private void SetGeometryControlTrue()
     {
         GeometryControl = true;
-        SetStartState(tvsGeometryControlTarget, manipulatorGeometryControlTarget);
+        SetStartState();
     }
 
-    private void SetStartState(Vector3 tvsTarget, Vector3 manipulatorTarget)
+    private void SetStartState()
     {
         startTime = Time.time;
         tvsStartTransform = TVS.rectTransform;
         manipulatorStartTransform = Manipulator.transform;
-
-        // Calculate the journey length.
-        tvsJourneyLength = Vector3.Distance(tvsStartTransform.position, tvsTarget);
-        manipulatorJourneyLength = Vector3.Distance(manipulatorStartTransform.localPosition, manipulatorTarget);
     }
 
     public void Start3DManipulatorAnimation()
