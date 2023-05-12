@@ -39,7 +39,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 17.716667
+        time: 22.266666
         value: -438.6
         inSlope: 0
         outSlope: 0
@@ -103,7 +103,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 15.766666
+        time: 20.316668
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -112,7 +112,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 17.716667
+        time: 22.266666
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -121,7 +121,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 23.716667
+        time: 28.266666
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -425,7 +425,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 15.733334
+        time: 20.283333
         value: 0
         inSlope: 0
         outSlope: 0
@@ -481,7 +481,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 23.716667
+        time: 28.266666
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -500,7 +500,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 17.716667
+        time: 22.266666
         value: -80.3
         inSlope: 0
         outSlope: 0
@@ -509,7 +509,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 23.716667
+        time: 28.266666
         value: 159.8
         inSlope: 0
         outSlope: 0
@@ -538,7 +538,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 23.75
+    m_StopTime: 28.266666
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -576,7 +576,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 17.716667
+        time: 22.266666
         value: -438.6
         inSlope: 0
         outSlope: 0
@@ -640,7 +640,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 15.766666
+        time: 20.316668
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -649,7 +649,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 17.716667
+        time: 22.266666
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -658,7 +658,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 23.716667
+        time: 28.266666
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -962,7 +962,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 15.733334
+        time: 20.283333
         value: 0
         inSlope: 0
         outSlope: 0
@@ -1018,7 +1018,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 23.716667
+        time: 28.266666
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -1037,7 +1037,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 17.716667
+        time: 22.266666
         value: -80.3
         inSlope: 0
         outSlope: 0
@@ -1046,7 +1046,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 23.716667
+        time: 28.266666
         value: 159.8
         inSlope: 0
         outSlope: 0
@@ -1072,14 +1072,14 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 16.116667
+  - time: 16.166666
     functionName: UstanovkapozitsiitvelaRun
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 17.783333
+  - time: 17.833334
     functionName: RuelRodsRemoveds
     data: 
     objectReferenceParameter: {fileID: 0}

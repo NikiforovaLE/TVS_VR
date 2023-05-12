@@ -71,7 +71,7 @@ public class Mnemo04Animation : MonoBehaviour
 
     public void UstanovkapozitsiitvelaStop()
     {
-        Mnemo03Off();
+        //Mnemo03Off();
         Ustanovkapozitsiitvela.enabled = false;
     }
 
