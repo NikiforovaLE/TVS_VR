@@ -54,7 +54,7 @@ public class Mnemo04Animation : MonoBehaviour
 
     public void Mnemo04Off()
     {
-        if (countpushPosition < 5)
+        if (countpushPosition < 4)
             animmnemo03.Play("03 Mnemo Animation1");
         else
         {

@@ -26,13 +26,14 @@ public class Mnemo03Animation : MonoBehaviour
     [SerializeField] private Text fuelRodsRemovedText;
     [SerializeField] private Text lastReadFuelRodsNumberText;
 
+    [SerializeField] private GeneralPanelAcions GeneralPanelAcions;
+    [SerializeField] private GeneralPanelAcions AdditionalGeneralPanelAcions;
+
     private List<string> lastReadFuelRodsNumbers;
     private List<string> fuelRodsRemoveds;
 
     public static int countLastReadFuelRodsNumbers;
     public static int countFuelRodsRemoveds;
-
-
 
     // Start is called before the first frame update
     void Start()
@@ -61,10 +62,10 @@ public class Mnemo03Animation : MonoBehaviour
 
     private void Mnemo03OnMain()
     {
-        Mnemo03M.SetActive(true);
-        Magazin.SetActive(true);
+        GeneralPanelAcions.SetPanelActive(Mnemo03M);
+        //Mnemo03M.SetActive(true);
+        //Magazin.SetActive(true);
     }
-
 
     private void Mnemo03Off()
     {
@@ -90,9 +91,10 @@ public class Mnemo03Animation : MonoBehaviour
     {
         Ustanovkarazborkimagtvel.enabled = false;
         Mnemo03OnMain();
-        Mnemo03Off();
-        Mnemo02.SetActive(false);
-        Mnemo04.SetActive(true);
+        //Mnemo03Off();
+        //Mnemo02.SetActive(false);
+        AdditionalGeneralPanelAcions.SetPanelActive(Mnemo04);
+        //Mnemo04.SetActive(true);
         animmnemo04.Play("04 Mnemo Animation");
     }
 
