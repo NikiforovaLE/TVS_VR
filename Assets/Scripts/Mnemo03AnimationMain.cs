@@ -94,8 +94,8 @@ public class Mnemo03AnimationMain : MonoBehaviour
     public void UstanovkarazborkimagtvelStop()
     {
         Ustanovkarazborkimagtvel.enabled = false;
-        Mnemo03Off();
-        Mnemo03OnMain();
+        //Mnemo03Off();
+        //Mnemo03OnMain();
         Mnemo04.SetActive(true);
         animmnemo04.Play("04 Mnemo Animation");
     }
