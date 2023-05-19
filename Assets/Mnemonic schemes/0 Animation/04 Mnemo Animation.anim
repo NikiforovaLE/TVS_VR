@@ -280,7 +280,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 5.5833335
+  - time: 4.9666667
     functionName: UstanovkarazborkimagtvelPlay
     data: 
     objectReferenceParameter: {fileID: 0}

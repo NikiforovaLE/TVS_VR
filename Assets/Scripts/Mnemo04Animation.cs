@@ -27,8 +27,8 @@ public class Mnemo04Animation : MonoBehaviour
     [SerializeField] private Text pushPositionText;
 
     private int countpushPosition = 0;
-    private List<string> pushPositions= new List<string> { "", "001", "040", "080", "120", "160" };
-    private readonly List<string> currentFuelRodNumbers = new List<string> { "", "01000123", "01004023", "01008023", "01012023", "01016023" };
+    private List<string> pushPositions = new() { "", "001", "079", "080", "081", "159", "160" };
+    private readonly List<string> currentFuelRodNumbers = new() { "", "01001023", "01007923", "01008023", "01008123", "01015923", "01016023" };
 
 
     // Start is called before the first frame update
@@ -54,7 +54,11 @@ public class Mnemo04Animation : MonoBehaviour
 
     public void Mnemo04Off()
     {
-        if (countpushPosition < 4)
+        if (countpushPosition == 3)
+        {
+            return;
+        }
+        if (countpushPosition < 6)
             animmnemo03.Play("03 Mnemo Animation1");
         else
         {

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Mnemo00AnimationStarter : MonoBehaviour
 {
     [SerializeField] private GameObject mnemo01;
+    [SerializeField] private GameObject mnemo05;
     [SerializeField] private GameObject mnemo07;
     [SerializeField] private GameObject mnemo08;
 
@@ -29,6 +30,12 @@ public class Mnemo00AnimationStarter : MonoBehaviour
     public void Start02And03MnemoAnimations()
     {
         mnemo01AnimationController.Mnemo01OffMnemo02Andnemo03On();
+    }
+
+    public void Start05MnemoAnimation()
+    {
+        GeneralPanelAcions.SetPanelActive(mnemo05);
+        mnemo05.GetComponent<Animation>().Play();
     }
 
     // Start is called before the first frame update

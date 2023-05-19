@@ -47,7 +47,7 @@ public class Mnemo05Animation : MonoBehaviour
     {
         TVSframe.SetActive(false);
         TVSframeAutooperator.SetActive(true);
-        animmnemo05.Play();
+        //animmnemo05.Play();
     }
 
     public void AutooperatorRun()
