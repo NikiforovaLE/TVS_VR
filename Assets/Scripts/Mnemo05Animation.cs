@@ -24,6 +24,9 @@ public class Mnemo05Animation : MonoBehaviour
     [SerializeField] private Text stateGripsText;
     [SerializeField] private Text destinationPositionText;
 
+    [SerializeField] private GeneralPanelAcions GeneralPanelAcions;
+    [SerializeField] private GeneralPanelAcions AdditionalGeneralPanelAcions;
+
     private int countverticalPosition = 0;
     private int countstateGrips = 0;
     private int countdestinationPosition = 0;
@@ -42,12 +45,16 @@ public class Mnemo05Animation : MonoBehaviour
         destinationPositionText.text = destinationPosition[countdestinationPosition];
     }
 
-
     void Update()
+    {
+
+        //animmnemo05.Play();
+    }
+
+    public void StartActions()
     {
         TVSframe.SetActive(false);
         TVSframeAutooperator.SetActive(true);
-        //animmnemo05.Play();
     }
 
     public void AutooperatorRun()
@@ -59,10 +66,12 @@ public class Mnemo05Animation : MonoBehaviour
     {
         Autooperator.enabled = false;
         TVSframeAutooperator.transform.SetParent(Tilter);
-        Mnemo05.SetActive(false);
-        Mnemo04Add.SetActive(false);
-        Mnemo06Add.SetActive(true);
-        Mnemo07.SetActive(true);
+        AdditionalGeneralPanelAcions.SetPanelActive(Mnemo06Add);
+        GeneralPanelAcions.SetPanelActive(Mnemo07);
+        //Mnemo05.SetActive(false);
+        //Mnemo04Add.SetActive(false);
+        //Mnemo06Add.SetActive(true);
+        //Mnemo07.SetActive(true);
     }
 
     public void verticalPositionLower()

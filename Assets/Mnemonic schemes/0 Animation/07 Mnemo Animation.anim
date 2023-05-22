@@ -17563,7 +17563,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 6.116667
+  - time: 4.866667
     functionName: TitlerStop
     data: 
     objectReferenceParameter: {fileID: 0}
