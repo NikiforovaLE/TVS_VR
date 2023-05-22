@@ -8,6 +8,7 @@ public class Mnemo00Animation : MonoBehaviour
     [SerializeField] private ARM2Mnemo0 ARM2Mnemo0;
     [SerializeField] private ARM2Mnemo1 ARM2Mnemo1;
     [SerializeField] private ARM2Mnemo2 ARM2Mnemo2;
+    [SerializeField] private Mnemo04Animation mnemo04Animation;
 
     [SerializeField] private Text attentionMessageOne;
     [SerializeField] private Text attentionMessageTwo;
@@ -59,6 +60,7 @@ public class Mnemo00Animation : MonoBehaviour
     public void LoadFuelIntoTVS()
     {
         mnemo00Animator.Play("FuelMoving");
+        mnemo04Animation.Mnemo04Off();
     }
 
     private void CheckConditionToStopAnimation()
@@ -72,6 +74,14 @@ public class Mnemo00Animation : MonoBehaviour
         else if (mnemo00Animator.GetInteger("fuelCount") == 6)
         {
             mnemo00Animator.Play("ReturnVTUK");
+        }
+    }
+
+    public void StartMnemo00Continue()
+    {
+        if (mnemo00Animator.GetInteger("fuelCount") == 6)
+        {
+            mnemo00Animator.Play("Mnemo00Continue");
         }
     }
 

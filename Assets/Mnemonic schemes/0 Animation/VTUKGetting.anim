@@ -2401,7 +2401,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: Start02And03MnemoAnimations
+    functionName: Start02And03MnemoAnimation
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

@@ -53,7 +53,7 @@ public class Mnemo07Animation : MonoBehaviour
 
     public void TitlerStop()
     {
-        animmnemo06.Play();
+        //animmnemo06.Play();
         Tilter.enabled = false;
     }
 
