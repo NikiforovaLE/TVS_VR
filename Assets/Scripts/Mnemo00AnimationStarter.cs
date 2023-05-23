@@ -8,6 +8,7 @@ public class Mnemo00AnimationStarter : MonoBehaviour
     [SerializeField] private GameObject mnemo05;
     [SerializeField] private GameObject mnemo07;
     [SerializeField] private GameObject mnemo08;
+    [SerializeField] private GameObject mnemo09;
 
     [SerializeField] private GameObject additionalMnemo06;
 
@@ -33,12 +34,6 @@ public class Mnemo00AnimationStarter : MonoBehaviour
         mnemo07.GetComponent<Animation>().Play();
     }
 
-    public void Start08MnemoAnimation()
-    {
-        AdditionalGeneralPanelAcions.SetPanelActive(mnemo08);
-        mnemo08.GetComponent<Animator>().Play("08 Mnemo Animation");
-    }
-
     public void Start02And03MnemoAnimation()
     {
         mnemo01AnimationController.Mnemo01OffMnemo02Andnemo03On();
@@ -48,6 +43,18 @@ public class Mnemo00AnimationStarter : MonoBehaviour
     {
         GeneralPanelAcions.SetPanelActive(mnemo05);
         mnemo05.GetComponent<Animation>().Play();
+    }
+
+    public void Start08MnemoAnimation()
+    {
+        AdditionalGeneralPanelAcions.SetPanelActive(mnemo08);
+        mnemo08.GetComponent<Animator>().Play("08 Mnemo Animation");
+    }
+
+    public void Start09MnemoAnimation()
+    {
+        GeneralPanelAcions.SetPanelActive(mnemo09);
+        mnemo09.GetComponent<Animator>().Play("09 Mnemo Animation");
     }
 
     // Start is called before the first frame update

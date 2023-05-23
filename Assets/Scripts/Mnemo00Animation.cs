@@ -60,7 +60,7 @@ public class Mnemo00Animation : MonoBehaviour
     public void LoadFuelIntoTVS()
     {
         mnemo00Animator.Play("FuelMoving");
-        mnemo04Animation.Mnemo04Off();
+        //mnemo04Animation.Mnemo04Off();
     }
 
     private void CheckConditionToStopAnimation()

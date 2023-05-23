@@ -33,7 +33,7 @@ public class Mnemo07Animation : MonoBehaviour
     {
         animmnemo07 = gameObject.GetComponent<Animation>();
         animmnemo06 = Mnemo06Add.GetComponent<Animation>();
-        animmnemo07.Play();
+        //animmnemo07.Play();
 
         stateHeadLatches = new List<string> { "Не поджата", "Поджата" };
         capturesFixing = new List<string> { "Открыты", "Закрыты" };
