@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,13 +10,14 @@ public class Mnemo8Animation : MonoBehaviour
     [SerializeField] private Animator coordinateManipulatorAnimator;
 
     public ARM2Mnemo0 aRM2Mnemo0;
+    public Mnemo00ForMnemo08 mnemo00ForMnemo08;
 
     private bool isWashing = false;
-    private bool IsDrying = false;
-    private bool TightnessControl = false;
-    private bool ImpurityControl = false;
-    private bool WeightControl = false;
-    private bool GeometryControl = false;
+    private bool isDrying = false;
+    private bool tightnessControl = false;
+    private bool impurityControl = false;
+    private bool weightControl = false;
+    private bool geometryControl = false;
     private bool readyToControl = false;
 
     private readonly Vector3 tvsWashingTarget = new(359.0f, -270.0f, 0.0f);
@@ -53,6 +52,11 @@ public class Mnemo8Animation : MonoBehaviour
     private Transform manipulatorStartTransform;
     public bool IsWashing { get => isWashing; set => isWashing = value; }
     public bool ReadyToControl { get => readyToControl; set => readyToControl = value; }
+    public bool IsDrying { get => isDrying; set => isDrying = value; }
+    public bool TightnessControl { get => tightnessControl; set => tightnessControl = value; }
+    public bool ImpurityControl { get => impurityControl; set => impurityControl = value; }
+    public bool WeightControl { get => weightControl; set => weightControl = value; }
+    public bool GeometryControl { get => geometryControl; set => geometryControl = value; }
 
     // Start is called before the first frame update
     void Start()
@@ -146,42 +150,47 @@ public class Mnemo8Animation : MonoBehaviour
     {
         mnemo08Animator.enabled = false;
         ReadyToControl = true;
-    }    
-    
+    }
+
     public void SetIsWashingTrue()
     {
         IsWashing = true;
         SetStartState();
+        mnemo00ForMnemo08.SetStartState();
     }
 
     private void SetIsDryingTrue()
     {
         IsDrying = true;
         SetStartState();
-
+        mnemo00ForMnemo08.SetStartState();
     }
     private void SetTightnessControlTrue()
     {
         TightnessControl = true;
         SetStartState();
+        mnemo00ForMnemo08.SetStartState();
     }
 
     private void SetImpurityControlTrue()
     {
         ImpurityControl = true;
         SetStartState();
+        mnemo00ForMnemo08.SetStartState();
     }
 
     private void SetWeightControlTrue()
     {
         WeightControl = true;
         SetStartState();
+        mnemo00ForMnemo08.SetStartState();
     }
 
     private void SetGeometryControlTrue()
     {
         GeometryControl = true;
         SetStartState();
+        mnemo00ForMnemo08.SetStartState();
     }
 
     private void SetStartState()
