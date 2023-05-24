@@ -77,7 +77,7 @@ public class Mnemo07Animation : MonoBehaviour
 
     public void Disable07MnemoShow09Mnemo()
     {
-        //Set mnemo08 active on MainPanel
+        //Set mnemo09 active on MainPanel
         GeneralPanelAcions.SetPanelActive(Mnemo09);
     }
 }
