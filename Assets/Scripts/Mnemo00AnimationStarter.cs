@@ -51,12 +51,6 @@ public class Mnemo00AnimationStarter : MonoBehaviour
         mnemo08.GetComponent<Animator>().Play("08 Mnemo Animation");
     }
 
-    public void Start09MnemoAnimation()
-    {
-        GeneralPanelAcions.SetPanelActive(mnemo09);
-        mnemo09.GetComponent<Animator>().Play("09 Mnemo Animation");
-    }
-
     // Start is called before the first frame update
     void Start()
     {
