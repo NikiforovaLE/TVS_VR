@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,10 +10,10 @@ public class Mnemo00ForMnemo08 : MonoBehaviour
     private Animator mnemo00Animator;
 
     private readonly Vector3 tvsWashingTarget = new(484.0f, -84.0f, 0.0f);
-    private readonly Vector3 manipulatorWashingTarget = new(448f, -35f, 0.0f);
+    private readonly Vector3 manipulatorWashingTarget = new(501.0f, -35.0f, 0.0f);
 
     private readonly Vector3 tvsDryingTarget = new(432.0f, -84.0f, 0.0f);
-    private readonly Vector3 manipulatorDryingTarget = new(448f, -35f, 0.0f);
+    private readonly Vector3 manipulatorDryingTarget = new(448.0f, -35.0f, 0.0f);
 
     private readonly Vector3 tvsTightnessControlTarget = new(335.0f, -84.0f, 0.0f);
     private readonly Vector3 manipulatorTightnessControlTarget = new(350.0f, -35f, 0.0f);

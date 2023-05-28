@@ -9,6 +9,10 @@ public class Mnemo8Animation : MonoBehaviour
     [SerializeField] private Animator mnemo08Animator;
     [SerializeField] private Animator coordinateManipulatorAnimator;
 
+    [SerializeField] private GameObject mnemo09;
+    [SerializeField] private GeneralPanelAcions GeneralPanelAcions;
+    [SerializeField] private GeneralPanelAcions AdditionalGeneralPanelAcions;
+
     public ARM2Mnemo0 aRM2Mnemo0;
     public Mnemo00ForMnemo08 mnemo00ForMnemo08;
 
@@ -198,6 +202,18 @@ public class Mnemo8Animation : MonoBehaviour
         startTime = Time.time;
         tvsStartTransform = TVS.rectTransform;
         manipulatorStartTransform = Manipulator.transform;
+    }
+
+    public void Start09MnemoAnimationWashing()
+    {
+        GeneralPanelAcions.SetPanelActive(mnemo09);
+        mnemo09.GetComponent<Animator>().Play("09 Mnemo Animation");
+    }
+
+    public void Start09MnemoAnimationDrying()
+    {
+        GeneralPanelAcions.SetPanelActive(mnemo09);
+        mnemo09.GetComponent<Animator>().Play("09 Mnemo Animation Drying");
     }
 
     public void Start3DManipulatorAnimation()
