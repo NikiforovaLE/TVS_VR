@@ -10,22 +10,22 @@ public class Mnemo00ForMnemo08 : MonoBehaviour
     private Animator mnemo00Animator;
 
     private readonly Vector3 tvsWashingTarget = new(484.0f, -84.0f, 0.0f);
-    private readonly Vector3 manipulatorWashingTarget = new(501.0f, -35.0f, 0.0f);
+    private readonly Vector3 manipulatorWashingTarget = new(501.0f, -8.0f, 0.0f);
 
     private readonly Vector3 tvsDryingTarget = new(432.0f, -84.0f, 0.0f);
-    private readonly Vector3 manipulatorDryingTarget = new(448.0f, -35.0f, 0.0f);
+    private readonly Vector3 manipulatorDryingTarget = new(448.0f, -8.0f, 0.0f);
 
     private readonly Vector3 tvsTightnessControlTarget = new(335.0f, -84.0f, 0.0f);
-    private readonly Vector3 manipulatorTightnessControlTarget = new(350.0f, -35f, 0.0f);
+    private readonly Vector3 manipulatorTightnessControlTarget = new(350.0f, -8f, 0.0f);
 
-    //private readonly Vector3 tvsImpurityControlTarget = new(236.0f, -84.0f, 0.0f);
-    //private readonly Vector3 manipulatorImpurityControlTarget = new(250f, -35f, 0.0f);
+    private readonly Vector3 tvsImpurityControlTarget = new(236.0f, -84.0f, 0.0f);
+    private readonly Vector3 manipulatorImpurityControlTarget = new(250f, -8f, 0.0f);
 
     //private readonly Vector3 tvsWeightControlTarget = new(432.0f, -84.0f, 0.0f);
-    //private readonly Vector3 manipulatorWeightControlTarget = new(448f, -35f, 0.0f);
+    //private readonly Vector3 manipulatorWeightControlTarget = new(448f, -8f, 0.0f);
 
     //private readonly Vector3 tvsGeometryControlTarget = new(432.0f, -84.0f, 0.0f);
-    //private readonly Vector3 manipulatorGeometryControlTarget = new(448f, -35f, 0.0f);
+    //private readonly Vector3 manipulatorGeometryControlTarget = new(448f, -8f, 0.0f);
 
     // Movement speed in units per second.
     private readonly float speed = 1.0f;
@@ -51,12 +51,12 @@ public class Mnemo00ForMnemo08 : MonoBehaviour
     {
         if (mnemo8Animation.IsWashing)
         {
-            MoveToWashing();
+            MoveToCertainPlace(tvsWashingTarget, manipulatorWashingTarget, "Mnemo00 Washing", startTime, tvsStartTransform, manipulatorStartTransform);
         }
 
         if (mnemo8Animation.IsDrying)
         {
-            MoveToDrying();
+            MoveToCertainPlace(tvsDryingTarget, manipulatorDryingTarget, "Mnemo00 Drying", startTime, tvsStartTransform, manipulatorStartTransform);
         }
 
         if (mnemo8Animation.TightnessControl)
@@ -79,15 +79,15 @@ public class Mnemo00ForMnemo08 : MonoBehaviour
         //}
     }
 
-    public void MoveToWashing()
-    {
-        MoveToCertainPlace(tvsWashingTarget, manipulatorWashingTarget, "Mnemo00 Washing", startTime, tvsStartTransform, manipulatorStartTransform);
-    }
+    //public void MoveToWashing()
+    //{
+    //    MoveToCertainPlace(tvsWashingTarget, manipulatorWashingTarget, "Mnemo00 Washing", startTime, tvsStartTransform, manipulatorStartTransform);
+    //}
 
-    public void MoveToDrying()
-    {
-        MoveToCertainPlace(tvsDryingTarget, manipulatorDryingTarget, "Mnemo00 Drying", startTime, tvsStartTransform, manipulatorStartTransform);
-    }
+    //public void MoveToDrying()
+    //{
+    //    MoveToCertainPlace(tvsDryingTarget, manipulatorDryingTarget, "Mnemo00 Drying", startTime, tvsStartTransform, manipulatorStartTransform);
+    //}
 
     public void MoveToTightnessControl()
     {

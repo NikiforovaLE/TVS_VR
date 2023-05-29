@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,14 +21,15 @@ public class Mnemo10Animation : MonoBehaviour
         currentTVS.text = ARM2Mnemo0.FrameNumber.text;
     }
 
-    public void SetValidity()
-    {
-        validityText.text = DateTime.Now.AddDays(3).ToString();
-    }
 
     public void StartControl()
     {
         gameObject.GetComponent<Animator>().Play("10 Mnemo Animation");
         SetValidity();
+    }
+
+    private void SetValidity()
+    {
+        validityText.text = DateTime.Now.AddDays(3).ToString();
     }
 }
