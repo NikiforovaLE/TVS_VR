@@ -182,7 +182,7 @@ public class Mnemo8Animation : MonoBehaviour
         ManipulatorFromMnemo00.transform.localPosition = Vector3.Lerp(manipulatorStartTransformForMnemo00.localPosition, manipulatorTargetForMnemo00, fractionOfManipulatorJourneyForMnemo00);
 
         if (TVS.rectTransform.anchoredPosition.x >= tvsTarget.x & TVS.rectTransform.anchoredPosition.y >= tvsTarget.y &&
-            TVSFromMnemo00.rectTransform.anchoredPosition.x >= tvsTarget.x & TVSFromMnemo00.rectTransform.anchoredPosition.y >= tvsTarget.y)
+            TVSFromMnemo00.rectTransform.anchoredPosition.x >= tvsTargetForMnemo00.x & TVSFromMnemo00.rectTransform.anchoredPosition.y >= tvsTargetForMnemo00.y)
         {
             mnemo08Animator.enabled = true;
             mnemo00Animator.enabled = true;
