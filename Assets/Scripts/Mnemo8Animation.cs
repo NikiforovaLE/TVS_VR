@@ -6,6 +6,7 @@ public class Mnemo8Animation : MonoBehaviour
     [SerializeField] private GameObject Manipulator;
     [SerializeField] private Image TVS;
     [SerializeField] private Text currentTVSNumberText;
+
     [SerializeField] private Animator mnemo08Animator;
     [SerializeField] private Animator coordinateManipulatorAnimator;
 
@@ -14,7 +15,6 @@ public class Mnemo8Animation : MonoBehaviour
     [SerializeField] private GeneralPanelAcions AdditionalGeneralPanelAcions;
 
     public ARM2Mnemo0 aRM2Mnemo0;
-    public Mnemo00ForMnemo08 mnemo00ForMnemo08;
 
     private bool isWashing = false;
     private bool isDrying = false;
@@ -49,16 +49,16 @@ public class Mnemo8Animation : MonoBehaviour
     [SerializeField] private Animator mnemo00Animator;
 
     private readonly Vector3 tvsWashingTargetForMnemo00 = new(484.0f, -84.0f, 0.0f);
-    private readonly Vector3 manipulatorWashingTargetForMnemo00 = new(501.0f, -8.0f, 0.0f);
+    private readonly Vector3 manipulatorWashingTargetForMnemo00 = new(501f, -1f, 0.0f);
 
     private readonly Vector3 tvsDryingTargetForMnemo00 = new(432.0f, -84.0f, 0.0f);
-    private readonly Vector3 manipulatorDryingTargetForMnemo00 = new(448.0f, -8.0f, 0.0f);
+    private readonly Vector3 manipulatorDryingTargetForMnemo00 = new(448f, -1f, 0.0f);
 
     private readonly Vector3 tvsTightnessControlTargetForMnemo00 = new(335.0f, -84.0f, 0.0f);
-    private readonly Vector3 manipulatorTightnessControlTargetForMnemo00 = new(350.0f, -8f, 0.0f);
+    private readonly Vector3 manipulatorTightnessControlTargetForMnemo00 = new(350.0f, -1f, 0.0f);
 
     private readonly Vector3 tvsImpurityControlTargetForMnemo00 = new(236.0f, -84.0f, 0.0f);
-    private readonly Vector3 manipulatorImpurityControlTargetForMnemo00 = new(250f, -8f, 0.0f);
+    private readonly Vector3 manipulatorImpurityControlTargetForMnemo00 = new(250f, -1f, 0.0f);
 
     // Total distance between the markers.
     private float tvsJourneyLengthForMnemo00;
@@ -79,6 +79,7 @@ public class Mnemo8Animation : MonoBehaviour
 
     private RectTransform tvsStartTransform;
     private Transform manipulatorStartTransform;
+
     public bool IsWashing { get => isWashing; set => isWashing = value; }
     public bool ReadyToControl { get => readyToControl; set => readyToControl = value; }
     public bool IsDrying { get => isDrying; set => isDrying = value; }
@@ -141,7 +142,8 @@ public class Mnemo8Animation : MonoBehaviour
 
         if (GeometryControl && MoveToCertainPlace(tvsGeometryControlTarget, manipulatorGeometryControlTarget, "08 Mnemo Animation Geometry",
             startTime, tvsStartTransform, manipulatorStartTransform,
-            tvsWashingTargetForMnemo00, manipulatorWashingTargetForMnemo00, "08 Mnemo Animation Geometry", tvsStartTransformForMnemo00, manipulatorStartTransformForMnemo00))
+            tvsWashingTargetForMnemo00, manipulatorWashingTargetForMnemo00, "08 Mnemo Animation Geometry", tvsStartTransformForMnemo00, 
+            manipulatorStartTransformForMnemo00))
         {
             GeometryControl = false;
         }
@@ -181,8 +183,9 @@ public class Mnemo8Animation : MonoBehaviour
         TVSFromMnemo00.rectTransform.anchoredPosition = Vector3.Lerp(tvsStartTransformForMnemo00.anchoredPosition, tvsTargetForMnemo00, fractionOfTVSJourneyForMnemo00);
         ManipulatorFromMnemo00.transform.localPosition = Vector3.Lerp(manipulatorStartTransformForMnemo00.localPosition, manipulatorTargetForMnemo00, fractionOfManipulatorJourneyForMnemo00);
 
-        if (TVS.rectTransform.anchoredPosition.x >= tvsTarget.x & TVS.rectTransform.anchoredPosition.y >= tvsTarget.y &&
-            TVSFromMnemo00.rectTransform.anchoredPosition.x >= tvsTargetForMnemo00.x & TVSFromMnemo00.rectTransform.anchoredPosition.y >= tvsTargetForMnemo00.y)
+        if (TVS.rectTransform.anchoredPosition.x >= tvsTarget.x & TVS.rectTransform.anchoredPosition.y >= tvsTarget.y 
+            //&& TVSFromMnemo00.rectTransform.anchoredPosition.x >= tvsTargetForMnemo00.x & TVSFromMnemo00.rectTransform.anchoredPosition.y >= tvsTargetForMnemo00.y
+            && coordinateManipulatorAnimator.GetBool("readyToWashing"))
         {
             mnemo08Animator.enabled = true;
             mnemo00Animator.enabled = true;
@@ -214,6 +217,7 @@ public class Mnemo8Animation : MonoBehaviour
     {
         IsWashing = true;
         SetStartState();
+        Start3DManipulatorAnimation();
     }
 
     private void SetIsDryingTrue()
