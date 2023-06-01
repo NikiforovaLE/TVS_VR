@@ -6,6 +6,8 @@ public class Mnemo10Animation : MonoBehaviour
 {
     [SerializeField] private Text validityText;
     [SerializeField] private Text currentTVS;
+    [SerializeField] private Animator mnemo08Animator;
+
     public ARM2Mnemo0 ARM2Mnemo0;
 
     // Start is called before the first frame update
@@ -25,6 +27,7 @@ public class Mnemo10Animation : MonoBehaviour
     public void StartControl()
     {
         gameObject.GetComponent<Animator>().Play("10 Mnemo Animation");
+        mnemo08Animator.speed = 1;
         SetValidity();
     }
 

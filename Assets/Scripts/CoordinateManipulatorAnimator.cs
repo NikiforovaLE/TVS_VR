@@ -5,9 +5,21 @@ public class CoordinateManipulatorAnimator : MonoBehaviour
     [SerializeField] private GameObject TVSForTransport;
     [SerializeField] private GameObject oldTVS;
 
+    private Animator animator;
+
     public void SetReadyToWashingTrue()
     {
-        gameObject.GetComponent<Animator>().SetBool("readyToWashing", true);
+        animator.SetBool("readyToWashing", true);
+    }
+
+    public void SetReadyToDryingTrue()
+    {
+        animator.SetBool("readyToDrying", true);
+    }
+
+    public void SetReadyToTightnessControlTrue()
+    {
+        animator.SetBool("readyToTightnessControl", true);
     }
 
     public void SetTVSForTransportActive()
@@ -16,10 +28,15 @@ public class CoordinateManipulatorAnimator : MonoBehaviour
         oldTVS.SetActive(false);
     }
 
+    public void StopAnimation()
+    {
+        animator.speed = 0;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-
+        animator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame

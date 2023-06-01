@@ -102,8 +102,9 @@ public class Mnemo8Animation : MonoBehaviour
 
         if (IsWashing && MoveToCertainPlace(tvsWashingTarget, manipulatorWashingTarget, "08 Mnemo Animation Washing",
             startTime, tvsStartTransform, manipulatorStartTransform,
-            tvsWashingTargetForMnemo00, manipulatorWashingTargetForMnemo00, "Mnemo00 Washing", 
-            tvsStartTransformForMnemo00, manipulatorStartTransformForMnemo00))
+            tvsWashingTargetForMnemo00, manipulatorWashingTargetForMnemo00, "Mnemo00 Washing",
+            tvsStartTransformForMnemo00, manipulatorStartTransformForMnemo00,
+            "readyToWashing"))
         {
             IsWashing = false;
         }
@@ -111,7 +112,8 @@ public class Mnemo8Animation : MonoBehaviour
         if (IsDrying && MoveToCertainPlace(tvsDryingTarget, manipulatorDryingTarget, "08 Mnemo Animation Drying",
             startTime, tvsStartTransform, manipulatorStartTransform,
             tvsDryingTargetForMnemo00, manipulatorDryingTargetForMnemo00, "Mnemo00 Drying",
-            tvsStartTransformForMnemo00, manipulatorStartTransformForMnemo00))
+            tvsStartTransformForMnemo00, manipulatorStartTransformForMnemo00,
+            "readyToDrying"))
         {
             IsDrying = false;
         }
@@ -119,7 +121,8 @@ public class Mnemo8Animation : MonoBehaviour
         if (TightnessControl && MoveToCertainPlace(tvsTightnessControlTarget, manipulatorTightnessControlTarget, "08 Mnemo Animation Tightness",
             startTime, tvsStartTransform, manipulatorStartTransform,
             tvsTightnessControlTargetForMnemo00, manipulatorTightnessControlTargetForMnemo00, "Mnemo00 TightnessControl",
-            tvsStartTransformForMnemo00, manipulatorStartTransformForMnemo00))
+            tvsStartTransformForMnemo00, manipulatorStartTransformForMnemo00,
+            "readyToTightnessControl"))
         {
             TightnessControl = false;
         }
@@ -127,7 +130,8 @@ public class Mnemo8Animation : MonoBehaviour
         if (ImpurityControl && MoveToCertainPlace(tvsImpurityControlTarget, manipulatorImpurityControlTarget, "08 Mnemo Animation Impurity",
             startTime, tvsStartTransform, manipulatorStartTransform,
             tvsImpurityControlTargetForMnemo00, manipulatorImpurityControlTargetForMnemo00, "Mnemo00 ImpurityControl",
-            tvsStartTransformForMnemo00, manipulatorStartTransformForMnemo00))
+            tvsStartTransformForMnemo00, manipulatorStartTransformForMnemo00,
+            "readyToImpurityControl"))
         {
             ImpurityControl = false;
         }
@@ -135,15 +139,17 @@ public class Mnemo8Animation : MonoBehaviour
         if (WeightControl && MoveToCertainPlace(tvsWeightControlTarget, manipulatorWeightControlTarget, "08 Mnemo Animation Weight",
             startTime, tvsStartTransform, manipulatorStartTransform,
             tvsWashingTargetForMnemo00, manipulatorWashingTargetForMnemo00, "08 Mnemo Animation Geometry",
-            tvsStartTransformForMnemo00, manipulatorStartTransformForMnemo00))
+            tvsStartTransformForMnemo00, manipulatorStartTransformForMnemo00,
+            "readyToWeightControl"))
         {
             WeightControl = false;
         }
 
         if (GeometryControl && MoveToCertainPlace(tvsGeometryControlTarget, manipulatorGeometryControlTarget, "08 Mnemo Animation Geometry",
             startTime, tvsStartTransform, manipulatorStartTransform,
-            tvsWashingTargetForMnemo00, manipulatorWashingTargetForMnemo00, "08 Mnemo Animation Geometry", tvsStartTransformForMnemo00, 
-            manipulatorStartTransformForMnemo00))
+            tvsWashingTargetForMnemo00, manipulatorWashingTargetForMnemo00, "08 Mnemo Animation Geometry", tvsStartTransformForMnemo00,
+            manipulatorStartTransformForMnemo00,
+            "readyToGeometryControl"))
         {
             GeometryControl = false;
         }
@@ -152,7 +158,8 @@ public class Mnemo8Animation : MonoBehaviour
     private bool MoveToCertainPlace(Vector3 tvsTarget, Vector3 manipulatorTarget, string animName,
         float startTime, RectTransform tvsStartTransform, Transform manipulatorStartTransform,
         Vector3 tvsTargetForMnemo00, Vector3 manipulatorTargetForMnemo00, string animNameForMnemo00,
-        RectTransform tvsStartTransformForMnemo00, Transform manipulatorStartTransformForMnemo00
+        RectTransform tvsStartTransformForMnemo00, Transform manipulatorStartTransformForMnemo00,
+        string boolName
         )
     {
         mnemo08Animator.enabled = false;
@@ -183,9 +190,9 @@ public class Mnemo8Animation : MonoBehaviour
         TVSFromMnemo00.rectTransform.anchoredPosition = Vector3.Lerp(tvsStartTransformForMnemo00.anchoredPosition, tvsTargetForMnemo00, fractionOfTVSJourneyForMnemo00);
         ManipulatorFromMnemo00.transform.localPosition = Vector3.Lerp(manipulatorStartTransformForMnemo00.localPosition, manipulatorTargetForMnemo00, fractionOfManipulatorJourneyForMnemo00);
 
-        if (TVS.rectTransform.anchoredPosition.x >= tvsTarget.x & TVS.rectTransform.anchoredPosition.y >= tvsTarget.y 
+        if (TVS.rectTransform.anchoredPosition.x >= tvsTarget.x & TVS.rectTransform.anchoredPosition.y >= tvsTarget.y
             //&& TVSFromMnemo00.rectTransform.anchoredPosition.x >= tvsTargetForMnemo00.x & TVSFromMnemo00.rectTransform.anchoredPosition.y >= tvsTargetForMnemo00.y
-            && coordinateManipulatorAnimator.GetBool("readyToWashing"))
+            && coordinateManipulatorAnimator.GetBool(boolName))
         {
             mnemo08Animator.enabled = true;
             mnemo00Animator.enabled = true;
@@ -272,8 +279,18 @@ public class Mnemo8Animation : MonoBehaviour
         mnemo09.GetComponent<Animator>().Play("09 Mnemo Animation Drying");
     }
 
+    public void ContinueCoordinateManipulatorAnimation()
+    {
+        coordinateManipulatorAnimator.speed = 1;
+    }
+
     public void Start3DManipulatorAnimation()
     {
         coordinateManipulatorAnimator.Play("ManipulatorMoving2");
+    }
+
+    public void StopCurrentAnimation()
+    {
+        mnemo08Animator.speed = 0;
     }
 }
