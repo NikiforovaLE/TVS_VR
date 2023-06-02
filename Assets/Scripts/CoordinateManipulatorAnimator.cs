@@ -22,6 +22,21 @@ public class CoordinateManipulatorAnimator : MonoBehaviour
         animator.SetBool("readyToTightnessControl", true);
     }
 
+    public void SetReadyToImpurityControlTrue()
+    {
+        animator.SetBool("readyToImpurityControl", true);
+    }
+
+    public void SetReadyToWeightControlTrue()
+    {
+        animator.SetBool("readyToWeightControl", true);
+    }    
+    
+    public void SetReadyToGeometryControlTrue()
+    {
+        animator.SetBool("readyToGeometryControl", true);
+    }
+
     public void SetTVSForTransportActive()
     {
         TVSForTransport.SetActive(true);
