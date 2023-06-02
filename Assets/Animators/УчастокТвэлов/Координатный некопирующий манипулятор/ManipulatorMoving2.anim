@@ -8779,19 +8779,26 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 28.866667
-    functionName: StopAnimation
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 28.883333
     functionName: SetReadyToDryingTrue
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 28.883333
+    functionName: StopAnimation
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 40.85
+    functionName: SetReadyToTightnessControlTrue
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 40.866665
     functionName: StopAnimation
     data: 
@@ -8799,8 +8806,8 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 40.866665
-    functionName: SetReadyToTightnessControlTrue
+  - time: 46.866665
+    functionName: StopAnimation
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
