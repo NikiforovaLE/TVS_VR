@@ -1,27 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Mnemo12Animation : MonoBehaviour
 {
-    [SerializeField] private Text isDoneText;
+    [SerializeField] private Text weightControlIsDoneText;
+    [SerializeField] private Text inputControlIsDoneText;
+    [SerializeField] private Text lockControlIsDoneText;
+    [SerializeField] private Text suzControlIsDoneText;
+
+    private bool isChecked;
 
     private readonly string done = "Выполнен";
-    // Start is called before the first frame update
-    void Start()
-    {
-        isDoneText.text = "";
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public bool IsChecked { get => isChecked; set => isChecked = value; }
 
-    public void IsDone()
+    private void IsDone(Text isDoneText)
     {
         isDoneText.text = done;
+    }
+
+    public void SetWeightControlIsDone()
+    {
+        IsDone(weightControlIsDoneText);
+    }
+
+    public void SetInputControlIsDone()
+    {
+        IsDone(inputControlIsDoneText);
+    }
+
+    public void SetLockControlIsDone()
+    {
+        IsDone(lockControlIsDoneText);
+    }
+
+    public void SetSuzControlIsDone()
+    {
+        IsDone(suzControlIsDoneText);
     }
 }

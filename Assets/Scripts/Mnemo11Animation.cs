@@ -1,14 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Mnemo11Animation : MonoBehaviour
 {
+    [SerializeField] private GameObject mnemo12;
     [SerializeField] private Text currentTVS;
     [SerializeField] private Text performedText;
     [SerializeField] private Image suitableButton;
     [SerializeField] private Image defectiveButton;
+    [SerializeField] private GeneralPanelAcions GeneralPanelAcions;
 
     public ARM2Mnemo0 ARM2Mnemo0;
     private Animator currentAnimator;
@@ -42,8 +42,9 @@ public class Mnemo11Animation : MonoBehaviour
         if (currentAnimator.GetBool("wasPerfomed"))
         {
             IsSuitable = true;
-            suitableButton.color = Color.green;
-            defectiveButton.color = Color.white;
+            suitableButton.color = new Color(0f, 255f, 0f, 255f);
+            defectiveButton.color = new Color(255f, 255f, 255f, 255f);
+            GeneralPanelAcions.SetPanelActive(mnemo12);
         }
     }
 
@@ -52,8 +53,8 @@ public class Mnemo11Animation : MonoBehaviour
         if (currentAnimator.GetBool("wasPerfomed"))
         {
             IsSuitable = false;
-            suitableButton.color = Color.white;
-            defectiveButton.color = Color.red;
+            suitableButton.color = new Color(255f, 255f, 255f, 255f);
+            defectiveButton.color = new Color(255f, 0f, 0f, 255f);
         }
     }
 }
