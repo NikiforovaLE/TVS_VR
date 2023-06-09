@@ -3,13 +3,20 @@ using UnityEngine.UI;
 
 public class Mnemo12Animation : MonoBehaviour
 {
+    [SerializeField] private Text currentTvs;
+    [SerializeField] private Text tvsType;
+
     [SerializeField] private Text step;
+    [SerializeField] private Text tvsWeightText;
     [SerializeField] private Text tvsWeightLossText;
     [SerializeField] private Text suzWeightLossText;
     [SerializeField] private Text weightControlIsDoneText;
     [SerializeField] private Text inputControlIsDoneText;
     [SerializeField] private Text lockControlIsDoneText;
     [SerializeField] private Text suzControlIsDoneText;
+
+
+    [SerializeField] private ARM2Mnemo0 ARM2Mnemo0;
 
     private Animator currentAnimator;
     private bool isChecked;
@@ -22,6 +29,14 @@ public class Mnemo12Animation : MonoBehaviour
     void Start()
     {
         currentAnimator = gameObject.GetComponent<Animator>();
+    }
+
+
+    // Update is called once per frame
+    void Update()
+    {
+        currentTvs.text = ARM2Mnemo0.FrameNumber.text;
+        tvsType.text = ARM2Mnemo0.Type.text;
     }
 
     public void StartControl()
@@ -44,14 +59,14 @@ public class Mnemo12Animation : MonoBehaviour
         step.text = "3";
     }
 
-    public void SetTvsWeightLoss()
+    public void SetTvsWeight()
     {
-        tvsWeightLossText.text = "230";
+        tvsWeightText.text = "230";
     }
 
-    public void SetSuzWeightLoss()
+    public void SetTvsWeightLoss()
     {
-        suzWeightLossText.text = "60";
+        tvsWeightLossText.text = "60";
     }
 
     private void IsDone(Text isDoneText)
@@ -77,5 +92,6 @@ public class Mnemo12Animation : MonoBehaviour
     public void SetSuzControlIsDone()
     {
         IsDone(suzControlIsDoneText);
+        suzWeightLossText.text = "53";
     }
 }
