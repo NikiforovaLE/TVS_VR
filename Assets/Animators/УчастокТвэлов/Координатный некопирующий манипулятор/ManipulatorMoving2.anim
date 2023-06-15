@@ -8814,23 +8814,65 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 52.666668
-    functionName: TriggerAnimationEvent
-    data: SetDirtyCheckType
+    functionName: SetReadyToImpurityControlTrue
+    data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 1
     messageOptions: 0
-  - time: 63.95
-    functionName: TriggerAnimationEvent
-    data: SetMassCheckType
+  - time: 52.883335
+    functionName: StopAnimation
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 58.916668
+    functionName: StopAnimation
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 64.53333
+    functionName: SetReadyToWeightControlTrue
+    data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 2
     messageOptions: 0
+  - time: 64.9
+    functionName: StopAnimation
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 70.916664
+    functionName: StopAnimation
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 103.316666
-    functionName: TriggerAnimationEvent
-    data: SetGeometryCheckType
+    functionName: SetReadyToGeometryControlTrue
+    data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 3
+    messageOptions: 0
+  - time: 103.8
+    functionName: StopAnimation
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 109.78333
+    functionName: StopAnimation
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
     messageOptions: 0
