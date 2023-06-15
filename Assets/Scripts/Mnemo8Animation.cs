@@ -11,6 +11,7 @@ public class Mnemo8Animation : MonoBehaviour
     [SerializeField] private Animator coordinateManipulatorAnimator;
 
     [SerializeField] private GameObject mnemo09;
+    [SerializeField] private GameObject mnemo11;
     [SerializeField] private GeneralPanelAcions GeneralPanelAcions;
     [SerializeField] private GeneralPanelAcions AdditionalGeneralPanelAcions;
 
@@ -279,6 +280,12 @@ public class Mnemo8Animation : MonoBehaviour
         mnemo09.GetComponent<Animator>().Play("09 Mnemo Animation Drying");
     }
 
+    public void Start11MnemoAnimation()
+    {
+        GeneralPanelAcions.SetPanelActive(mnemo11);
+        mnemo11.GetComponent<Animator>().Play("11 Mnemo Animation");
+
+    }
     public void ContinueCoordinateManipulatorAnimation()
     {
         coordinateManipulatorAnimator.speed = 1;
