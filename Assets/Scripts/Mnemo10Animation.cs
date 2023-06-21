@@ -7,6 +7,7 @@ public class Mnemo10Animation : MonoBehaviour
     [SerializeField] private Text validityText;
     [SerializeField] private Text currentTVS;
     [SerializeField] private Text PChS;
+    [SerializeField] private Image isPerformedPanel;
     [SerializeField] private Animator mnemo08Animator;
     [SerializeField] private GeneralPanelAcions GeneralPanelAcions;
     [SerializeField] private GameObject mnemo11;
@@ -26,10 +27,10 @@ public class Mnemo10Animation : MonoBehaviour
         currentTVS.text = ARM2Mnemo0.FrameNumber.text;
     }
 
-
     public void StartControl()
     {
         SetValidity();
+        isPerformedPanel.color = new(0f, 255f, 0f, 100f);
         PChS.text = "1*10-13";
         gameObject.GetComponent<Animator>().Play("10 Mnemo Animation");
         mnemo08Animator.speed = 1;
@@ -40,9 +41,13 @@ public class Mnemo10Animation : MonoBehaviour
         validityText.text = DateTime.Now.AddDays(3).ToString();
     }
 
-
     public void Show11Mnemo()
     {
         GeneralPanelAcions.SetPanelActive(mnemo11);
+    }
+
+    private void MakeIsPerformedPanelGray()
+    {
+        isPerformedPanel.color = new Color(255f, 255f, 255f, 100f);
     }
 }

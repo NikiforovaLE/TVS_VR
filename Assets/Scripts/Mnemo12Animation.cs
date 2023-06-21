@@ -15,7 +15,7 @@ public class Mnemo12Animation : MonoBehaviour
     [SerializeField] private Text lockControlIsDoneText;
     [SerializeField] private Text suzControlIsDoneText;
 
-
+    [SerializeField] private Animator mnemo08Animator;
     [SerializeField] private ARM2Mnemo0 ARM2Mnemo0;
 
     private Animator currentAnimator;
@@ -31,7 +31,6 @@ public class Mnemo12Animation : MonoBehaviour
         currentAnimator = gameObject.GetComponent<Animator>();
     }
 
-
     // Update is called once per frame
     void Update()
     {
@@ -42,6 +41,7 @@ public class Mnemo12Animation : MonoBehaviour
     public void StartControl()
     {
         currentAnimator.Play("12 Mnemo Animation");
+        mnemo08Animator.speed = 1;
     }
 
     public void SetStep1()
