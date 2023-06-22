@@ -50,16 +50,22 @@ public class Mnemo8Animation : MonoBehaviour
     [SerializeField] private Animator mnemo00Animator;
 
     private readonly Vector3 tvsWashingTargetForMnemo00 = new(484.0f, -84.0f, 0.0f);
-    private readonly Vector3 manipulatorWashingTargetForMnemo00 = new(501f, -1f, 0.0f);
+    private readonly Vector3 manipulatorWashingTargetForMnemo00 = new(501f, -8f, 0.0f);
 
     private readonly Vector3 tvsDryingTargetForMnemo00 = new(432.0f, -84.0f, 0.0f);
-    private readonly Vector3 manipulatorDryingTargetForMnemo00 = new(448f, -1f, 0.0f);
+    private readonly Vector3 manipulatorDryingTargetForMnemo00 = new(448f, -8f, 0.0f);
 
     private readonly Vector3 tvsTightnessControlTargetForMnemo00 = new(335.0f, -84.0f, 0.0f);
-    private readonly Vector3 manipulatorTightnessControlTargetForMnemo00 = new(350.0f, -1f, 0.0f);
+    private readonly Vector3 manipulatorTightnessControlTargetForMnemo00 = new(350.0f, -8f, 0.0f);
 
     private readonly Vector3 tvsImpurityControlTargetForMnemo00 = new(236.0f, -84.0f, 0.0f);
-    private readonly Vector3 manipulatorImpurityControlTargetForMnemo00 = new(250f, -1f, 0.0f);
+    private readonly Vector3 manipulatorImpurityControlTargetForMnemo00 = new(250f, -8f, 0.0f);
+
+    private readonly Vector3 tvsWeightControlTargetForMnemo00 = new(108.0f, -84.0f, 0.0f);
+    private readonly Vector3 manipulatorWeightControlTargetForMnemo00 = new(120f, -8f, 0.0f);
+
+    private readonly Vector3 tvsGeometryControlTargetForMnemo00 = new(10.0f, -84.0f, 0.0f);
+    private readonly Vector3 manipulatorGeometryControlTargetForMnemo00 = new(20f, -8f, 0.0f);
 
     // Total distance between the markers.
     private float tvsJourneyLengthForMnemo00;
@@ -139,7 +145,7 @@ public class Mnemo8Animation : MonoBehaviour
 
         if (WeightControl && MoveToCertainPlace(tvsWeightControlTarget, manipulatorWeightControlTarget, "08 Mnemo Animation Weight",
             startTime, tvsStartTransform, manipulatorStartTransform,
-            tvsWashingTargetForMnemo00, manipulatorWashingTargetForMnemo00, "08 Mnemo Animation Geometry",
+            tvsWeightControlTargetForMnemo00, manipulatorWeightControlTargetForMnemo00, "Mnemo00 WeightControl",
             tvsStartTransformForMnemo00, manipulatorStartTransformForMnemo00,
             "readyToWeightControl"))
         {
@@ -148,7 +154,7 @@ public class Mnemo8Animation : MonoBehaviour
 
         if (GeometryControl && MoveToCertainPlace(tvsGeometryControlTarget, manipulatorGeometryControlTarget, "08 Mnemo Animation Geometry",
             startTime, tvsStartTransform, manipulatorStartTransform,
-            tvsWashingTargetForMnemo00, manipulatorWashingTargetForMnemo00, "08 Mnemo Animation Geometry", tvsStartTransformForMnemo00,
+            tvsGeometryControlTargetForMnemo00, manipulatorGeometryControlTargetForMnemo00, "Mnemo00 GeometryControl", tvsStartTransformForMnemo00,
             manipulatorStartTransformForMnemo00,
             "readyToGeometryControl"))
         {
@@ -195,6 +201,7 @@ public class Mnemo8Animation : MonoBehaviour
             //&& TVSFromMnemo00.rectTransform.anchoredPosition.x >= tvsTargetForMnemo00.x & TVSFromMnemo00.rectTransform.anchoredPosition.y >= tvsTargetForMnemo00.y
             && coordinateManipulatorAnimator.GetBool(boolName))
         {
+            coordinateManipulatorAnimator.speed = 1;
             mnemo08Animator.enabled = true;
             mnemo00Animator.enabled = true;
             mnemo08Animator.Play(animName);
@@ -264,8 +271,8 @@ public class Mnemo8Animation : MonoBehaviour
         manipulatorStartTransform = Manipulator.transform;
 
         //for mnemo00
-        tvsStartTransformForMnemo00 = TVS.rectTransform;
-        manipulatorStartTransformForMnemo00 = Manipulator.transform;
+        tvsStartTransformForMnemo00 = TVSFromMnemo00.rectTransform;
+        manipulatorStartTransformForMnemo00 = ManipulatorFromMnemo00.transform;
     }
 
     public void Start09MnemoAnimationWashing()
@@ -299,5 +306,6 @@ public class Mnemo8Animation : MonoBehaviour
     public void StopCurrentAnimation()
     {
         mnemo08Animator.speed = 0;
+        coordinateManipulatorAnimator.speed = 0;
     }
 }
