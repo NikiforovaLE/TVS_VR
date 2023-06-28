@@ -18,6 +18,9 @@ public class Mnemo12Animation : MonoBehaviour
     [SerializeField] private Animator mnemo08Animator;
     [SerializeField] private ARM2Mnemo0 ARM2Mnemo0;
 
+    [SerializeField] private GeneralPanelAcions GeneralPanelAcions;
+    [SerializeField] private GameObject mnemo13;
+
     private Animator currentAnimator;
     private bool isChecked;
 
@@ -93,5 +96,10 @@ public class Mnemo12Animation : MonoBehaviour
     {
         IsDone(suzControlIsDoneText);
         suzWeightLossText.text = "53";
+    }
+
+    public void Show13Mnemo()
+    {
+        GeneralPanelAcions.SetPanelActive(mnemo13);
     }
 }
