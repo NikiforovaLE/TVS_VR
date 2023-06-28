@@ -8771,21 +8771,21 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 14.866667
+  - time: 14.783334
     functionName: StopAnimation
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 28.55
+  - time: 28.333334
     functionName: SetReadyToDryingTrue
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 28.65
+  - time: 28.433332
     functionName: StopAnimation
     data: 
     objectReferenceParameter: {fileID: 0}

@@ -75,7 +75,7 @@ public class Mnemo8Animation : MonoBehaviour
     private Transform manipulatorStartTransformForMnemo00;
 
     // Movement speed in units per second.
-    public float speed = 1.0f;
+    private readonly float speed = 0.5f;
 
     // Time when the movement started.
     private float startTime;
@@ -199,7 +199,8 @@ public class Mnemo8Animation : MonoBehaviour
 
         if (TVS.rectTransform.anchoredPosition.x >= tvsTarget.x & TVS.rectTransform.anchoredPosition.y >= tvsTarget.y
             //&& TVSFromMnemo00.rectTransform.anchoredPosition.x >= tvsTargetForMnemo00.x & TVSFromMnemo00.rectTransform.anchoredPosition.y >= tvsTargetForMnemo00.y
-            && coordinateManipulatorAnimator.GetBool(boolName))
+            && coordinateManipulatorAnimator.GetBool(boolName)
+            && coordinateManipulatorAnimator.speed == 0)
         {
             coordinateManipulatorAnimator.speed = 1;
             mnemo08Animator.enabled = true;
