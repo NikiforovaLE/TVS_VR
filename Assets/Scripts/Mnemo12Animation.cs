@@ -96,6 +96,7 @@ public class Mnemo12Animation : MonoBehaviour
     {
         IsDone(suzControlIsDoneText);
         suzWeightLossText.text = "53";
+        IsChecked = true;
     }
 
     public void Show13Mnemo()
