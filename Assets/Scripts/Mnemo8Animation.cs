@@ -297,6 +297,7 @@ public class Mnemo8Animation : MonoBehaviour
     public void ContinueCoordinateManipulatorAnimation()
     {
         coordinateManipulatorAnimator.speed = 1;
+        mnemo00Animator.speed = 1;
     }
 
     public void Start3DManipulatorAnimation()
@@ -307,6 +308,7 @@ public class Mnemo8Animation : MonoBehaviour
     public void StopCurrentAnimation()
     {
         mnemo08Animator.speed = 0;
+        mnemo00Animator.speed = 0;
         coordinateManipulatorAnimator.speed = 0;
     }
 }

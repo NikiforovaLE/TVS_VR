@@ -15,6 +15,9 @@ public class Mnemo12Animation : MonoBehaviour
     [SerializeField] private Text lockControlIsDoneText;
     [SerializeField] private Text suzControlIsDoneText;
 
+
+    [SerializeField] private Image isPerformingBackgrond;
+
     [SerializeField] private Animator mnemo08Animator;
     [SerializeField] private ARM2Mnemo0 ARM2Mnemo0;
 
@@ -25,7 +28,8 @@ public class Mnemo12Animation : MonoBehaviour
     private bool isChecked;
 
     private readonly string done = "Выполнен";
-
+    private readonly Color whenIsNotPerforming = new(255f, 255f, 255f, 255f);
+    private readonly Color whenIsPerforming = new(0f, 255f, 0f, 255f);
     public bool IsChecked { get => isChecked; set => isChecked = value; }
 
     // Start is called before the first frame update
@@ -45,6 +49,7 @@ public class Mnemo12Animation : MonoBehaviour
     {
         currentAnimator.Play("12 Mnemo Animation");
         mnemo08Animator.speed = 1;
+        isPerformingBackgrond.color = whenIsPerforming;
     }
 
     public void SetStep1()
@@ -97,6 +102,7 @@ public class Mnemo12Animation : MonoBehaviour
         IsDone(suzControlIsDoneText);
         suzWeightLossText.text = "53";
         IsChecked = true;
+        isPerformingBackgrond.color = whenIsNotPerforming;
     }
 
     public void Show13Mnemo()
