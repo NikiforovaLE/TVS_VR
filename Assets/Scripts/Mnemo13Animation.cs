@@ -25,8 +25,8 @@ public class Mnemo13Animation : MonoBehaviour
     private bool mnemo12isChecked;
     private bool mnemo13IsChecked;
 
-    private readonly Color whenIsNotPerforming = new Color(0f, 255f, 0f, 255f);
-    private readonly Color whenIsPerforming = new Color(0f, 255f, 0f, 255f);
+    private readonly Color whenIsNotPerforming = new(255f, 255f, 255f, 255f);
+    private readonly Color whenIsPerforming = new(0f, 255f, 0f, 255f);
     private readonly string done = "Выполнен";
     private readonly string messageWhenNotChecked = "Проведите проверку";
 
