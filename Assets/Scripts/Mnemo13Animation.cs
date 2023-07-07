@@ -13,6 +13,7 @@ public class Mnemo13Animation : MonoBehaviour
 
     [SerializeField] private Mnemo12Animation mnemo12Animation;
 
+    [SerializeField] private Animator mnemo08Animator;
     [SerializeField] private Animator mnemo14Animator;
 
     [SerializeField] private GeneralPanelAcions generalPanelAcions;
@@ -52,6 +53,7 @@ public class Mnemo13Animation : MonoBehaviour
             MakeButtonsUnPointable();
             attentionMessage.text = "";
             isPerformingBackgrond.color = whenIsPerforming;
+            mnemo08Animator.speed = 1;
         }
     }
 
