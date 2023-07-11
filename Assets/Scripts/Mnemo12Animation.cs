@@ -14,6 +14,8 @@ public class Mnemo12Animation : MonoBehaviour
     [SerializeField] private Text inputControlIsDoneText;
     [SerializeField] private Text lockControlIsDoneText;
     [SerializeField] private Text suzControlIsDoneText;
+    [SerializeField] private Text captureText;
+    [SerializeField] private Text rotationAngle;
 
 
     [SerializeField] private Image isPerformingBackgrond;
