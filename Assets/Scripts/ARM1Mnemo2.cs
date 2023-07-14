@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,7 +21,7 @@ public class ARM1Mnemo2 : MonoBehaviour
     [SerializeField] private Image indicatorFive;
 
     [SerializeField] private GameObject types;
-    
+
     private int counter;
     private int containersCounter;
     private int framesCounter;
@@ -32,9 +31,11 @@ public class ARM1Mnemo2 : MonoBehaviour
     private bool DefectsInFixing;
 
     private List<string> framesNumbers;
+    private List<string> deffectContainers;
     private List<Image> Indicators;
     private Dictionary<string, bool> resultOfControl;
     private Dictionary<string, string> numberOfContainersAndFrames;
+    private Dictionary<string, List<string>> deffectContainerNumbersAndListOfItsFramesAndTypes;
     private Dictionary<string, string> framesAndTypes;
 
     private readonly string messageWhenConfirmWithoutDeffects = "“ребуетс€ передать контейнер на участок ѕ“и ";
@@ -53,6 +54,8 @@ public class ARM1Mnemo2 : MonoBehaviour
     public List<Image> Indicators1 { get => Indicators; set => Indicators = value; }
     public string TypeOfTVS { get => typeOfTVS; set => typeOfTVS = value; }
     public Dictionary<string, string> FramesAndTypes { get => framesAndTypes; set => framesAndTypes = value; }
+    public Dictionary<string, List<string>> DeffectContainerNumbersAndListOfItsFramesAndTypes { get => deffectContainerNumbersAndListOfItsFramesAndTypes; set => deffectContainerNumbersAndListOfItsFramesAndTypes = value; }
+    public List<string> DeffectContainers { get => deffectContainers; set => deffectContainers = value; }
 
     public void ShowContainerNumbers()
     {
@@ -88,7 +91,6 @@ public class ARM1Mnemo2 : MonoBehaviour
             framesCounter = 0;
             ShowFrameNumberText();
         }
-
     }
 
     private void ShowFrameNumberText()
@@ -122,10 +124,12 @@ public class ARM1Mnemo2 : MonoBehaviour
             attention.text = "";
             ResultOfControl.Add(Container, true);
             Indicators[indexOfIndicator].color = Color.red;
-            ARMPanelActions.ShowMnemoPanel(mainARM1Mnemo);
             message.text = messageWhenConfirmWithDeffects;
+            ARMPanelActions.ShowMnemoPanel(mainARM1Mnemo);
+            DeffectContainers.Add(Container);
+            DeffectContainerNumbersAndListOfItsFramesAndTypes.Add(Container, new List<string> { Frame, TypeOfTVS });
         }
-        else 
+        else
         {
             attention.text = "";
             Indicators[indexOfIndicator].color = Color.green;
@@ -195,7 +199,7 @@ public class ARM1Mnemo2 : MonoBehaviour
         containersCounter = 0;
         framesCounter = 0;
         attention.text = "";
-        TypeOfTVS = ""; 
+        TypeOfTVS = "";
         framesNumbers = new List<string> { "TVS00001", "TVS00002", "TVS00003", "TVS00004", "TVS00005" };
         Scratches = false;
         Dints = false;
