@@ -35,7 +35,7 @@ public class ARM1Mnemo2 : MonoBehaviour
     private List<Image> Indicators;
     private Dictionary<string, bool> resultOfControl;
     private Dictionary<string, string> numberOfContainersAndFrames;
-    private Dictionary<string, string> numberOfDeffectContainersAndItsFrames;
+    private Dictionary<string, List<string>> deffectContainerNumbersAndListOfItsFramesAndTypes;
     private Dictionary<string, string> framesAndTypes;
 
     private readonly string messageWhenConfirmWithoutDeffects = "“ребуетс€ передать контейнер на участок ѕ“и ";
@@ -54,7 +54,7 @@ public class ARM1Mnemo2 : MonoBehaviour
     public List<Image> Indicators1 { get => Indicators; set => Indicators = value; }
     public string TypeOfTVS { get => typeOfTVS; set => typeOfTVS = value; }
     public Dictionary<string, string> FramesAndTypes { get => framesAndTypes; set => framesAndTypes = value; }
-    public Dictionary<string, string> NumberOfDeffectContainersAndItsFrames { get => numberOfDeffectContainersAndItsFrames; set => numberOfDeffectContainersAndItsFrames = value; }
+    public Dictionary<string, List<string>> DeffectContainerNumbersAndListOfItsFramesAndTypes { get => deffectContainerNumbersAndListOfItsFramesAndTypes; set => deffectContainerNumbersAndListOfItsFramesAndTypes = value; }
     public List<string> DeffectContainers { get => deffectContainers; set => deffectContainers = value; }
 
     public void ShowContainerNumbers()
@@ -91,7 +91,6 @@ public class ARM1Mnemo2 : MonoBehaviour
             framesCounter = 0;
             ShowFrameNumberText();
         }
-
     }
 
     private void ShowFrameNumberText()
@@ -125,10 +124,10 @@ public class ARM1Mnemo2 : MonoBehaviour
             attention.text = "";
             ResultOfControl.Add(Container, true);
             Indicators[indexOfIndicator].color = Color.red;
-            ARMPanelActions.ShowMnemoPanel(mainARM1Mnemo);
             message.text = messageWhenConfirmWithDeffects;
+            ARMPanelActions.ShowMnemoPanel(mainARM1Mnemo);
             DeffectContainers.Add(Container);
-            NumberOfDeffectContainersAndItsFrames.Add(Container, Frame);
+            DeffectContainerNumbersAndListOfItsFramesAndTypes.Add(Container, new List<string> { Frame, TypeOfTVS });
         }
         else
         {
