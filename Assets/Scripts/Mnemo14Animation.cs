@@ -8,6 +8,7 @@ public class Mnemo14Animation : MonoBehaviour
     [SerializeField] private Text currentTVS;
     [SerializeField] private Text currentBox;
     [SerializeField] private Animator transferTruckAnimator;
+    [SerializeField] private Animator manipulatorCranAnimator;
     [SerializeField] private Animator coordinateManipulatorAnimator;
     public ARM2Mnemo0 ARM2Mnemo0;
 
@@ -36,6 +37,7 @@ public class Mnemo14Animation : MonoBehaviour
 
     public void Start3DAnimation()
     {
+        //manipulatorCranAnimator.Play("PenalManipulatorMoving");
         transferTruckAnimator.Play("TruckMoving");
         currentBox.text = boxNumber + counter++;
     }
