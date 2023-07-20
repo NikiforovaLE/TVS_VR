@@ -13,7 +13,6 @@ public class Mnemo03AnimationMain : MonoBehaviour
 
     public GameObject Shiberm03m;
     public GameObject Ramka03m;
-    public GameObject M03m03m;
 
     public GameObject Shiberm;
     public GameObject Ramka;
@@ -33,15 +32,12 @@ public class Mnemo03AnimationMain : MonoBehaviour
     private int countLastReadFuelRodsNumbers;
     private int countFuelRodsRemoveds;
 
-
-
     // Start is called before the first frame update
     void Start()
     {
         animmnemo03 = gameObject.GetComponent<Animation>();
         animmnemo04 = Mnemo04.GetComponent<Animation>();
         //animmnemo03["03 Mnemo Animation"].time = 20.0f;
-
 
         lastReadFuelRodsNumbers = new List<string> { "", "01000123", "01004023", "01008023", "01012023", "01016023" };
         fuelRodsRemoveds = new List<string> { "", "001", "040", "080", "120", "160" };
@@ -70,7 +66,6 @@ public class Mnemo03AnimationMain : MonoBehaviour
     {
         Mnemo03.SetActive(true);
     }
-
 
     private void Mnemo03Off()
     {
