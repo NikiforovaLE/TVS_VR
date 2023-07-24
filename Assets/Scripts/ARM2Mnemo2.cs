@@ -89,7 +89,7 @@ public class ARM2Mnemo2 : MonoBehaviour
     {
         counter = 0;
         CurrentVTUK = "";
-        VTUKNumbers = new List<string> { "VTUK0001", "VTUK0002", "VTUK0003", "VTUK0004", "VTUK0005" };
+        VTUKNumbers = new List<string> { "брсй0001", "брсй0002", "брсй0003", "брсй0004", "брсй0005" };
         totalAmountOfFuelElementsInVTUKWhenTypeOneAndTwo = "80";
         totalAmountOfFuelElementsInVTUKWhenTypeThreeAndFour = "51";
         infoAboutVTUKNumberOn02Mnemo.text = "";
