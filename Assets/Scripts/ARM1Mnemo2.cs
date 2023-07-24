@@ -200,7 +200,7 @@ public class ARM1Mnemo2 : MonoBehaviour
         framesCounter = 0;
         attention.text = "";
         TypeOfTVS = "";
-        framesNumbers = new List<string> { "TVS00001", "TVS00002", "TVS00003", "TVS00004", "TVS00005" };
+        framesNumbers = new List<string> { "ายั00001", "ายั00002", "ายั00003", "ายั00004", "ายั00005" };
         Scratches = false;
         Dints = false;
         DefectsInFixing = false;

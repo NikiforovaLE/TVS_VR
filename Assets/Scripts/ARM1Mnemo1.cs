@@ -29,6 +29,8 @@ public class ARM1Mnemo1 : MonoBehaviour
     private readonly string afterConfirmMessage = "Требуется выполнить входной контроль";
     private readonly string warningMessage = "Сначала нужно считать номер контейнера!";
     public List<string> ChosenNumbers { get => chosenNumbers; set => chosenNumbers = value; }
+    public List<Text> ReadNumbers { get => readNumbers; set => readNumbers = value; }
+    public int CounterOfReadNumbers { get => counterOfReadNumbers; set => counterOfReadNumbers = value; }
 
     public void ReadNumberOfContainer()
     {
@@ -54,13 +56,13 @@ public class ARM1Mnemo1 : MonoBehaviour
             return;
         }
 
-        if (counterOfReadNumbers < 5 && !ChosenNumbers.Contains(output.text))
+        if (CounterOfReadNumbers < 5 && !ChosenNumbers.Contains(output.text))
         {
             attention.text = "";
-            readNumbers[counterOfReadNumbers].text = output.text;
+            ReadNumbers[CounterOfReadNumbers].text = output.text;
             ChosenNumbers.Add(output.text);
-            numberOnMnemo0.text = (counterOfReadNumbers + 1).ToString();
-            counterOfReadNumbers++;
+            numberOnMnemo0.text = (CounterOfReadNumbers + 1).ToString();
+            CounterOfReadNumbers++;
             ARMPanelActions.ShowMnemoPanel(mainARM1Mnemo);
             message.text = afterConfirmMessage;
         }
@@ -70,7 +72,7 @@ public class ARM1Mnemo1 : MonoBehaviour
     void Start()
     {
         counter = 0;
-        counterOfReadNumbers = 0;
+        CounterOfReadNumbers = 0;
         output.text = "";
         readNumberOne.text = "";
         readNumberTwo.text = "";
@@ -81,8 +83,8 @@ public class ARM1Mnemo1 : MonoBehaviour
         numberOnMnemo0.text = 0.ToString();
         message.text = firstMessage;
         generalMessage.text = firstGeneralMessage;
-        containersNumbers = new List<string> { "CONT0001", "CONT0002", "CONT0003", "CONT0004", "CONT0005" };
-        readNumbers = new List<Text> { readNumberOne, readNumberTwo, readNumberThree, readNumberFour, readNumberFive };
+        containersNumbers = new List<string> { "КОНТ0001", "КОНТ0002", "КОНТ0003", "КОНТ0004", "КОНТ0005" };
+        ReadNumbers = new List<Text> { readNumberOne, readNumberTwo, readNumberThree, readNumberFour, readNumberFive };
         ChosenNumbers = new List<string>();
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class ARM1Mnemo32 : MonoBehaviour
 {
+    [SerializeField] private ARM1Mnemo0 aRM1Mnemo0;
+    [SerializeField] private ARM1Mnemo1 aRM1Mnemo1;
     [SerializeField] private ARM1Mnemo2 ARM1Mnemo2;
     [SerializeField] private ARMPanelActions ARM1PanelActions;
     [SerializeField] private Text deffectContainerNumber;
@@ -48,8 +50,12 @@ public class ARM1Mnemo32 : MonoBehaviour
             CurrentDeffectContainer = deffectContainerNumber.text;
             List<string> deffectContainerNumbers = ARM1Mnemo2.DeffectContainers;
             deffectContainerNumbers.Remove(CurrentDeffectContainer);
-            ARM1PanelActions.ShowMnemoPanel(mainARM1Mnemo);
 
+            // actions on ARM1Mnemo0
+            aRM1Mnemo1.CounterOfReadNumbers--;
+            aRM1Mnemo0.FillReadNumbers();
+            ARM1PanelActions.ShowMnemoPanel(mainARM1Mnemo);
+            
             // actions on 17.Mnemo on MainPanel
             Dictionary<string, List<string>> deffectContainerNumbersAndListOfItsFramesAndTypes = ARM1Mnemo2.DeffectContainerNumbersAndListOfItsFramesAndTypes;
             frameNumberOn17MnemoText.text = deffectContainerNumbersAndListOfItsFramesAndTypes[CurrentDeffectContainer][0];
