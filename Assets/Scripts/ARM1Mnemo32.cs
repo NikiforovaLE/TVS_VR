@@ -53,30 +53,13 @@ public class ARM1Mnemo32 : MonoBehaviour
             //correct info on ARM1 Mnemo2
             List<string> deffectContainerNumbers = aRM1Mnemo2.DeffectContainers;
             deffectContainerNumbers.Remove(CurrentDeffectContainer);
-
-            int indexOfIndicator = aRM1Mnemo1.ChosenNumbers.IndexOf(CurrentDeffectContainer);
-            aRM1Mnemo1.ChosenNumbers.RemoveAt(indexOfIndicator);
+            aRM1Mnemo1.ChosenNumbers.Remove(CurrentDeffectContainer);
             aRM1Mnemo1.CounterOfReadNumbers--;
-
-            List<Image> Indicators = aRM1Mnemo2.Indicators1;
-            Indicators.RemoveAt(indexOfIndicator);
 
             // actions on ARM1Mnemo0
             aRM1Mnemo0.FillReadNumbers();
-            ARM1PanelActions.ShowMnemoPanel(mainARM1Mnemo);
-            
-            // actions on 17.Mnemo on MainPanel
-            Dictionary<string, List<string>> deffectContainerNumbersAndListOfItsFramesAndTypes = aRM1Mnemo2.DeffectContainerNumbersAndListOfItsFramesAndTypes;
-            frameNumberOn17MnemoText.text = deffectContainerNumbersAndListOfItsFramesAndTypes[CurrentDeffectContainer][0];
-            typeOfDeffectTvsOn17MnemoText.text = deffectContainerNumbersAndListOfItsFramesAndTypes[CurrentDeffectContainer][1];
-            additionalGeneralPanelAcions.SetPanelActive(mnemo17);
         }
     }
-
-    //private void Show17MnemoOnMainPanel()
-    //{
-    //    generalPanelAcions.SetPanelActive(mnemo17);
-    //}
 
     // Start is called before the first frame update
     void Start()

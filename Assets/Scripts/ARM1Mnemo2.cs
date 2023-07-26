@@ -33,7 +33,7 @@ public class ARM1Mnemo2 : MonoBehaviour
     private List<string> framesNumbers;
     private List<string> deffectContainers;
     private List<Image> Indicators;
-    private Dictionary<string, bool> resultOfControl;
+    private Dictionary<string, bool> resultOfControl; //does TVS have defects? yes-true, no - false
     private Dictionary<string, string> numberOfContainersAndFrames;
     private Dictionary<string, List<string>> deffectContainerNumbersAndListOfItsFramesAndTypes;
     private Dictionary<string, string> framesAndTypes;
