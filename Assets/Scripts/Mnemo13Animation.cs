@@ -17,8 +17,10 @@ public class Mnemo13Animation : MonoBehaviour
     [SerializeField] private Animator mnemo14Animator;
 
     [SerializeField] private GeneralPanelAcions generalPanelAcions;
+    [SerializeField] private GeneralPanelAcions additionalGeneralPanelAcions;
 
     [SerializeField] private GameObject mnemo14;
+    [SerializeField] private GameObject mnemo16;
     [SerializeField] private GameObject isSuitableButton;
     [SerializeField] private GameObject defectButton;
 
@@ -101,6 +103,7 @@ public class Mnemo13Animation : MonoBehaviour
         {
             attentionMessage.text = "";
             generalPanelAcions.SetPanelActive(mnemo14);
+            additionalGeneralPanelAcions.SetPanelActive(mnemo16);
         }
         else
         {
