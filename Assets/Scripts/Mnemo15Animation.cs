@@ -15,11 +15,23 @@ public class Mnemo15Animation : MonoBehaviour
 
     private readonly string positionIsManipulatorCran = "Кран-манипулятор";
     private readonly string positionIsCoordinateManipulator = "Координатный манипулятор";
+    private readonly string positionIsBoxLidRemoving = "Снятие крышки пенала";
+
     public void FillInfo()
     {
         currentBox.text = mnemo16Animation.CurrentBox;
         currentFrame.text = aRM2Mnemo0.FrameNumber.text;
         destinationPosition.text = positionIsManipulatorCran;
+    }
+
+    public void SetBoxLidRemoving()
+    {
+        destinationPosition.text = positionIsBoxLidRemoving;
+    }
+
+    public void SetCoordinateManipulatorPosition()
+    {
+        destinationPosition.text = positionIsCoordinateManipulator;
     }
 
     // Start is called before the first frame update
