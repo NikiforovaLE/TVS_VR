@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class ARM1Mnemo1 : MonoBehaviour
 {
+    [SerializeField] private MessageInfo messageInfoOnMnemo1;
+
     [SerializeField] private Text output;
     [SerializeField] private Text message;
     [SerializeField] private Text generalMessage;
@@ -28,6 +30,11 @@ public class ARM1Mnemo1 : MonoBehaviour
     private readonly string firstGeneralMessage = "Необходимо выполнить операции на АРМ ввода №1";
     private readonly string afterConfirmMessage = "Требуется выполнить входной контроль";
     private readonly string warningMessage = "Сначала нужно считать номер контейнера!";
+
+    private readonly string operatorAllowedOperations = "Оператор разрешил выполнение операций на ЛСУ";
+    private readonly string positiveStatus = "+";
+    private readonly string negativeStatus = "-";
+
     public List<string> ChosenNumbers { get => chosenNumbers; set => chosenNumbers = value; }
     public List<Text> ReadNumbers { get => readNumbers; set => readNumbers = value; }
     public int CounterOfReadNumbers { get => counterOfReadNumbers; set => counterOfReadNumbers = value; }
@@ -65,6 +72,7 @@ public class ARM1Mnemo1 : MonoBehaviour
             CounterOfReadNumbers++;
             ARMPanelActions.ShowMnemoPanel(mainARM1Mnemo);
             message.text = afterConfirmMessage;
+            messageInfoOnMnemo1.FillInfo(operatorAllowedOperations, positiveStatus);
         }
     }
 

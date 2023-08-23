@@ -83,7 +83,7 @@ public class Mnemo01AnimationController : MonoBehaviour
     {
         additionalGeneralPanelAcions.SetPanelActive(Mnemo03);
         imageOf03MnemoButton.color = buttonColorAfterClicking;
-        //Mnemo03.SetActive(true);
+        Mnemo03.SetActive(true);
         Shiberm.SetActive(false);
         Ramka.SetActive(false);
         M03m.SetActive(false);
