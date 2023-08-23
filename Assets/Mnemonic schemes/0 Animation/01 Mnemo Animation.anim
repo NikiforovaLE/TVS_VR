@@ -800,6 +800,27 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 15.983334
+    functionName: OpenShiber
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 18.983334
+    functionName: SetShiberIsOpened
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 19.1
+    functionName: MoveIntoShelter
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 19.816668
     functionName: ShiberStop
     data: 
@@ -823,6 +844,27 @@ AnimationClip:
     messageOptions: 0
   - time: 30.166666
     functionName: ShiberPlay
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 30.216667
+    functionName: SetLodgementIsInShelter
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 30.216667
+    functionName: CloseShiber
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 33.966667
+    functionName: SetShiberIsClosed
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
