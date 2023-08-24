@@ -15,33 +15,36 @@ public class Mnemo1Messages : MonoBehaviour
 
     private readonly string positiveStatus = "+";
     private readonly string negativeStatus = "-";
+
+    private readonly string messageSource = "Ñáîðêà ÒÂÑ";
+
     public void OpenShiber()
     {
-        messageInfoOnMnemo1.FillInfo(openShiberCommand, positiveStatus);
+        messageInfoOnMnemo1.FillInfo(openShiberCommand, messageSource, positiveStatus);
     }
 
     public void CloseShiber()
     {
-        messageInfoOnMnemo1.FillInfo(closeShiberCommand, positiveStatus);
+        messageInfoOnMnemo1.FillInfo(closeShiberCommand, messageSource, positiveStatus);
     }
 
     public void SetShiberIsOpened()
     {
-        messageInfoOnMnemo1.FillInfo(shiberIsOpened, positiveStatus);
+        messageInfoOnMnemo1.FillInfo(shiberIsOpened, messageSource, positiveStatus);
     }
 
     public void SetShiberIsClosed()
     {
-        messageInfoOnMnemo1.FillInfo(shiberIsClosed, positiveStatus);
+        messageInfoOnMnemo1.FillInfo(shiberIsClosed, messageSource, positiveStatus);
     }
 
     public void MoveIntoShelter()
     {
-        messageInfoOnMnemo1.FillInfo(moveIntoShelterCommand, positiveStatus);
+        messageInfoOnMnemo1.FillInfo(moveIntoShelterCommand, messageSource, positiveStatus);
     }
 
     public void SetLodgementIsInShelter()
     {
-        messageInfoOnMnemo1.FillInfo(lodgementIsInShelter, positiveStatus);
+        messageInfoOnMnemo1.FillInfo(lodgementIsInShelter, messageSource, positiveStatus);
     }
 }

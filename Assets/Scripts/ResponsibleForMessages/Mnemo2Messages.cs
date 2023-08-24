@@ -12,23 +12,25 @@ public class Mnemo2Messages : MonoBehaviour
 
     private readonly string positiveStatus = "+";
     private readonly string negativeStatus = "-";
+
+    private readonly string messageSource = "–‡·ÓÚ‡ Ò ¬“” ";
     public void OpenShiber()
     {
-        messageInfoOnMnemo2.FillInfo(openShiberCommand, positiveStatus);
+        messageInfoOnMnemo2.FillInfo(openShiberCommand, messageSource, positiveStatus);
     }
 
     public void CloseShiber()
     {
-        messageInfoOnMnemo2.FillInfo(closeShiberCommand, positiveStatus);
+        messageInfoOnMnemo2.FillInfo(closeShiberCommand, messageSource, positiveStatus);
     }
 
     public void SetShiberIsOpened()
     {
-        messageInfoOnMnemo2.FillInfo(shiberIsOpened, positiveStatus);
+        messageInfoOnMnemo2.FillInfo(shiberIsOpened, messageSource, positiveStatus);
     }
 
     public void SetShiberIsClosed()
     {
-        messageInfoOnMnemo2.FillInfo(shiberIsClosed, positiveStatus);
+        messageInfoOnMnemo2.FillInfo(shiberIsClosed, messageSource, positiveStatus);
     }
 }
