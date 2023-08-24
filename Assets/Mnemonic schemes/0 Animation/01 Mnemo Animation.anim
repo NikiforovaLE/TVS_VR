@@ -793,8 +793,8 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 15.983334
-    functionName: ShiberPlay
+  - time: 0
+    functionName: ConfirmChoice
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -807,6 +807,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 15.983334
+    functionName: ShiberPlay
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 18.983334
     functionName: SetShiberIsOpened
     data: 
@@ -814,7 +821,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 19.1
+  - time: 19.15
     functionName: MoveIntoShelter
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -856,7 +863,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 30.216667
+  - time: 30.333334
     functionName: CloseShiber
     data: 
     objectReferenceParameter: {fileID: 0}

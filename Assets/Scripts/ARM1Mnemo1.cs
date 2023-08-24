@@ -35,6 +35,7 @@ public class ARM1Mnemo1 : MonoBehaviour
     private readonly string positiveStatus = "+";
     private readonly string negativeStatus = "-";
 
+    private readonly string messageSource = "Оператор";
     public List<string> ChosenNumbers { get => chosenNumbers; set => chosenNumbers = value; }
     public List<Text> ReadNumbers { get => readNumbers; set => readNumbers = value; }
     public int CounterOfReadNumbers { get => counterOfReadNumbers; set => counterOfReadNumbers = value; }
@@ -72,7 +73,7 @@ public class ARM1Mnemo1 : MonoBehaviour
             CounterOfReadNumbers++;
             ARMPanelActions.ShowMnemoPanel(mainARM1Mnemo);
             message.text = afterConfirmMessage;
-            messageInfoOnMnemo1.FillInfo(operatorAllowedOperations, positiveStatus);
+            messageInfoOnMnemo1.FillInfo(operatorAllowedOperations, messageSource, positiveStatus);
         }
     }
 
