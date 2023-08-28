@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class ARM2Mnemo1 : MonoBehaviour
 {
+    [SerializeField] private MessageInfo messageInfoOnArm2Mnemo1;
+
     [SerializeField] private ARMPanelActions ARM2PanelActions;
     [SerializeField] private ARM1Mnemo1 ARM1Mnemo1;
     [SerializeField] private ARM1Mnemo2 ARM1Mnemo2;
@@ -23,6 +25,11 @@ public class ARM2Mnemo1 : MonoBehaviour
     private readonly string attentionMessageAboutTheAbsenceOfFrame = "Необходимо считать номер каркаса ТВС";
     private string currentFrame;
     private string currentContainerNumber;
+
+
+    private readonly string container = "Контейнер ";
+    private readonly string withFrame = " с каркасом ТВС  ";
+    private readonly string isRecieved = " получен на участке подачи комплектующих ";
 
     public string CurrentFrame { get => currentFrame; set => currentFrame = value; }
     public string CurrentContainerNumber { get => currentContainerNumber; set => currentContainerNumber = value; }

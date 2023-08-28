@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class ARM1Mnemo31 : MonoBehaviour
 {
+    [SerializeField] private MessageInfo messageInfoOnMnemo1MainPanel;
+    [SerializeField] private MessageInfo messageInfoOnArm1;
+
     [SerializeField] private ARM1Mnemo1 ARM1Mnemo1;
     [SerializeField] private ARM1Mnemo2 ARM1Mnemo2;
     [SerializeField] private ARMPanelActions ARM1PanelActions;
@@ -16,12 +19,26 @@ public class ARM1Mnemo31 : MonoBehaviour
     [SerializeField] private Text attention;
     [SerializeField] private GameObject mainARM1Mnemo;
     [SerializeField] private Mnemo00Animation Mnemo00Animation;
+
+    private int counter;
     private string currentContainer;
-    private readonly string messageWhenConfirm = "";
+
+    // messages on the top panels
+    private readonly string messageOnArm1TopPanelWhenConfirm = "";
     private readonly string generalMessageAfterConfirm = "Необходимо выполнить операции на АРМ ввода №2";
     private readonly string ARM2MessageAfterConfirm = "Необходимо получить контейнер с каркасом ТВС";
     private readonly string warningMessage = "Сначала нужно считать номер контейнера!";
-    private int counter;
+
+    // messages on the MessageArea on Mnemo1 on Main panel
+    private readonly string operatorAllowedOperations = "Оператор разрешил выполнение операций на ЛСУ";
+
+    // messages on ARM1 MessageArea
+    private readonly string containerText = "Контейнер ";
+    private readonly string isTransferred = " передан на участок ПТиК";
+
+    private readonly string messageSourceIsOperator = "Оператор";
+    private readonly string positiveStatus = "+";
+    private readonly string negativeStatus = "-";
 
     public string CurrentContainer { get => currentContainer; set => currentContainer = value; }
 
@@ -66,12 +83,15 @@ public class ARM1Mnemo31 : MonoBehaviour
             ARM1PanelActions.ShowMnemoPanel(mainARM1Mnemo);
 
             //top panel messages
-            messageOnARM1TopPanel.text = messageWhenConfirm;
+            messageOnARM1TopPanel.text = messageOnArm1TopPanelWhenConfirm;
             generalMessage.text = generalMessageAfterConfirm;
             ARM2Message.text = ARM2MessageAfterConfirm;
 
             //info on 01 Mnemo
             infoAboutContainerNumberOn01Mnemo.text = CurrentContainer;
+            messageInfoOnMnemo1MainPanel.FillInfo(operatorAllowedOperations, messageSourceIsOperator, positiveStatus);
+
+            messageInfoOnArm1.FillInfo(containerText + CurrentContainer + isTransferred, messageSourceIsOperator, positiveStatus);// messageArea
 
             //Mnemo 00 actions
             Mnemo00Animation.ToBeYellowOne = false;
