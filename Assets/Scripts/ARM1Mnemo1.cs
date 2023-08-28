@@ -1,11 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ARM1Mnemo1 : MonoBehaviour
 {
-    [SerializeField] private MessageInfo messageInfoOnMnemo1;
+    [SerializeField] private MessageInfo messageInfoOnArm1;
 
     [SerializeField] private Text output;
     [SerializeField] private Text message;
@@ -26,16 +25,19 @@ public class ARM1Mnemo1 : MonoBehaviour
 
     private int counter;
     private int counterOfReadNumbers;
-    private readonly string firstMessage = "Требуется получить контейнер с каркасом ТВС";
+
+    // messages on the top panels
     private readonly string firstGeneralMessage = "Необходимо выполнить операции на АРМ ввода №1";
-    private readonly string afterConfirmMessage = "Требуется выполнить входной контроль";
+    private readonly string firstMessageOnArm1TopPanel = "Требуется получить контейнер с каркасом ТВС";
+    private readonly string afterConfirmMessageOnArm1TopPanel = "Требуется выполнить входной контроль";
     private readonly string warningMessage = "Сначала нужно считать номер контейнера!";
 
-    private readonly string operatorAllowedOperations = "Оператор разрешил выполнение операций на ЛСУ";
+    // messages on ARM1 MessageArea
+    private readonly string containerIsRecieved = "Получен контейнер ";
+    private readonly string messageSourceIsOperator = "Оператор";
     private readonly string positiveStatus = "+";
     private readonly string negativeStatus = "-";
 
-    private readonly string messageSource = "Оператор";
     public List<string> ChosenNumbers { get => chosenNumbers; set => chosenNumbers = value; }
     public List<Text> ReadNumbers { get => readNumbers; set => readNumbers = value; }
     public int CounterOfReadNumbers { get => counterOfReadNumbers; set => counterOfReadNumbers = value; }
@@ -67,13 +69,16 @@ public class ARM1Mnemo1 : MonoBehaviour
         if (CounterOfReadNumbers < 5 && !ChosenNumbers.Contains(output.text))
         {
             attention.text = "";
-            ReadNumbers[CounterOfReadNumbers].text = output.text;
-            ChosenNumbers.Add(output.text);
-            numberOnMnemo0.text = (CounterOfReadNumbers + 1).ToString();
-            CounterOfReadNumbers++;
+            string currentContainer = output.text;
+            ReadNumbers[CounterOfReadNumbers++].text = currentContainer;
+            ChosenNumbers.Add(currentContainer);
+            message.text = afterConfirmMessageOnArm1TopPanel; // message on the ARM1 top panel
+            numberOnMnemo0.text = CounterOfReadNumbers.ToString(); // info on ARM1Mnemo0
+
+            //fill messageArea on ARM1 
+            messageInfoOnArm1.FillInfo(containerIsRecieved + currentContainer, messageSourceIsOperator, positiveStatus);
+
             ARMPanelActions.ShowMnemoPanel(mainARM1Mnemo);
-            message.text = afterConfirmMessage;
-            messageInfoOnMnemo1.FillInfo(operatorAllowedOperations, messageSource, positiveStatus);
         }
     }
 
@@ -90,7 +95,7 @@ public class ARM1Mnemo1 : MonoBehaviour
         readNumberFive.text = "";
         attention.text = "";
         numberOnMnemo0.text = 0.ToString();
-        message.text = firstMessage;
+        message.text = firstMessageOnArm1TopPanel;
         generalMessage.text = firstGeneralMessage;
         containersNumbers = new List<string> { "КОНТ0001", "КОНТ0002", "КОНТ0003", "КОНТ0004", "КОНТ0005" };
         ReadNumbers = new List<Text> { readNumberOne, readNumberTwo, readNumberThree, readNumberFour, readNumberFive };
