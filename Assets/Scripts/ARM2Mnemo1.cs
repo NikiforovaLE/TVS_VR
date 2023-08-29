@@ -1,11 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ARM2Mnemo1 : MonoBehaviour
 {
-    [SerializeField] private MessageInfo messageInfoOnArm2Mnemo1;
+    [SerializeField] private MessageInfo messageInfoOnArm2;
 
     [SerializeField] private ARMPanelActions ARM2PanelActions;
     [SerializeField] private ARM1Mnemo1 ARM1Mnemo1;
@@ -26,11 +25,13 @@ public class ARM2Mnemo1 : MonoBehaviour
     private string currentFrame;
     private string currentContainerNumber;
 
-
+    // messages on ARM2 MessageArea
     private readonly string container = "Контейнер ";
     private readonly string withFrame = " с каркасом ТВС  ";
-    private readonly string isRecieved = " получен на участке подачи комплектующих ";
-
+    private readonly string isRecieved = " получен на участке подачи комплектующих";
+    private readonly string messageSourceIsOperator = "Оператор";
+    private readonly string positiveStatus = "+";
+    private readonly string negativeStatus = "-";
     public string CurrentFrame { get => currentFrame; set => currentFrame = value; }
     public string CurrentContainerNumber { get => currentContainerNumber; set => currentContainerNumber = value; }
 
@@ -57,8 +58,9 @@ public class ARM2Mnemo1 : MonoBehaviour
             currentFrame = frameNumber;
             CurrentContainerNumber = containerNumber;
             ARM2Mnemo0.ShowTVSInfo();
-            ARM2PanelActions.ShowMnemoPanel(mainMnemoARM2);
             message.text = messageAfterConfirm;
+            messageInfoOnArm2.FillInfo(container + CurrentContainerNumber + withFrame + currentFrame + isRecieved, messageSourceIsOperator, positiveStatus);
+            ARM2PanelActions.ShowMnemoPanel(mainMnemoARM2);
         }
     }
 

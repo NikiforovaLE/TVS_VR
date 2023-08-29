@@ -1,10 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ARM2Mnemo2 : MonoBehaviour
 {
+    [SerializeField] private MessageInfo messageInfoOnArm2;
+
     [SerializeField] private Text outputVTUKNumber;
     [SerializeField] private Text outputVTUKNumberOnMnemo3;
     [SerializeField] private Text outputNumberOfFuelElements;
@@ -27,6 +28,13 @@ public class ARM2Mnemo2 : MonoBehaviour
     private string totalAmountOfFuelElementsInVTUKWhenTypeOneAndTwo;
     private string totalAmountOfFuelElementsInVTUKWhenTypeThreeAndFour;
     private int counter;
+
+    // messages on ARM2 MessageArea
+    private readonly string vtuk = "ВТУК ";
+    private readonly string isRecieved = " получен на участке подачи комплектующих";
+    private readonly string messageSourceIsOperator = "Оператор";
+    private readonly string positiveStatus = "+";
+    private readonly string negativeStatus = "-";
 
     public Mnemo00Animation Mnemo00Animation;
     public string CurrentVTUK { get => currentVTUK; set => currentVTUK = value; }
@@ -81,6 +89,7 @@ public class ARM2Mnemo2 : MonoBehaviour
                 mnemo00Animator.Play("VTUKGetting");
                 //mnemo01AnimationController.Mnemo01OffMnemo02Andnemo03On();
             }
+            messageInfoOnArm2.FillInfo(vtuk + CurrentVTUK + isRecieved, messageSourceIsOperator, positiveStatus);
         }
     }
 
