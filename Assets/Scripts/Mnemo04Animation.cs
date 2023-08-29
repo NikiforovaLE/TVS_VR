@@ -30,6 +30,7 @@ public class Mnemo04Animation : MonoBehaviour
     private List<string> pushPositions = new() { "", "001", "079", "080", "081", "159", "160" };
     private readonly List<string> currentFuelRodNumbers = new() { "", "01001023", "01007923", "01008023", "01008123", "01015923", "01016023" };
 
+    public Text CurrentFuelRodNumberText { get => currentFuelRodNumberText; set => currentFuelRodNumberText = value; }
 
     // Start is called before the first frame update
     void Start()
@@ -97,7 +98,7 @@ public class Mnemo04Animation : MonoBehaviour
     public void CurrentFuelRodNumber()
     {
         countpushPosition++;
-        currentFuelRodNumberText.text = currentFuelRodNumbers[countpushPosition];
+        CurrentFuelRodNumberText.text = currentFuelRodNumbers[countpushPosition];
         pushPositionText.text = pushPositions[countpushPosition];
     }
 

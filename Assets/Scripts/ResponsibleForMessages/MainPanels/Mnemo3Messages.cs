@@ -13,7 +13,7 @@ public class Mnemo3Messages : MonoBehaviour
     private readonly string shiberIsClosed = "Шибер закрыт";
 
     private readonly string getVtukCommand = "Выдана команда \"Получить ВТУК\"";
-    private readonly string vtukIsReceived = "Получен ВТУК";
+    private readonly string vtukIsReceived = "Получен ВТУК ";
 
     private readonly string extractFuelRodCommand = "Выдана команда \"Извлечь твэл\"";
     private readonly string fuelRodIsExtracted = "Извлечён твэл из магазина";
@@ -22,7 +22,7 @@ public class Mnemo3Messages : MonoBehaviour
     private readonly string transferFuelRodForAssemblyCommand = "Выдана команда \"Передать твэл на сборку\"";
     private readonly string FuelRodIsTransfered = "Твэл перемещён на сборку ТВС";
     private readonly string returnMagazineCommand = "Выдана команда \"Вернуть магазин\"";
-    private readonly string magazineIsPlacedInVtuk = "\"Магазин помещён во ВТУК\"";
+    private readonly string magazineIsPlacedInVtuk = "Магазин помещён во ВТУК";
 
     private readonly string positiveStatus = "+";
     private readonly string negativeStatus = "-";

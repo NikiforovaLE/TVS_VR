@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class ARM2Mnemo3 : MonoBehaviour
 {
+    [SerializeField] private MessageInfo messageInfoOnArm2;
+
     [SerializeField] private ARMPanelActions ARM2PanelActions;
     [SerializeField] private ARM2Mnemo0 ARM2Mnemo0;
     [SerializeField] private ARM2Mnemo2 ARM2Mnemo2;
@@ -14,10 +16,18 @@ public class ARM2Mnemo3 : MonoBehaviour
     [SerializeField] private Animator mnemo00Animator;
     [SerializeField] private Mnemo00Animation Mnemo00Animation;
 
+    // messages on ARM2 MessageArea
+    private readonly string vtuk = "ВТУК ";
+    private readonly string isReturned = " убран с участка подачи комплектующих";
+    private readonly string messageSourceIsOperator = "Оператор";
+    private readonly string positiveStatus = "+";
+    private readonly string negativeStatus = "-";
+
     public void ConfirmChoice()
     {
         if (!outputVTUKNumber.text.Equals(""))
         {
+            string currentVtuk = outputVTUKNumber.text;
             ARM2Mnemo2.CurrentVTUK = "";
             ARM2Mnemo2.CurrentTotalAmountOfFuelElementsInVTUK = "";
             ARM2Mnemo2TextAboutVTUKNumber.text = "";
@@ -36,6 +46,7 @@ public class ARM2Mnemo3 : MonoBehaviour
                 Mnemo00Animation.AttentionMessageTwo.text = "";
                 Mnemo00Animation.ToBeYellowTwo = false;
             }
+            messageInfoOnArm2.FillInfo(vtuk + currentVtuk + isReturned, messageSourceIsOperator, positiveStatus);
         }
     }
 }
