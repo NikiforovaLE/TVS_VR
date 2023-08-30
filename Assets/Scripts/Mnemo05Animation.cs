@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class Mnemo05Animation : MonoBehaviour
 {
-
-    private Animation animmnemo05;
     public Animator Autooperator;
     public GameObject TVSframe;
     public GameObject TVSframeAutooperator;
@@ -17,8 +15,6 @@ public class Mnemo05Animation : MonoBehaviour
     public GameObject Mnemo05;
 
     private List<string> verticalPosition;
-    private List<string> stateGrips;
-    private List<string> destinationPosition;
 
     [SerializeField] private Text verticalPositionText;
     [SerializeField] private Text stateGripsText;
@@ -28,27 +24,19 @@ public class Mnemo05Animation : MonoBehaviour
     [SerializeField] private GeneralPanelAcions AdditionalGeneralPanelAcions;
 
     private int countverticalPosition = 0;
-    private int countstateGrips = 0;
-    private int countdestinationPosition = 0;
 
+    private readonly string gripsAreOpen = "Открыты";
+    private readonly string gripsAreClosed = "Закрыты";
+
+    private readonly string destinationPositionIsBundleAssembly = "Сборка пучка";
+    private readonly string destinationPositionIsDefectFrameDisassembly = "Разборка дефектного каркаса";
+    private readonly string destinationPositionIsTvsAssembly = "Сборка ТВС";
 
     // Start is called before the first frame update
     void Start()
     {
-        animmnemo05 = gameObject.GetComponent<Animation>();
-
         verticalPosition = new List<string> { "Верхнее", "Нижнее" };
-        stateGrips = new List<string> { "Открыты", "Закрыты" };
-        destinationPosition = new List<string> { "Сборка пучка", "Разборка дефектного каркаса", "Сборка ТВС"};
         verticalPositionText.text = verticalPosition[countverticalPosition];
-        stateGripsText.text = stateGrips[countstateGrips];
-        destinationPositionText.text = destinationPosition[countdestinationPosition];
-    }
-
-    void Update()
-    {
-
-        //animmnemo05.Play();
     }
 
     public void StartActions()
@@ -74,39 +62,40 @@ public class Mnemo05Animation : MonoBehaviour
         //Mnemo07.SetActive(true);
     }
 
-    public void verticalPositionLower()
+    public void MakeVerticalPositionLower()
     {
         countverticalPosition++;
         verticalPositionText.text = verticalPosition[countverticalPosition];
     }
 
-    public void verticalPositionUpper()
+    public void MakeVerticalPositionUpper()
     {
         countverticalPosition--;
         verticalPositionText.text = verticalPosition[countverticalPosition];
     }
 
-    public void stateGripsClose()
+    public void CloseGrips()
     {
-        countstateGrips++;
-        stateGripsText.text = stateGrips[countstateGrips];
+        stateGripsText.text = gripsAreClosed;
     }
 
-    public void stateGripsOpen()
+    public void OpenGrips()
     {
-        countstateGrips--;
-        stateGripsText.text = stateGrips[countstateGrips];
+        stateGripsText.text = gripsAreOpen;
     }
 
-    public void destinationPositionForward()
+    public void SetDestinationPositionIsBundleAssembly()
     {
-        countdestinationPosition++;
-        destinationPositionText.text = destinationPosition[countdestinationPosition];
+        destinationPositionText.text = destinationPositionIsBundleAssembly;
     }
 
-    public void destinationPositionBack()
+    public void SetDestinationPositionIsDefectFrameDisassembly()
     {
-        countdestinationPosition--;
-        destinationPositionText.text = destinationPosition[countdestinationPosition];
+        destinationPositionText.text = destinationPositionIsDefectFrameDisassembly;
+    }
+    
+    public void SetDestinationPositionIsTvsAssembly()
+    {
+        destinationPositionText.text = destinationPositionIsTvsAssembly;
     }
 }
