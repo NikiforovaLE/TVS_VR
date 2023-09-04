@@ -11,6 +11,7 @@ public class Mnemo10Animation : MonoBehaviour
     [SerializeField] private Animator mnemo08Animator;
     [SerializeField] private GeneralPanelAcions GeneralPanelAcions;
     [SerializeField] private GameObject mnemo11;
+    [SerializeField] private Mnemo10Messages mnemo10Messages;
 
     public ARM2Mnemo0 ARM2Mnemo0;
 
@@ -29,6 +30,7 @@ public class Mnemo10Animation : MonoBehaviour
 
     public void StartControl()
     {
+        mnemo10Messages.StartSensitivityTest();
         SetValidity();
         isPerformedPanel.color = new(0f, 255f, 0f, 100f);
         PChS.text = "1*10-13";
