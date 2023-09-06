@@ -227,7 +227,7 @@ public class Mnemo8Animation : MonoBehaviour
         TVS.transform.Translate(speed * Time.deltaTime * new Vector3(0f, -170f, 0f));
     }
 
-    private void SetReadyToControlTrue()
+    public void SetReadyToControlTrue()
     {
         mnemo08Animator.enabled = false;
         ReadyToControl = true;

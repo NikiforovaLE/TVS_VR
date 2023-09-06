@@ -30,7 +30,8 @@ public class Mnemo00Animation : MonoBehaviour
     private bool toBeYellowTwo = false;
 
     private readonly string doActionsOnARM2 = "Необходимо выполнить операции на АРМ ввода №2";
-    private readonly string returnVUKMessage = "Необходимо вернуть ВТУК";
+    private readonly string returnEmptyLodgementMessage = "Необходимо вернуть ВТУК";
+    private readonly string returnVtukMessage = "Необходимо вернуть ВТУК";
 
     public Text AttentionMessageOne { get => attentionMessageOne; set => attentionMessageOne = value; }
     public Text AttentionMessageTwo { get => attentionMessageTwo; set => attentionMessageTwo = value; }
@@ -92,10 +93,12 @@ public class Mnemo00Animation : MonoBehaviour
         mnemo00Animator.SetInteger("fuelCount", fuelCount);
     }
 
-    public void ShowMessageToReturnVTUK()
+    public void ShowMessagesToReturnEmptyLodgementAndVtuk()
     {
+        toBeYellowOne = true;
         toBeYellowTwo = true;
-        attentionMessageTwo.text = returnVUKMessage;
+        attentionMessageOne.text = returnEmptyLodgementMessage;
+        attentionMessageTwo.text = returnVtukMessage;
     }
 
     // Start is called before the first frame update

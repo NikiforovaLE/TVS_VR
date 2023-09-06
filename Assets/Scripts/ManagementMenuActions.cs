@@ -11,6 +11,10 @@ public class ManagementMenuActions : MonoBehaviour
     [SerializeField] private Button pauseButton;
     [SerializeField] private Image unpressed;
     [SerializeField] private Image pressed;
+
+    [SerializeField] private ManagementMenuActions managementMenuActionsOne;
+    [SerializeField] private ManagementMenuActions managementMenuActionsTwo;
+
     private bool isChosen = false;
     private Color greenColor = new(120 / 255f, 240 / 255f, 90 / 255f);
 
@@ -23,6 +27,8 @@ public class ManagementMenuActions : MonoBehaviour
             buttonImage.color = greenColor;
         }
         IsChosen = true;
+        managementMenuActionsOne.MakeButtonsWhite();
+        managementMenuActionsTwo.MakeButtonsWhite();
     }
 
     public void MakeButtonsWhite()

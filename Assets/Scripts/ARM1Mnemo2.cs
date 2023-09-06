@@ -73,6 +73,14 @@ public class ARM1Mnemo2 : MonoBehaviour
     {
         List<string> chosenContainerNumbers = ARM1Mnemo1.ChosenNumbers;
         int size = chosenContainerNumbers.Count;
+
+        if (TypeOfTVS.Equals(""))
+        {
+            attention.color = Color.red;
+            attention.text = "Сначала выберите исполнение ТВС!";
+            return;
+        }
+
         if (counter % 2 == 0 && containersCounter < size)
         {
             containerNumber.text = chosenContainerNumbers[containersCounter];
@@ -117,17 +125,18 @@ public class ARM1Mnemo2 : MonoBehaviour
         string Container = containerNumber.text;
         string Frame = frameNumber.text;
         int indexOfIndicator = ARM1Mnemo1.ChosenNumbers.IndexOf(Container);
-        if (Container.Equals("") || Frame.Equals(""))
-        {
-            attention.color = Color.red;
-            attention.text = "Необходимо считать номера";
-            return;
-        }
 
         if (TypeOfTVS.Equals(""))
         {
             attention.color = Color.red;
             attention.text = "Сначала выберите исполнение ТВС!";
+            return;
+        }
+
+        if (Container.Equals("") || Frame.Equals(""))
+        {
+            attention.color = Color.red;
+            attention.text = "Необходимо считать номера";
             return;
         }
 
@@ -203,10 +212,12 @@ public class ARM1Mnemo2 : MonoBehaviour
 
     private void ChooseType(string type)
     {
+        attention.text = "";
         TypeOfTVS = type;
         types.SetActive(false);
         chosenType.text = type;
     }
+
     // Start is called before the first frame update
     void Start()
     {
