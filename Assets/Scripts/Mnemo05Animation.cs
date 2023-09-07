@@ -47,7 +47,7 @@ public class Mnemo05Animation : MonoBehaviour
 
     public void AutooperatorRun()
     {
-        Autooperator.Play("Third_new", 0, 0f);
+        Autooperator.Play("MoveLodgementToAsembly", 0, 0f);
     }
 
     public void TitlerTvsRun()
