@@ -51,15 +51,8 @@ public class Mnemo00AnimationStarter : MonoBehaviour
         mnemo08.GetComponent<Animator>().Play("08 Mnemo Animation");
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void ReturnEmptyLodgement()
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
