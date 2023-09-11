@@ -30,7 +30,7 @@ public class Mnemo00Animation : MonoBehaviour
     private bool toBeYellowTwo = false;
 
     private readonly string doActionsOnARM2 = "Необходимо выполнить операции на АРМ ввода №2";
-    private readonly string returnEmptyLodgementMessage = "Необходимо вернуть ВТУК";
+    private readonly string returnEmptyLodgementMessage = "Необходимо вернуть порожний ложемент-свидетель";
     private readonly string returnVtukMessage = "Необходимо вернуть ВТУК";
 
     public Text AttentionMessageOne { get => attentionMessageOne; set => attentionMessageOne = value; }
