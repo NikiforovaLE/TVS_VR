@@ -25,7 +25,7 @@ public class Mnemo05Animation : MonoBehaviour
 
     private int countverticalPosition = 0;
 
-    private readonly string gripsAreOpen = "Открыты";
+    private readonly string gripsAreOpened = "Открыты";
     private readonly string gripsAreClosed = "Закрыты";
 
     private readonly string destinationPositionIsBundleAssembly = "Сборка пучка";
@@ -81,7 +81,7 @@ public class Mnemo05Animation : MonoBehaviour
 
     public void OpenGrips()
     {
-        stateGripsText.text = gripsAreOpen;
+        stateGripsText.text = gripsAreOpened;
     }
 
     public void SetDestinationPositionIsBundleAssembly()

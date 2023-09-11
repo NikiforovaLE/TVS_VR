@@ -6,7 +6,6 @@ public class Mnemo8Animation : MonoBehaviour
     [SerializeField] private GameObject Manipulator;
     [SerializeField] private Image TVS;
     [SerializeField] private Text currentTVSNumberText;
-    [SerializeField] private Text verticalCoordinate;
 
     [SerializeField] private Animator mnemo08Animator;
     [SerializeField] private Animator coordinateManipulatorAnimator;
@@ -26,8 +25,6 @@ public class Mnemo8Animation : MonoBehaviour
     private bool geometryControl = false;
     private bool readyToControl = false;
 
-    private readonly string verticalCoordinate9500 = "9500";
-    private readonly string verticalCoordinate5000 = "5000";
 
     private readonly Vector3 tvsWashingTarget = new(359.0f, -270.0f, 0.0f);
     private readonly Vector3 manipulatorWashingTarget = new(362.3f, -173.7f, 0.0f);
@@ -314,15 +311,5 @@ public class Mnemo8Animation : MonoBehaviour
         mnemo08Animator.speed = 0;
         mnemo00Animator.speed = 0;
         coordinateManipulatorAnimator.speed = 0;
-    }
-
-    public void SetVerticalCoordinate5000()
-    {
-        verticalCoordinate.text = verticalCoordinate5000;
-    }
-
-    public void SetVerticalCoordinate9500()
-    {
-        verticalCoordinate.text = verticalCoordinate9500;
     }
 }
