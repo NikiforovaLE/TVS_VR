@@ -26,23 +26,23 @@ public class Mnemo8Animation : MonoBehaviour
     private bool readyToControl = false;
 
 
-    private readonly Vector3 tvsWashingTarget = new(359.0f, -270.0f, 0.0f);
-    private readonly Vector3 manipulatorWashingTarget = new(362.3f, -173.7f, 0.0f);
+    private readonly Vector3 tvsWashingTarget = new(177.0f, -91.0f, 0.0f);
+    private readonly Vector3 manipulatorWashingTarget = new(178.0f, 11.3f, 0.0f);
 
-    private readonly Vector3 tvsDryingTarget = new(310.0f, -270.0f, 0.0f);
-    private readonly Vector3 manipulatorDryingTarget = new(311f, -173.7f, 0.0f);
+    private readonly Vector3 tvsDryingTarget = new(129.0f, -91.0f, 0.0f);
+    private readonly Vector3 manipulatorDryingTarget = new(129.5f, 11.3f, 0.0f);
 
-    private readonly Vector3 tvsTightnessControlTarget = new(188.0f, -270.0f, 0.0f);
-    private readonly Vector3 manipulatorTightnessControlTarget = new(189.0f, -173.7f, 0.0f);
+    private readonly Vector3 tvsTightnessControlTarget = new(7.0f, -91.0f, 0.0f);
+    private readonly Vector3 manipulatorTightnessControlTarget = new(7.5f, 11.3f, 0.0f);
 
-    private readonly Vector3 tvsImpurityControlTarget = new(65.0f, -270.0f, 0.0f);
-    private readonly Vector3 manipulatorImpurityControlTarget = new(66.0f, -173.7f, 0.0f);
+    private readonly Vector3 tvsImpurityControlTarget = new(-118.0f, -91.0f, 0.0f);
+    private readonly Vector3 manipulatorImpurityControlTarget = new(-117.5f, 11.3f, 0.0f);
 
-    private readonly Vector3 tvsWeightControlTarget = new(-102.0f, -270.0f, 0.0f);
-    private readonly Vector3 manipulatorWeightControlTarget = new(-101.0f, -173.7f, 0.0f);
+    private readonly Vector3 tvsWeightControlTarget = new(-284.0f, -91.0f, 0.0f);
+    private readonly Vector3 manipulatorWeightControlTarget = new(-283.5f, 5f, 0.0f);
 
-    private readonly Vector3 tvsGeometryControlTarget = new(-224.0f, -270.0f, 0.0f);
-    private readonly Vector3 manipulatorGeometryControlTarget = new(-223.0f, -173.7f, 0.0f);
+    private readonly Vector3 tvsGeometryControlTarget = new(-405.0f, -91.0f, 0.0f);
+    private readonly Vector3 manipulatorGeometryControlTarget = new(-405.0f, 11.3f, 0.0f);
 
     //for mnemo00
     [SerializeField] private GameObject ManipulatorFromMnemo00;
@@ -100,7 +100,7 @@ public class Mnemo8Animation : MonoBehaviour
     void Start()
     {
         currentTVSNumberText.text = "";
-        TVS.transform.position = new Vector3(486f, -270f, 0);
+        TVS.transform.position = new Vector3(303.0f, -271.0f, 0);
     }
 
     // Update is called once per frame
