@@ -5,7 +5,6 @@ public class Mnemo8Animation : MonoBehaviour
 {
     [SerializeField] private GameObject Manipulator;
     [SerializeField] private Image TVS;
-    [SerializeField] private Text currentTVSNumberText;
 
     [SerializeField] private Animator mnemo08Animator;
     [SerializeField] private Animator coordinateManipulatorAnimator;
@@ -24,7 +23,6 @@ public class Mnemo8Animation : MonoBehaviour
     private bool weightControl = false;
     private bool geometryControl = false;
     private bool readyToControl = false;
-
 
     private readonly Vector3 tvsWashingTarget = new(177.0f, -91.0f, 0.0f);
     private readonly Vector3 manipulatorWashingTarget = new(178.0f, 11.3f, 0.0f);
@@ -99,15 +97,12 @@ public class Mnemo8Animation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentTVSNumberText.text = "";
         TVS.transform.position = new Vector3(303.0f, -271.0f, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        currentTVSNumberText.text = aRM2Mnemo0.FrameNumber.text;
-
         if (IsWashing && MoveToCertainPlace(tvsWashingTarget, manipulatorWashingTarget, "08 Mnemo Animation Washing",
             startTime, tvsStartTransform, manipulatorStartTransform,
             tvsWashingTargetForMnemo00, manipulatorWashingTargetForMnemo00, "Mnemo00 Washing",
