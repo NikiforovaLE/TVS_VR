@@ -11,7 +11,7 @@ public class Mnemo13Animation : MonoBehaviour
 
     [SerializeField] private Image isPerformingBackgrond;
 
-    [SerializeField] private Mnemo12Animation mnemo12Animation;
+    [SerializeField] private Mnemo12Info mnemo12Info;
 
     [SerializeField] private Animator mnemo08Animator;
     [SerializeField] private Animator mnemo14Animator;
@@ -44,7 +44,7 @@ public class Mnemo13Animation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mnemo12isChecked = mnemo12Animation.IsChecked;
+        mnemo12isChecked = mnemo12Info.IsChecked;
     }
 
     public void StartControl()

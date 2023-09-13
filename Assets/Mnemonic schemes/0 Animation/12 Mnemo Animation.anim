@@ -3173,35 +3173,35 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.5
-    functionName: SetStep1
+    functionName: SetNextStep
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 2.5
-    functionName: SetStep2
+    functionName: SetNextStep
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 4
-    functionName: SetStep3
+    functionName: SetNextStep
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 5.45
-    functionName: SetTvsWeight
+    functionName: SetTvsWeightIs230
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 7.116667
-    functionName: SetTvsWeightLoss
+    functionName: SetTvsWeightLossIs60
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
