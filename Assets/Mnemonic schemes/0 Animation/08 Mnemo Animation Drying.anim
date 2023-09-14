@@ -1040,29 +1040,22 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 4.1666665
-    functionName: SetVerticalMovementLevelIsBottom
+  - time: 4.3
+    functionName: SetVerticalMovementLevelIsTop
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 4.3333335
+  - time: 4.6666665
     functionName: SetVerticalCoordinateIs9500
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 7.6666665
+  - time: 7.5333333
     functionName: SetVerticalMovementLevelIsBottom
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 7.8333335
-    functionName: SetGraspIsClamped
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -1075,7 +1068,14 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 8
+  - time: 7.9166665
+    functionName: SetGraspIsClamped
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 8.1
     functionName: SetVerticalMovementLevelIsTop
     data: 
     objectReferenceParameter: {fileID: 0}

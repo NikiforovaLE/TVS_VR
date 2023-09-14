@@ -23,13 +23,13 @@ public class Mnemo12Info : MonoBehaviour
     private int stepCount = 0;
 
     private bool isChecked = false;
-
     private readonly string tvsWeightIs0 = "0";
     private readonly string tvsWeightIs230 = "230";
     private readonly string tvsWeightLossIs0 = "0";
     private readonly string tvsWeightLossIs60 = "60";
     private readonly string suzWeightLossIs0 = "0";
     private readonly string suzWeightLossIs53 = "53";
+    private readonly string controlIsNotDone = "Не выполнен";
     private readonly string controlIsDone = "Выполнен";
     private readonly string captureIsOpened = "Открыт";
     private readonly string captureIsClosed = "Закрыт";
@@ -69,6 +69,11 @@ public class Mnemo12Info : MonoBehaviour
     public void SetTvsWeightLossIs60()
     {
         tvsWeightLoss.text = tvsWeightLossIs60;
+    }
+
+    public void SetSuzWeightLossIs0()
+    {
+        suzWeightLoss.text = suzWeightLossIs0;
     }
 
     public void SetWeightControlIsDone()
@@ -113,26 +118,32 @@ public class Mnemo12Info : MonoBehaviour
     {
         tvsRotationAngle.text = tvsRotationAngleIs0;
     }
-    
+
     public void SetTvsRotationAngleIs120()
     {
         tvsRotationAngle.text = tvsRotationAngleIs120;
     }
-    
+
     public void SetTvsRotationAngleIs240()
     {
         tvsRotationAngle.text = tvsRotationAngleIs240;
     }
-    
+
     public void SetTvsRotationAngleIs36()
     {
-        tvsRotationAngle.text = tvsRotationAngleIs240;
+        tvsRotationAngle.text = tvsRotationAngleIs360;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-
+        SetTvsWeightIs0();
+        SetTvsWeightLossIs0();
+        SetSuzWeightLossIs0();
+        weightControResult.text = controlIsNotDone;
+        inputControlResult.text = controlIsNotDone;
+        lockControlResult.text = controlIsNotDone;
+        suzControlResult.text = controlIsNotDone;
     }
 
     // Update is called once per frame

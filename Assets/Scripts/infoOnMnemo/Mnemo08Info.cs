@@ -146,13 +146,13 @@ public class Mnemo08Info : MonoBehaviour
     void Start()
     {
         currentTVSNumberText.text = "";
-        verticalMovementLevel.text = verticalMovementLevelIsTop;
-        verticalCoordinate.text = verticalCoordinateIs9500;
-        graspState.text = noGraspIsNotClamped;
-        graspRotationAngle.text = graspRotationAngleIs0;
+        SetVerticalMovementLevelIsTop();
+        SetVerticalCoordinateIs9500();
+        SetGraspIsNotClamped();
+        SetGraspRotationAngleIs0();
         destinationPositionOnHorizontalMovement.text = destinationPositionIsTvsAssembly;
-        directControl.text = directControlIsNotUsed;
-        movementOnDirectControl.text = movementOnDirectControlIsStop;
+        SetDirectControlIsNotUsed();
+        SetMovementOnDirectControlIsStop();
     }
 
     // Update is called once per frame
