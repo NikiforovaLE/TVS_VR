@@ -87,8 +87,8 @@ public class MessageInfo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetCurrentNums();
-        MakeAllFieldsEmpty();
+        //SetCurrentNums();
+        //MakeAllFieldsEmpty();
     }
 
     private void MakeAllFieldsEmpty()

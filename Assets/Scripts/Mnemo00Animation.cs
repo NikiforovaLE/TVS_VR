@@ -110,6 +110,7 @@ public class Mnemo00Animation : MonoBehaviour
         currentContainerNumber.text = "";
         currentVTUKNumber.text = "";
         mnemo00Animator.SetInteger("fuelCount", 0);
+        mnemo00Animator.enabled = false;
     }
 
     // Update is called once per frame

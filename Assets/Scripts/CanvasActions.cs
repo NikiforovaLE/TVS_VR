@@ -16,6 +16,9 @@ public class CanvasActions : MonoBehaviour
     [SerializeField] private GameObject ARM1MainPanel;
     [SerializeField] private GameObject ARM2MainPanel;
 
+    [SerializeField] private GameObject mnemo00;
+    [SerializeField] private GeneralPanelAcions generalPanelAcions;
+
     [SerializeField] private Image GneralPanelButton;
     [SerializeField] private Image ARM1PanelButton;
     [SerializeField] private Image ARM2PanelButton;
@@ -31,7 +34,7 @@ public class CanvasActions : MonoBehaviour
         GeneralPanel.SetActive(false);
         ARM1Panel.SetActive(true);
 
-        MainPanel.SetActive(false);
+        generalPanelAcions.SetPanelActive(mnemo00);
         ARM2MainPanel.SetActive(false);
         ARM1MainPanel.SetActive(true);
 
@@ -50,7 +53,7 @@ public class CanvasActions : MonoBehaviour
         ARM1Panel.SetActive(false);
         GeneralPanel.SetActive(false);
 
-        MainPanel.SetActive(false);
+        generalPanelAcions.SetPanelActive(mnemo00);
         ARM1MainPanel.SetActive(false);
         ARM2MainPanel.SetActive(true);
 
@@ -71,7 +74,7 @@ public class CanvasActions : MonoBehaviour
 
         ARM1MainPanel.SetActive(false);
         ARM2MainPanel.SetActive(false);
-        MainPanel.SetActive(true);
+        //MainPanel.SetActive(true);
 
         ARM1MessagePanel.SetActive(false);
         ARM2MessagePanel.SetActive(false);

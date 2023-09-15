@@ -15,12 +15,13 @@ public class GroupManagement : MonoBehaviour
     {
         groupManagementButton.image = pressedState ? pressed : unpressed;
         groupManagementMenu.SetActive(pressedState);
+        pressedState = !pressedState;
     }
 
     // Start is called before the first frame update
     void Start()
     {
         groupManagementMenu.SetActive(false);
-        pressedState = false;
+        pressedState = true;
     }
 }

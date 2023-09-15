@@ -90,11 +90,12 @@ public class ARM1Mnemo31 : MonoBehaviour
             infoAboutContainerNumberOn01Mnemo.text = CurrentContainer;
             messageInfoOnMnemo1MainPanel.FillInfo(operatorAllowedOperations, messageSourceIsOperator, positiveStatus);
 
-            messageInfoOnArm1.FillInfo(containerText + CurrentContainer + isTransferred, messageSourceIsOperator, positiveStatus);// messageArea
+            //messageInfoOnArm1.FillInfo(containerText + CurrentContainer + isTransferred, messageSourceIsOperator, positiveStatus);// messageArea
 
             //Mnemo 00 actions
             Mnemo00Animation.ToBeYellowOne = false;
             Mnemo00Animation.ToBeYellowTwo = true;
+            Mnemo00Animation.AttentionMessageOne.text = "";
             Mnemo00Animation.AttentionMessageTwo.text = generalMessageAfterConfirm;
         }
     }

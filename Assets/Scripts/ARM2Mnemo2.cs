@@ -25,8 +25,8 @@ public class ARM2Mnemo2 : MonoBehaviour
     private readonly string generalMessageAfterConfirm = "Посмотрите 2D и 3D анимации";
     private string currentVTUK;
     private string currentTotalAmountOfFuelElementsInVTUK;
-    private string totalAmountOfFuelElementsInVTUKWhenTypeOneAndTwo;
-    private string totalAmountOfFuelElementsInVTUKWhenTypeThreeAndFour;
+    private string totalAmountOfFuelElementsInVTUKWhenTypeOneAndTwo = "160";
+    private string totalAmountOfFuelElementsInVTUKWhenTypeThreeAndFour = "102";
     private int counter;
 
     // messages on ARM2 MessageArea
@@ -89,7 +89,7 @@ public class ARM2Mnemo2 : MonoBehaviour
                 mnemo00Animator.Play("VTUKGetting");
                 //mnemo01AnimationController.Mnemo01OffMnemo02Andnemo03On();
             }
-            messageInfoOnArm2.FillInfo(vtuk + CurrentVTUK + isRecieved, messageSourceIsOperator, positiveStatus);
+            //messageInfoOnArm2.FillInfo(vtuk + CurrentVTUK + isRecieved, messageSourceIsOperator, positiveStatus);
         }
     }
 
@@ -99,8 +99,6 @@ public class ARM2Mnemo2 : MonoBehaviour
         counter = 0;
         CurrentVTUK = "";
         VTUKNumbers = new List<string> { "ВТУК0001", "ВТУК0002", "ВТУК0003", "ВТУК0004", "ВТУК0005" };
-        totalAmountOfFuelElementsInVTUKWhenTypeOneAndTwo = "80";
-        totalAmountOfFuelElementsInVTUKWhenTypeThreeAndFour = "51";
         infoAboutVTUKNumberOn02Mnemo.text = "";
     }
 }

@@ -40,12 +40,13 @@ public class ManagementMenuActions : MonoBehaviour
         IsChosen = false;
     }
 
-    public void StartOperations()
+    public void StartOperations(string animationName)
     {
         if (IsChosen)
         {
             MakeButtonOnePressedButtonTwoUnpressed(playButton, pauseButton);
             animator.enabled = true;
+            animator.Play(animationName);
         }
     }
 

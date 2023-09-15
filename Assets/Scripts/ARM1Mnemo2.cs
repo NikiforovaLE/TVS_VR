@@ -159,8 +159,8 @@ public class ARM1Mnemo2 : MonoBehaviour
             NumberOfContainersAndFrames.Add(Container, Frame);
             FramesAndTypes.Add(Frame, TypeOfTVS);
             message.text = messageWhenConfirmWithoutDeffects; // message on the ARM1 top panel
-            messageInfoOnArm1.FillInfo(containerIsRecieved + Container, messageSourceIsOperator, positiveStatus); //messageArea
-            messageInfoOnArm1.FillInfo(inputControl + Frame + fromContainer + Container + isPerformedNoDefects, messageSourceIsOperator, positiveStatus); //messageArea
+            //messageInfoOnArm1.FillInfo(containerIsRecieved + Container, messageSourceIsOperator, positiveStatus); //messageArea
+            //messageInfoOnArm1.FillInfo(inputControl + Frame + fromContainer + Container + isPerformedNoDefects, messageSourceIsOperator, positiveStatus); //messageArea
             ARMPanelActions.ShowMnemoPanel(mainARM1Mnemo);
         }
     }
