@@ -76,7 +76,7 @@ public class ARM1Mnemo1 : MonoBehaviour
             numberOnMnemo0.text = CounterOfReadNumbers.ToString(); // info on ARM1Mnemo0
 
             //fill messageArea on ARM1 
-            messageInfoOnArm1.FillInfo(containerIsRecieved + currentContainer, messageSourceIsOperator, positiveStatus);
+            //messageInfoOnArm1.FillInfo(containerIsRecieved + currentContainer, messageSourceIsOperator, positiveStatus);
 
             ARMPanelActions.ShowMnemoPanel(mainARM1Mnemo);
         }

@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class ARM2Mnemo3 : MonoBehaviour
 {
-    [SerializeField] private MessageInfo messageInfoOnArm2;
+    //[SerializeField] private MessageInfo messageInfoOnArm2;
 
     [SerializeField] private ARMPanelActions ARM2PanelActions;
     [SerializeField] private ARM2Mnemo0 ARM2Mnemo0;
@@ -46,7 +46,7 @@ public class ARM2Mnemo3 : MonoBehaviour
                 Mnemo00Animation.AttentionMessageTwo.text = "";
                 Mnemo00Animation.ToBeYellowTwo = false;
             }
-            messageInfoOnArm2.FillInfo(vtuk + currentVtuk + isReturned, messageSourceIsOperator, positiveStatus);
+            //messageInfoOnArm2.FillInfo(vtuk + currentVtuk + isReturned, messageSourceIsOperator, positiveStatus);
         }
     }
 }

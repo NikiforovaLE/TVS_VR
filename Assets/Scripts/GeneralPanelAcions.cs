@@ -63,6 +63,7 @@ public class GeneralPanelAcions : MonoBehaviour
                 mnemos[i].SetActive(false);
             }
         }
+        mnemos[0].SetActive(true);
         mnemos[panelIndex].SetActive(true);
     }
 
