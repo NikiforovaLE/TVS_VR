@@ -4,9 +4,6 @@ using Oculus.Interaction;
 
 public class Mnemo13Animation : MonoBehaviour
 {
-    [SerializeField] private Text lengthControlIsDoneText;
-    [SerializeField] private Text sizeControlIsDoneText;
-    [SerializeField] private Text viewControlIsDoneText;
     [SerializeField] private Text attentionMessage;
 
     [SerializeField] private Image isPerformingBackgrond;
@@ -30,7 +27,6 @@ public class Mnemo13Animation : MonoBehaviour
 
     private readonly Color whenIsNotPerforming = new(255f, 255f, 255f, 255f);
     private readonly Color whenIsPerforming = new(0f, 255f, 0f, 255f);
-    private readonly string done = "Выполнен";
     private readonly string messageWhenNotChecked = "Проведите проверку";
 
     // Start is called before the first frame update
@@ -63,26 +59,6 @@ public class Mnemo13Animation : MonoBehaviour
     {
         isSuitableButton.GetComponent<PointableUnityEventWrapper>().enabled = false;
         defectButton.GetComponent<PointableUnityEventWrapper>().enabled = false;
-    }
-
-    private void IsDone(Text isDoneText)
-    {
-        isDoneText.text = done;
-    }
-
-    public void SetLengthControlIsDone()
-    {
-        IsDone(lengthControlIsDoneText);
-    }
-
-    public void SetSizeControlIsDone()
-    {
-        IsDone(sizeControlIsDoneText);
-    }
-
-    public void SetViewControlIsDoneText()
-    {
-        IsDone(viewControlIsDoneText);
     }
 
     public void MakeButtonsPointable()
