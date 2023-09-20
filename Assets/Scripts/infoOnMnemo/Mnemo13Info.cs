@@ -3,26 +3,39 @@ using UnityEngine.UI;
 
 public class Mnemo13Info : MonoBehaviour
 {
-    [SerializeField] private MessageInfo messageInfoOnMnemo13;
+    [SerializeField] private ARM2Mnemo0 aRM2Mnemo0;
 
+    //info1
+    [SerializeField] private Text tvsNumber;
     [SerializeField] private Text tvsLength;
-    [SerializeField] private Text size;
+    [SerializeField] private Text tvsLengthControlResult;
+    [SerializeField] private Text turnkeySize;
+    [SerializeField] private Text turnkeySizeControlResult;
+    [SerializeField] private Text appearanceControlResult;
 
-    [SerializeField] private Text lengthControlIsDoneText;
-    [SerializeField] private Text sizeControlIsDoneText;
-    [SerializeField] private Text viewControlIsDoneText;
+    //info3
+    [SerializeField] private Text tvsRotationAngle;
+    [SerializeField] private Text turnkeySizeMeasurementLevel;
+    [SerializeField] private Text tvsVerticalCoordinate;
 
-    private readonly string tvsLengthIs0 = "0";
+    private readonly string zeroValue = "0";
     private readonly string tvsLengthIs = "";
-    private readonly string sizeIs0 = "0";
     private readonly string sizeIs = "";
+    private readonly string tvsRotationAngleIs = "";
+    private readonly string turnkeySizeMeasurementLevelIs = "";
+    private readonly string tvsVerticalCoordinateIs7450 = "7450";
 
     private readonly string controlIsNotDone = "Не выполнен";
     private readonly string controlIsDone = "Выполнен";
 
+    public void GetAndFillTvsNumber()
+    {
+        tvsNumber.text = aRM2Mnemo0.FrameNumber.text;
+    }
+
     public void SetTvsLengthIs0()
     {
-        tvsLength.text = tvsLengthIs0;
+        tvsLength.text = zeroValue;
     }
 
     public void SetTvsLengthIs()
@@ -30,46 +43,72 @@ public class Mnemo13Info : MonoBehaviour
         tvsLength.text = tvsLengthIs;
     }
 
-    public void SetSizeIs0()
+    public void SetTvsLengthControlIsDone()
     {
-        size.text = sizeIs0;
+        IsDone(tvsLengthControlResult);
     }
 
-    public void SetSizeIs()
+    public void SetTurnkeySizeIs0()
     {
-        size.text = sizeIs;
+        turnkeySize.text = zeroValue;
     }
 
-    public void SetLengthControlIsDone()
+    public void SetTurnkeySizeIs()
     {
-        IsDone(lengthControlIsDoneText);
+        turnkeySize.text = sizeIs;
     }
 
-    public void SetSizeControlIsDone()
+    public void SetTurnkeySizeControlIsDone()
     {
-        IsDone(sizeControlIsDoneText);
+        IsDone(turnkeySizeControlResult);
     }
 
-    public void SetViewControlIsDoneText()
+    public void SetAppearanceControlIsDone()
     {
-        IsDone(viewControlIsDoneText);
+        IsDone(appearanceControlResult);
     }
 
     private void IsDone(Text isDoneText)
     {
         isDoneText.text = controlIsDone;
     }
+    
+    private void SetTvsRotationAngleIs0()
+    {
+        tvsRotationAngle.text = zeroValue;
+    }
+    
+    private void SetTvsRotationAngleIs()
+    {
+        tvsRotationAngle.text = tvsRotationAngleIs;
+    }
+    
+    private void SetTurnkeySizeMeasurementLevelIs()
+    {
+        turnkeySizeMeasurementLevel.text = turnkeySizeMeasurementLevelIs;
+    }
+    
+    private void SetTvsVerticalCoordinateIs0()
+    {
+        tvsVerticalCoordinate.text = zeroValue;
+    }
+    
+    private void SetTvsVerticalCoordinateIs7450()
+    {
+        tvsVerticalCoordinate.text = tvsVerticalCoordinateIs7450;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
+        tvsNumber.text = "";
         SetTvsLengthIs0();
-        SetSizeIs0();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        tvsLengthControlResult.text = controlIsNotDone;
+        SetTurnkeySizeIs0();
+        turnkeySizeControlResult.text = controlIsNotDone;
+        appearanceControlResult.text = controlIsNotDone;
+        SetTvsRotationAngleIs0();
+        turnkeySizeMeasurementLevel.text = "";
+        SetTvsVerticalCoordinateIs0();
     }
 }

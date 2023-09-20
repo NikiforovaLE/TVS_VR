@@ -2920,6 +2920,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0
+    functionName: GetAndFillTvsAndBoxNumbers
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.016666668
     functionName: Start3DAnimation
     data: 
