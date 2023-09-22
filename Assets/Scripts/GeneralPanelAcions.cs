@@ -56,15 +56,18 @@ public class GeneralPanelAcions : MonoBehaviour
 
     private void MakePanelActiveByIndex(int panelIndex)
     {
-        for (int i = 0; i < mnemos.Count; i++)
+        for (int i = 1; i < mnemos.Count; i++)
         {
-            if (i != panelIndex && i != 0)
+            if (i != panelIndex)
             {
                 mnemos[i].SetActive(false);
             }
         }
+        if (panelIndex != 0)
+        {
+            mnemos[panelIndex].SetActive(true);
+        }
         mnemos[0].SetActive(true);
-        mnemos[panelIndex].SetActive(true);
     }
 
     private void MakeButtonGray(int panelIndex)

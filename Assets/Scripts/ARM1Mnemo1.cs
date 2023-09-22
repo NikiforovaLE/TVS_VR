@@ -7,8 +7,7 @@ public class ARM1Mnemo1 : MonoBehaviour
     [SerializeField] private MessageInfo messageInfoOnArm1;
 
     [SerializeField] private Text output;
-    [SerializeField] private Text message;
-    [SerializeField] private Text generalMessage;
+    [SerializeField] private Text arm1Message;
     [SerializeField] private Text readNumberOne;
     [SerializeField] private Text readNumberTwo;
     [SerializeField] private Text readNumberThree;
@@ -27,9 +26,7 @@ public class ARM1Mnemo1 : MonoBehaviour
     private int counterOfReadNumbers;
 
     // messages on the top panels
-    private readonly string firstGeneralMessage = "Необходимо выполнить операции на АРМ ввода №1";
-    private readonly string firstMessageOnArm1TopPanel = "Требуется получить контейнер с каркасом ТВС";
-    private readonly string afterConfirmMessageOnArm1TopPanel = "Требуется выполнить входной контроль";
+    private readonly string afterConfirmArm1Message = "Требуется выполнить входной контроль";
     private readonly string warningMessage = "Сначала нужно считать номер контейнера!";
 
     // messages on ARM1 MessageArea
@@ -72,7 +69,7 @@ public class ARM1Mnemo1 : MonoBehaviour
             string currentContainer = output.text;
             ReadNumbers[CounterOfReadNumbers++].text = currentContainer;
             ChosenNumbers.Add(currentContainer);
-            message.text = afterConfirmMessageOnArm1TopPanel; // message on the ARM1 top panel
+            arm1Message.text = afterConfirmArm1Message; // message on TopPanels
             numberOnMnemo0.text = CounterOfReadNumbers.ToString(); // info on ARM1Mnemo0
 
             //fill messageArea on ARM1 
@@ -95,8 +92,6 @@ public class ARM1Mnemo1 : MonoBehaviour
         readNumberFive.text = "";
         attention.text = "";
         numberOnMnemo0.text = 0.ToString();
-        message.text = firstMessageOnArm1TopPanel;
-        generalMessage.text = firstGeneralMessage;
         containersNumbers = new List<string> { "КОНТ0001", "КОНТ0002", "КОНТ0003", "КОНТ0004", "КОНТ0005" };
         ReadNumbers = new List<Text> { readNumberOne, readNumberTwo, readNumberThree, readNumberFour, readNumberFive };
         ChosenNumbers = new List<string>();

@@ -6,28 +6,28 @@ public class ARM2Mnemo2 : MonoBehaviour
 {
     [SerializeField] private MessageInfo messageInfoOnArm2;
 
+    [SerializeField] private Mnemo00Animation Mnemo00Animation;
+    [SerializeField] private ARMPanelActions ARM2PanelActions;
+    [SerializeField] private ARM1Mnemo2 ARM1Mnemo2;
+    [SerializeField] private ARM2Mnemo0 ARM2Mnemo0;
+    [SerializeField] private ARM2Mnemo1 ARM2Mnemo1;
+
     [SerializeField] private Text outputVTUKNumber;
     [SerializeField] private Text outputVTUKNumberOnMnemo3;
     [SerializeField] private Text outputNumberOfFuelElements;
-    [SerializeField] private Text message;
-    [SerializeField] private Text generalMessage;
-    [SerializeField] private ARM2Mnemo0 ARM2Mnemo0;
-    [SerializeField] private ARM2Mnemo1 ARM2Mnemo1;
-    [SerializeField] private ARM1Mnemo2 ARM1Mnemo2;
-    [SerializeField] private ARMPanelActions ARM2PanelActions;
-    [SerializeField] private Mnemo01AnimationController mnemo01AnimationController;
-    [SerializeField] private GameObject mainMnemoARM2;
     [SerializeField] private Text infoAboutVTUKNumberOn02Mnemo;
+    [SerializeField] private Text arm2Message;
+
+    [SerializeField] private GameObject mainMnemoARM2;
     [SerializeField] private Animator mnemo00Animator;
 
     private List<string> VTUKNumbers;
+    private int counter;
 
-    private readonly string generalMessageAfterConfirm = "Посмотрите 2D и 3D анимации";
     private string currentVTUK;
     private string currentTotalAmountOfFuelElementsInVTUK;
     private string totalAmountOfFuelElementsInVTUKWhenTypeOneAndTwo = "160";
     private string totalAmountOfFuelElementsInVTUKWhenTypeThreeAndFour = "102";
-    private int counter;
 
     // messages on ARM2 MessageArea
     private readonly string vtuk = "ВТУК ";
@@ -36,7 +36,6 @@ public class ARM2Mnemo2 : MonoBehaviour
     private readonly string positiveStatus = "+";
     private readonly string negativeStatus = "-";
 
-    public Mnemo00Animation Mnemo00Animation;
     public string CurrentVTUK { get => currentVTUK; set => currentVTUK = value; }
     public string CurrentTotalAmountOfFuelElementsInVTUK { get => currentTotalAmountOfFuelElementsInVTUK; set => currentTotalAmountOfFuelElementsInVTUK = value; }
 
@@ -79,16 +78,18 @@ public class ARM2Mnemo2 : MonoBehaviour
             currentTotalAmountOfFuelElementsInVTUK = outputNumberOfFuelElements.text;
             ARM2Mnemo0.ShowVTUKInfo();
             ARM2PanelActions.ShowMnemoPanel(mainMnemoARM2);
-            message.text = "";
-            generalMessage.text = generalMessageAfterConfirm;
+            arm2Message.text = "";
             infoAboutVTUKNumberOn02Mnemo.text = CurrentVTUK;
-            Mnemo00Animation.AttentionMessageTwo.text = "";
-            Mnemo00Animation.ToBeYellowTwo = false;
             if (mnemo00Animator.GetInteger("VTUKGettingCount") % 2 != 0)
             {
                 mnemo00Animator.Play("VTUKGetting");
                 //mnemo01AnimationController.Mnemo01OffMnemo02Andnemo03On();
             }
+
+            //Mnemo 00 actions
+            Mnemo00Animation.ToBeYellowTwo = false;
+            Mnemo00Animation.AttentionMessageTwo.text = "";
+
             //messageInfoOnArm2.FillInfo(vtuk + CurrentVTUK + isRecieved, messageSourceIsOperator, positiveStatus);
         }
     }
