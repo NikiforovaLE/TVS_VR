@@ -1,23 +1,26 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ARM1Mnemo0 : MonoBehaviour
 {
-    [SerializeField] private ARM1Mnemo1 aRM1Mnemo1;
-    [SerializeField] private ARMPanelActions aRMPanelActions;
-    [SerializeField] private ARM1Mnemo2 aRM1Mnemo2;
+    [SerializeField] private ARM1Mnemo1 arm1Mnemo1;
+    [SerializeField] private ARMPanelActions armPanelActions;
+    [SerializeField] private ARM1Mnemo2 arm1Mnemo2;
 
+    [SerializeField] private Text arm1Message;
+    [SerializeField] private Image arm1MessageBackground;
+
+    private readonly Color yellowBackground = new(255f, 155f, 0f, 255f);
     public void FillReadNumbers()
     {
-        List<string> chosenNumbersFromArm1 = aRM1Mnemo1.ChosenNumbers;
-        List<Text> readNumbersFromArm1 = aRM1Mnemo1.ReadNumbers;
-        List<Image> indicators = aRM1Mnemo2.Indicators1;
-        Dictionary<string, bool> resultOfControl = aRM1Mnemo2.ResultOfControl;
+        List<string> chosenNumbersFromArm1 = arm1Mnemo1.ChosenNumbers;
+        List<Text> readNumbersFromArm1 = arm1Mnemo1.ReadNumbers;
+        List<Image> indicators = arm1Mnemo2.Indicators1;
+        Dictionary<string, bool> resultOfControl = arm1Mnemo2.ResultOfControl;
         string currentContainer;
 
-        int counter = aRM1Mnemo1.CounterOfReadNumbers;
+        int counter = arm1Mnemo1.CounterOfReadNumbers;
         for (int i = 0; i < counter; i++)
         {
             currentContainer = chosenNumbersFromArm1[i];
@@ -25,11 +28,12 @@ public class ARM1Mnemo0 : MonoBehaviour
             if (resultOfControl.ContainsKey(currentContainer))
             {
                 indicators[i].color = resultOfControl[currentContainer] ? Color.red : Color.green;
-            } else
+            }
+            else
             {
                 indicators[i].color = Color.gray;
             }
-            
+
         }
         FillRemainRows(readNumbersFromArm1, counter, indicators);
     }
@@ -41,18 +45,12 @@ public class ARM1Mnemo0 : MonoBehaviour
             readNumbersFromArm1[i].text = "";
             indicators[i].color = Color.gray;
         }
-        aRMPanelActions.ShowMnemoPanel(gameObject);
+        armPanelActions.ShowMnemoPanel(gameObject);
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void ShowMessageOnArmlMessagePanel(string message)
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        arm1Message.text = message;
+        arm1MessageBackground.color = yellowBackground;
     }
 }

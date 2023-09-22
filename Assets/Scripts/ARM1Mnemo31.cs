@@ -4,17 +4,17 @@ using UnityEngine.UI;
 
 public class ARM1Mnemo31 : MonoBehaviour
 {
-    [SerializeField] private MessageInfo messageInfoOnMnemo1MainPanel;
+    [SerializeField] private MessageInfo messageInfoOnMnemo01MainPanel;
     [SerializeField] private MessageInfo messageInfoOnArm1;
 
+    [SerializeField] private ARM1Mnemo0 arm1Mnemo0;
     [SerializeField] private ARM1Mnemo1 ARM1Mnemo1;
     [SerializeField] private ARM1Mnemo2 ARM1Mnemo2;
     [SerializeField] private ARMPanelActions ARM1PanelActions;
+
     [SerializeField] private Text containerNumber;
-    [SerializeField] private Text messageOnARM1TopPanel;
-    [SerializeField] private Text generalMessage;
-    [SerializeField] private Text ARM2Message;
-    [SerializeField] private Text infoAboutContainerNumberOn01Mnemo;
+    [SerializeField] private Text arm2Message;
+    [SerializeField] private Text infoAboutContainerNumberOnMnemo01;
     [SerializeField] private Text attention;
     [SerializeField] private GameObject mainARM1Mnemo;
     [SerializeField] private Mnemo00Animation Mnemo00Animation;
@@ -22,13 +22,13 @@ public class ARM1Mnemo31 : MonoBehaviour
     private int counter;
     private string currentContainer;
 
-    // messages on the top panels
-    private readonly string messageOnArm1TopPanelWhenConfirm = "";
-    private readonly string generalMessageAfterConfirm = "Необходимо выполнить операции на АРМ ввода №2";
-    private readonly string ARM2MessageAfterConfirm = "Необходимо получить контейнер с каркасом ТВС";
+    // messages on TopPanels
+    private readonly string arm2OperationsMustBePerformed = "Необходимо выполнить операции на АРМ ввода №2";
+    private readonly string arm2InitialMessage = "Необходимо получить контейнер с каркасом ТВС";
+
     private readonly string warningMessage = "Сначала нужно считать номер контейнера!";
 
-    // messages on the MessageArea on Mnemo1 on Main panel
+    // messages on the MessageArea on Mnemo01 on Main panel
     private readonly string operatorAllowedOperations = "Оператор разрешил выполнение операций на ЛСУ";
 
     // messages on ARM1 MessageArea
@@ -81,14 +81,13 @@ public class ARM1Mnemo31 : MonoBehaviour
             chosenContainerNumbers.Remove(CurrentContainer);
             ARM1PanelActions.ShowMnemoPanel(mainARM1Mnemo);
 
-            //top panel messages
-            messageOnARM1TopPanel.text = messageOnArm1TopPanelWhenConfirm;
-            generalMessage.text = generalMessageAfterConfirm;
-            ARM2Message.text = ARM2MessageAfterConfirm;
+            //TopPanels
+            arm1Mnemo0.ShowMessageOnArmlMessagePanel(arm2OperationsMustBePerformed);    
+            arm2Message.text = arm2InitialMessage;
 
-            //info on 01 Mnemo
-            infoAboutContainerNumberOn01Mnemo.text = CurrentContainer;
-            messageInfoOnMnemo1MainPanel.FillInfo(operatorAllowedOperations, messageSourceIsOperator, positiveStatus);
+            //info on Mnemo01
+            infoAboutContainerNumberOnMnemo01.text = CurrentContainer;
+            messageInfoOnMnemo01MainPanel.FillInfo(operatorAllowedOperations, messageSourceIsOperator, positiveStatus);
 
             //messageInfoOnArm1.FillInfo(containerText + CurrentContainer + isTransferred, messageSourceIsOperator, positiveStatus);// messageArea
 
@@ -96,7 +95,7 @@ public class ARM1Mnemo31 : MonoBehaviour
             Mnemo00Animation.ToBeYellowOne = false;
             Mnemo00Animation.ToBeYellowTwo = true;
             Mnemo00Animation.AttentionMessageOne.text = "";
-            Mnemo00Animation.AttentionMessageTwo.text = generalMessageAfterConfirm;
+            Mnemo00Animation.AttentionMessageTwo.text = arm2OperationsMustBePerformed;
         }
     }
 
@@ -106,7 +105,7 @@ public class ARM1Mnemo31 : MonoBehaviour
         counter = 0;
         containerNumber.text = "";
         CurrentContainer = "";
-        infoAboutContainerNumberOn01Mnemo.text = "";
+        infoAboutContainerNumberOnMnemo01.text = "";
         attention.text = "";
     }
 }
