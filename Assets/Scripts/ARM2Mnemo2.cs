@@ -26,8 +26,8 @@ public class ARM2Mnemo2 : MonoBehaviour
 
     private string currentVTUK;
     private string currentTotalAmountOfFuelElementsInVTUK;
-    private string totalAmountOfFuelElementsInVTUKWhenTypeOneAndTwo = "160";
-    private string totalAmountOfFuelElementsInVTUKWhenTypeThreeAndFour = "102";
+    private string totalAmountOfFuelElementsInVTUKWhenTypeOneAndTwo = "80";
+    private string totalAmountOfFuelElementsInVTUKWhenTypeThreeAndFour = "51";
 
     // messages on ARM2 MessageArea
     private readonly string vtuk = "брсй ";
