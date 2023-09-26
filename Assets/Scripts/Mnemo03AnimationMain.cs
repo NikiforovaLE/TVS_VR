@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Mnemo03AnimationMain : MonoBehaviour
 {
+    public Mnemo00Animation mnemo00Animation;
+
     public GameObject Mnemo02;
     public GameObject Mnemo03;
     public GameObject Mnemo04;
@@ -32,6 +34,8 @@ public class Mnemo03AnimationMain : MonoBehaviour
     private int countLastReadFuelRodsNumbers;
     private int countFuelRodsRemoveds;
 
+    public Text LastReadFuelRodsNumberText { get => lastReadFuelRodsNumberText; set => lastReadFuelRodsNumberText = value; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +49,7 @@ public class Mnemo03AnimationMain : MonoBehaviour
         countLastReadFuelRodsNumbers = Mnemo03Animation.countLastReadFuelRodsNumbers;
         countFuelRodsRemoveds = Mnemo03Animation.countFuelRodsRemoveds;
 
-        lastReadFuelRodsNumberText.text = lastReadFuelRodsNumbers[countLastReadFuelRodsNumbers];
+        LastReadFuelRodsNumberText.text = lastReadFuelRodsNumbers[countLastReadFuelRodsNumbers];
         fuelRodsRemovedText.text = fuelRodsRemoveds[countFuelRodsRemoveds];
     }
 
@@ -103,13 +107,19 @@ public class Mnemo03AnimationMain : MonoBehaviour
     public void LastReadFuelRodsNumber()
     {
         countLastReadFuelRodsNumbers = countLastReadFuelRodsNumbers + 1;
-        lastReadFuelRodsNumberText.text = lastReadFuelRodsNumbers[countLastReadFuelRodsNumbers];
-        currentFuelRodNumber = lastReadFuelRodsNumberText.text;
+        LastReadFuelRodsNumberText.text = lastReadFuelRodsNumbers[countLastReadFuelRodsNumbers];
+        currentFuelRodNumber = LastReadFuelRodsNumberText.text;
     }
 
     public void RuelRodsRemoveds()
     {
         countFuelRodsRemoveds = countFuelRodsRemoveds + 1;
         fuelRodsRemovedText.text = (fuelRodsRemoveds[countFuelRodsRemoveds]);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        magazineNumberText.text = mnemo00Animation.CurrentMagazine.text;
     }
 }

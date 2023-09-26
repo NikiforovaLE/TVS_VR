@@ -87,8 +87,7 @@ public class ARM2Mnemo2 : MonoBehaviour
             }
 
             //Mnemo 00 actions
-            Mnemo00Animation.ToBeYellowTwo = false;
-            Mnemo00Animation.AttentionMessageTwo.text = "";
+            Mnemo00Animation.StopBlinkingTwo();
 
             //messageInfoOnArm2.FillInfo(vtuk + CurrentVTUK + isRecieved, messageSourceIsOperator, positiveStatus);
         }

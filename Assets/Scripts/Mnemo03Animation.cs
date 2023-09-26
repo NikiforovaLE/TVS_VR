@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Mnemo03Animation : MonoBehaviour
 {
+    public Mnemo00Animation mnemo00Animation;
     public GameObject Mnemo02;
     public GameObject Mnemo03;
     public GameObject Mnemo03M;
@@ -113,5 +114,11 @@ public class Mnemo03Animation : MonoBehaviour
     {
         countFuelRodsRemoveds++;
         fuelRodsRemovedText.text = fuelRodsRemoveds[countFuelRodsRemoveds];
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        magazineNumberText.text = mnemo00Animation.CurrentMagazine.text;
     }
 }
