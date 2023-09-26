@@ -31,6 +31,7 @@ public class ARM2Mnemo0 : MonoBehaviour
 
     public Text FrameNumber { get => frameNumber; set => frameNumber = value; }
     public Text Type { get => type; set => type = value; }
+    public Text TotalAmountOfFuelElementsInTVS { get => totalAmountOfFuelElementsInTVS; set => totalAmountOfFuelElementsInTVS = value; }
 
     public void ShowTVSInfo()
     {
@@ -66,7 +67,7 @@ public class ARM2Mnemo0 : MonoBehaviour
 
     public void GetAndSetTotalAmountOfFuelElementsInTVS()
     {
-        totalAmountOfFuelElementsInTVS.text = Type.text switch
+        TotalAmountOfFuelElementsInTVS.text = Type.text switch
         {
             "1" => typeOneAndTwoTotalAmountOfFuelElements,
             "2" => typeOneAndTwoTotalAmountOfFuelElements,
@@ -82,7 +83,7 @@ public class ARM2Mnemo0 : MonoBehaviour
         FrameNumber.text = "";
         Type.text = "";
         currentAmountOfFuelElementsInTVS.text = "";
-        totalAmountOfFuelElementsInTVS.text = "";
+        TotalAmountOfFuelElementsInTVS.text = "";
 
         VTUKNumber.text = "";
         currentAmountOfFuelElementsInVTUK.text = "";

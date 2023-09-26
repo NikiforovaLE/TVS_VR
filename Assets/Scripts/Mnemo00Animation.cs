@@ -5,49 +5,73 @@ using UnityEngine.UI;
 
 public class Mnemo00Animation : MonoBehaviour
 {
-    [SerializeField] private ARM2Mnemo0 ARM2Mnemo0;
-    [SerializeField] private ARM2Mnemo1 ARM2Mnemo1;
-    [SerializeField] private ARM2Mnemo2 ARM2Mnemo2;
+    [SerializeField] private ARM2Mnemo0 arm2Mnemo0;
+    [SerializeField] private ARM2Mnemo1 arm2Mnemo1;
+    [SerializeField] private ARM2Mnemo2 arm2Mnemo2;
+    [SerializeField] private Mnemo03AnimationMain mnemo03AnimationMain;
     [SerializeField] private Mnemo04Animation mnemo04Animation;
 
     [SerializeField] private Text attentionMessageOne;
     [SerializeField] private Text attentionMessageTwo;
-    [SerializeField] private Text currentFuel;
+
     [SerializeField] private Text currentContainerNumber;
     [SerializeField] private Text currentVTUKNumber;
-    [SerializeField] private Text currentFuelAmount;
-    [SerializeField] private Text totalFuelAmount;
+    [SerializeField] private Text currentFuel;
+    [SerializeField] private Text currentMagazine;
+
+    [SerializeField] private Text currentFuelAmountInTvs;
+    [SerializeField] private Text totalFuelAmountInTvs;
+    [SerializeField] private Text currentFuelAmountInVtuk;
+    [SerializeField] private Text totalFuelAmountInVtuk;
 
     public GameObject yellowBackgroungOne;
     public GameObject yellowBackgroungTwo;
 
     public Animator mnemo00Animator;
 
-    private List<string> fuelNumbers;
+    private List<string> fuelNumbersInTvs;
+    private List<string> fuelNumbersInVtuk;
+
     private int fuelCount = 0;
     private int vtukGettingCount = 0;
-    private bool toBeYellowOne = true;
-    private bool toBeYellowTwo = false;
 
-    private readonly string doActionsOnARM2 = "Необходимо выполнить операции на АРМ ввода №2";
+    private readonly string arm2OperationsMustBePerformed = "Необходимо выполнить операции на АРМ ввода №2";
     private readonly string returnEmptyLodgementMessage = "Необходимо вернуть порожний ложемент-свидетель";
     private readonly string returnVtukMessage = "Необходимо вернуть ВТУК";
 
     public Text AttentionMessageOne { get => attentionMessageOne; set => attentionMessageOne = value; }
     public Text AttentionMessageTwo { get => attentionMessageTwo; set => attentionMessageTwo = value; }
-    public bool ToBeYellowOne { get => toBeYellowOne; set => toBeYellowOne = value; }
-    public bool ToBeYellowTwo { get => toBeYellowTwo; set => toBeYellowTwo = value; }
     public int VtukGettingCount { get => vtukGettingCount; set => vtukGettingCount = value; }
+    public Text CurrentMagazine { get => currentMagazine; set => currentMagazine = value; }
+
+    public void FillInitialInfo()
+    {
+        currentFuel.text = "";
+        FillFuelNumbers();
+        string vtukNumber = arm2Mnemo2.CurrentVTUK;
+        CurrentMagazine.text = "МАГАЗ" + vtukNumber.Substring(vtukNumber.Length - 3);
+    }
 
     public void FillFuelNumbers()
     {
-        fuelNumbers = ARM2Mnemo0.Type.ToString() switch
+        string tvsType = arm2Mnemo0.Type.ToString();
+
+        fuelNumbersInTvs = tvsType switch
         {
             "1" or "2" => new List<string> { "0", "1", "79", "80", "81", "159", "160" },
             "3" or "4" => new List<string> { "0", "1", "50", "51", "52", "101", "102" },
             _ => new List<string> { "0", "1", "79", "80", "81", "159", "160" }
         };
-        currentFuel.text = fuelNumbers[fuelCount];
+
+        fuelNumbersInVtuk = tvsType switch
+        {
+            "1" or "2" => new List<string> { "0", "1", "79", "80", "1", "79", "80" },
+            "3" or "4" => new List<string> { "0", "1", "50", "51", "1", "50", "51" },
+            _ => new List<string> { "0", "1", "79", "80", "1", "79", "80" }
+        };
+
+        currentFuelAmountInTvs.text = fuelNumbersInTvs[fuelCount];
+        currentFuelAmountInVtuk.text = fuelNumbersInVtuk[fuelCount];
         mnemo00Animator.SetInteger("fuelCount", fuelCount);
     }
 
@@ -68,8 +92,8 @@ public class Mnemo00Animation : MonoBehaviour
     {
         if (mnemo00Animator.GetInteger("fuelCount") == 3)
         {
-            AttentionMessageTwo.text = doActionsOnARM2;
-            toBeYellowTwo = true;
+            AttentionMessageTwo.text = arm2OperationsMustBePerformed;
+            yellowBackgroungTwo.SetActive(true);
             mnemo00Animator.Play("ReturnVTUK");
         }
         else if (mnemo00Animator.GetInteger("fuelCount") == 6)
@@ -85,18 +109,21 @@ public class Mnemo00Animation : MonoBehaviour
             mnemo00Animator.Play("Mnemo00Continue");
         }
     }
-
-    public void ShowFuelNumber()
+    public void ShowFuelNumberInVtuk()
     {
-        fuelCount++;
-        currentFuelAmount.text = fuelNumbers[fuelCount];
+        currentFuelAmountInVtuk.text = fuelNumbersInVtuk[++fuelCount];
+    }
+
+    public void ShowFuelNumberInTvs()
+    {
+        currentFuelAmountInTvs.text = fuelNumbersInTvs[fuelCount];
         mnemo00Animator.SetInteger("fuelCount", fuelCount);
     }
 
     public void ShowMessagesToReturnEmptyLodgementAndVtuk()
     {
-        toBeYellowOne = true;
-        toBeYellowTwo = true;
+        yellowBackgroungOne.SetActive(true);
+        yellowBackgroungTwo.SetActive(true);
         attentionMessageOne.text = returnEmptyLodgementMessage;
         attentionMessageTwo.text = returnVtukMessage;
     }
@@ -106,25 +133,44 @@ public class Mnemo00Animation : MonoBehaviour
     {
         AttentionMessageOne.text = "Необходимо выполнить операции на АРМ ввода №1";
         attentionMessageTwo.text = "";
-        currentFuel.text = "";
         currentContainerNumber.text = "";
         currentVTUKNumber.text = "";
+        currentFuel.text = "";
+        CurrentMagazine.text = "";
         mnemo00Animator.SetInteger("fuelCount", 0);
-        mnemo00Animator.enabled = false;
+        mnemo00Animator.Play("00 blinking One");
+        yellowBackgroungTwo.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        SetBackgroundActive(yellowBackgroungOne, ToBeYellowOne);
-        SetBackgroundActive(yellowBackgroungTwo, ToBeYellowTwo);
-        currentContainerNumber.text = ARM2Mnemo1.CurrentContainerNumber;
-        currentVTUKNumber.text = ARM2Mnemo2.CurrentVTUK;
-        totalFuelAmount.text = ARM2Mnemo2.CurrentTotalAmountOfFuelElementsInVTUK;
+        //SetBackgroundActive(yellowBackgroungOne, ToBeYellowOne);
+        //SetBackgroundActive(yellowBackgroungTwo, ToBeYellowTwo);
+        currentContainerNumber.text = arm2Mnemo1.CurrentContainerNumber;
+        currentVTUKNumber.text = arm2Mnemo2.CurrentVTUK;
+        currentFuel.text = mnemo03AnimationMain.LastReadFuelRodsNumberText.text;
+
+        totalFuelAmountInTvs.text = arm2Mnemo0.TotalAmountOfFuelElementsInTVS.text;
+        totalFuelAmountInVtuk.text = arm2Mnemo2.CurrentTotalAmountOfFuelElementsInVTUK;
     }
 
-    private void SetBackgroundActive(GameObject background, bool toBeYellow)
+    //private void SetBackgroundActive(GameObject background, bool toBeYellow)
+    //{
+    //    background.SetActive(toBeYellow);
+    //}
+
+    public void StopBlinkingOneStartBlinkingTwo()
     {
-        background.SetActive(toBeYellow);
+        AttentionMessageOne.text = "";
+        AttentionMessageTwo.text = arm2OperationsMustBePerformed;
+        mnemo00Animator.Play("00 blinking Two");
+    }
+
+    public void StopBlinkingTwo()
+    {
+        mnemo00Animator.enabled = false;
+        AttentionMessageTwo.text = "";
+        yellowBackgroungTwo.SetActive(false);
     }
 }

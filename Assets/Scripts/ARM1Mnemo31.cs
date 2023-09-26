@@ -82,7 +82,7 @@ public class ARM1Mnemo31 : MonoBehaviour
             ARM1PanelActions.ShowMnemoPanel(mainARM1Mnemo);
 
             //TopPanels
-            arm1Mnemo0.ShowMessageOnArmlMessagePanel(arm2OperationsMustBePerformed);    
+            arm1Mnemo0.ShowMessageOnArmlMessagePanel(arm2OperationsMustBePerformed);
             arm2Message.text = arm2InitialMessage;
 
             //info on Mnemo01
@@ -92,10 +92,9 @@ public class ARM1Mnemo31 : MonoBehaviour
             //messageInfoOnArm1.FillInfo(containerText + CurrentContainer + isTransferred, messageSourceIsOperator, positiveStatus);// messageArea
 
             //Mnemo 00 actions
-            Mnemo00Animation.ToBeYellowOne = false;
-            Mnemo00Animation.ToBeYellowTwo = true;
-            Mnemo00Animation.AttentionMessageOne.text = "";
-            Mnemo00Animation.AttentionMessageTwo.text = arm2OperationsMustBePerformed;
+            Mnemo00Animation.StopBlinkingOneStartBlinkingTwo();
+            //Mnemo00Animation.ToBeYellowOne = false;
+            //Mnemo00Animation.ToBeYellowTwo = true;
         }
     }
 
