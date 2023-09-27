@@ -106,14 +106,12 @@ public class Mnemo03Animation : MonoBehaviour
 
     public void LastReadFuelRodsNumber()
     {
-        countLastReadFuelRodsNumbers++;
-        lastReadFuelRodsNumberText.text = lastReadFuelRodsNumbers[countLastReadFuelRodsNumbers];
+        lastReadFuelRodsNumberText.text = lastReadFuelRodsNumbers[++countLastReadFuelRodsNumbers];
     }
 
     public void RuelRodsRemoveds()
     {
-        countFuelRodsRemoveds++;
-        fuelRodsRemovedText.text = fuelRodsRemoveds[countFuelRodsRemoveds];
+        fuelRodsRemovedText.text = fuelRodsRemoveds[++countFuelRodsRemoveds];
     }
 
     // Update is called once per frame

@@ -8,7 +8,7 @@ public class Mnemo00Animation : MonoBehaviour
     [SerializeField] private ARM2Mnemo0 arm2Mnemo0;
     [SerializeField] private ARM2Mnemo1 arm2Mnemo1;
     [SerializeField] private ARM2Mnemo2 arm2Mnemo2;
-    [SerializeField] private Mnemo03AnimationMain mnemo03AnimationMain;
+    [SerializeField] private Mnemo03Animation mnemo03Animation;
     [SerializeField] private Mnemo04Animation mnemo04Animation;
 
     [SerializeField] private Text attentionMessageOne;
@@ -149,7 +149,7 @@ public class Mnemo00Animation : MonoBehaviour
         //SetBackgroundActive(yellowBackgroungTwo, ToBeYellowTwo);
         currentContainerNumber.text = arm2Mnemo1.CurrentContainerNumber;
         currentVTUKNumber.text = arm2Mnemo2.CurrentVTUK;
-        currentFuel.text = mnemo03AnimationMain.LastReadFuelRodsNumberText.text;
+        currentFuel.text = mnemo04Animation.CurrentFuelRodNumberText.text;
 
         totalFuelAmountInTvs.text = arm2Mnemo0.TotalAmountOfFuelElementsInTVS.text;
         totalFuelAmountInVtuk.text = arm2Mnemo2.CurrentTotalAmountOfFuelElementsInVTUK;
