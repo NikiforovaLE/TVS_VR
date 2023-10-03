@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Mnemo15Animation : MonoBehaviour
 {
-    [SerializeField] private Mnemo16Animation mnemo16Animation;
+    [SerializeField] private Mnemo16Info mnemo16Info;
 
     [SerializeField] private Text currentBox;
     [SerializeField] private Text currentFrame;
@@ -19,7 +19,7 @@ public class Mnemo15Animation : MonoBehaviour
 
     public void FillInfo()
     {
-        currentBox.text = mnemo16Animation.CurrentBox;
+        currentBox.text = mnemo16Info.CurrentBox;
         currentFrame.text = aRM2Mnemo0.FrameNumber.text;
         destinationPosition.text = positionIsManipulatorCran;
     }
