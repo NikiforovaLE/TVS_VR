@@ -2992,6 +2992,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0
+    functionName: Start3DAnimation
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 2.5
     functionName: MakeVerticalMovementLevelDown
     data: 
@@ -3035,7 +3042,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 13.016666
-    functionName: Show15MnemoOnAdditionalPanel
+    functionName: StartAnimationOn14MnemoAnd15Mnemo
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

@@ -3,7 +3,6 @@ using UnityEngine;
 public class Mnemo14Animation : MonoBehaviour
 {
     [SerializeField] private Animator transferTruckAnimator;
-    [SerializeField] private Animator manipulatorCranAnimator;
     [SerializeField] private Animator coordinateManipulatorAnimator;
 
     private Animator currentAnimator;
@@ -21,7 +20,6 @@ public class Mnemo14Animation : MonoBehaviour
 
     public void Start3DAnimation()
     {
-        //manipulatorCranAnimator.Play("PenalManipulatorMoving");
         transferTruckAnimator.Play("TruckMoving");
     }
 
