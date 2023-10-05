@@ -18,6 +18,7 @@ public class Mnemo00AnimationStarter : MonoBehaviour
     [SerializeField] private Mnemo01AnimationController mnemo01AnimationController;
 
     private Animation mnemo5Animation;
+    private Animator mnemo00Animator;
     public void Start01MnemoAnimation()
     {
         GeneralPanelAcions.SetPanelActive(mnemo01);
@@ -53,15 +54,17 @@ public class Mnemo00AnimationStarter : MonoBehaviour
         mnemo08.GetComponent<Animator>().Play("08 Mnemo Animation");
     }
 
-    public void StartReturningEmptyLodgementOnMnemo5()
+    public void StartReturningEmptyLodgement()
     {
         GeneralPanelAcions.SetPanelActive(mnemo05);
         mnemo5Animation.Play("05 Mnemo Empty Lodgement Returning");
+        mnemo00Animator.Play("Mnemo00 Returning Empty Lodgement");
     }
 
     // Start is called before the first frame update
     void Start()
     {
         mnemo5Animation = mnemo05.GetComponent<Animation>();
+        mnemo00Animator = gameObject.GetComponent<Animator>();
     }
 }
