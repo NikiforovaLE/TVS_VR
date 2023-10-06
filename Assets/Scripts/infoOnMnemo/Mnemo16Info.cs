@@ -10,6 +10,8 @@ public class Mnemo16Info : MonoBehaviour
     [SerializeField] private Text verticalMovementLevel;
     [SerializeField] private Text boxGrippingIsClosed;
 
+    [SerializeField] private Animator manipulatorCran;
+
     public ARM2Mnemo0 ARM2Mnemo0;
 
     private int boxCounter = 0;
@@ -57,6 +59,11 @@ public class Mnemo16Info : MonoBehaviour
     public void MakeBoxGrippingIsOpened()
     {
         boxGrippingIsClosed.text = isClosed_No;
+    }
+
+    public void Start3dAnimation()
+    {
+        manipulatorCran.Play("PenalManipulatorMoving");
     }
 
     // Start is called before the first frame update
