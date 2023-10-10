@@ -12,28 +12,38 @@ public class Mnemo14Messages : MonoBehaviour
     private readonly string removeBoxRootCommand = "Выдана команда \"Снять крышку пенала\"";
     private readonly string boxRootIsRemoved = "Крышка пенала снята";
 
-    private readonly string messageSourceIs = "Шибер закрыт";
+    private readonly string messageSourceIsBoxLoading = "Загрузка в пенал";
 
     private readonly string positiveStatus = "+";
     private readonly string negativeStatus = "-";
 
     public void OpenShiberCommand()
     {
-        messageInfoOnMnemo14.FillInfo(openShiberCommand, messageSourceIs, positiveStatus);
+        messageInfoOnMnemo14.FillInfo(openShiberCommand, messageSourceIsBoxLoading, positiveStatus);
     }
 
     public void CloseShiberCommand()
     {
-        messageInfoOnMnemo14.FillInfo(closeShiberCommand, messageSourceIs, positiveStatus);
+        messageInfoOnMnemo14.FillInfo(closeShiberCommand, messageSourceIsBoxLoading, positiveStatus);
     }
 
     public void SetShiberIsOpened()
     {
-        messageInfoOnMnemo14.FillInfo(shiberIsOpened, messageSourceIs, positiveStatus);
+        messageInfoOnMnemo14.FillInfo(shiberIsOpened, messageSourceIsBoxLoading, positiveStatus);
     }
 
     public void SetShiberIsClosed()
     {
-        messageInfoOnMnemo14.FillInfo(shiberIsClosed, messageSourceIs, positiveStatus);
+        messageInfoOnMnemo14.FillInfo(shiberIsClosed, messageSourceIsBoxLoading, positiveStatus);
+    }
+    
+    public void RemoveBoxRootCommand()
+    {
+        messageInfoOnMnemo14.FillInfo(removeBoxRootCommand, messageSourceIsBoxLoading, positiveStatus);
+    }
+    
+    public void SetBoxRootIsRemoved()
+    {
+        messageInfoOnMnemo14.FillInfo(boxRootIsRemoved, messageSourceIsBoxLoading, positiveStatus);
     }
 }
