@@ -734,23 +734,9 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.98333335
-    functionName: TriggerAnimationEvent
-    data: PutPenalOnTruck
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
   - time: 3.7166667
     functionName: StopAnimation
     data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 6.516667
-    functionName: TriggerAnimationEvent
-    data: TakePenalFromTruck
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
