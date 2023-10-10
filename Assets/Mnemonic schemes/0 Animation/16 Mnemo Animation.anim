@@ -2986,27 +2986,27 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: FillInfo
+    functionName: FillInitialInfoOnMnemo
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0
+  - time: 2.5
     functionName: Start3DAnimation
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 2.5
+  - time: 2.5333333
     functionName: MakeVerticalMovementLevelDown
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 2.5
+  - time: 2.5333333
     functionName: MakeBoxGrippingIsClosed
     data: 
     objectReferenceParameter: {fileID: 0}

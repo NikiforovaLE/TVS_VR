@@ -25,7 +25,7 @@ public class Mnemo16Info : MonoBehaviour
 
     public string CurrentBox { get => currentBox; set => currentBox = value; }
 
-    public void FillInfo()
+    public void FillInitialInfoOnMnemo()
     {
         if (boxCounter >= boxNumbers.Capacity && boxCounter < 9)
         {
