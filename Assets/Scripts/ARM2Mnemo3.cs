@@ -3,8 +3,6 @@ using UnityEngine.UI;
 
 public class ARM2Mnemo3 : MonoBehaviour
 {
-    //[SerializeField] private MessageInfo messageInfoOnArm2;
-
     [SerializeField] private ARMPanelActions ARM2PanelActions;
     [SerializeField] private ARM2Mnemo0 ARM2Mnemo0;
     [SerializeField] private ARM2Mnemo2 ARM2Mnemo2;
@@ -15,6 +13,7 @@ public class ARM2Mnemo3 : MonoBehaviour
     [SerializeField] private Text ARM2Mnemo2TextAboutAmountOfFuel;
     [SerializeField] private Animator mnemo00Animator;
     [SerializeField] private Mnemo00Animation Mnemo00Animation;
+    [SerializeField] private MessageInfo messageInfoOnArm2;
 
     // messages on ARM2 MessageArea
     private readonly string vtuk = "ВТУК ";
@@ -39,13 +38,13 @@ public class ARM2Mnemo3 : MonoBehaviour
             mnemo00Animator.Play("ReturnVTUK");
             if (mnemo00Animator.GetInteger("VTUKGettingCount") % 2 != 0)
             {
-                Mnemo00Animation.AttentionMessageTwo.text = "Необходимо получить ВТУК";
+                Mnemo00Animation.AttentionMessageTwo.text = "Необходимо получить ВТУК на АРМ ввода №2";
             }
             else
             {
                 Mnemo00Animation.StopBlinkingTwo();
             }
-            //messageInfoOnArm2.FillInfo(vtuk + currentVtuk + isReturned, messageSourceIsOperator, positiveStatus);
+            messageInfoOnArm2.FillInfo(vtuk + currentVtuk + isReturned, messageSourceIsOperator, positiveStatus);
         }
     }
 }
