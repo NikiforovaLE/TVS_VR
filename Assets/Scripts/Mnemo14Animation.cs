@@ -18,7 +18,7 @@ public class Mnemo14Animation : MonoBehaviour
         currentAnimator.enabled = false;
     }
 
-    public void Start3DAnimation()
+    public void Start3DAnimationOfTruck()
     {
         transferTruckAnimator.Play("TruckMoving");
     }

@@ -36,6 +36,7 @@ public class Mnemo00Animation : MonoBehaviour
     private int vtukGettingCount = 0;
 
     private readonly string arm2OperationsMustBePerformed = "Необходимо выполнить операции на АРМ ввода №2";
+    private readonly string vtukMustBeReturnedMessage = "Необходимо вернуть ВТУК на АРМ ввода №2";
     private readonly string returnEmptyLodgementMessage = "Необходимо вернуть порожний ложемент-свидетель";
     private readonly string returnVtukMessage = "Необходимо вернуть ВТУК";
 
@@ -92,7 +93,7 @@ public class Mnemo00Animation : MonoBehaviour
     {
         if (mnemo00Animator.GetInteger("fuelCount") == 3)
         {
-            AttentionMessageTwo.text = arm2OperationsMustBePerformed;
+            AttentionMessageTwo.text = vtukMustBeReturnedMessage;
             yellowBackgroungTwo.SetActive(true);
             mnemo00Animator.Play("ReturnVTUK");
         }
