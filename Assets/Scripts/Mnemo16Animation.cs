@@ -6,6 +6,7 @@ public class Mnemo16Animation : MonoBehaviour
     [SerializeField] private GameObject additionalMnemo15;
     [SerializeField] private GeneralPanelAcions additionalGeneralPanelAcions;
     [SerializeField] private Animator manipulatorCranAnimator;
+    [SerializeField] private Animator mnemo00Animator;
     public ARM2Mnemo0 ARM2Mnemo0;
 
     private Animator mnemo14Animator;
@@ -14,6 +15,11 @@ public class Mnemo16Animation : MonoBehaviour
     public void Start3DAnimation()
     {
         manipulatorCranAnimator.Play("PenalManipulatorMoving");
+    }
+
+    public void StartAnimationOnMnemo00()
+    {
+        mnemo00Animator.Play("Mnemo00 Manipulator Cran Animation");
     }
 
     public void StartAnimationOn14MnemoAnd15Mnemo()

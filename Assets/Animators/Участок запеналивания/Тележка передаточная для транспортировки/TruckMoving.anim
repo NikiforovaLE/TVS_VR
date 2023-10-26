@@ -268,7 +268,37 @@ AnimationClip:
       \u0434\u043B\u044F \u0442\u0440\u0430\u043D\u0441\u043F\u043E\u0440\u0442\u0438\u0440\u043E\u0432\u043A\u0438
       \u0437\u0430\u043F\u0435\u043D\u0430\u043B\u0435\u043D\u043D\u043E\u0439 \u0422\u0412\u0421/\u041F\u0438\u043D\u0430\u043B-\u043A\u0440\u044B\u0436\u043A\u0430"
   m_ScaleCurves: []
-  m_FloatCurves: []
+  m_FloatCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 19.916666
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_IsActive
+    path: "\u0422\u0435\u043B\u0435\u0436\u043A\u0430 \u043F\u0435\u0440\u0435\u0434\u0430\u0442\u043E\u0447\u043D\u0430\u044F
+      \u0434\u043B\u044F \u0442\u0440\u0430\u043D\u0441\u043F\u043E\u0440\u0442\u0438\u0440\u043E\u0432\u043A\u0438
+      \u0437\u0430\u043F\u0435\u043D\u0430\u043B\u0435\u043D\u043D\u043E\u0439 \u0422\u0412\u0421/\u041F\u0438\u043D\u0430\u043B-\u043A\u0440\u044B\u0436\u043A\u0430"
+    classID: 1
+    script: {fileID: 0}
   m_PPtrCurves: []
   m_SampleRate: 60
   m_WrapMode: 0
@@ -296,6 +326,13 @@ AnimationClip:
       attribute: 1
       script: {fileID: 0}
       typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3901156934
+      attribute: 2086281974
+      script: {fileID: 0}
+      typeID: 1
       customType: 0
       isPPtrCurve: 0
     pptrCurveMapping: []
@@ -1102,6 +1139,36 @@ AnimationClip:
       \u0434\u043B\u044F \u0442\u0440\u0430\u043D\u0441\u043F\u043E\u0440\u0442\u0438\u0440\u043E\u0432\u043A\u0438
       \u0437\u0430\u043F\u0435\u043D\u0430\u043B\u0435\u043D\u043D\u043E\u0439 \u0422\u0412\u0421/\u041F\u0438\u043D\u0430\u043B-\u043A\u0440\u044B\u0436\u043A\u0430"
     classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 19.916666
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_IsActive
+    path: "\u0422\u0435\u043B\u0435\u0436\u043A\u0430 \u043F\u0435\u0440\u0435\u0434\u0430\u0442\u043E\u0447\u043D\u0430\u044F
+      \u0434\u043B\u044F \u0442\u0440\u0430\u043D\u0441\u043F\u043E\u0440\u0442\u0438\u0440\u043E\u0432\u043A\u0438
+      \u0437\u0430\u043F\u0435\u043D\u0430\u043B\u0435\u043D\u043D\u043E\u0439 \u0422\u0412\u0421/\u041F\u0438\u043D\u0430\u043B-\u043A\u0440\u044B\u0436\u043A\u0430"
+    classID: 1
     script: {fileID: 0}
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
