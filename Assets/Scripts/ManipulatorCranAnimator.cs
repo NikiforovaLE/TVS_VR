@@ -19,6 +19,14 @@ public class ManipulatorCranAnimator : MonoBehaviour
         manipulatorCranBox.SetActive(false);
     }
 
+    public void MakexeManipulatorCranBoxVisiblTransportTruckBoInvisible()
+    {
+        transportTruckBoxLid.SetActive(false);
+        transportTruckBox.SetActive(false);
+        manipulatorCranBox.SetActive(true);
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {

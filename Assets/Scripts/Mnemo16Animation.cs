@@ -5,6 +5,7 @@ public class Mnemo16Animation : MonoBehaviour
     [SerializeField] private GameObject mnemo14;
     [SerializeField] private GameObject additionalMnemo15;
     [SerializeField] private GeneralPanelAcions additionalGeneralPanelAcions;
+    [SerializeField] private GeneralPanelAcions generalPanelAcions;
     [SerializeField] private Animator manipulatorCranAnimator;
     [SerializeField] private Animator mnemo00Animator;
     public ARM2Mnemo0 ARM2Mnemo0;
@@ -24,9 +25,15 @@ public class Mnemo16Animation : MonoBehaviour
 
     public void StartAnimationOn14MnemoAnd15Mnemo()
     {
+        generalPanelAcions.SetPanelActive(mnemo14);
         additionalGeneralPanelAcions.SetPanelActive(additionalMnemo15);
         mnemo15Animator.Play("15 Mnemo Animation");
         mnemo14Animator.Play("14 Mnemo Animation");
+    }
+
+    public void ContinueManipulatorCranAnimation()
+    {
+        manipulatorCranAnimator.speed = 1;
     }
 
     // Start is called before the first frame update
