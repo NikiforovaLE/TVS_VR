@@ -17538,8 +17538,22 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0.016666668
+    functionName: TransferToVerticalPositionCommand
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 4.866667
     functionName: TitlerStop
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 5.8
+    functionName: SetLodgementIsInoVerticalPosition
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

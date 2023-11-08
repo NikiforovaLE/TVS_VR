@@ -89,7 +89,7 @@ public class ARM1Mnemo31 : MonoBehaviour
             infoAboutContainerNumberOnMnemo01.text = CurrentContainer;
             messageInfoOnMnemo01MainPanel.FillInfo(operatorAllowedOperations, messageSourceIsOperator, positiveStatus);
 
-            //messageInfoOnArm1.FillInfo(containerText + CurrentContainer + isTransferred, messageSourceIsOperator, positiveStatus);// messageArea
+            messageInfoOnArm1.FillInfo(containerText + CurrentContainer + isTransferred, messageSourceIsOperator, positiveStatus);// messageArea
 
             //Mnemo 00 actions
             Mnemo00Animation.StopBlinkingOneStartBlinkingTwo();

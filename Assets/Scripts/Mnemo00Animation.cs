@@ -165,6 +165,7 @@ public class Mnemo00Animation : MonoBehaviour
     {
         AttentionMessageOne.text = "";
         AttentionMessageTwo.text = arm2OperationsMustBePerformed;
+        mnemo00Animator.enabled = true;
         mnemo00Animator.Play("00 blinking Two");
     }
 
