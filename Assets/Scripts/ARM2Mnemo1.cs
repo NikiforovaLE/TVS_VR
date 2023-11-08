@@ -59,7 +59,7 @@ public class ARM2Mnemo1 : MonoBehaviour
             CurrentContainerNumber = containerNumber;
             ARM2Mnemo0.ShowTVSInfo();
             arm2Message.text = messageAfterConfirm;
-            //messageInfoOnArm2.FillInfo(container + CurrentContainerNumber + withFrame + currentFrame + isRecieved, messageSourceIsOperator, positiveStatus);
+            messageInfoOnArm2.FillInfo(container + CurrentContainerNumber + withFrame + currentFrame + isRecieved, messageSourceIsOperator, positiveStatus);
             ARM2PanelActions.ShowMnemoPanel(mainMnemoARM2);
         }
     }
