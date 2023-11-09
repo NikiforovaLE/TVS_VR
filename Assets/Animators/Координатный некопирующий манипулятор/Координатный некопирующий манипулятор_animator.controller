@@ -832,46 +832,43 @@ AnimatorStateMachine:
     m_Position: {x: -36, y: -24, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5908135436120736954}
-    m_Position: {x: -1, y: 41, z: 0}
+    m_Position: {x: -300, y: -80, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6399804142468740987}
-    m_Position: {x: 34, y: 106, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 1203922726896900345}
-    m_Position: {x: 69, y: 171, z: 0}
+    m_Position: {x: -300, y: -20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8950757340101184383}
-    m_Position: {x: 104, y: 236, z: 0}
+    m_Position: {x: -300, y: 40, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5026732093107337957}
-    m_Position: {x: 139, y: 301, z: 0}
+    m_Position: {x: -300, y: 100, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4758453902033058911}
-    m_Position: {x: 174, y: 366, z: 0}
+    m_Position: {x: -300, y: 160, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2278777188292718163}
-    m_Position: {x: 209, y: 431, z: 0}
+    m_Position: {x: -300, y: 220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 551011379206263623}
-    m_Position: {x: 244, y: 496, z: 0}
+    m_Position: {x: -600, y: -20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8126682334509584700}
-    m_Position: {x: 279, y: 561, z: 0}
+    m_Position: {x: -600, y: 40, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 402278816725423134}
-    m_Position: {x: 314, y: 626, z: 0}
+    m_Position: {x: -600, y: 100, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5080619168797776071}
-    m_Position: {x: 349, y: 691, z: 0}
+    m_Position: {x: -600, y: 220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4679968843813660227}
-    m_Position: {x: 384, y: 756, z: 0}
+    m_Position: {x: -600, y: 160, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6662616094395654010}
-    m_Position: {x: 419, y: 821, z: 0}
+    m_Position: {x: -600, y: -80, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2961299779215837855}
-    m_Position: {x: 454, y: 886, z: 0}
+    m_Position: {x: -300, y: -140, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 1101578959371742080}
@@ -890,32 +887,6 @@ AnimatorStateMachine:
   m_ExitPosition: {x: 504, y: -156, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 1102444796827449684}
---- !u!1102 &1203922726896900345
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: MoveTVSFromGeometryToBufer
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 8336ee294e5a1ae4280dc119dcfc8064, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!1102 &4679968843813660227
 AnimatorState:
   serializedVersion: 6
