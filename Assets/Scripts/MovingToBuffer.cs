@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MovingToBuffer : MonoBehaviour
@@ -27,11 +28,11 @@ public class MovingToBuffer : MonoBehaviour
                 break;
             }
         }
-        //while (currentAnimation.get.(currentAnimationName))
-        //{
-        //    continue;
-        //}
-        //mnemo08Animator.Play(bufferAnimationName);
+        while (currentAnimation.GetComponent<Animation>().isPlaying)
+        {
+            continue;
+        }
+        mnemo08Animator.Play(bufferAnimationName);
     }
 
     private string GetBufferAnimationName(string currentAnimationName)
