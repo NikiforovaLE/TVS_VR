@@ -4935,8 +4935,22 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 10.983334
+    functionName: SetWeightControlIsPerformed
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 11
     functionName: SetWeightControlIsDone
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 53.916668
+    functionName: SetEntranceToSlipwayControlIsPerformed
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -4949,8 +4963,22 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 54.5
+    functionName: SetShankLockControlIsPerformed
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 54.516666
     functionName: SetLockControlIsDone
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 65.083336
+    functionName: SetSuzControlIsPerformed
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

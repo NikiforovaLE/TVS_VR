@@ -14,6 +14,7 @@ public class MovingToBuffer : MonoBehaviour
 
     private Animator mnemo08Animator;
     private List<AnimationClip> mnemo08Animation;
+    private int count = 0;
     public void MoveToBuffer()
     {
         string currentAnimationName = mnemo08Animator.GetCurrentAnimatorClipInfo(0)[0].clip.name;
@@ -28,9 +29,9 @@ public class MovingToBuffer : MonoBehaviour
                 break;
             }
         }
-        while (currentAnimation.GetComponent<Animation>().isPlaying)
+        while (mnemo08Animator.GetCurrentAnimatorStateInfo(0).IsName(currentAnimationName))
         {
-            continue;
+            count = 0;
         }
         mnemo08Animator.Play(bufferAnimationName);
     }
