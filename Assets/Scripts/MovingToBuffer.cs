@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class MovingToBuffer : MonoBehaviour
@@ -14,7 +13,7 @@ public class MovingToBuffer : MonoBehaviour
 
     private Animator mnemo08Animator;
     private List<AnimationClip> mnemo08Animation;
-    private int count = 0;
+
     public void MoveToBuffer()
     {
         string currentAnimationName = mnemo08Animator.GetCurrentAnimatorClipInfo(0)[0].clip.name;
@@ -29,10 +28,14 @@ public class MovingToBuffer : MonoBehaviour
                 break;
             }
         }
-        while (mnemo08Animator.GetCurrentAnimatorStateInfo(0).IsName(currentAnimationName))
-        {
-            count = 0;
-        }
+        StartCoroutine(waiter(currentAnimation, bufferAnimationName));
+
+    }
+
+    System.Collections.IEnumerator waiter(AnimationClip currentAnimation, string bufferAnimationName)
+    {
+        //wait untill current animation is finished
+        yield return new WaitForSeconds(currentAnimation.length - mnemo08Animator.GetCurrentAnimatorStateInfo(0).normalizedTime * mnemo08Animator.GetCurrentAnimatorStateInfo(0).length - 1);
         mnemo08Animator.Play(bufferAnimationName);
     }
 
