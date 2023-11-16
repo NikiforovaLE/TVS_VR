@@ -824,21 +824,21 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 4.3333335
-    functionName: SetLengthControlIsDone
+    functionName: SetTvsLengthControlIsDone
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 6
-    functionName: SetSizeControlIsDone
+    functionName: SetTurnkeySizeControlIsDone
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 11.033334
-    functionName: SetViewControlIsDoneText
+    functionName: SetAppearanceControlIsDone
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
