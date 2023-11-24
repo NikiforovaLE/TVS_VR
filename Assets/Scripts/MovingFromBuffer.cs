@@ -4,6 +4,7 @@ public class MovingFromBuffer : MonoBehaviour
 {
     [SerializeField] private MovingToBuffer movingToBuffer;
     [SerializeField] private Animator coordinateManipulatorAnimator;
+    [SerializeField] private Animator mnemo00Animator;
 
     private Animator mnemo08Animator;
 
@@ -13,6 +14,7 @@ public class MovingFromBuffer : MonoBehaviour
         string newRequiredBufferAnimation = GetNewBufferAnimationName(lastBufferAnimation);
         mnemo08Animator.Play(newRequiredBufferAnimation);
         coordinateManipulatorAnimator.Play(newRequiredBufferAnimation);
+        mnemo00Animator.Play(newRequiredBufferAnimation + "00");
     }
 
     private string GetNewBufferAnimationName(string lastBufferAnimation)

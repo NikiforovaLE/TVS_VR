@@ -10,28 +10,33 @@ public class MovingToBuffer : MonoBehaviour
     [SerializeField] private AnimationClip mnemo08Weight;
     [SerializeField] private AnimationClip mnemo08Geometry;
     [SerializeField] private Animator coordinateManipulatorAnimator;
+    [SerializeField] private Animator mnemo00Animator;
 
     private Animator mnemo08Animator;
     private List<AnimationClip> mnemo08Animation;
 
     private string requiredBufferAnimation = "";
-
+    private int bufferTvsCounter = 0;
     public string RequiredBufferAnimation { get => requiredBufferAnimation; set => requiredBufferAnimation = value; }
+    public int BufferTvsCounter { get => bufferTvsCounter; set => bufferTvsCounter = value; }
 
     public void MoveToBuffer()
     {
-        string currentAnimationName = mnemo08Animator.GetCurrentAnimatorClipInfo(0)[0].clip.name;
-        AnimationClip currentAnimation = mnemo08Washing;
-        foreach (AnimationClip animation in mnemo08Animation)
+        if (BufferTvsCounter < 4)
         {
-            if (animation.name.Equals(currentAnimationName))
+            string currentAnimationName = mnemo08Animator.GetCurrentAnimatorClipInfo(0)[0].clip.name;
+            AnimationClip currentAnimation = mnemo08Washing;
+            foreach (AnimationClip animation in mnemo08Animation)
             {
-                currentAnimation = animation;
-                requiredBufferAnimation = GetBufferAnimationName(currentAnimationName);
-                break;
+                if (animation.name.Equals(currentAnimationName))
+                {
+                    currentAnimation = animation;
+                    requiredBufferAnimation = GetBufferAnimationName(currentAnimationName);
+                    break;
+                }
             }
+            StartCoroutine(waiter(currentAnimation, requiredBufferAnimation));
         }
-        StartCoroutine(waiter(currentAnimation, requiredBufferAnimation));
     }
 
     System.Collections.IEnumerator waiter(AnimationClip currentAnimation, string bufferAnimationName)
@@ -40,6 +45,8 @@ public class MovingToBuffer : MonoBehaviour
         yield return new WaitForSeconds(currentAnimation.length - mnemo08Animator.GetCurrentAnimatorStateInfo(0).normalizedTime * mnemo08Animator.GetCurrentAnimatorStateInfo(0).length - 1);
         mnemo08Animator.Play(bufferAnimationName);
         coordinateManipulatorAnimator.Play(bufferAnimationName);
+        mnemo00Animator.Play(bufferAnimationName + "00");
+        BufferTvsCounter++;
     }
 
     private string GetBufferAnimationName(string currentAnimationName)

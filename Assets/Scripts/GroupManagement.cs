@@ -11,7 +11,7 @@ public class GroupManagement : MonoBehaviour
     public Button groupManagementButton;
     public GameObject groupManagementMenu;
     private bool pressedState;
-    public void OnClick()
+    public void ShowGroupManagementMenu()
     {
         groupManagementButton.image = pressedState ? pressed : unpressed;
         groupManagementMenu.SetActive(pressedState);
