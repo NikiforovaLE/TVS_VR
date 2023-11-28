@@ -17,13 +17,14 @@ public class ARM1Mnemo31 : MonoBehaviour
     [SerializeField] private Text infoAboutContainerNumberOnMnemo01;
     [SerializeField] private Text attention;
     [SerializeField] private GameObject mainARM1Mnemo;
+    [SerializeField] private GameObject tvsOnLodgement;
     [SerializeField] private Mnemo00Animation Mnemo00Animation;
 
     private int counter;
     private string currentContainer;
 
     // messages on TopPanels
-    private readonly string arm2OperationsMustBePerformed = "Необходимо выполнить операции на АРМ ввода №2";
+    private readonly string arm2OperationsMustBePerformed = "Необходимо выполнить операции на АРМ ввода №2"; //also on attention block two
     private readonly string arm2InitialMessage = "Необходимо получить контейнер с каркасом ТВС";
 
     private readonly string warningMessage = "Сначала нужно считать номер контейнера!";
@@ -92,9 +93,9 @@ public class ARM1Mnemo31 : MonoBehaviour
             messageInfoOnArm1.FillInfo(containerText + CurrentContainer + isTransferred, messageSourceIsOperator, positiveStatus);// messageArea
 
             //Mnemo 00 actions
-            Mnemo00Animation.StopBlinkingOneStartBlinkingTwo();
-            //Mnemo00Animation.ToBeYellowOne = false;
-            //Mnemo00Animation.ToBeYellowTwo = true;
+            Mnemo00Animation.StopBlinkingOne();
+            Mnemo00Animation.StartBlinkingTwo(arm2OperationsMustBePerformed);
+            tvsOnLodgement.SetActive(true);
         }
     }
 

@@ -10,6 +10,8 @@ public class Mnemo00Animation : MonoBehaviour
     [SerializeField] private ARM2Mnemo2 arm2Mnemo2;
     [SerializeField] private Mnemo03Animation mnemo03Animation;
     [SerializeField] private Mnemo04Animation mnemo04Animation;
+    [SerializeField] private Animator attentionBlockOne;
+    [SerializeField] private Animator attentionBlockTwo;
 
     [SerializeField] private Text attentionMessageOne;
     [SerializeField] private Text attentionMessageTwo;
@@ -35,8 +37,7 @@ public class Mnemo00Animation : MonoBehaviour
     private int fuelCount = 0;
     private int vtukGettingCount = 0;
 
-    private readonly string arm2OperationsMustBePerformed = "Необходимо выполнить операции на АРМ ввода №2";
-    private readonly string vtukMustBeReturnedMessage = "Необходимо вернуть ВТУК на АРМ ввода №2";
+    private readonly string needToReturnVtuk = "Необходимо вернуть ВТУК на АРМ ввода №2";
     private readonly string returnEmptyLodgementMessage = "Необходимо вернуть порожний ложемент-свидетель";
     private readonly string returnVtukMessage = "Необходимо вернуть ВТУК";
 
@@ -93,8 +94,7 @@ public class Mnemo00Animation : MonoBehaviour
     {
         if (mnemo00Animator.GetInteger("fuelCount") == 3)
         {
-            AttentionMessageTwo.text = vtukMustBeReturnedMessage;
-            yellowBackgroungTwo.SetActive(true);
+            StartBlinkingTwo(needToReturnVtuk);
             mnemo00Animator.Play("ReturnVTUK");
         }
         else if (mnemo00Animator.GetInteger("fuelCount") == 6)
@@ -123,10 +123,10 @@ public class Mnemo00Animation : MonoBehaviour
 
     public void ShowMessagesToReturnEmptyLodgementAndVtuk()
     {
-        yellowBackgroungOne.SetActive(true);
-        yellowBackgroungTwo.SetActive(true);
         attentionMessageOne.text = returnEmptyLodgementMessage;
         attentionMessageTwo.text = returnVtukMessage;
+        attentionBlockOne.enabled = true;
+        attentionBlockTwo.enabled = true;
     }
 
     // Start is called before the first frame update
@@ -139,15 +139,13 @@ public class Mnemo00Animation : MonoBehaviour
         currentFuel.text = "";
         CurrentMagazine.text = "";
         mnemo00Animator.SetInteger("fuelCount", 0);
-        mnemo00Animator.Play("00 blinking One");
-        yellowBackgroungTwo.SetActive(false);
+        attentionBlockOne.enabled = true;
+        attentionBlockTwo.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //SetBackgroundActive(yellowBackgroungOne, ToBeYellowOne);
-        //SetBackgroundActive(yellowBackgroungTwo, ToBeYellowTwo);
         currentContainerNumber.text = arm2Mnemo1.CurrentContainerNumber;
         currentVTUKNumber.text = arm2Mnemo2.CurrentVTUK;
         currentFuel.text = mnemo04Animation.CurrentFuelRodNumberText.text;
@@ -156,22 +154,22 @@ public class Mnemo00Animation : MonoBehaviour
         totalFuelAmountInVtuk.text = arm2Mnemo2.CurrentTotalAmountOfFuelElementsInVTUK;
     }
 
-    //private void SetBackgroundActive(GameObject background, bool toBeYellow)
-    //{
-    //    background.SetActive(toBeYellow);
-    //}
-
-    public void StopBlinkingOneStartBlinkingTwo()
+    public void StopBlinkingOne()
     {
+        attentionBlockOne.enabled = false;
         AttentionMessageOne.text = "";
-        AttentionMessageTwo.text = arm2OperationsMustBePerformed;
-        mnemo00Animator.enabled = true;
-        mnemo00Animator.Play("00 blinking Two");
+        yellowBackgroungOne.SetActive(false);
+    }
+
+    public void StartBlinkingTwo(string message)
+    {
+        AttentionMessageTwo.text = message;
+        attentionBlockTwo.enabled = true;
     }
 
     public void StopBlinkingTwo()
     {
-        mnemo00Animator.enabled = false;
+        attentionBlockTwo.enabled = false;
         AttentionMessageTwo.text = "";
         yellowBackgroungTwo.SetActive(false);
     }
