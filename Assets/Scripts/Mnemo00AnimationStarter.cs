@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Mnemo00AnimationStarter : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class Mnemo00AnimationStarter : MonoBehaviour
     [SerializeField] private GeneralPanelAcions AdditionalGeneralPanelAcions;
 
     [SerializeField] private Mnemo01AnimationController mnemo01AnimationController;
+    [SerializeField] private ARM2Mnemo1 arm2Mnemo1;
+
+    [SerializeField] private Text emptyLodgementNumberOnArm2Mnemo4;
 
     private Animation mnemo5Animation;
     private Animator mnemo00Animator;
@@ -56,6 +60,7 @@ public class Mnemo00AnimationStarter : MonoBehaviour
 
     public void StartReturningEmptyLodgement()
     {
+        emptyLodgementNumberOnArm2Mnemo4.text = arm2Mnemo1.CurrentContainerNumber;
         GeneralPanelAcions.SetPanelActive(mnemo05);
         mnemo5Animation.Play("05 Mnemo Empty Lodgement Returning");
         mnemo00Animator.Play("Mnemo00 Returning Empty Lodgement");

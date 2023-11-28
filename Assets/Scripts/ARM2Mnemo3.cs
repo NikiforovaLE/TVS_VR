@@ -22,6 +22,8 @@ public class ARM2Mnemo3 : MonoBehaviour
     private readonly string positiveStatus = "+";
     private readonly string negativeStatus = "-";
 
+    //messages on attention block two
+    private readonly string needToGetVtuk = "Необходимо получить ВТУК на АРМ ввода №2";
     public void ConfirmChoice()
     {
         if (!outputVTUKNumber.text.Equals(""))
@@ -38,7 +40,7 @@ public class ARM2Mnemo3 : MonoBehaviour
             mnemo00Animator.Play("ReturnVTUK");
             if (mnemo00Animator.GetInteger("VTUKGettingCount") % 2 != 0)
             {
-                Mnemo00Animation.AttentionMessageTwo.text = "Необходимо получить ВТУК на АРМ ввода №2";
+                Mnemo00Animation.StartBlinkingTwo(needToGetVtuk);
             }
             else
             {
