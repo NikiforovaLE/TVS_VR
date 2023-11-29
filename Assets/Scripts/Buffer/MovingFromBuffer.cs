@@ -5,17 +5,21 @@ public class MovingFromBuffer : MonoBehaviour
     [SerializeField] private MovingToBuffer movingToBuffer;
     [SerializeField] private Animator coordinateManipulatorAnimator;
     [SerializeField] private Animator mnemo00Animator;
+    [SerializeField] private FromBufferMenu fromBufferMenu;
 
     private Animator mnemo08Animator;
 
     public void MoveFromBuffer()
     {
-        string lastBufferAnimation = movingToBuffer.RequiredBufferAnimation;
-        string newRequiredBufferAnimation = GetNewBufferAnimationName(lastBufferAnimation);
-        mnemo08Animator.Play(newRequiredBufferAnimation);
-        coordinateManipulatorAnimator.Play(newRequiredBufferAnimation);
-        mnemo00Animator.Play(newRequiredBufferAnimation + "00");
-        movingToBuffer.BufferTvsCounter--;
+        if (fromBufferMenu.BufferTvsCounter > 0)
+        {
+            string lastBufferAnimation = movingToBuffer.RequiredBufferAnimation;
+            string newRequiredBufferAnimation = GetNewBufferAnimationName(lastBufferAnimation);
+            mnemo08Animator.Play(newRequiredBufferAnimation);
+            coordinateManipulatorAnimator.Play(newRequiredBufferAnimation);
+            mnemo00Animator.Play(newRequiredBufferAnimation + "00");
+            fromBufferMenu.RemoveTvsFromBuffer();
+        }
     }
 
     private string GetNewBufferAnimationName(string lastBufferAnimation)
