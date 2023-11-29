@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MovingToBuffer : MonoBehaviour
 {
@@ -11,18 +12,20 @@ public class MovingToBuffer : MonoBehaviour
     [SerializeField] private AnimationClip mnemo08Geometry;
     [SerializeField] private Animator coordinateManipulatorAnimator;
     [SerializeField] private Animator mnemo00Animator;
+    [SerializeField] private FromBufferMenu fromBufferMenu;
+    [SerializeField] private ARM2Mnemo1 arm2Mnemo1;
+    [SerializeField] private Image bufferIndicator;
 
     private Animator mnemo08Animator;
     private List<AnimationClip> mnemo08Animation;
 
     private string requiredBufferAnimation = "";
-    private int bufferTvsCounter = 0;
+
     public string RequiredBufferAnimation { get => requiredBufferAnimation; set => requiredBufferAnimation = value; }
-    public int BufferTvsCounter { get => bufferTvsCounter; set => bufferTvsCounter = value; }
 
     public void MoveToBuffer()
     {
-        if (BufferTvsCounter < 4)
+        if (fromBufferMenu.BufferTvsCounter < 4)
         {
             string currentAnimationName = mnemo08Animator.GetCurrentAnimatorClipInfo(0)[0].clip.name;
             AnimationClip currentAnimation = mnemo08Washing;
@@ -43,10 +46,11 @@ public class MovingToBuffer : MonoBehaviour
     {
         //wait untill current animation is finished
         yield return new WaitForSeconds(currentAnimation.length - mnemo08Animator.GetCurrentAnimatorStateInfo(0).normalizedTime * mnemo08Animator.GetCurrentAnimatorStateInfo(0).length - 1);
+        bufferIndicator.color = Color.green;
         mnemo08Animator.Play(bufferAnimationName);
         coordinateManipulatorAnimator.Play(bufferAnimationName);
         mnemo00Animator.Play(bufferAnimationName + "00");
-        BufferTvsCounter++;
+        fromBufferMenu.AddTvsToBuffer(arm2Mnemo1.CurrentContainerNumber);
     }
 
     private string GetBufferAnimationName(string currentAnimationName)
