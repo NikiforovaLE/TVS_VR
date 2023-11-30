@@ -1,37 +1,46 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class FromBufferMenu : MonoBehaviour
 {
     [SerializeField] private Text tvsAmount;
-    [SerializeField] private Text tvsCellOne;
-    [SerializeField] private Text tvsCellTwo;
-    [SerializeField] private Text tvsCellThree;
-    [SerializeField] private Text tvsCellFour;
     [SerializeField] private Image bufferIndicator;
 
+    [HideInInspector] private const int SIZE = 4;
+    [SerializeField] private Text[] tvsNumberCells = new Text[SIZE];
+    [SerializeField] private Image[] tvsCellImages = new Image[SIZE];
+    [SerializeField] private GameObject[] innerWhenTvsImages = new GameObject[SIZE];
+
     private int bufferTvsCounter = 0;
-    private List<Text> tvsCells;
 
     public int BufferTvsCounter { get => bufferTvsCounter; set => bufferTvsCounter = value; }
 
+    void OnValidate()
+    {
+        if (tvsCellImages.Length != SIZE || innerWhenTvsImages.Length != SIZE)
+        {
+            Debug.LogWarning("Don't change the array's size!");
+            System.Array.Resize(ref tvsCellImages, SIZE);
+            System.Array.Resize(ref innerWhenTvsImages, SIZE);
+        }
+    }
+
     public void AddTvsToBuffer(string tvsNumber)
     {
-        tvsCells[BufferTvsCounter].text = tvsNumber;
+        tvsNumberCells[BufferTvsCounter].text = tvsNumber;
+        tvsCellImages[BufferTvsCounter].color = Color.green;
+        tvsCellImages[BufferTvsCounter].GetComponentInChildren<Image>().color = Color.green;
+        innerWhenTvsImages[BufferTvsCounter].SetActive(true);
         tvsAmount.text = (++BufferTvsCounter).ToString();
     }
 
     public void RemoveTvsFromBuffer()
     {
         tvsAmount.text = (--BufferTvsCounter).ToString();
-        tvsCells[BufferTvsCounter].text = "";
-        if(BufferTvsCounter == 0)
+        tvsNumberCells[BufferTvsCounter].text = "";
+        if (BufferTvsCounter == 0)
         {
-            bufferIndicator.color = new(255f, 255f, 255f, 255f);
+            bufferIndicator.color = Color.green;
         }
     }
-
-    // Start is called before the first frame update
-    void Start() => tvsCells = new List<Text> { tvsCellTwo, tvsCellOne, tvsCellThree, tvsCellFour };
 }
