@@ -14,7 +14,9 @@ public class MovingToBuffer : MonoBehaviour
     [SerializeField] private Animator mnemo00Animator;
     [SerializeField] private FromBufferMenu fromBufferMenu;
     [SerializeField] private ARM2Mnemo1 arm2Mnemo1;
+    [SerializeField] private Mnemo8Animation mnemo8Animation;
     [SerializeField] private Image bufferIndicator;
+    [SerializeField] private Image bufferIndicatorOnMnemo00;
 
     private Animator mnemo08Animator;
     private List<AnimationClip> mnemo08Animation;
@@ -38,15 +40,17 @@ public class MovingToBuffer : MonoBehaviour
                     break;
                 }
             }
-            StartCoroutine(waiter(currentAnimation, requiredBufferAnimation));
+            StartCoroutine(waiter(currentAnimation, requiredBufferAnimation, currentAnimationName));
         }
     }
 
-    System.Collections.IEnumerator waiter(AnimationClip currentAnimation, string bufferAnimationName)
+    System.Collections.IEnumerator waiter(AnimationClip currentAnimation, string bufferAnimationName, string currentAnimationName)
     {
         //wait untill current animation is finished
         yield return new WaitForSeconds(currentAnimation.length - mnemo08Animator.GetCurrentAnimatorStateInfo(0).normalizedTime * mnemo08Animator.GetCurrentAnimatorStateInfo(0).length - 1);
+        SetFlagInMnemo08Animation(currentAnimationName);
         bufferIndicator.color = Color.green;
+        bufferIndicatorOnMnemo00.color = Color.green;
         mnemo08Animator.Play(bufferAnimationName);
         coordinateManipulatorAnimator.Play(bufferAnimationName);
         mnemo00Animator.Play(bufferAnimationName + "00");
@@ -64,6 +68,18 @@ public class MovingToBuffer : MonoBehaviour
             "08 Mnemo Animation Weight" => "MoveTVSFromWeightControlToBufer",
             "08 Mnemo Animation Geometry" => "MoveTVSFromGeometryControlToBufer",
             _ => ""
+        };
+    }
+
+    private void SetFlagInMnemo08Animation(string currentAnimationName)
+    {
+        switch (currentAnimationName)
+        {
+            case "08 Mnemo Animation Washing": mnemo8Animation.IsDrying = false; break;
+            case "08 Mnemo Animation Drying": mnemo8Animation.TightnessControl = false; break;
+            case "08 Mnemo Animation Tightness": mnemo8Animation.ImpurityControl = false; break;
+            case "08 Mnemo Animation Impurity": mnemo8Animation.WeightControl = false; break;
+            case "08 Mnemo Animation Weight": mnemo8Animation.GeometryControl = false; break;
         };
     }
 

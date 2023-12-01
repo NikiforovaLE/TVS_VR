@@ -34,7 +34,7 @@ public class Mnemo08Info : MonoBehaviour
     private readonly string destinationPositionIsWeight = "Масса";
     private readonly string destinationPositionIsEntry = "Входимость";
     private readonly string destinationPositionIsGeometry = "Геометрия";
-    private readonly string destinationPositionIsBuferStorage = "Буферное хранилище";
+    private readonly string destinationPositionIsBufferStorage = "Буферное хранилище";
 
     private readonly string directControlIsUsed = "Используется";
     private readonly string directControlIsNotUsed = "Не используется";
@@ -117,9 +117,9 @@ public class Mnemo08Info : MonoBehaviour
         destinationPositionOnHorizontalMovement.text = destinationPositionIsGeometry;
     }
 
-    public void SetDestinationPositionIsBuferStorage()
+    public void SetDestinationPositionIsBufferStorage()
     {
-        destinationPositionOnHorizontalMovement.text = destinationPositionIsBuferStorage;
+        destinationPositionOnHorizontalMovement.text = destinationPositionIsBufferStorage;
     }
 
     public void SetDirectControlIsUsed()
