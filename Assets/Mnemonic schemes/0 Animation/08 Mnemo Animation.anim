@@ -2431,7 +2431,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 12.916667
+  - time: 14.883333
     functionName: SetReadyToControlTrue
     data: 
     objectReferenceParameter: {fileID: 0}
