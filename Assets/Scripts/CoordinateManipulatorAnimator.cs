@@ -30,8 +30,8 @@ public class CoordinateManipulatorAnimator : MonoBehaviour
     public void SetReadyToWeightControlTrue()
     {
         animator.SetBool("readyToWeightControl", true);
-    }    
-    
+    }
+
     public void SetReadyToGeometryControlTrue()
     {
         animator.SetBool("readyToGeometryControl", true);

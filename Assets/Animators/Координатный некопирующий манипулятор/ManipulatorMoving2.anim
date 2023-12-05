@@ -8829,28 +8829,28 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 14.683333
+  - time: 14.85
     functionName: SetReadyToWashingTrue
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 14.783334
+  - time: 14.866667
     functionName: StopAnimation
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 28.333334
+  - time: 28.516666
     functionName: SetReadyToDryingTrue
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 28.433332
+  - time: 28.533333
     functionName: StopAnimation
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -8878,7 +8878,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 52.35
+  - time: 52.533333
     functionName: SetReadyToImpurityControlTrue
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -8899,7 +8899,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 64.21667
+  - time: 64.55
     functionName: SetReadyToWeightControlTrue
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -8948,7 +8948,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 103
+  - time: 103.45
     functionName: SetReadyToGeometryControlTrue
     data: 
     objectReferenceParameter: {fileID: 0}

@@ -6,6 +6,7 @@ public class MovingFromBuffer : MonoBehaviour
     [SerializeField] private Animator coordinateManipulatorAnimator;
     [SerializeField] private Animator mnemo00Animator;
     [SerializeField] private FromBufferMenu fromBufferMenu;
+    [SerializeField] private CoordinateManipulatorAnimator coordinateManipulatorAnimatorScript;
 
     private Animator mnemo08Animator;
 
@@ -34,6 +35,37 @@ public class MovingFromBuffer : MonoBehaviour
             "MoveTVSFromGeometryControlToBufer" => "MoveTVSFromBuffer",
             _ => ""
         };
+    }
+
+
+    public void StartManipulatorMovingOnWashing()
+    {
+        coordinateManipulatorAnimator.Play("ManipulatorMoving2", 0, 0.11712067f);
+    }
+
+    public void StartManipulatorMovingOnDrying()
+    {
+        coordinateManipulatorAnimator.Play("ManipulatorMoving2", 0, 0.22502961f);
+    }
+
+    public void StartManipulatorMoving2OnTightnessControl()
+    {
+        coordinateManipulatorAnimator.Play("ManipulatorMoving2", 0, 0.31991051f);
+    }
+
+    public void StartManipulatorMoving2OnImpurityControl()
+    {
+        coordinateManipulatorAnimator.Play("ManipulatorMoving2", 0, 0.41465982f);
+    }
+
+    public void StartManipulatorMoving2OnWeightControl()
+    {
+        coordinateManipulatorAnimator.Play("ManipulatorMoving2", 0, 0.50954073f);
+    }
+
+    public void StartManipulatorMoving2OnGeometryControl()
+    {
+        coordinateManipulatorAnimator.Play("ManipulatorMoving2", 0, 0.81668641f);
     }
 
     // Start is called before the first frame update
