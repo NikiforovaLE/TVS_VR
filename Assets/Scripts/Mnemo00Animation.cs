@@ -38,7 +38,6 @@ public class Mnemo00Animation : MonoBehaviour
     private int vtukGettingCount = 0;
 
     private readonly string needToReturnVtuk = "Необходимо вернуть ВТУК на АРМ ввода №2";
-    private readonly string returnEmptyLodgementMessage = "Необходимо вернуть порожний ложемент-свидетель";
     private readonly string returnVtukMessage = "Необходимо вернуть ВТУК";
 
     public Text AttentionMessageOne { get => attentionMessageOne; set => attentionMessageOne = value; }
@@ -121,12 +120,9 @@ public class Mnemo00Animation : MonoBehaviour
         mnemo00Animator.SetInteger("fuelCount", fuelCount);
     }
 
-    public void ShowMessagesToReturnEmptyLodgementAndVtuk()
+    public void ShowMessagesToReturnVtuk()
     {
-        attentionMessageOne.text = returnEmptyLodgementMessage;
-        attentionMessageTwo.text = returnVtukMessage;
-        attentionBlockOne.enabled = true;
-        attentionBlockTwo.enabled = true;
+        StartBlinkingTwo(returnVtukMessage);
     }
 
     // Start is called before the first frame update
@@ -152,6 +148,12 @@ public class Mnemo00Animation : MonoBehaviour
 
         totalFuelAmountInTvs.text = arm2Mnemo0.TotalAmountOfFuelElementsInTVS.text;
         totalFuelAmountInVtuk.text = arm2Mnemo2.CurrentTotalAmountOfFuelElementsInVTUK;
+    }
+
+    public void StartBlinkingOne(string message)
+    {
+        AttentionMessageOne.text = message;
+        attentionBlockOne.enabled = true;
     }
 
     public void StopBlinkingOne()
