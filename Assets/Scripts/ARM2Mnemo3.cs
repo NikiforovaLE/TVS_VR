@@ -24,6 +24,10 @@ public class ARM2Mnemo3 : MonoBehaviour
 
     //messages on attention block two
     private readonly string needToGetVtuk = "Необходимо получить ВТУК на АРМ ввода №2";
+
+    //messages on attention block one
+    private readonly string returnEmptyLodgementMessage = "Необходимо вернуть порожний ложемент-свидетель";
+
     public void ConfirmChoice()
     {
         if (!outputVTUKNumber.text.Equals(""))
@@ -45,6 +49,7 @@ public class ARM2Mnemo3 : MonoBehaviour
             else
             {
                 Mnemo00Animation.StopBlinkingTwo();
+                Mnemo00Animation.StartBlinkingOne(returnEmptyLodgementMessage);
             }
             messageInfoOnArm2.FillInfo(vtuk + currentVtuk + isReturned, messageSourceIsOperator, positiveStatus);
         }
