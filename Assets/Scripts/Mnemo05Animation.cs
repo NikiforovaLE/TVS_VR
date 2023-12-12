@@ -1,11 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Mnemo05Animation : MonoBehaviour
 {
     public Animator Autooperator;
+    public Animator Lodgement;
+    public Animator Shiber;
+    public GameObject AutooperatorLodgement;
     public GameObject TVSframe;
     public GameObject TVSframeAutooperator;
     public Transform Tilter;
@@ -14,30 +14,8 @@ public class Mnemo05Animation : MonoBehaviour
     public GameObject Mnemo07;
     public GameObject Mnemo05;
 
-    private List<string> verticalPosition;
-
-    [SerializeField] private Text verticalPositionText;
-    [SerializeField] private Text stateGripsText;
-    [SerializeField] private Text destinationPositionText;
-
     [SerializeField] private GeneralPanelAcions GeneralPanelAcions;
     [SerializeField] private GeneralPanelAcions AdditionalGeneralPanelAcions;
-
-    private int countverticalPosition = 0;
-
-    private readonly string gripsAreOpened = "Открыты";
-    private readonly string gripsAreClosed = "Закрыты";
-
-    private readonly string destinationPositionIsBundleAssembly = "Сборка пучка";
-    private readonly string destinationPositionIsDefectFrameDisassembly = "Разборка дефектного каркаса";
-    private readonly string destinationPositionIsTvsAssembly = "Сборка ТВС";
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        verticalPosition = new List<string> { "Верхнее", "Нижнее" };
-        verticalPositionText.text = verticalPosition[countverticalPosition];
-    }
 
     public void StartActions()
     {
@@ -62,40 +40,29 @@ public class Mnemo05Animation : MonoBehaviour
         //Mnemo07.SetActive(true);
     }
 
-    public void MakeVerticalPositionLower()
+    public void StartReturningEmptyLodgementOn3DAutooperator()
     {
-        countverticalPosition++;
-        verticalPositionText.text = verticalPosition[countverticalPosition];
+        Autooperator.Play("Returning Empty Lodgement");
     }
 
-    public void MakeVerticalPositionUpper()
+    public void StartShiberOpeningOn3d()
     {
-        countverticalPosition--;
-        verticalPositionText.text = verticalPosition[countverticalPosition];
+        Shiber.Play("DoorMoving");
     }
 
-    public void CloseGrips()
+    public void StopShiberOpeningOn3d()
     {
-        stateGripsText.text = gripsAreClosed;
+        Shiber.speed = 0;
     }
 
-    public void OpenGrips()
+    public void ContinueShiberOpeningOn3d()
     {
-        stateGripsText.text = gripsAreOpened;
+        Shiber.speed = 1;
     }
 
-    public void SetDestinationPositionIsBundleAssembly()
+    public void StartReturningEmptyLodgementOn3DShiber()
     {
-        destinationPositionText.text = destinationPositionIsBundleAssembly;
-    }
-
-    public void SetDestinationPositionIsDefectFrameDisassembly()
-    {
-        destinationPositionText.text = destinationPositionIsDefectFrameDisassembly;
-    }
-    
-    public void SetDestinationPositionIsTvsAssembly()
-    {
-        destinationPositionText.text = destinationPositionIsTvsAssembly;
+        Lodgement.Play("Returning Empty Logement");
+        AutooperatorLodgement.SetActive(false);
     }
 }
