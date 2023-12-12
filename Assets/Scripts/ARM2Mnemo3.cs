@@ -7,6 +7,7 @@ public class ARM2Mnemo3 : MonoBehaviour
     [SerializeField] private ARM2Mnemo0 ARM2Mnemo0;
     [SerializeField] private ARM2Mnemo2 ARM2Mnemo2;
     [SerializeField] private GameObject mainMnemoARM2;
+    [SerializeField] private GameObject vtukImage;
     [SerializeField] private Text outputVTUKNumber;
     [SerializeField] private Text infoAboutVTUKNumberOn02Mnemo;
     [SerializeField] private Text ARM2Mnemo2TextAboutVTUKNumber;
@@ -48,10 +49,17 @@ public class ARM2Mnemo3 : MonoBehaviour
             }
             else
             {
+                vtukImage.SetActive(false);
                 Mnemo00Animation.StopBlinkingTwo();
                 Mnemo00Animation.StartBlinkingOne(returnEmptyLodgementMessage);
             }
             messageInfoOnArm2.FillInfo(vtuk + currentVtuk + isReturned, messageSourceIsOperator, positiveStatus);
         }
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        vtukImage.SetActive(true);
     }
 }
