@@ -115,7 +115,7 @@ public class ARM1Mnemo2 : MonoBehaviour
 
     private void ShowFrameNumberText()
     {
-        frameNumber.text = framesNumbers[framesCounter];
+        frameNumber.text = "า" + containerNumber.text.Replace("สฮอา00", chosenType.text) + "23"; 
         framesCounter++;
         counter++;
     }
@@ -226,7 +226,6 @@ public class ARM1Mnemo2 : MonoBehaviour
         framesCounter = 0;
         attention.text = "";
         TypeOfTVS = "";
-        framesNumbers = new List<string> { "ายั00001", "ายั00002", "ายั00003", "ายั00004", "ายั00005" };
         Scratches = false;
         Dints = false;
         DefectsInFixing = false;
