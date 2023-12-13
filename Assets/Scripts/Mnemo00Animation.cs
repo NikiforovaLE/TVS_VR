@@ -50,7 +50,7 @@ public class Mnemo00Animation : MonoBehaviour
         currentFuel.text = "";
         FillFuelNumbers();
         string vtukNumber = arm2Mnemo2.CurrentVTUK;
-        CurrentMagazine.text = "ÌÀÃÀÇ" + vtukNumber.Substring(vtukNumber.Length - 3);
+        CurrentMagazine.text = vtukNumber.Replace("ÂÒÓÊ0", "ÌÀÃÀÇ");
     }
 
     public void FillFuelNumbers()
